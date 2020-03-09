@@ -1,0 +1,61 @@
+{
+  "name": "easymoney",
+  "version": "0.0.2",
+  "author": "Whispers12",
+  "maintainers": [
+    {
+      "name": "Whispers12",
+      "email": "githubFrolov@yandex.ru"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Whispers12/easymoney.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Whispers12/easymoney/issues"
+  },
+  "homepage": "https://github.com/Whispers12/easymoney#readme",
+  "license": "MIT",
+  "description": "Best way to do money in js",
+  "main": "index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "jest --watchAll",
+    "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "test-prehook": "jest --bail"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/jest": "^25.1.3",
+    "@types/node": "^12.12.11",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "cross-env": "^5.2.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "fast-check": "^1.20.0",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.3",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.4"
+  },
+  "engines": {
+    "node": ">=10.8.x"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test-prehook",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

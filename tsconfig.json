@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "noUnusedParameters": true,
+    "importHelpers": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/__tests__/*.ts", "node_modules", "lib"]
+}
