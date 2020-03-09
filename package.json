@@ -1,6 +1,6 @@
 {
-  "name": "easymoney",
-  "version": "0.0.2",
+  "name": "easy-money",
+  "version": "0.0.3",
   "author": "Whispers12",
   "maintainers": [
     {
@@ -10,12 +10,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Whispers12/easymoney.git"
+    "url": "git+https://github.com/Whispers12/easy-money.git"
   },
   "bugs": {
-    "url": "https://github.com/Whispers12/easymoney/issues"
+    "url": "https://github.com/Whispers12/easy-money/issues"
   },
-  "homepage": "https://github.com/Whispers12/easymoney#readme",
+  "homepage": "https://github.com/Whispers12/easy-money#readme",
   "license": "MIT",
   "description": "Best way to do money in js",
   "main": "index.js",
