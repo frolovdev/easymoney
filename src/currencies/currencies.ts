@@ -1,6 +1,6 @@
 import { CurrencyMap, CurrencyUnitISO } from "./types";
 
-export const currencies: CurrencyMap<CurrencyUnitISO> = {
+export const currenciesMap: CurrencyMap<CurrencyUnitISO> = {
   AFN: {
     code: "AFN",
     currency: "Afghani",
@@ -1239,4 +1239,8 @@ export const currencies: CurrencyMap<CurrencyUnitISO> = {
     minorUnit: 0,
     numericCode: 961
   }
-};
+} as const;
+
+export const currencies = Object.keys(currenciesMap).map(
+  code => currenciesMap[code]
+);

@@ -4,7 +4,7 @@ import { bind } from "../bind";
 import { RoundingModes, RoundingModesType } from "../consts/rounding-modes";
 import { isNumeric, assert } from "../assert";
 import { CalculatorBase } from "../calculator";
-import { fromString, fromNumber } from "../number/number";
+import { fromString, fromNumber } from "../number";
 import { MoneyBase, PrivateInstance, Instance, CreateMoney } from "./types";
 
 function construct(

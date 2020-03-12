@@ -1,6 +1,6 @@
 import { BigIntMoneyInput } from "../../types";
 import { CreateMoney, BigIntMoneyBase } from "../types";
-import { createBigIntCalculator } from "../../calculator/bigIntCalcaulator";
+import { createBigIntCalculator } from "../../calculator/";
 import { createBigIntMoneyUnit } from "../bigIntMoney";
 import { BIG_INT_PRECISION_M } from "../../consts/precisions";
 

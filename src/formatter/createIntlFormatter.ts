@@ -1,28 +1,56 @@
-// import { bind } from "./../bind";
-// import { IMoney } from "./../types";
-// import { Formatter } from "./types";
+import { MoneyBase } from "../money/types";
+import { bind } from "./../bind";
 
-// function createIntlFormatter(moneyInstance: IMoney): Formatter {
-//   const publicInstance = {} as Formatter;
+import { IntlFormatter, CreateIntlFormatter } from "./types";
 
-//   publicInstance.format = bind(format, moneyInstance);
+import { currencies } from "../currencies/currencies";
+import { CurrencyListISO, CurrencyUnitISO } from "../currencies/types";
+import { createCurrencyList } from "../currencies";
 
-//   return publicInstance;
-// }
+type PrivateInstance = {
+  currencyList: CurrencyListISO;
+  formatter: Intl.NumberFormat;
+};
 
-// // locales?: string | string[] | undefined, options?: Intl.NumberFormatOptions | undefined) => Intl.NumberFormat
-// function format(
-//   moneyInstance: IMoney,
-//   locales?: string | string[],
-//   options?: Exclude<Intl.NumberFormatOptions, "currency"> | undefined
-// ) {
-//   const formatter = new Intl.NumberFormat(locales, {
-//     ...options,
-//     currency: moneyInstance.getCurrency()
-//   });
+export function createIntlFormatterFactory(
+  formatter: Intl.NumberFormat,
+  currencyList: CurrencyListISO
+): IntlFormatter {
+  const publicInstance = {} as IntlFormatter;
 
-//   const amount = moneyInstance.getAmount();
+  const privateInstance: PrivateInstance = {
+    currencyList,
+    formatter
+  };
 
-//   // @ts-ignore
-//   return formatter.format(amount);
-// }
+  publicInstance.format = bind(format, privateInstance);
+
+  return publicInstance;
+}
+
+export function format(
+  privateInstance: PrivateInstance,
+  moneyInstance: MoneyBase
+) {
+  const amount = moneyInstance.getAmount();
+
+  const { formatter } = privateInstance;
+
+  return formatter.format(Number(amount));
+}
+
+function createIntlFormatterWithCustomCurrencies(
+  currencies: CurrencyUnitISO[],
+  locales?: string | string[],
+  options?: Intl.NumberFormatOptions
+) {
+  const formatter = new Intl.NumberFormat(locales, options);
+
+  const currencyList = createCurrencyList(currencies);
+
+  return createIntlFormatterFactory(formatter, currencyList);
+}
+
+export function createBaseIntlFormatter(): CreateIntlFormatter {
+  return createIntlFormatterWithCustomCurrencies.bind(null, currencies);
+}
