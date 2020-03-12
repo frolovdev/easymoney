@@ -1,7 +1,7 @@
 import { MoneyBase } from "../money/types";
 import { bind } from "./../bind";
 
-import { IntlFormatter, CreateIntlFormatter } from "./types";
+import { IntlFormatter } from "./types";
 
 import { currencies } from "../currencies/currencies";
 import { CurrencyListISO, CurrencyUnitISO } from "../currencies/types";
@@ -51,6 +51,9 @@ function createIntlFormatterWithCustomCurrencies(
   return createIntlFormatterFactory(formatter, currencyList);
 }
 
-export function createBaseIntlFormatter(): CreateIntlFormatter {
+export function createBaseIntlFormatter(): (
+  locales?: string | string[],
+  options?: Intl.NumberFormatOptions
+) => IntlFormatter {
   return createIntlFormatterWithCustomCurrencies.bind(null, currencies);
 }
