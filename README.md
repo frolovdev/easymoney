@@ -2,14 +2,42 @@
 
 Money library for working with monetary values in js
 
-## MAIN FEATURES
+## Main features
 
-- 🎁 **composable and modular api**: easy treeshackable with webpack
+- 🎁 **composable and modular api**: easy tree shaking with webpack
 - 🛠 **statically typed**: first-class support of typescript
 - 💣 **reliable**: great dx and human readable errors
 - 🎁 **immutable**: immutable data
 - 💡 **big int suport**: support new standart of big int out of the box
 - 🧮 **custom calculators**: support custom calculators (for example if u need operating with big values like string) 
+
+## Comparison with other money libraries
+
+|                    | easy-money | Dinero |
+| ------------------ | ---------- | ------ |
+| Custom calculators | ✅          | ❌      |
+| Big int support    | ✅          | ❌      |
+| Tree Shaking       | ✅          | ❌      |
+| Typescript         | ✅          | ❌      |
+| Flexible api       | ✅          | ❌      |
+
+## Installation
+
+```sh
+npm i easy-money
+```
+
+or
+
+```sh
+yarn add easy-money
+```
+
+## Usage
+
+```js
+
+```
 
 
 ## IEEE 754 starndart
