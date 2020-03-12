@@ -1,3 +1,17 @@
+# easy-money
+
+Money library for working with monetary values in js
+
+## MAIN FEATURES
+
+- 🎁 **composable and modular api**: easy treeshackable with webpack
+- 🛠 **statically typed**: first-class support of typescript
+- 💣 **reliable**: great dx and human readable errors
+- 🎁 **immutable**: immutable data
+- 💡 **big int suport**: support new standart of big int out of the box
+- 🧮 **custom calculators**: support custom calculators (for example if u need operating with big values like string) 
+
+
 ## IEEE 754 starndart
 
 WIKI
