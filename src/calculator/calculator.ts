@@ -1,4 +1,4 @@
-import { fromNumber } from "../number/number";
+import { fromNumber } from "../number";
 
 import { customRound } from "../round/round";
 import { assert } from "../assert";

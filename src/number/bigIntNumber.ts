@@ -1,6 +1,5 @@
 import { BIG_INT_PRECISION, BIG_INT_PRECISION_M } from "./../consts/precisions";
 import { RoundingModesType, RoundingModes } from "../consts/rounding-modes";
-import { assert } from "../assert";
 
 export function bigIntAbs(value: bigint) {
   return value > 0 ? value : -value;

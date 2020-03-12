@@ -1,5 +1,10 @@
-// import { Money } from "../types";
+import { MoneyBase } from "../money/types";
 
-// export interface Formatter {
-//   format: (money: Money) => string;
-// }
+export type IntlFormatter = {
+  format(money: MoneyBase): string;
+};
+
+export type CreateIntlFormatter = (
+  locales?: string | string[],
+  options?: Intl.NumberFormatOptions
+) => IntlFormatter;

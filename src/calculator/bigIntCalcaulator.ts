@@ -1,8 +1,4 @@
-import {
-  bigIntDivide,
-  convertValueToBigInt,
-  bigIntAbs
-} from "./../number/bigIntNumber";
+import { bigIntDivide, convertValueToBigInt, bigIntAbs } from "./../number";
 import { assert } from "../assert";
 import { BigIntCalculatorBase } from "./types";
 

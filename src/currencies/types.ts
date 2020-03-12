@@ -17,6 +17,8 @@ export interface CurrencyList<C> {
   getCurrencies(): CurrencyMap<C>;
 }
 
+export type CurrencyListISO = CurrencyList<CurrencyUnitISO>;
+
 export type CurrencyMap<C> = {
   [code: string]: C;
 };

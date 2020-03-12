@@ -1,4 +1,4 @@
-import { BIG_INT_PRECISION_M, BIG_INT_PRECISION } from "./../consts/precisions";
+import { BIG_INT_PRECISION_M } from "./../consts/precisions";
 import { bind } from "../bind";
 import { BigIntMoneyInput, BigIntMoney } from "../types";
 import {
@@ -8,10 +8,10 @@ import {
   BigIntInstance,
   BigIntPrivateInstance
 } from "./types";
-import { BigIntCalculatorBase } from "../calculator/types";
+import { BigIntCalculatorBase } from "../calculator";
 
 import { RoundingModesType, RoundingModes } from "../consts/rounding-modes";
-import { convertValueToBigInt, bigIntAbs } from "../number/bigIntNumber";
+import { convertValueToBigInt } from "../number";
 import { assert, isNumeric } from "../assert";
 
 function construct(
