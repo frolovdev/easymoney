@@ -35,9 +35,24 @@ yarn add easy-money
 
 ## Usage
 
+
+### Money
 ```js
 
 ```
+```js
+
+```
+
+### Pass custom calculator 
+
+In example we just pass base calculator
+
+
+
+### Formatting
+
+### Working with currencies
 
 
 ## IEEE 754 starndart

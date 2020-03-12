@@ -57,5 +57,14 @@
       "pre-push": "npm run test-prehook",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "keywords": [
+    "easy-money",
+    "money",
+    "dinero",
+    "dinero.js",
+    "amount",
+    "immutable",
+    "monetary"
+  ]
 }
