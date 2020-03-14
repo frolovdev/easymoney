@@ -1,5 +1,7 @@
 # easy-money
 
+Money library for working with monetary values in js
+
 WIP, (03.14.2020) we are still work in progress.
 
 High-level roadmap
@@ -20,8 +22,6 @@ Feel free to ask any questions or just contact, I open to any suggestions or ide
 [Facebook](https://www.facebook.com/andrey.frolov.94617)
 
 [Telegram](https://t.me/frolovandrei)
-
-Money library for working with monetary values in js
 
 ## Main features
 
