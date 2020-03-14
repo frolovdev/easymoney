@@ -1,5 +1,26 @@
 # easy-money
 
+WIP, (14.03.2020) we are still work in progress.
+
+High-level roadmap
+
+| Feature                           | Status |
+| --------------------------------- | ------ |
+| core functions in math            | ✅      |
+| custom calculators support        | ✅      |
+| tests on most codebase            | ✅      |
+| currencies                        | ✅      |
+| bigInt Support                    | ✅      |
+| formatting                        | ❌(30%) |
+| docs and community                | ❌(10%) |
+| currencies stable api with crypto | ❌      |
+
+Feel free to ask any questions or just contact, I open to any suggestions or ideas
+
+[Facebook](https://www.facebook.com/andrey.frolov.94617)
+
+[Telegram](https://t.me/frolovandrei)
+
 Money library for working with monetary values in js
 
 ## Main features
