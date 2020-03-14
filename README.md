@@ -1,6 +1,6 @@
 # easy-money
 
-WIP, (14.03.2020) we are still work in progress.
+WIP, (03.14.2020) we are still work in progress.
 
 High-level roadmap
 
