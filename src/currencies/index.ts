@@ -1,6 +1,8 @@
 import { currencies, currenciesMap } from "./currencies";
-export { createCurrencyList } from "./createCurrencyList";
+
+import { createCurrencyList } from "./createCurrencyList";
 export { createAgregatedCurrencyList } from "./createAgregatedCurrencyList";
+export const isoCurrencyLsit = createCurrencyList(currencies);
 export {
   CurrencyUnit,
   CurrencyUnitISO,
@@ -8,4 +10,4 @@ export {
   CurrencyListISO,
   CurrencyMap
 } from "./types";
-export { currencies, currenciesMap };
+export { currencies, currenciesMap, createCurrencyList };

@@ -1,6 +1,6 @@
 {
   "name": "easy-money",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "author": "Whispers12",
   "maintainers": [
     {
@@ -18,8 +18,8 @@
   "homepage": "https://github.com/Whispers12/easy-money#readme",
   "license": "MIT",
   "description": "Best way to do money in js",
-  "main": "index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "jest --watchAll",

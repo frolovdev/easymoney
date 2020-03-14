@@ -8,3 +8,4 @@ coverage/
 .travis.yml
 .vscode
 .cache
+src
