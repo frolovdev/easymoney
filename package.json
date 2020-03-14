@@ -21,6 +21,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "deploy": "cd website && now",
     "build": "tsc -p tsconfig.json",
     "test": "jest --watchAll",
     "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
