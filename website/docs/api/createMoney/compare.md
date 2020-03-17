@@ -1,11 +1,11 @@
 ---
-id: add
+id: compare
 title: API Reference
 hide_title: true
-sidebar_label: add
+sidebar_label: compare
 ---
 
-# add
+# compare
 
 **Example**
 
@@ -17,9 +17,7 @@ const money = createMoney({ amount: 100, currency: 'USD' });
 
 const money2 = createMoney({ amount: 100, currency: 'USD' });
 
-const result = money.add(money2);
-
-result.getAmount();
-// => 200
+money.compare(money2);
+// => 0
 
 ```
