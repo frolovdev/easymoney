@@ -1,6 +1,6 @@
 ---
 id: isZero
-title: API Reference
+title: isZero
 hide_title: true
 sidebar_label: isZero
 ---

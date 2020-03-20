@@ -1,6 +1,6 @@
 ---
 id: subtract
-title: API Reference
+title: subtract
 hide_title: true
 sidebar_label: subtract
 ---

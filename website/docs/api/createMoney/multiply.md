@@ -1,6 +1,6 @@
 ---
 id: multiply
-title: API Reference
+title: multiply
 hide_title: true
 sidebar_label: multiply
 ---

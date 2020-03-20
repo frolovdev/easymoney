@@ -1,6 +1,6 @@
 ---
 id: getSource
-title: API Reference
+title: getSource
 hide_title: true
 sidebar_label: getSource
 ---

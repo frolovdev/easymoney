@@ -1,6 +1,6 @@
 ---
 id: getAmount
-title: API Reference
+title: getAmount
 hide_title: true
 sidebar_label: getAmount
 ---

@@ -2,16 +2,15 @@ module.exports = {
   someSidebar: {
     Introduction: [
       "introduction/getting-started",
-      "introduction/installation",
-      "doc2",
-      "doc3"
+      "introduction/installation"
     ],
     "API Reference": [
       "api/api-reference",
       {
         type: "category",
         label: "createMoney",
-        items: ["api/createMoney/add",
+        items: [
+                "api/createMoney/add",
                 "api/createMoney/absolute",
                 "api/createMoney/allocate",
                 "api/createMoney/allocateTo",
@@ -103,7 +102,6 @@ module.exports = {
                 "api/createBigIntCalculator/subtract"
                 ]
       }
-    ],
-    Features: ["mdx"]
+    ]
   }
 };

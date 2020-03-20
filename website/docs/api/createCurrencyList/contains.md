@@ -1,6 +1,6 @@
 ---
 id: contains
-title: API Reference
+title: contains
 hide_title: true
 sidebar_label: contains
 ---

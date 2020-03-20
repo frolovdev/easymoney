@@ -1,6 +1,6 @@
 ---
 id: getCurrency
-title: API Reference
+title: getCurrency
 hide_title: true
 sidebar_label: getCurrency
 ---
