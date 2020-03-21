@@ -1,6 +1,6 @@
 ---
 id: mod
-title: API Reference
+title: mod
 hide_title: true
 sidebar_label: mod
 ---

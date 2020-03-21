@@ -1,6 +1,6 @@
 ---
 id: ceil
-title: API Reference
+title: ceil
 hide_title: true
 sidebar_label: ceil
 ---

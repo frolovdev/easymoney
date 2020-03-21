@@ -1,6 +1,6 @@
 ---
 id: lessThanOrEqual
-title: API Reference
+title: lessThanOrEqual
 hide_title: true
 sidebar_label: lessThanOrEqual
 ---

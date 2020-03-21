@@ -1,6 +1,6 @@
 ---
 id: greaterThan
-title: API Reference
+title: greaterThan
 hide_title: true
 sidebar_label: greaterThan
 ---

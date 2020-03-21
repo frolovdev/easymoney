@@ -1,6 +1,6 @@
 ---
 id: ratioOf
-title: API Reference
+title: ratioOf
 hide_title: true
 sidebar_label: ratioOf
 ---

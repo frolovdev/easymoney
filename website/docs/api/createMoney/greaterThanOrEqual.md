@@ -1,6 +1,6 @@
 ---
 id: greaterThanOrEqual
-title: API Reference
+title: greaterThanOrEqual
 hide_title: true
 sidebar_label: greaterThanOrEqual
 ---
@@ -21,9 +21,7 @@ const money2 = createMoney({ amount: 100, currency: 'USD' });
 money.greaterThanOrEqual(money2);
 // => true
 
-// if firssdsdst value greater thn second
-
-firssdsdst
+//if first value greater then second
 const money3 = createMoney({ amount: 150, currency: 'USD' });
 
 const money4 = createMoney({ amount: 100, currency: 'USD' });

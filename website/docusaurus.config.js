@@ -25,7 +25,15 @@ module.exports = {
           label: "Docs",
           position: "left"
         },
-        { to: "blog", label: "Api", position: "left" },
+        { to: "docs/api/api-reference", 
+          label: "Api", 
+          position: "left" 
+        },
+        {
+          to: "docs/introduction/getting-started#help-and-discussion", 
+          label: "Need help?", 
+          position: "right"
+        },
         {
           href: "https://github.com/whispers12/easy-money",
           label: "Chat",
@@ -72,15 +80,7 @@ module.exports = {
           items: [
             {
               label: "Spectrum",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus"
-            },
-            {
-              label: "Gitter",
-              href: "https://discordapp.com/invite/docusaurus"
-            },
-            {
-              label: "Telegram 🇷🇺",
-              href: "https://discordapp.com/invite/docusaurus"
+              href: "https://stackoverflow.com/questions/tagged/easy-money"
             }
           ]
         },
@@ -89,7 +89,7 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus"
+              href: "https://github.com/frolovdev/easy-money"
             }
           ]
         }

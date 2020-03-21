@@ -1,6 +1,6 @@
 ---
 id: compare
-title: API Reference
+title: compare
 hide_title: true
 sidebar_label: compare
 ---

@@ -1,6 +1,6 @@
 ---
 id: share
-title: API Reference
+title: share
 hide_title: true
 sidebar_label: share
 ---

@@ -1,6 +1,6 @@
 ---
 id: divide
-title: API Reference
+title: divide
 hide_title: true
 sidebar_label: divide
 ---

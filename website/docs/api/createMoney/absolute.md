@@ -1,6 +1,6 @@
 ---
 id: absolute
-title: API Reference
+title: absolute
 hide_title: true
 sidebar_label: absolute
 ---

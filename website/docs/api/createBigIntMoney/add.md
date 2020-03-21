@@ -1,6 +1,6 @@
 ---
 id: add
-title: API Reference
+title: add
 hide_title: true
 sidebar_label: add
 ---
