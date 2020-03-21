@@ -13,6 +13,7 @@ High-level roadmap
 | tests on most codebase            | ✅      |
 | currencies                        | ✅      |
 | bigInt Support                    | ✅      |
+| docs base api, positive cases     | ✅      |
 | formatting                        | ❌(30%) |
 | docs and community                | ❌(10%) |
 | currencies stable api with crypto | ❌      |

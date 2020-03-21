@@ -8,6 +8,7 @@ describe("createAgregatedCurrencyList", () => {
     it("shouldnt throws an error if data is correct", () => {
       const keys = Object.keys(currencies);
 
+      // @ts-ignore
       const currencySet = keys.map(key => currencies[key]);
 
       const goodMock = [
@@ -44,6 +45,7 @@ describe("createAgregatedCurrencyList", () => {
       it("should be equal original length of data", () => {
         const keys = Object.keys(currencies);
 
+        // @ts-ignore
         const currencySet = keys.map(key => currencies[key]);
 
         const goodMock = [
@@ -58,8 +60,16 @@ describe("createAgregatedCurrencyList", () => {
         ];
 
         const goodMoc1k = [
-          { minorUnit: 2, code: "SADXBTA", meta: {} },
-          { minorUnit: 5, code: "ASDDXBT", meta: {} }
+          {
+            minorUnit: 2,
+            code: "SADXBTA",
+            meta: {}
+          },
+          {
+            minorUnit: 5,
+            code: "ASDDXBT",
+            meta: {}
+          }
         ];
 
         const currencyList = createCurrencyList(goodMock);
