@@ -1,6 +1,6 @@
 ---
 id: isSameCurrency
-title: API Reference
+title: isSameCurrency
 hide_title: true
 sidebar_label: isSameCurrency
 ---

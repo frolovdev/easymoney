@@ -21,6 +21,11 @@ yarn add easy-money
 
 For more details, see the Installation page.
 
+## Help and Discussion
+
+You can also ask questions on [Stack Overflow](https://stackoverflow.com) using the **[#easy-money](https://stackoverflow.com/questions/tagged/easy-money)** tag.
+
+If you have a bug report or need to leave other feedback, **[please file an issue](https://github.com/frolovdev/easy-money/issues)** on the Github repo
 
 ## Basic examples of api
 

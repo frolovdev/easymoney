@@ -1,6 +1,6 @@
 ---
 id: round
-title: API Reference
+title: round
 hide_title: true
 sidebar_label: round
 ---

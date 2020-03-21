@@ -1,6 +1,6 @@
 ---
 id: allocate
-title: API Reference
+title: allocate
 hide_title: true
 sidebar_label: allocate
 ---

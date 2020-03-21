@@ -1,6 +1,6 @@
 ---
 id: equals
-title: API Reference
+title: equals
 hide_title: true
 sidebar_label: equals
 ---

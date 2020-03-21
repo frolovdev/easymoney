@@ -1,6 +1,6 @@
 ---
 id: lessThan
-title: API Reference
+title: lessThan
 hide_title: true
 sidebar_label: lessThan
 ---

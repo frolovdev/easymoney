@@ -1,6 +1,6 @@
 ---
 id: floor
-title: API Reference
+title: floor
 hide_title: true
 sidebar_label: floor
 ---

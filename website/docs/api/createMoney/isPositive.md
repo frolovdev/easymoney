@@ -1,6 +1,6 @@
 ---
 id: isPositive
-title: API Reference
+title: isPositive
 hide_title: true
 sidebar_label: isPositive
 ---
