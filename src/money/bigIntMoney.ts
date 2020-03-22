@@ -308,7 +308,7 @@ function multiply(
 function divide(
   instance: BigIntInstance,
   divisor: string | number | bigint,
-  roundingMode: RoundingModesType = RoundingModes.HALF_UP
+  roundingMode: RoundingModesType = RoundingModes.HALF_EVEN
 ) {
   assertRoundingMode(roundingMode);
 
