@@ -1,6 +1,6 @@
 {
   "name": "easy-money",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "author": "Whispers12",
   "sideEffects": false,
   "source": "src/index.ts",
@@ -30,7 +30,7 @@
     "rebuild": "npm run clean && npm run build",
     "postpublish": "npm run clean",
     "build": "cross-env fixme=fixme ./node_modules/.bin/microbundle --external=easy-money",
-    "clean": "cross-env fixme=fixme ./node_modules/.bin/rimraf build/",
+    "clean": "cross-env fixme=fixme ./node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",
     "test": "jest --watchAll",
     "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
