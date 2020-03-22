@@ -280,7 +280,7 @@ function assertRoundingMode(roundingMode: any): asserts roundingMode {
 function multiply(
   instance: BigIntInstance,
   multiplier: string | number | bigint,
-  roundingMode: RoundingModesType = RoundingModes.HALF_UP
+  roundingMode: RoundingModesType = RoundingModes.HALF_EVEN
 ) {
   assertRoundingMode(roundingMode);
 

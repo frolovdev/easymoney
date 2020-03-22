@@ -370,8 +370,43 @@ describe("money", () => {
         expect(expression).toThrow();
       });
 
-      // TODO: add units for rounding
-      describe("rounding", () => {});
+      describe("rounding", () => {
+        it("should round bankers rounding by default", () => {
+          const data1 = { amount: 5, currency: "RUB" };
+
+          const money1 = createMoney(data1);
+
+          expect(money1.multiply(1.0).getAmount()).toEqual("5");
+          expect(money1.multiply(1.02).getAmount()).toEqual("5");
+          expect(money1.multiply(1.08).getAmount()).toEqual("5");
+          expect(money1.multiply(1.1).getAmount()).toEqual("6");
+          expect(money1.multiply(1.12).getAmount()).toEqual("6");
+          expect(money1.multiply(1.18).getAmount()).toEqual("6");
+          expect(money1.multiply(1.2).getAmount()).toEqual("6");
+          expect(money1.multiply(1.22).getAmount()).toEqual("6");
+          expect(money1.multiply(1.28).getAmount()).toEqual("6");
+          expect(money1.multiply(1.3).getAmount()).toEqual("6");
+          expect(money1.multiply(1.32).getAmount()).toEqual("7");
+          expect(money1.multiply(1.38).getAmount()).toEqual("7");
+          expect(money1.multiply(1.4).getAmount()).toEqual("7");
+
+          expect(money1.multiply(-1.4).getAmount()).toEqual("-7");
+          expect(money1.multiply(-1.38).getAmount()).toEqual("-7");
+          expect(money1.multiply(-1.32).getAmount()).toEqual("-7");
+          expect(money1.multiply(-1.3).getAmount()).toEqual("-6");
+          expect(money1.multiply(-1.28).getAmount()).toEqual("-6");
+          expect(money1.multiply(-1.22).getAmount()).toEqual("-6");
+          expect(money1.multiply(-1.2).getAmount()).toEqual("-6");
+          expect(money1.multiply(-1.18).getAmount()).toEqual("-6");
+          expect(money1.multiply(-1.12).getAmount()).toEqual("-6");
+          expect(money1.multiply(-1.1).getAmount()).toEqual("-6");
+          expect(money1.multiply(-1.08).getAmount()).toEqual("-5");
+          expect(money1.multiply(-1.02).getAmount()).toEqual("-5");
+          expect(money1.multiply(-1.0).getAmount()).toEqual("-5");
+        });
+      });
+
+      it("should be possible to pass another rounding method", () => {});
     });
 
     describe("divide", () => {

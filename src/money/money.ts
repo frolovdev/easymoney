@@ -182,7 +182,7 @@ function lessThanOrEqual(publicInstance: MoneyBase, money: MoneyBase) {
 function multiply(
   instance: Instance,
   multiplier: string | number,
-  roundingMode: RoundingModesType = RoundingModes.HALF_UP
+  roundingMode: RoundingModesType = RoundingModes.HALF_EVEN
 ) {
   assertOperand(multiplier);
   assertRoundingMode(roundingMode);
@@ -229,7 +229,7 @@ function assertRoundingMode(roundingMode: any): asserts roundingMode {
 function divide(
   instance: Instance,
   divisor: string | number,
-  roundingMode: RoundingModesType = RoundingModes.HALF_UP
+  roundingMode: RoundingModesType = RoundingModes.HALF_EVEN
 ) {
   assertOperand(divisor);
   assertRoundingMode(roundingMode);
