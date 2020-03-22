@@ -1,7 +1,11 @@
 {
   "name": "easy-money",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "author": "Whispers12",
+  "sideEffects": false,
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "maintainers": [
     {
       "name": "Whispers12",
@@ -18,8 +22,6 @@
   "homepage": "https://github.com/Whispers12/easy-money#readme",
   "license": "MIT",
   "description": "Best way to do money in js",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "deploy": "cd website && now",
     "build": "tsc -p tsconfig.json",
@@ -59,6 +61,12 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "files": [
+    "/README.md",
+    "/package.json",
+    "/src",
+    "/build"
+  ],
   "keywords": [
     "easy-money",
     "money",
