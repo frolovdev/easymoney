@@ -82,11 +82,11 @@ function round(
 
   const { calculator } = privateInstance;
 
-  if (roundingMode === RoundingModes.UP) {
+  if (roundingMode === RoundingModes.CEILING) {
     return calculator.ceil(amount);
   }
 
-  if (roundingMode === RoundingModes.DOWN) {
+  if (roundingMode === RoundingModes.FLOOR) {
     return calculator.floor(amount);
   }
 

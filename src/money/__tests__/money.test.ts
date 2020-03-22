@@ -406,7 +406,39 @@ describe("money", () => {
         });
       });
 
-      it("should be possible to pass another rounding method", () => {});
+      it("should be possible to pass another rounding method", () => {
+        const data1 = { amount: 5, currency: "RUB" };
+
+        const money1 = createMoney(data1);
+
+        expect(money1.multiply(1.0, "DOWN").getAmount()).toEqual("5");
+        expect(money1.multiply(1.02, "DOWN").getAmount()).toEqual("5");
+        expect(money1.multiply(1.08, "DOWN").getAmount()).toEqual("5");
+        expect(money1.multiply(1.1, "DOWN").getAmount()).toEqual("5");
+        expect(money1.multiply(1.12, "DOWN").getAmount()).toEqual("5");
+        expect(money1.multiply(1.18, "DOWN").getAmount()).toEqual("5");
+        expect(money1.multiply(1.2, "DOWN").getAmount()).toEqual("6");
+        expect(money1.multiply(1.22, "DOWN").getAmount()).toEqual("6");
+        expect(money1.multiply(1.28, "DOWN").getAmount()).toEqual("6");
+        expect(money1.multiply(1.3, "DOWN").getAmount()).toEqual("6");
+        expect(money1.multiply(1.32, "DOWN").getAmount()).toEqual("6");
+        expect(money1.multiply(1.38, "DOWN").getAmount()).toEqual("6");
+        expect(money1.multiply(1.4, "DOWN").getAmount()).toEqual("7");
+
+        expect(money1.multiply(-1.4, "DOWN").getAmount()).toEqual("-7");
+        expect(money1.multiply(-1.38, "DOWN").getAmount()).toEqual("-6");
+        expect(money1.multiply(-1.32, "DOWN").getAmount()).toEqual("-6");
+        expect(money1.multiply(-1.3, "DOWN").getAmount()).toEqual("-6");
+        expect(money1.multiply(-1.28, "DOWN").getAmount()).toEqual("-6");
+        expect(money1.multiply(-1.22, "DOWN").getAmount()).toEqual("-6");
+        expect(money1.multiply(-1.2, "DOWN").getAmount()).toEqual("-6");
+        expect(money1.multiply(-1.18, "DOWN").getAmount()).toEqual("-5");
+        expect(money1.multiply(-1.12, "DOWN").getAmount()).toEqual("-5");
+        expect(money1.multiply(-1.1, "DOWN").getAmount()).toEqual("-5");
+        expect(money1.multiply(-1.08, "DOWN").getAmount()).toEqual("-5");
+        expect(money1.multiply(-1.02, "DOWN").getAmount()).toEqual("-5");
+        expect(money1.multiply(-1.0, "DOWN").getAmount()).toEqual("-5");
+      });
     });
 
     describe("divide", () => {
