@@ -1,0 +1,36 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+     {
+      "login": "frolovdev",
+      "name": "Andrey Frolov",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/30667180?v=4",
+      "profile": "https://www.linkedin.com/in/andrey-frolov-3b8579155/",
+      "contributions": [
+        "test",
+        "doc",
+        "code"
+      ]
+    },
+    {
+      "login": "oneyan1",
+      "name": "oneyan1",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/45971627?v=4",
+      "profile": "https://github.com/oneyan1",
+      "contributions": [
+        "test",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "easy-money",
+  "projectOwner": "frolovdev",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

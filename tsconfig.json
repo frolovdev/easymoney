@@ -13,5 +13,5 @@
     "importHelpers": true
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["src/**/__tests__/*.ts", "node_modules", "lib"]
+  "exclude": ["src/**/__tests__/*.ts", "website"]
 }
