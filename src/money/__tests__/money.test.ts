@@ -1,6 +1,7 @@
 import { createMoneyUnit } from "../money";
 import { createCalculator } from "../../calculator";
 import { CreateMoney } from "../types";
+import { RoundingModes } from "../../consts/rounding-modes";
 
 describe("money", () => {
   let createMoney: CreateMoney;
@@ -482,8 +483,155 @@ describe("money", () => {
         expect(result).toThrow();
       });
 
-      // TODO: add units for rounding
-      describe("rounding", () => {});
+      describe("rounding", () => {
+        describe("default half_even", () => {
+          test.each([
+            [10, 9, "1"],
+            [11, 8, "1"],
+            [10, 7, "1"],
+            [6, 4, "2"],
+            [10, 5, "2"],
+            [10, 6, "2"]
+          ])(
+            "should correctly round positive even results",
+            (left, right, result) => {
+              expect(
+                createMoney({ amount: left, currency: "USD" })
+                  .divide(right)
+                  .getAmount()
+              ).toEqual(result);
+            }
+          );
+
+          test.each([
+            [14, 7, "2"],
+            [15, 7, "2"],
+            [17, 7, "2"],
+            [5, 2, "2"],
+            [13, 5, "3"],
+            [14, 5, "3"],
+            [15, 5, "3"]
+          ])(
+            "should correctly round positive odd results",
+            (left, right, result) => {
+              expect(
+                createMoney({ amount: left, currency: "USD" })
+                  .divide(right)
+                  .getAmount()
+              ).toEqual(result);
+            }
+          );
+
+          test.each([
+            [11, -6, "-2"],
+            [10, -6, "-2"],
+            [6, -4, "-2"],
+            [5, -4, "-1"],
+            [10, -2, "-5"]
+          ])(
+            "should correctly round negative even results",
+            (left, right, result) => {
+              expect(
+                createMoney({ amount: left, currency: "USD" })
+                  .divide(right)
+                  .getAmount()
+              ).toEqual(result);
+            }
+          );
+
+          test.each([
+            [12, -6, "-2"],
+            [12, -5, "-2"],
+            [10, -4, "-2"],
+            [13, -5, "-3"],
+            [14, -5, "-3"],
+            [15, -5, "-3"]
+          ])(
+            "should correctly round negative odd results",
+            (left, right, result) => {
+              expect(
+                createMoney({ amount: left, currency: "USD" })
+                  .divide(right)
+                  .getAmount()
+              ).toEqual(result);
+            }
+          );
+        });
+
+        describe("can pass any another", () => {
+          test.each([
+            [10, 9, "1"],
+            [11, 8, "1"],
+            [10, 7, "1"],
+            [6, 4, "2"],
+            [6, 6, "1"],
+            [10, 6, "2"]
+          ])(
+            "should correctly round positive even results",
+            (left, right, result) => {
+              expect(
+                createMoney({ amount: left, currency: "USD" })
+                  .divide(right, RoundingModes.HALF_UP)
+                  .getAmount()
+              ).toEqual(result);
+            }
+          );
+
+          test.each([
+            [14, 7, "2"],
+            [15, 7, "2"],
+            [17, 7, "2"],
+            [5, 2, "3"],
+            [13, 5, "3"],
+            [14, 5, "3"],
+            [15, 5, "3"]
+          ])(
+            "should correctly round positive odd results",
+            (left, right, result) => {
+              expect(
+                createMoney({ amount: left, currency: "USD" })
+                  .divide(right, RoundingModes.HALF_UP)
+                  .getAmount()
+              ).toEqual(result);
+            }
+          );
+
+          test.each([
+            [11, -6, "-2"],
+            [10, -6, "-2"],
+            [6, -4, "-2"],
+            [5, -4, "-1"],
+            [10, -2, "-5"]
+          ])(
+            "should correctly round negative even results",
+            (left, right, result) => {
+              expect(
+                createMoney({ amount: left, currency: "USD" })
+                  .divide(right, RoundingModes.HALF_UP)
+                  .getAmount()
+              ).toEqual(result);
+            }
+          );
+
+          test.each([
+            [12, -6, "-2"],
+            [12, -5, "-2"],
+            [10, -4, "-3"],
+            [13, -5, "-3"],
+            [14, -5, "-3"],
+            [15, -5, "-3"]
+          ])(
+            "should correctly round negative odd results",
+            (left, right, result) => {
+              expect(
+                createMoney({ amount: left, currency: "USD" })
+                  .divide(right, RoundingModes.HALF_UP)
+                  .getAmount()
+              ).toEqual(result);
+            }
+          );
+        });
+      });
     });
 
     describe("allocate", () => {
