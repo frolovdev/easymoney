@@ -54,7 +54,7 @@
     "cross-env": "^5.2.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
-    "fast-check": "^1.20.0",
+    "fast-check": "^1.23.0",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
