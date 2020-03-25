@@ -13,7 +13,7 @@ You can watch examples of using methods in original repo modulename/______tests_
 
 ## Money
 
-- [createMoney](createMoney/index.md)
+- [createMoney](createMoney/Description.md)
   - [absolute](createMoney/absolute.md)
   - [add](createMoney/add.md)
   - [allocate](createMoney/allocate.md)
@@ -37,7 +37,7 @@ You can watch examples of using methods in original repo modulename/______tests_
   - [ratioOf](createMoney/ratioOf.md)
   - [subtract](createMoney/subtract.md)
 - [createMoneyUnit](createMoney/index.md)
-- [createBigIntMoney](createBigIntMoney/index.md)
+- [createBigIntMoney](createBigIntMoney/Description.md)
   - [add](createBigIntMoney/add.md)
   - [allocate](createBigIntMoney/allocate.md)
   - [allocateTo](createBigIntMoney/allocateTo.md)
@@ -57,7 +57,7 @@ You can watch examples of using methods in original repo modulename/______tests_
 
 ## Calculator
 
-- [createCalculator](createCalculator/index.md)
+- [createCalculator](createCalculator/Description.md)
   - [absolute](createCalculator/absolute.md)
   - [add](createCalculator/add.md)
   - [ceil](createCalculator/ceil.md)
@@ -69,7 +69,7 @@ You can watch examples of using methods in original repo modulename/______tests_
   - [round](createCalculator/round.md)
   - [share](createCalculator/share.md)
   - [subtract](createCalculator/subtract.md)
-- [createBigIntCalculator](createBigIntCalculator/index.md)
+- [createBigIntCalculator](createBigIntCalculator/Description.md)
   - [absolute](createBigIntCalculator/absolute.md)
   - [add](createBigIntCalculator/add.md)
   - [compare](createBigIntCalculator/compare.md)
@@ -81,10 +81,10 @@ You can watch examples of using methods in original repo modulename/______tests_
 
 ## Currencies
 
-- [createCurrencyList](createCurrencyList/index.md)
+- [createCurrencyList](createCurrencyList/Description.md)
   - [contains](createCurrencyList/contains.md)
   - [getCurrencies](createCurrencyList/getCurrencies.md)
-- [createAgregatedCurrencyList](createAgregatedCurrencyList/index.md)
+- [createAgregatedCurrencyList](createAgregatedCurrencyList/Description.md)
   - [contains](createAgregatedCurrencyList/contains.md)
   - [getCurrencies](createAgregatedCurrencyList/getCurrencies.md)
 - [isoCurrencyLsit](createMoney/index.md)

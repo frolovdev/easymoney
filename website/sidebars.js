@@ -1,12 +1,15 @@
-module.exports = {
+  module.exports = {
   someSidebar: {
-    Introduction: ["introduction/getting-started", "introduction/installation"],
+    Introduction: [
+    "introduction/getting-started",
+    "introduction/installation"],
     "API Reference": [
       "api/api-reference",
       {
         type: "category",
         label: "createMoney",
         items: [
+          "api/createMoney/Description",
           "api/createMoney/add",
           "api/createMoney/absolute",
           "api/createMoney/allocate",
@@ -35,6 +38,7 @@ module.exports = {
         type: "category",
         label: "createBigIntMoney",
         items: [
+          "api/createBigIntMoney/Description",
           "api/createBigIntMoney/add",
           "api/createBigIntMoney/allocate",
           "api/createBigIntMoney/allocateTo",
@@ -57,6 +61,7 @@ module.exports = {
         type: "category",
         label: "createCurrencyList",
         items: [
+          "api/createCurrencyList/Description",
           "api/createCurrencyList/contains",
           "api/createCurrencyList/getCurrencies"
         ]
@@ -65,6 +70,7 @@ module.exports = {
         type: "category",
         label: "createAgregatedCurrencyList",
         items: [
+          "api/createAgregatedCurrencyList/Description",
           "api/createAgregatedCurrencyList/contains",
           "api/createAgregatedCurrencyList/getCurrencies"
         ]
@@ -73,6 +79,7 @@ module.exports = {
         type: "category",
         label: "createCalculator",
         items: [
+          "api/createCalculator/Description",
           "api/createCalculator/absolute",
           "api/createCalculator/add",
           "api/createCalculator/ceil",
@@ -90,6 +97,7 @@ module.exports = {
         type: "category",
         label: "createBigIntCalculator",
         items: [
+          "api/createBigIntCalculator/Description",
           "api/createBigIntCalculator/absolute",
           "api/createBigIntCalculator/add",
           "api/createBigIntCalculator/compare",
