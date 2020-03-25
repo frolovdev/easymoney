@@ -1,17 +1,17 @@
 import * as fc from "fast-check";
-import { createMoney } from "../index";
+import { createBigIntMoney } from "../index";
 
-describe("money", () => {
+describe("bigIntmoney", () => {
   describe("methods", () => {
     describe("add", () => {
       test("should be commutative", () => {
         fc.assert(
-          fc.property(fc.integer(), fc.integer(), (firstValue, secondValue) => {
-            const money1 = createMoney({
+          fc.property(fc.bigInt(), fc.bigInt(), (firstValue, secondValue) => {
+            const money1 = createBigIntMoney({
               amount: firstValue,
               currency: "USD"
             });
-            const money2 = createMoney({
+            const money2 = createBigIntMoney({
               amount: secondValue,
               currency: "USD"
             });
@@ -25,19 +25,19 @@ describe("money", () => {
       test("should be associative", () => {
         fc.assert(
           fc.property(
-            fc.integer(),
-            fc.integer(),
-            fc.integer(),
+            fc.bigInt(),
+            fc.bigInt(),
+            fc.bigInt(),
             (firstValue, secondValue, thirdValue) => {
-              const money1 = createMoney({
+              const money1 = createBigIntMoney({
                 amount: firstValue,
                 currency: "RUB"
               });
-              const money2 = createMoney({
+              const money2 = createBigIntMoney({
                 amount: secondValue,
                 currency: "RUB"
               });
-              const money3 = createMoney({
+              const money3 = createBigIntMoney({
                 amount: thirdValue,
                 currency: "RUB"
               });
@@ -54,9 +54,12 @@ describe("money", () => {
       });
       test("should be additive identity", () => {
         fc.assert(
-          fc.property(fc.integer(), value => {
-            const money1 = createMoney({ amount: value, currency: "USD" });
-            const zeroMoney = createMoney({ amount: 0, currency: "USD" });
+          fc.property(fc.bigInt(), value => {
+            const money1 = createBigIntMoney({
+              amount: value,
+              currency: "USD"
+            });
+            const zeroMoney = createBigIntMoney({ amount: 0, currency: "USD" });
 
             expect(money1.add(zeroMoney).getAmount()).toEqual(
               money1.getAmount()
@@ -69,42 +72,38 @@ describe("money", () => {
     describe("multiply", () => {
       test("should be commutative", () => {
         fc.assert(
-          fc.property(
-            fc.integer(-1000000, 1000000),
-            fc.integer(-1000000, 1000000),
-            (firstValue, secondValue) => {
-              const money1 = createMoney({
-                amount: firstValue,
-                currency: "USD"
-              });
-              const money2 = createMoney({
-                amount: secondValue,
-                currency: "USD"
-              });
+          fc.property(fc.bigInt(), fc.bigInt(), (firstValue, secondValue) => {
+            const money1 = createBigIntMoney({
+              amount: firstValue,
+              currency: "USD"
+            });
+            const money2 = createBigIntMoney({
+              amount: secondValue,
+              currency: "USD"
+            });
 
-              expect(money1.multiply(secondValue).getAmount()).toEqual(
-                money2.multiply(firstValue).getAmount()
-              );
-            }
-          )
+            expect(money1.multiply(secondValue).getAmount()).toEqual(
+              money2.multiply(firstValue).getAmount()
+            );
+          })
         );
       });
       test("should be associative", () => {
         fc.assert(
           fc.property(
-            fc.integer(-100000, 100000),
-            fc.integer(-100000, 100000),
-            fc.integer(-100000, 100000),
+            fc.bigInt(),
+            fc.bigInt(),
+            fc.bigInt(),
             (firstValue, secondValue, thirdValue) => {
-              const money1 = createMoney({
+              const money1 = createBigIntMoney({
                 amount: firstValue,
                 currency: "RUB"
               });
-              const money2 = createMoney({
+              const money2 = createBigIntMoney({
                 amount: secondValue,
                 currency: "RUB"
               });
-              const money3 = createMoney({
+              const money3 = createBigIntMoney({
                 amount: thirdValue,
                 currency: "RUB"
               });
@@ -121,8 +120,8 @@ describe("money", () => {
       });
       test("should be multiplicative identity", () => {
         fc.assert(
-          fc.property(fc.integer(), value => {
-            const money = createMoney({ amount: value, currency: "USD" });
+          fc.property(fc.bigInt(), value => {
+            const money = createBigIntMoney({ amount: value, currency: "USD" });
 
             expect(money.multiply(1).getAmount()).toEqual(money.getAmount());
           })
@@ -132,19 +131,19 @@ describe("money", () => {
         //copy-past from add method
         fc.assert(
           fc.property(
-            fc.integer(-1000000, 1000000),
-            fc.integer(),
-            fc.integer(),
+            fc.bigInt(),
+            fc.bigInt(),
+            fc.bigInt(),
             (firstValue, secondValue, thirdValue) => {
-              const money1 = createMoney({
+              const money1 = createBigIntMoney({
                 amount: firstValue,
                 currency: "RUB"
               });
-              const money2 = createMoney({
+              const money2 = createBigIntMoney({
                 amount: secondValue,
                 currency: "RUB"
               });
-              const money3 = createMoney({
+              const money3 = createBigIntMoney({
                 amount: thirdValue,
                 currency: "RUB"
               });
@@ -166,14 +165,14 @@ describe("money", () => {
       test("should be not commutative for negative values", () => {
         fc.assert(
           fc.property(
-            fc.integer(-1),
-            fc.integer(-1),
+            fc.bigInt(-9007199254740991n, -1n),
+            fc.bigInt(-9007199254740991n, -1n),
             (firstValue, secondValue) => {
-              const money1 = createMoney({
+              const money1 = createBigIntMoney({
                 amount: firstValue,
                 currency: "RUB"
               });
-              const money2 = createMoney({
+              const money2 = createBigIntMoney({
                 amount: secondValue,
                 currency: "RUB"
               });
@@ -220,14 +219,14 @@ describe("money", () => {
       test("should be not commutative for positive values", () => {
         fc.assert(
           fc.property(
-            fc.integer(1, Number.MAX_SAFE_INTEGER),
-            fc.integer(1, Number.MAX_SAFE_INTEGER),
+            fc.bigInt(1n, 9007199254740991n),
+            fc.bigInt(1n, 9007199254740991n),
             (firstValue, secondValue) => {
-              const money1 = createMoney({
+              const money1 = createBigIntMoney({
                 amount: firstValue,
                 currency: "RUB"
               });
-              const money2 = createMoney({
+              const money2 = createBigIntMoney({
                 amount: secondValue,
                 currency: "RUB"
               });
@@ -273,86 +272,55 @@ describe("money", () => {
       });
       test("should be multiplicative identity", () => {
         fc.assert(
-          fc.property(fc.integer(), value => {
-            const money = createMoney({ amount: value, currency: "USD" });
+          fc.property(fc.bigInt(), value => {
+            const money = createBigIntMoney({ amount: value, currency: "USD" });
 
             expect(money.divide(1).getAmount()).toEqual(money.getAmount());
           })
         );
       });
     });
-    describe("subrtract", () => {
-      test("should be not commutative or for negative values", () => {
+    describe("subtract", () => {
+      test("should be not commutative", () => {
         fc.assert(
-          fc.property(
-            fc.integer(-1),
-            fc.integer(-1),
-            (firstValue, secondValue) => {
-              const money1 = createMoney({
-                amount: firstValue,
-                currency: "USD"
-              });
-              const money2 = createMoney({
-                amount: secondValue,
-                currency: "USD"
-              });
-              if (firstValue !== secondValue) {
-                expect(money1.subtract(money2).getAmount()).not.toEqual(
-                  money2.subtract(money1).getAmount()
-                );
-              } else {
-                expect(money1.subtract(money2).getAmount()).toEqual(
-                  money2.subtract(money1).getAmount()
-                );
-              }
-            }
-          )
-        );
-      });
-      test("should be not commutative or for positive values", () => {
-        fc.assert(
-          fc.property(
-            fc.integer(1, Number.MAX_SAFE_INTEGER),
-            fc.integer(1, Number.MAX_SAFE_INTEGER),
-            (firstValue, secondValue) => {
-              const money1 = createMoney({
-                amount: firstValue,
-                currency: "USD"
-              });
-              const money2 = createMoney({
-                amount: secondValue,
-                currency: "USD"
-              });
+          fc.property(fc.bigInt(), fc.bigInt(), (firstValue, secondValue) => {
+            const money1 = createBigIntMoney({
+              amount: firstValue,
+              currency: "USD"
+            });
+            const money2 = createBigIntMoney({
+              amount: secondValue,
+              currency: "USD"
+            });
 
-              if (firstValue !== secondValue) {
-                expect(money1.subtract(money2).getAmount()).not.toEqual(
-                  money2.subtract(money1).getAmount()
-                );
-              } else {
-                expect(money1.subtract(money2).getAmount()).toEqual(
-                  money2.subtract(money1).getAmount()
-                );
-              }
+            if (firstValue !== secondValue) {
+              expect(money1.subtract(money2).getAmount()).not.toEqual(
+                money2.subtract(money1).getAmount()
+              );
+            } else {
+              expect(money1.subtract(money2).getAmount()).toEqual(
+                money2.subtract(money1).getAmount()
+              );
             }
-          )
+          })
         );
       });
       test("should be not associative for negative values", () => {
         fc.assert(
           fc.property(
-            fc.integer(-1),
-            fc.integer(-1),
-            fc.integer(-1),
+            fc.bigInt(-9007199254740991n, -1n),
+            fc.bigInt(-9007199254740991n, -1n),
+            fc.bigInt(-9007199254740991n, -1n),
             (firstValue, secondValue, thirdValue) => {
-              const money1 = createMoney({
+              const money1 = createBigIntMoney({
                 amount: firstValue,
                 currency: "USD"
               });
-              const money2 = createMoney({
+              const money2 = createBigIntMoney({
                 amount: secondValue,
                 currency: "USD"
               });
-              const money3 = createMoney({
+              const money3 = createBigIntMoney({
                 amount: thirdValue,
                 currency: "USD"
               });
@@ -376,19 +344,19 @@ describe("money", () => {
       test("should be not associative for positive values", () => {
         fc.assert(
           fc.property(
-            fc.integer(1, Number.MAX_SAFE_INTEGER),
-            fc.integer(1, Number.MAX_SAFE_INTEGER),
-            fc.integer(1, Number.MAX_SAFE_INTEGER),
+            fc.bigInt(1n, 9007199254740991n),
+            fc.bigInt(1n, 9007199254740991n),
+            fc.bigInt(1n, 9007199254740991n),
             (firstValue, secondValue, thirdValue) => {
-              const money1 = createMoney({
+              const money1 = createBigIntMoney({
                 amount: firstValue,
                 currency: "USD"
               });
-              const money2 = createMoney({
+              const money2 = createBigIntMoney({
                 amount: secondValue,
                 currency: "USD"
               });
-              const money3 = createMoney({
+              const money3 = createBigIntMoney({
                 amount: thirdValue,
                 currency: "USD"
               });
@@ -396,18 +364,27 @@ describe("money", () => {
               const money1SubMoney2 = money1.subtract(money2);
               const money2SubMoney3 = money2.subtract(money3);
 
-              expect(money1SubMoney2.subtract(money3).getAmount()).not.toEqual(
-                money1.subtract(money2SubMoney3).getAmount()
-              );
+              if (firstValue === secondValue && secondValue === thirdValue) {
+                expect(money1SubMoney2.subtract(money3).getAmount()).toEqual(
+                  money1.subtract(money2SubMoney3).getAmount()
+                );
+              } else {
+                expect(
+                  money1SubMoney2.subtract(money3).getAmount()
+                ).not.toEqual(money1.subtract(money2SubMoney3).getAmount());
+              }
             }
           )
         );
       });
       test("should be additive identity", () => {
         fc.assert(
-          fc.property(fc.integer(), value => {
-            const money = createMoney({ amount: value, currency: "USD" });
-            const moneyZero = createMoney({ amount: 0, currency: "USD" });
+          fc.property(fc.bigInt(), value => {
+            const money = createBigIntMoney({ amount: value, currency: "USD" });
+            const moneyZero = createBigIntMoney({
+              amount: 0n,
+              currency: "USD"
+            });
 
             expect(money.subtract(moneyZero).getAmount()).toEqual(
               money.getAmount()
