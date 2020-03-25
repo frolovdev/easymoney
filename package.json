@@ -33,6 +33,7 @@
     "clean": "cross-env fixme=fixme ./node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",
     "test": "jest --watchAll",
+    "test-prop": "jest propbased-test",
     "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "test-prehook": "jest --bail",
     "size": "size-limit"
