@@ -9,17 +9,18 @@ WIP, (03.14.2020) we are still work in progress.
 
 High-level roadmap
 
-| Feature                           | Status |
-| --------------------------------- | ------ |
-| core functions in math            | ✅      |
-| custom calculators support        | ✅      |
-| tests on most codebase            | ✅      |
-| currencies                        | ✅      |
-| bigInt Support                    | ✅      |
-| docs base api, positive cases     | ✅      |
-| formatting                        | ❌(30%) |
-| docs and community                | ❌(10%) |
-| currencies stable api with crypto | ❌      |
+| Feature                              | Status |
+| ------------------------------------ | ------ |
+| core functions in math               | ✅      |
+| custom calculators support           | ✅      |
+| tests on most codebase               | ✅      |
+| currencies                           | ✅      |
+| bigInt Support                       | ✅      |
+| docs base api, positive cases        | ✅      |
+| property-based tests on main methods | ✅      |
+| formatting                           | ❌(40%) |
+| docs and community                   | ❌(30%) |
+| currencies stable api with crypto    | ❌      |
 
 Feel free to ask any questions or just contact, I open to any suggestions or ideas
 
