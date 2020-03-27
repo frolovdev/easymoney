@@ -1,7 +1,7 @@
 import * as fc from "fast-check";
 import { createBigIntMoney } from "../index";
 
-describe("bigIntmoney", () => {
+describe("bigIntMoney", () => {
   describe("methods", () => {
     describe("add", () => {
       test("should be commutative", () => {
@@ -42,12 +42,12 @@ describe("bigIntmoney", () => {
                 currency: "RUB"
               });
 
-              const money1AmountMoney2 = money1.add(money2);
-              const money2AmountMoney3 = money2.add(money3);
-
-              expect(money1AmountMoney2.add(money3).getAmount()).toEqual(
-                money1.add(money2AmountMoney3).getAmount()
-              );
+              expect(
+                money1
+                  .add(money2)
+                  .add(money3)
+                  .getAmount()
+              ).toEqual(money1.add(money2.add(money3)).getAmount());
             }
           )
         );
@@ -108,11 +108,15 @@ describe("bigIntmoney", () => {
                 currency: "RUB"
               });
 
-              const money1MultMoney2 = money1.multiply(secondValue);
-              const money2MultMoney3 = money2.multiply(thirdValue);
-
-              expect(money1MultMoney2.multiply(thirdValue).getAmount()).toEqual(
-                money1.multiply(money2MultMoney3.getAmount()).getAmount()
+              expect(
+                money1
+                  .multiply(money2.getAmount())
+                  .multiply(money3.getAmount())
+                  .getAmount()
+              ).toEqual(
+                money1
+                  .multiply(money2.multiply(money3.getAmount()).getAmount())
+                  .getAmount()
               );
             }
           )
@@ -325,18 +329,14 @@ describe("bigIntmoney", () => {
                 currency: "USD"
               });
 
-              const money1SubMoney2 = money1.subtract(money2);
-              const money2SubMoney3 = money2.subtract(money3);
-
-              if (firstValue === secondValue && secondValue === thirdValue) {
-                expect(money1SubMoney2.subtract(money3).getAmount()).toEqual(
-                  money1.subtract(money2SubMoney3).getAmount()
-                );
-              } else {
-                expect(
-                  money1SubMoney2.subtract(money3).getAmount()
-                ).not.toEqual(money1.subtract(money2SubMoney3).getAmount());
-              }
+              expect(
+                money1
+                  .subtract(money2)
+                  .subtract(money3)
+                  .getAmount()
+              ).not.toEqual(
+                money1.subtract(money2.subtract(money3)).getAmount()
+              );
             }
           )
         );
@@ -364,15 +364,14 @@ describe("bigIntmoney", () => {
               const money1SubMoney2 = money1.subtract(money2);
               const money2SubMoney3 = money2.subtract(money3);
 
-              if (firstValue === secondValue && secondValue === thirdValue) {
-                expect(money1SubMoney2.subtract(money3).getAmount()).toEqual(
-                  money1.subtract(money2SubMoney3).getAmount()
-                );
-              } else {
-                expect(
-                  money1SubMoney2.subtract(money3).getAmount()
-                ).not.toEqual(money1.subtract(money2SubMoney3).getAmount());
-              }
+              expect(
+                money1
+                  .subtract(money2)
+                  .subtract(money3)
+                  .getAmount()
+              ).not.toEqual(
+                money1.subtract(money2.subtract(money3)).getAmount()
+              );
             }
           )
         );
