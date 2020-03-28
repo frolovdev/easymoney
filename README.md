@@ -9,18 +9,18 @@ WIP, (03.14.2020) we are still work in progress.
 
 High-level roadmap
 
-| Feature                              | Status |
-| ------------------------------------ | ------ |
-| core functions in math               | ✅      |
-| custom calculators support           | ✅      |
-| tests on most codebase               | ✅      |
-| currencies                           | ✅      |
-| bigInt Support                       | ✅      |
-| docs base api, positive cases        | ✅      |
-| property-based tests on main methods | ✅      |
-| formatting                           | ❌(40%) |
-| docs and community                   | ❌(30%) |
-| currencies stable api with crypto    | ❌      |
+| Feature                              | Status     |
+| ------------------------------------ | ---------- |
+| core functions in math               | ✅          |
+| custom calculators support           | ✅          |
+| tests on most codebase               | ✅          |
+| currencies                           | ✅          |
+| bigInt Support                       | ✅          |
+| docs base api, positive cases        | ✅          |
+| property-based tests on main methods | ✅          |
+| intl formatter for createMoney       | ✅          |
+| formatting                           | ❌(50%)     |
+| supporting crypto currencies         | not stable |
 
 Feel free to ask any questions or just contact, I open to any suggestions or ideas
 
