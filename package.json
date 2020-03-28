@@ -1,6 +1,6 @@
 {
   "name": "easy-money",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "author": "Whispers12",
   "sideEffects": false,
   "source": "src/index.ts",
