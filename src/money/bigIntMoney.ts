@@ -1,6 +1,6 @@
 import { BIG_INT_PRECISION_M } from "./../consts/precisions";
 import { bind } from "../bind";
-import { BigIntMoneyInput, BigIntMoney } from "../types";
+import { BigIntMoneyInput, Money } from "../types";
 import {
   PrivateInstance,
   BigIntMoneyBase,
@@ -19,7 +19,7 @@ function construct(
   currency: BigIntMoneyInput["currency"],
 
   config: Config
-): BigIntMoney {
+): Money<bigint> {
   if (config && config.source) {
     // TODO: reimplement this code
     // @ts-ignore

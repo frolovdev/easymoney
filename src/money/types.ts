@@ -1,12 +1,15 @@
-import { BigIntMoney, MoneyInput } from "../types";
+import { MoneyInput } from "../types";
 import { Money } from "../types";
 import { RoundingModesType } from "../consts/rounding-modes";
 
 import { CalculatorBase, BigIntCalculatorBase } from "../calculator/types";
 
-export interface MoneyBase {
-  getAmount: () => Money["amount"];
-  getCurrency: () => Money["currency"];
+export interface AbstractMoneyBase<T> {
+  getAmount: () => Money<T>["amount"];
+  getCurrency: () => Money<T>["currency"];
+}
+
+export interface MoneyBase extends AbstractMoneyBase<string> {
   add(money: MoneyBase): MoneyBase;
   subtract(money: MoneyBase): MoneyBase;
   isSameCurrency(money: MoneyBase): boolean;
@@ -45,9 +48,7 @@ export type Instance = {
 
 export type CreateMoney<MI = MoneyInput, MB = MoneyBase> = (money: MI) => MB;
 
-export interface BigIntMoneyBase {
-  getAmount: () => BigIntMoney["amount"];
-  getCurrency: () => BigIntMoney["currency"];
+export interface BigIntMoneyBase extends AbstractMoneyBase<bigint> {
   add(money: BigIntMoneyBase): BigIntMoneyBase;
   subtract(money: BigIntMoneyBase): BigIntMoneyBase;
   isSameCurrency(money: BigIntMoneyBase): boolean;
@@ -74,7 +75,7 @@ export interface BigIntMoneyBase {
 
 export type BigIntPrivateInstance = {
   calculator: BigIntCalculatorBase;
-  instanceMoney: BigIntMoney;
+  instanceMoney: Money<bigint>;
   roundindMode: RoundingModesType;
 };
 

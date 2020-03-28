@@ -6,6 +6,11 @@ type PrivateInstance<C> = {
   currencies: CurrencyMap<C>;
 };
 
+type Instance<C> = {
+  publicInstance: CurrencyList<C>;
+  privateInstance: PrivateInstance<C>;
+};
+
 function createCurrencyList<C extends CurrencyUnit>(
   currencies: C[]
 ): CurrencyList<C> {
@@ -37,17 +42,48 @@ function createCurrencyList<C extends CurrencyUnit>(
 
   const publicInstance = {} as CurrencyList<C>;
 
+  const instance = { publicInstance, privateInstance };
+
   publicInstance.contains = bind(contains, privateInstance);
   publicInstance.getCurrencies = bind(getCurrencies, privateInstance);
+  publicInstance.subUnitFor = bind(subUnitFor, instance);
 
   return publicInstance;
 }
 
-function contains<C>(
+/*
+
+
+
+public function subunitFor(Currency $currency)
+    {
+        if (!$this->contains($currency)) {
+            throw new UnknownCurrencyException('Cannot find ISO currency '.$currency->getCode());
+        }
+
+        return $this->getCurrencies()[$currency->getCode()]['minorUnit'];
+    }
+
+*/
+
+function subUnitFor<C extends CurrencyUnit>(
+  instance: Instance<C>,
+  currency: C | string
+) {
+  const currencyCode = typeof currency === "object" ? currency.code : currency;
+  if (!instance.publicInstance.contains(currency)) {
+    throw new Error(`Cannot find ISO currency ${currencyCode}`);
+  }
+
+  return instance.privateInstance.currencies[currencyCode].minorUnit;
+}
+
+function contains<C extends CurrencyUnit>(
   privateInstance: PrivateInstance<C>,
-  currency: AnyCurrency
+  currency: AnyCurrency | string
 ): boolean {
-  return !!privateInstance.currencies[currency.code];
+  const code = typeof currency === "object" ? currency.code : currency;
+  return !!privateInstance.currencies[code];
 }
 
 function getCurrencies<C>(privateInstance: PrivateInstance<C>) {
