@@ -5,7 +5,7 @@
 
 Money library for working with monetary values in js
 
-WIP, (03.14.2020) we are still work in progress.
+WIP, (03.28.2020) we are still work in progress.
 
 High-level roadmap
 
