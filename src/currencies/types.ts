@@ -13,8 +13,9 @@ export type CurrencyUnitISO = CurrencyUnit & {
 };
 
 export interface CurrencyList<C> {
-  contains: (currencyCode: AnyCurrency) => boolean;
+  contains: (currency: AnyCurrency | string) => boolean;
   getCurrencies(): CurrencyMap<C>;
+  subUnitFor(currency: AnyCurrency | string): number;
 }
 
 export type CurrencyListISO = CurrencyList<CurrencyUnitISO>;
