@@ -8,15 +8,47 @@ describe("createMoneyIntlFormatter", () => {
   beforeAll(() => {
     createFormatter = createMoneyIntlFormatterUnit(currencies);
   });
-  describe("constructor", () => {});
 
   describe("format", () => {
-    it("should throw an error", () => {});
+    it("should throw an error if currency doesn't exist", () => {
+      const money = { amount: 5, currency: "XBT" };
+
+      const expression = () => createFormatter().format(createMoney(money));
+      expect(expression).toThrow();
+    });
     it("should format valid ", () => {
       const money = { amount: 5, currency: "USD" };
 
       const formattedValue = createFormatter().format(createMoney(money));
-      expect(formattedValue).toEqual("$0.050");
+      expect(formattedValue).toEqual("$0.05");
+    });
+
+    it("should valid format and merge options", () => {
+      const money = { amount: 50, currency: "USD" };
+
+      const formattedValue = createFormatter().format(
+        createMoney(money),
+        "en-US",
+        { minimumFractionDigits: 1, maximumFractionDigits: 1 }
+      );
+      expect(formattedValue).toEqual("$0.5");
+    });
+
+    it("should valid format ", () => {
+      const money = { amount: 500, currency: "USD" };
+
+      const formattedValue = createFormatter().format(createMoney(money));
+      expect(formattedValue).toEqual("$5.00");
+    });
+
+    it("should be possible pass different locales", () => {
+      const money = { amount: 500, currency: "USD" };
+
+      const formattedValue = createFormatter().format(
+        createMoney(money),
+        "ru-RU"
+      );
+      expect(formattedValue).toEqual("$5.00");
     });
   });
 });

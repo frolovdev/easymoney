@@ -1,4 +1,5 @@
-import { createBaseIntlFormatter } from "./createIntlFormatter";
+import { currencies } from "../currencies";
+import { createMoneyIntlFormatterUnit } from "./createMoneyIntlFormatter";
 
-const createIntlFormatter = createBaseIntlFormatter();
-export { createIntlFormatter };
+const createMoneyIntlFormatter = createMoneyIntlFormatterUnit(currencies);
+export { createMoneyIntlFormatter };

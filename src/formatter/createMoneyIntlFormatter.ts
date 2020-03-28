@@ -1,6 +1,5 @@
 import { bind } from "../bind";
 import {
-  currencies,
   createCurrencyList,
   CurrencyList,
   CurrencyUnitISO
@@ -33,8 +32,6 @@ export function createMoneyIntlFormatterUnit(currencies: CurrencyUnitISO[]) {
 
 const defaultOptions: MoneyIntlOptions = {
   currencyDisplay: "symbol",
-  minimumFractionDigits: 0,
-  maximumFractionDigits: 0,
   useGrouping: true,
   style: "currency"
 };
@@ -43,8 +40,9 @@ function format(
   privateInstance: PrivateInstance,
   money: MoneyBase,
   locale: string = "en-US",
-  options: MoneyIntlOptions = defaultOptions
+  options: MoneyIntlOptions
 ) {
+  const mergedOptions = { ...defaultOptions, ...options };
   let valueBase = money.getAmount();
   let negative = false;
 
@@ -75,13 +73,14 @@ function format(
     formatted = `-${formatted}`;
   }
 
-  // @ts-ignore
   return Number(formatted).toLocaleString(locale, {
     currency: money.getCurrency(),
-    useGrouping: options.useGrouping,
-    style: options.style,
-    currencyDisplay: options.currencyDisplay,
-    minimumFractionDigits: options.minimumFractionDigits || decimalDigitsLength,
-    maximumFractionDigits: options.maximumFractionDigits || decimalDigitsLength
+    useGrouping: mergedOptions.useGrouping,
+    style: mergedOptions.style,
+    currencyDisplay: mergedOptions.currencyDisplay,
+    minimumFractionDigits:
+      mergedOptions.minimumFractionDigits || decimalDigitsLength,
+    maximumFractionDigits:
+      mergedOptions.maximumFractionDigits || decimalDigitsLength
   });
 }
