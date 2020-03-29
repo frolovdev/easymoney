@@ -17,7 +17,7 @@
 <!-- src/calculator -->
 <g id="node1" class="node">
 <title>src/calculator</title>
-<g id="a_node1"><a xlink:href="https://github.com/sverweij/dependency-cruiser/blob/develop/src/calculator" xlink:title="calculator">
+<g id="a_node1"><a xlink:href="https://github.com/frolovdev/easy-money/blob/master/src/calculator" xlink:title="calculator">
 <polygon fill="#ffffcc" stroke="black" points="105.02,-123 52.87,-123 50.98,-121.11 50.98,-106 103.13,-106 105.02,-107.89 105.02,-123"/>
 <polyline fill="none" stroke="black" points="103.13,-121.11 50.98,-121.11 "/>
 <polyline fill="none" stroke="black" points="103.13,-121.11 103.13,-106 "/>
@@ -29,7 +29,7 @@
 <!-- src/consts -->
 <g id="node2" class="node">
 <title>src/consts</title>
-<g id="a_node2"><a xlink:href="https://github.com/sverweij/dependency-cruiser/blob/develop/src/consts" xlink:title="consts">
+<g id="a_node2"><a xlink:href="https://github.com/frolovdev/easy-money/blob/master/src/consts" xlink:title="consts">
 <polygon fill="#ffffcc" stroke="black" points="86,-33 33.89,-33 32,-31.11 32,-16 84.11,-16 86,-17.89 86,-33"/>
 <polyline fill="none" stroke="black" points="84.11,-31.11 32,-31.11 "/>
 <polyline fill="none" stroke="black" points="84.11,-31.11 84.11,-16 "/>
@@ -47,7 +47,7 @@
 <!-- src/utils -->
 <g id="node3" class="node">
 <title>src/utils</title>
-<g id="a_node3"><a xlink:href="https://github.com/sverweij/dependency-cruiser/blob/develop/src/utils" xlink:title="utils">
+<g id="a_node3"><a xlink:href="https://github.com/frolovdev/easy-money/blob/master/src/utils" xlink:title="utils">
 <polygon fill="#ffffcc" stroke="black" points="194,-33 141.89,-33 140,-31.11 140,-16 192.11,-16 194,-17.89 194,-33"/>
 <polyline fill="none" stroke="black" points="192.11,-31.11 140,-31.11 "/>
 <polyline fill="none" stroke="black" points="192.11,-31.11 192.11,-16 "/>
@@ -65,7 +65,7 @@
 <!-- src/number -->
 <g id="node4" class="node">
 <title>src/number</title>
-<g id="a_node4"><a xlink:href="https://github.com/sverweij/dependency-cruiser/blob/develop/src/number" xlink:title="number">
+<g id="a_node4"><a xlink:href="https://github.com/frolovdev/easy-money/blob/master/src/number" xlink:title="number">
 <polygon fill="#ffffcc" stroke="black" points="126,-63 73.89,-63 72,-61.11 72,-46 124.11,-46 126,-47.89 126,-63"/>
 <polyline fill="none" stroke="black" points="124.11,-61.11 72,-61.11 "/>
 <polyline fill="none" stroke="black" points="124.11,-61.11 124.11,-46 "/>
@@ -83,7 +83,7 @@
 <!-- src/round -->
 <g id="node5" class="node">
 <title>src/round</title>
-<g id="a_node5"><a xlink:href="https://github.com/sverweij/dependency-cruiser/blob/develop/src/round" xlink:title="round">
+<g id="a_node5"><a xlink:href="https://github.com/frolovdev/easy-money/blob/master/src/round" xlink:title="round">
 <polygon fill="#ffffcc" stroke="black" points="98,-93 45.89,-93 44,-91.11 44,-76 96.11,-76 98,-77.89 98,-93"/>
 <polyline fill="none" stroke="black" points="96.11,-91.11 44,-91.11 "/>
 <polyline fill="none" stroke="black" points="96.11,-91.11 96.11,-76 "/>
@@ -125,7 +125,7 @@
 <!-- src/core -->
 <g id="node6" class="node">
 <title>src/core</title>
-<g id="a_node6"><a xlink:href="https://github.com/sverweij/dependency-cruiser/blob/develop/src/core" xlink:title="core">
+<g id="a_node6"><a xlink:href="https://github.com/frolovdev/easy-money/blob/master/src/core" xlink:title="core">
 <polygon fill="#ffffcc" stroke="black" points="112,-213 59.89,-213 58,-211.11 58,-196 110.11,-196 112,-197.89 112,-213"/>
 <polyline fill="none" stroke="black" points="110.11,-211.11 58,-211.11 "/>
 <polyline fill="none" stroke="black" points="110.11,-211.11 110.11,-196 "/>
@@ -149,7 +149,7 @@
 <!-- src/currencies -->
 <g id="node7" class="node">
 <title>src/currencies</title>
-<g id="a_node7"><a xlink:href="https://github.com/sverweij/dependency-cruiser/blob/develop/src/currencies" xlink:title="currencies">
+<g id="a_node7"><a xlink:href="https://github.com/frolovdev/easy-money/blob/master/src/currencies" xlink:title="currencies">
 <polygon fill="#ffffcc" stroke="black" points="195.52,-153 140.37,-153 138.48,-151.11 138.48,-136 193.63,-136 195.52,-137.89 195.52,-153"/>
 <polyline fill="none" stroke="black" points="193.63,-151.11 138.48,-151.11 "/>
 <polyline fill="none" stroke="black" points="193.63,-151.11 193.63,-136 "/>
@@ -167,7 +167,7 @@
 <!-- src/formatter -->
 <g id="node8" class="node">
 <title>src/formatter</title>
-<g id="a_node8"><a xlink:href="https://github.com/sverweij/dependency-cruiser/blob/develop/src/formatter" xlink:title="no&#45;orphans">
+<g id="a_node8"><a xlink:href="https://github.com/frolovdev/easy-money/blob/master/src/formatter" xlink:title="no&#45;orphans">
 <polygon fill="#ccffcc" stroke="red" points="152,-183 99.89,-183 98,-181.11 98,-166 150.11,-166 152,-167.89 152,-183"/>
 <polyline fill="none" stroke="red" points="150.11,-181.11 98,-181.11 "/>
 <polyline fill="none" stroke="red" points="150.11,-181.11 150.11,-166 "/>
@@ -185,7 +185,7 @@
 <!-- src/money -->
 <g id="node9" class="node">
 <title>src/money</title>
-<g id="a_node9"><a xlink:href="https://github.com/sverweij/dependency-cruiser/blob/develop/src/money" xlink:title="money">
+<g id="a_node9"><a xlink:href="https://github.com/frolovdev/easy-money/blob/master/src/money" xlink:title="money">
 <polygon fill="#ffffcc" stroke="black" points="112,-153 59.89,-153 58,-151.11 58,-136 110.11,-136 112,-137.89 112,-153"/>
 <polyline fill="none" stroke="black" points="110.11,-151.11 58,-151.11 "/>
 <polyline fill="none" stroke="black" points="110.11,-151.11 110.11,-136 "/>

@@ -1,11 +1,13 @@
-<div>
+<div align="center" text-align="center">
   <img src="./logo.png" align="center"
      alt="Storeon logo by Anton Lovchikov" width="300" height="159"></img>     
      <br></br>
 </div>
 
 
-easy-money library for working with monetary values in js
+library for operating with monetary values in JavaScript and TypeScript
+
+📖 [Read the documentation](https://easy-money.now.sh/docs/introduction/getting-started)
 
 ## High-level roadmap
 

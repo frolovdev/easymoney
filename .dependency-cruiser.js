@@ -182,13 +182,13 @@ module.exports = {
     // "doNotFollow": "node_modules",
 
     /* pattern specifying which files to exclude (regular expression) */
-    exclude: "mocks|fixtures|test/integration",
+    exclude: "mocks|fixtures|test/integration|__tests__",
 
     /* list of module systems to cruise */
     // "moduleSystems": ["amd", "cjs", "es6", "tsd"],
 
     /* prefix for links in html and svg output (e.g. https://github.com/you/yourrepo/blob/develop/) */
-    prefix: "https://github.com/sverweij/dependency-cruiser/blob/develop/",
+    prefix: "https://github.com/frolovdev/easy-money/blob/master/",
 
     /* if true detect dependencies that only exist before typescript-to-javascript compilation */
     tsPreCompilationDeps: true,
@@ -224,7 +224,7 @@ module.exports = {
     exoticRequireStrings: ["tryRequire"],
     reporterOptions: {
       archi: {
-        collapsePattern: "^(node_modules|src|test)/[^/]+|^bin/"
+        collapsePattern: "^(node_modules|src|test|__tests__)/[^/]+|^bin/"
       },
       dot: {
         theme: {
