@@ -16,7 +16,7 @@ module.exports = {
       title: "easy-money",
       logo: {
         alt: "My Site Logo",
-        src: "img/logo.svg"
+        src: "img/logo.png"
       },
       links: [
         {
@@ -25,13 +25,10 @@ module.exports = {
           label: "Docs",
           position: "left"
         },
-        { to: "docs/api/api-reference", 
-          label: "Api", 
-          position: "left" 
-        },
+        { to: "docs/api/api-reference", label: "Api", position: "left" },
         {
-          to: "docs/introduction/getting-started#help-and-discussion", 
-          label: "Need help?", 
+          to: "docs/introduction/getting-started#help-and-discussion",
+          label: "Need help?",
           position: "right"
         },
         {
