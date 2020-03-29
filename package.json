@@ -3,7 +3,7 @@
   "version": "0.0.22",
   "author": "Whispers12",
   "sideEffects": false,
-  "source": "src/core/index.ts",
+  "source": "src/main/index.ts",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
   "module": "dist/index.es.js",
