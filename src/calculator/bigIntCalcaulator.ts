@@ -1,5 +1,5 @@
 import { bigIntDivide, convertValueToBigInt, bigIntAbs } from "./../number";
-import { assert } from "../assert";
+import { assert } from "../utils/assert";
 import { BigIntCalculatorBase } from "./types";
 
 import { BIG_INT_PRECISION_M } from "../consts/precisions";

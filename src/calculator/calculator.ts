@@ -1,7 +1,7 @@
 import { fromNumber } from "../number";
 
 import { customRound } from "../round/round";
-import { assert } from "../assert";
+import { assert } from "../utils/assert";
 import { CalculatorBase } from "./types";
 
 export function createCalculator(): CalculatorBase {

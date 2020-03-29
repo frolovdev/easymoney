@@ -1,5 +1,5 @@
-import { MoneyInput } from "../types";
-import { Money } from "../types";
+import { MoneyInput } from "../core/types";
+import { Money } from "../core/types";
 import { RoundingModesType } from "../consts/rounding-modes";
 
 import { CalculatorBase, BigIntCalculatorBase } from "../calculator/types";

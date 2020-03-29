@@ -1,6 +1,6 @@
 import { BIG_INT_PRECISION_M } from "./../consts/precisions";
-import { bind } from "../bind";
-import { BigIntMoneyInput, Money } from "../types";
+import { bind } from "../utils/bind";
+import { BigIntMoneyInput, Money } from "../core/types";
 import {
   PrivateInstance,
   BigIntMoneyBase,
@@ -12,7 +12,7 @@ import { BigIntCalculatorBase } from "../calculator";
 
 import { RoundingModesType, RoundingModes } from "../consts/rounding-modes";
 import { convertValueToBigInt } from "../number";
-import { assert, isNumeric } from "../assert";
+import { assert, isNumeric } from "../utils/assert";
 
 function construct(
   amount: BigIntMoneyInput["amount"],

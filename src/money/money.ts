@@ -1,8 +1,8 @@
-import { MoneyInput, Money } from "../types";
-import { bind } from "../bind";
+import { MoneyInput, Money } from "../core/types";
+import { bind } from "../utils/bind";
 
 import { RoundingModes, RoundingModesType } from "../consts/rounding-modes";
-import { isNumeric, assert } from "../assert";
+import { isNumeric, assert } from "../utils/assert";
 import { CalculatorBase } from "../calculator";
 import { fromString, fromNumber } from "../number";
 import { MoneyBase, PrivateInstance, Instance, CreateMoney } from "./types";

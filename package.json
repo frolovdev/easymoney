@@ -3,7 +3,7 @@
   "version": "0.0.21",
   "author": "Whispers12",
   "sideEffects": false,
-  "source": "src/index.ts",
+  "source": "src/core/index.ts",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -36,7 +36,8 @@
     "test-prop": "jest propbased-test",
     "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "test-prehook": "jest --bail",
-    "size": "size-limit"
+    "size": "size-limit",
+    "depcruise:archi": " depcruise --include-only '^(src|bin)' --config .dependency-cruiser.js -T archi src/**/* | dot -Grankdir=TD -T svg | tee high-level-dependencies.svg | depcruise-wrap-stream-in-html > high-level-dependencies.html"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
@@ -53,6 +54,7 @@
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^1.13.0",
     "cross-env": "^5.2.1",
+    "dependency-cruiser": "^8.1.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "fast-check": "^1.23.0",

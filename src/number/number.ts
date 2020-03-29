@@ -1,4 +1,4 @@
-import { bind } from "../bind";
+import { bind } from "../utils/bind";
 import { NumberInstance } from "./types";
 type Numbers = {
   [digit: string]: number;

@@ -5,6 +5,8 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest"
   },
 
-  testMatch: [`<rootDir>/src/**/*.test.ts`,
-              `<rootDir>/src/**/*.propbased-test.ts`]
+  testMatch: [
+    `<rootDir>/src/**/*.test.ts`,
+    `<rootDir>/src/**/*.propbased-test.ts`
+  ]
 };

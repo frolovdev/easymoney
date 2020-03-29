@@ -1,6 +1,6 @@
-import { bind } from "./../bind";
+import { bind } from "../utils/bind";
 import { CurrencyUnit, CurrencyList, CurrencyMap, AnyCurrency } from "./types";
-import { assert } from "../assert";
+import { assert } from "../utils/assert";
 
 type PrivateInstance<C> = {
   currencies: CurrencyMap<C>;
