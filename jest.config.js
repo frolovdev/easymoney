@@ -1,12 +1,12 @@
 module.exports = {
+  // p: ["<rootDir>/packages/*"],
+  projects: ["<rootDir>/packages/*/jest.config.js"],
   preset: "ts-jest",
   testEnvironment: "node",
   transform: {
     "^.+\\.tsx?$": "ts-jest"
   },
 
-  testMatch: [
-    `<rootDir>/src/**/*.test.ts`,
-    `<rootDir>/src/**/*.propbased-test.ts`
-  ]
+  modulePathIgnorePatterns: ["dist"],
+  testMatch: [`**/*.test.ts`, `**/*.propbased-test.ts`]
 };
