@@ -1,21 +1,9 @@
-export interface CurrencyUnit {
-  code: string;
-  minorUnit: number;
-}
-
-export interface AnyCurrency extends CurrencyUnit {
-  [key: string]: any;
-}
-
-export type CurrencyUnitISO = CurrencyUnit & {
-  numericCode: number;
-  currency: string;
-};
+import { Currency, CurrencyUnitISO } from "@easymoney/common";
 
 export interface CurrencyList<C> {
-  contains: (currency: AnyCurrency | string) => boolean;
+  contains: (currency: Currency) => boolean;
   getCurrencies(): CurrencyMap<C>;
-  subUnitFor(currency: AnyCurrency | string): number;
+  subUnitFor(currency: Currency): number;
 }
 
 export type CurrencyListISO = CurrencyList<CurrencyUnitISO>;

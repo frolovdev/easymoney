@@ -8,8 +8,38 @@
     "strict": true,
     "declaration": true,
     "sourceMap": true,
+    "rootDir": ".",
     "removeComments": true,
     "noUnusedParameters": true,
-    "importHelpers": true
-  }
+    "importHelpers": true,
+    "noEmitOnError": false,
+    "baseUrl": ".",
+    "composite": true,
+    "paths": {
+      "@easymoney/*": ["packages/*/src"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "lib",
+    "__tests__",
+    "**/*.test*",
+    "**/*.spec*"
+  ],
+  "files": [],
+  "references": [
+    {
+      "path": "packages/currencies"
+    },
+    {
+      "path": "packages/common"
+    },
+    {
+      "path": "packages/money"
+    },
+    {
+      "path": "packages/bigint-money"
+    }
+  ]
 }

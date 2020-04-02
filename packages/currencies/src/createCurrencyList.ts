@@ -1,17 +1,16 @@
-import { bind } from "../utils/bind";
-import { CurrencyUnit, CurrencyList, CurrencyMap, AnyCurrency } from "./types";
-import { assert } from "../utils/assert";
+import { assert, bind, AnyCurrency, Currency } from "@easymoney/common";
+import { CurrencyList, CurrencyMap } from "./types";
 
-type PrivateInstance<C> = {
+type PrivateInstance<C extends AnyCurrency> = {
   currencies: CurrencyMap<C>;
 };
 
-type Instance<C> = {
+type Instance<C extends AnyCurrency> = {
   publicInstance: CurrencyList<C>;
   privateInstance: PrivateInstance<C>;
 };
 
-function createCurrencyList<C extends CurrencyUnit>(
+function createCurrencyList<C extends AnyCurrency>(
   currencies: C[]
 ): CurrencyList<C> {
   const currencyMap: CurrencyMap<C> = {};
@@ -51,24 +50,9 @@ function createCurrencyList<C extends CurrencyUnit>(
   return publicInstance;
 }
 
-/*
-
-
-
-public function subunitFor(Currency $currency)
-    {
-        if (!$this->contains($currency)) {
-            throw new UnknownCurrencyException('Cannot find ISO currency '.$currency->getCode());
-        }
-
-        return $this->getCurrencies()[$currency->getCode()]['minorUnit'];
-    }
-
-*/
-
-function subUnitFor<C extends CurrencyUnit>(
-  instance: Instance<C>,
-  currency: C | string
+function subUnitFor<C extends Currency, ObjCur extends AnyCurrency>(
+  instance: Instance<ObjCur>,
+  currency: C extends AnyCurrency ? C : C extends "string" ? string : never
 ) {
   const currencyCode = typeof currency === "object" ? currency.code : currency;
   if (!instance.publicInstance.contains(currency)) {
@@ -78,15 +62,17 @@ function subUnitFor<C extends CurrencyUnit>(
   return instance.privateInstance.currencies[currencyCode].minorUnit;
 }
 
-function contains<C extends CurrencyUnit>(
-  privateInstance: PrivateInstance<C>,
-  currency: AnyCurrency | string
+function contains<C extends Currency, ObjCur extends AnyCurrency>(
+  privateInstance: PrivateInstance<ObjCur>,
+  currency: C extends AnyCurrency ? C : C extends "string" ? string : never
 ): boolean {
   const code = typeof currency === "object" ? currency.code : currency;
   return !!privateInstance.currencies[code];
 }
 
-function getCurrencies<C>(privateInstance: PrivateInstance<C>) {
+function getCurrencies<ObjCur extends AnyCurrency>(
+  privateInstance: PrivateInstance<ObjCur>
+) {
   return privateInstance.currencies;
 }
 

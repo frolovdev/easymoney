@@ -1,9 +1,5 @@
-import { bind } from "../utils/bind";
-import {
-  createCurrencyList,
-  CurrencyList,
-  CurrencyUnitISO
-} from "./../currencies/";
+import { bind } from "@easymoney/common";
+import { createCurrencyList, CurrencyList, CurrencyUnitISO } from "@easymoney/";
 import { MoneyIntlOptions, MoneyIntlFormatter } from "./types";
 import { MoneyBase } from "../money";
 import { lpad } from "./lpad";

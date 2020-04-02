@@ -1,4 +1,5 @@
-import { CurrencyMap, CurrencyUnitISO } from "./types";
+import { CurrencyMap } from "./types";
+import { CurrencyUnitISO } from "@easymoney/common";
 
 export const currenciesMap: CurrencyMap<CurrencyUnitISO> = {
   AFN: {

@@ -1,9 +1,13 @@
-import { bind } from "../utils/bind";
-import { CurrencyUnit, CurrencyList, CurrencyMap, AnyCurrency } from "./types";
-import { assert } from "../utils/assert";
+import { CurrencyList, CurrencyMap } from "./types";
+import { assert, bind, CurrencyUnit, Currency } from "@easymoney/common";
+
+type Instance<C> = {
+  privateInstance: PrivateInstance<C>;
+  publicInstance: NewList<C>;
+};
 
 type PrivateInstance<C> = {
-  currencies: CurrencyMap<C>;
+  currencies: CurrencyMap<Partial<C>>;
 };
 
 type NewList<C> = CurrencyList<Partial<C>>;
@@ -47,15 +51,27 @@ const createAgregatedCurrencyList = <C extends CurrencyUnit>(
 
   const publicInstance = {} as NewList<C>;
 
+  const instance: Instance<C> = { publicInstance, privateInstance };
+
   publicInstance.contains = bind(contains, privateInstance);
   publicInstance.getCurrencies = bind(getCurrencies, privateInstance);
+  publicInstance.subUnitFor = bind(subUnitFor, instance);
 
   return publicInstance;
 };
 
-function contains<C>(
+function subUnitFor<C extends Currency>(instance: Instance<C>, currency: C) {
+  const currencyCode = typeof currency === "object" ? currency.code : currency;
+  if (!instance.publicInstance.contains(currency)) {
+    throw new Error(`Cannot find ISO currency ${currencyCode}`);
+  }
+
+  return instance.privateInstance.currencies[currencyCode].minorUnit;
+}
+
+function contains<C extends Currency>(
   privateInstance: PrivateInstance<C>,
-  currency: AnyCurrency
+  currency: C
 ): boolean {
   return !!privateInstance.currencies[currency.code];
 }

@@ -1,4 +1,4 @@
-import { MoneyBase } from "../money/types";
+import { MoneyBase } from "@easymoney/money";
 
 export type MoneyIntlOptions = {
   currencyDisplay?: "code" | "symbol" | "name";

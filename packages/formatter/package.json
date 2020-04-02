@@ -1,5 +1,5 @@
 {
-  "name": "@easymoney/currencies",
+  "name": "@easymoney/formatter",
   "version": "0.0.1",
   "author": "Whispers12",
   "sideEffects": false,
@@ -46,6 +46,7 @@
     "@easymoney/common": "^0.0.4"
   },
   "devDependencies": {
+    "@easymoney/money": "^0.0.1",
     "@easymoney/common": "^0.0.4"
   },
   "engines": {
