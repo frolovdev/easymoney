@@ -1,21 +1,22 @@
 import { BIG_INT_PRECISION_M } from "../consts/precisions";
-import { bind } from "../../utils/bind";
-import { BigIntMoneyInput, Money } from "../../../packages/common/src/types";
 import {
-  PrivateInstance,
+  bind,
+  Money,
+  RoundingModesType,
+  RoundingModes,
+  assert
+} from "@easymoney/common";
+
+import {
   BigIntMoneyBase,
   CreateMoney,
   BigIntInstance,
-  BigIntPrivateInstance
-} from "../../money/types";
-import { BigIntCalculatorBase } from "../../calculator";
+  BigIntPrivateInstance,
+  BigIntMoneyInput
+} from "./types";
+import { BigIntCalculatorBase } from "../calculator";
 
-import {
-  RoundingModesType,
-  RoundingModes
-} from "../../../packages/common/src/rounding-modes";
-import { convertValueToBigInt } from "../../number";
-import { assert, isNumeric } from "../../utils/assert";
+import { convertValueToBigInt } from "../number/";
 
 function construct(
   amount: BigIntMoneyInput["amount"],
@@ -145,7 +146,7 @@ function getSource(privateInstance: BigIntPrivateInstance) {
   return privateInstance.instanceMoney.amount;
 }
 
-function getCurrency(privateInstance: PrivateInstance) {
+function getCurrency(privateInstance: BigIntPrivateInstance) {
   return privateInstance.instanceMoney.currency;
 }
 
@@ -251,14 +252,6 @@ function assertSameCurrency(
   assert(
     isSameCurrency(moneyInstance, money),
     new TypeError("Currencies must be identical")
-  );
-}
-
-// TODO: move to common
-function assertOperand(operand: string | number): asserts operand is number {
-  assert(
-    isNumeric(operand),
-    new TypeError("Operand should be a numeric value.")
   );
 }
 

@@ -1,7 +1,7 @@
-import { BigIntCalculatorBase } from "../../../calculator/types";
+import { BigIntCalculatorBase } from "../types";
 
 import { createBigIntCalculator } from "../bigIntCalcaulator";
-import { RoundingModes } from "../../../core/rounding-modes";
+import { RoundingModes } from "@easymoney/common";
 
 describe("bigIntCalculator", () => {
   let calculator: BigIntCalculatorBase;

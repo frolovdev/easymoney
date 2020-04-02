@@ -1,7 +1,8 @@
-import { createCalculator } from "../../calculator";
+import { createCalculator } from "../calculator";
 
 import { roundExamples } from "./round";
-import { CalculatorBase, RoundingModesType } from "@easymoney/common";
+import { RoundingModesType } from "@easymoney/common";
+import { CalculatorBase } from "../types";
 
 describe("calculator", () => {
   describe("methods of calculator", () => {

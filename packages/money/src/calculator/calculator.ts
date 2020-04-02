@@ -2,7 +2,7 @@ import { fromNumber } from "../number";
 
 import { customRound } from "./round";
 import { assert } from "@easymoney/common";
-import { CalculatorBase } from "@easymoney/common";
+import { CalculatorBase } from "./types";
 
 export function createCalculator(): CalculatorBase {
   const instance = {

@@ -1,11 +1,5 @@
-import {
-  BIG_INT_PRECISION,
-  BIG_INT_PRECISION_M
-} from "../bigInt/consts/precisions";
-import {
-  RoundingModesType,
-  RoundingModes
-} from "../../packages/common/src/rounding-modes";
+import { BIG_INT_PRECISION, BIG_INT_PRECISION_M } from "../consts/precisions";
+import { RoundingModesType, RoundingModes } from "@easymoney/common";
 
 export function bigIntAbs(value: bigint) {
   return value > 0 ? value : -value;

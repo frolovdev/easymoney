@@ -1,2 +1,1 @@
-export { MoneyBase } from "@easymoney/common";
-export { createMoneyUnit, createMoney } from "./money";
+export { createMoneyUnit, createMoney, MoneyBase } from "./money";
