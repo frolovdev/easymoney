@@ -1,4 +1,4 @@
-import { currencies } from "../currencies";
+import { currencies } from "@easymoney/currencies";
 import { createMoneyIntlFormatterUnit } from "./createMoneyIntlFormatter";
 import { MoneyIntlFormatter } from "./types";
 

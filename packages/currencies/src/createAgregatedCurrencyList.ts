@@ -1,5 +1,11 @@
 import { CurrencyList, CurrencyMap } from "./types";
-import { assert, bind, CurrencyUnit, Currency } from "@easymoney/common";
+import {
+  assert,
+  bind,
+  CurrencyUnit,
+  Currency,
+  AnyCurrency
+} from "@easymoney/common";
 
 type Instance<C> = {
   privateInstance: PrivateInstance<C>;
@@ -12,7 +18,7 @@ type PrivateInstance<C> = {
 
 type NewList<C> = CurrencyList<Partial<C>>;
 
-const createAgregatedCurrencyList = <C extends CurrencyUnit>(
+const createAgregatedCurrencyList = <C extends AnyCurrency>(
   currenciesList: NewList<C>[]
 ): NewList<C> => {
   const agregatedCurrencyMap: CurrencyMap<Partial<C>> = {};
@@ -60,7 +66,10 @@ const createAgregatedCurrencyList = <C extends CurrencyUnit>(
   return publicInstance;
 };
 
-function subUnitFor<C extends Currency>(instance: Instance<C>, currency: C) {
+function subUnitFor<C extends Currency, ObjCur extends AnyCurrency>(
+  instance: Instance<ObjCur>,
+  currency: C extends AnyCurrency ? C : C extends "string" ? string : never
+) {
   const currencyCode = typeof currency === "object" ? currency.code : currency;
   if (!instance.publicInstance.contains(currency)) {
     throw new Error(`Cannot find ISO currency ${currencyCode}`);
@@ -69,11 +78,12 @@ function subUnitFor<C extends Currency>(instance: Instance<C>, currency: C) {
   return instance.privateInstance.currencies[currencyCode].minorUnit;
 }
 
-function contains<C extends Currency>(
-  privateInstance: PrivateInstance<C>,
-  currency: C
+function contains<C extends Currency, ObjCur extends AnyCurrency>(
+  privateInstance: PrivateInstance<ObjCur>,
+  currency: C extends AnyCurrency ? C : C extends "string" ? string : never
 ): boolean {
-  return !!privateInstance.currencies[currency.code];
+  const code = typeof currency === "object" ? currency.code : currency;
+  return !!privateInstance.currencies[code];
 }
 
 function getCurrencies<C>(privateInstance: PrivateInstance<C>) {

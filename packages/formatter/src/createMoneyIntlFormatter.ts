@@ -1,7 +1,11 @@
 import { bind } from "@easymoney/common";
-import { createCurrencyList, CurrencyList, CurrencyUnitISO } from "@easymoney/";
+import {
+  createCurrencyList,
+  CurrencyList,
+  CurrencyUnitISO
+} from "@easymoney/currencies";
 import { MoneyIntlOptions, MoneyIntlFormatter } from "./types";
-import { MoneyBase } from "../money";
+import { MoneyBase } from "@easymoney/money";
 import { lpad } from "./lpad";
 
 type PrivateInstance = {
@@ -69,8 +73,9 @@ function format(
     formatted = `-${formatted}`;
   }
 
+  const currency = money.getCurrency();
   return Number(formatted).toLocaleString(locale, {
-    currency: money.getCurrency(),
+    currency: typeof currency === "object" ? currency.code : currency,
     useGrouping: mergedOptions.useGrouping,
     style: mergedOptions.style,
     currencyDisplay: mergedOptions.currencyDisplay,

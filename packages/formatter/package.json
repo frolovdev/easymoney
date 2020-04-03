@@ -43,11 +43,13 @@
     "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
-    "@easymoney/common": "^0.0.4"
+    "@easymoney/common": "^0.0.4",
+    "@easymoney/currencies": "^0.0.1"
   },
   "devDependencies": {
     "@easymoney/money": "^0.0.1",
-    "@easymoney/common": "^0.0.4"
+    "@easymoney/common": "^0.0.4",
+    "@easymoney/currencies": "^0.0.1"
   },
   "engines": {
     "node": ">=10.8.x"

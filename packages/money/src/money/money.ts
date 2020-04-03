@@ -1,5 +1,4 @@
-import { Money } from "@easymoney/common";
-import { bind } from "@easymoney/common";
+import { bind, Money } from "@easymoney/common";
 import { MoneyInput } from "./types";
 
 import { RoundingModes, RoundingModesType } from "@easymoney/common";

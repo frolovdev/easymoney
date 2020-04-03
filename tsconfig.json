@@ -7,12 +7,12 @@
     "esModuleInterop": true,
     "strict": true,
     "declaration": true,
+    "declarationMap": true,
     "sourceMap": true,
     "rootDir": ".",
     "removeComments": true,
     "noUnusedParameters": true,
     "importHelpers": true,
-    "noEmitOnError": false,
     "baseUrl": ".",
     "composite": true,
     "paths": {
@@ -30,16 +30,19 @@
   "files": [],
   "references": [
     {
-      "path": "packages/currencies"
-    },
-    {
       "path": "packages/common"
     },
     {
       "path": "packages/money"
     },
     {
+      "path": "packages/currencies"
+    },
+    {
       "path": "packages/bigint-money"
+    },
+    {
+      "path": "packages/formatter"
     }
   ]
 }

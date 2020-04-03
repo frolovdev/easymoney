@@ -1,7 +1,7 @@
 import { createMoneyIntlFormatterUnit } from "../createMoneyIntlFormatter";
-import { currencies } from "../../currencies/";
+import { currencies } from "@easymoney/currencies";
 import { MoneyIntlFormatter } from "../types";
-import { createMoney } from "../../money/";
+import { createMoney } from "@easymoney/money";
 
 describe("createMoneyIntlFormatter", () => {
   let createFormatter: () => MoneyIntlFormatter;
