@@ -1,12 +1,12 @@
 {
   "name": "@easymoney/money",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "Whispers12",
   "sideEffects": false,
-  "source": "src/index.ts",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "jsnext:main": "dist/index.esm.js",
   "umd:main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "maintainers": [
@@ -26,11 +26,11 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
-    "prepublishOnly": "npm run rebuild && npm run test-prehook",
-    "rebuild": "npm run clean && npm run build",
+    "prepublishOnly": "npm run build && npm run test-prehook",
     "postpublish": "npm run clean",
-    "build": "cross-env fixme=fixme ../../node_modules/.bin/microbundle --external=easy-money",
-    "clean": "cross-env fixme=fixme ../../node_modules/.bin/rimraf dist/",
+    "prebuild": "npm run clean",
+    "build": "rollup -c",
+    "clean": "../../node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",
     "test": "../../node_modules/.bin/jest --watchAll",
     "test-prop": "../../node_modules/.bin/jest propbased-test",
@@ -43,10 +43,26 @@
     "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
-    "@easymoney/common": "^0.0.4"
+    "@easymoney/common": "^0.0.5"
   },
   "devDependencies": {
-    "@easymoney/common": "^0.0.4"
+    "@easymoney/common": "^0.0.5",
+    "@rollup/plugin-alias": "^3.0.0",
+    "@rollup/plugin-typescript": "^4.0.0",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-gzip": "^2.2.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-size-snapshot": "^0.10.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "rollup-plugin-visualizer": "^3.3.1",
+    "typescript": "^3.8.3"
   },
   "engines": {
     "node": ">=10.8.x"
