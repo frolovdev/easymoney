@@ -1,0 +1,72 @@
+{
+  "name": "@easymoney/formatter",
+  "version": "0.0.1",
+  "author": "Whispers12",
+  "sideEffects": false,
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "maintainers": [
+    {
+      "name": "Whispers12",
+      "email": "githubFrolov@yandex.ru"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frolovdev/easy-money.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frolovdev/easy-money/issues"
+  },
+  "homepage": "https://github.com/frolovdev/easy-money#readme",
+  "license": "MIT",
+  "description": "Best way to do money in js",
+  "scripts": {
+    "prepublishOnly": "npm run rebuild",
+    "rebuild": "npm run clean && npm run build",
+    "postpublish": "npm run clean",
+    "build": "cross-env fixme=fixme ../../node_modules/.bin/microbundle --external=easy-money",
+    "clean": "cross-env fixme=fixme ../../node_modules/.bin/rimraf dist/",
+    "deploy": "cd website && now",
+    "test": "../../node_modules/.bin/jest --watchAll",
+    "test-prop": "../../node_modules/.bin/jest propbased-test",
+    "test-debug": "node --inspect-brk ../../node_modules/.bin/jest --runInBand",
+    "test-prehook": "../../node_modules/.bin/jest --bail",
+    "size": "size-limit"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "peerDependencies": {
+    "@easymoney/common": "^0.0.4",
+    "@easymoney/currencies": "^0.0.1"
+  },
+  "devDependencies": {
+    "@easymoney/money": "^0.0.1",
+    "@easymoney/common": "^0.0.4",
+    "@easymoney/currencies": "^0.0.1"
+  },
+  "engines": {
+    "node": ">=10.8.x"
+  },
+  "files": [
+    "/README.md",
+    "/package.json",
+    "/src",
+    "/dist"
+  ],
+  "keywords": [
+    "easy-money",
+    "money",
+    "dinero",
+    "dinero.js",
+    "amount",
+    "immutable",
+    "monetary"
+  ]
+}

@@ -3,7 +3,8 @@
   "version": "0.0.22",
   "author": "Whispers12",
   "sideEffects": false,
-  "source": "src/core/index.ts",
+  "private": false,
+  "source": "src/main/index.ts",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -26,26 +27,27 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
+    "bootstrap": "lerna bootstrap && lerna run rebuild",
+    "build": "rollup --config",
+    "tsc:build": "tsc --build",
+    "start:watch": "tsc --build --watch",
+    "test": "lerna run test-prehook",
+    "size": "lerna run size",
+    "test:watch": "jest --watchAll",
     "prepublishOnly": "npm run rebuild && npm run test-prehook",
-    "rebuild": "npm run clean && npm run build",
+    "rebuild": "lerna run rebuild",
     "postpublish": "npm run clean",
-    "build": "cross-env fixme=fixme ./node_modules/.bin/microbundle --external=easy-money",
     "clean": "cross-env fixme=fixme ./node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",
-    "test": "jest --watchAll",
     "test-prop": "jest propbased-test",
     "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "test-prehook": "jest --bail",
-    "size": "size-limit",
     "depcruise:archi": " depcruise --include-only '^(src|bin)' --config .dependency-cruiser.js -T archi src | dot -Grankdir=TD -T svg | tee high-level-dependencies.svg | depcruise-wrap-stream-in-html > high-level-dependencies.html"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@babel/plugin-syntax-bigint": "^7.8.3",
-    "@babel/preset-typescript": "^7.9.0",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@size-limit/preset-small-lib": "^4.4.0",
@@ -60,10 +62,11 @@
     "fast-check": "^1.23.0",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
+    "lerna": "^3.20.2",
     "lint-staged": "^9.5.0",
-    "microbundle": "^0.12.0-next.8",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
+    "rollup": "^2.3.2",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.4"
   },
@@ -73,7 +76,6 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run test-prehook",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -91,5 +93,6 @@
     "amount",
     "immutable",
     "monetary"
-  ]
+  ],
+  "dependencies": {}
 }
