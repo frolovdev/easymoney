@@ -4,9 +4,10 @@ module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
   transform: {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest",
   },
-
+  testMatch: ["**/__tests__/**/*.test.*"],
   modulePathIgnorePatterns: ["dist"],
-  testMatch: [`**/*.test.ts`, `**/*.propbased-test.ts`]
+
+  testMatch: [`**/*.test.ts`, `**/*.propbased-test.ts`],
 };

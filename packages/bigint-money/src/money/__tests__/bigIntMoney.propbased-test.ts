@@ -1,5 +1,5 @@
 import * as fc from "fast-check";
-import { createBigIntMoney } from "../../../money/index";
+import { createBigIntMoney } from "../index";
 
 describe("bigIntMoney", () => {
   describe("methods", () => {
@@ -9,11 +9,11 @@ describe("bigIntMoney", () => {
           fc.property(fc.bigInt(), fc.bigInt(), (firstValue, secondValue) => {
             const money1 = createBigIntMoney({
               amount: firstValue,
-              currency: "USD"
+              currency: "USD",
             });
             const money2 = createBigIntMoney({
               amount: secondValue,
-              currency: "USD"
+              currency: "USD",
             });
 
             expect(money1.add(money2).getAmount()).toEqual(
@@ -31,15 +31,15 @@ describe("bigIntMoney", () => {
             (firstValue, secondValue, thirdValue) => {
               const money1 = createBigIntMoney({
                 amount: firstValue,
-                currency: "RUB"
+                currency: "RUB",
               });
               const money2 = createBigIntMoney({
                 amount: secondValue,
-                currency: "RUB"
+                currency: "RUB",
               });
               const money3 = createBigIntMoney({
                 amount: thirdValue,
-                currency: "RUB"
+                currency: "RUB",
               });
 
               expect(
@@ -54,10 +54,10 @@ describe("bigIntMoney", () => {
       });
       test("should be additive identity", () => {
         fc.assert(
-          fc.property(fc.bigInt(), value => {
+          fc.property(fc.bigInt(), (value) => {
             const money1 = createBigIntMoney({
               amount: value,
-              currency: "USD"
+              currency: "USD",
             });
             const zeroMoney = createBigIntMoney({ amount: 0, currency: "USD" });
 
@@ -75,11 +75,11 @@ describe("bigIntMoney", () => {
           fc.property(fc.bigInt(), fc.bigInt(), (firstValue, secondValue) => {
             const money1 = createBigIntMoney({
               amount: firstValue,
-              currency: "USD"
+              currency: "USD",
             });
             const money2 = createBigIntMoney({
               amount: secondValue,
-              currency: "USD"
+              currency: "USD",
             });
 
             expect(money1.multiply(secondValue).getAmount()).toEqual(
@@ -97,15 +97,15 @@ describe("bigIntMoney", () => {
             (firstValue, secondValue, thirdValue) => {
               const money1 = createBigIntMoney({
                 amount: firstValue,
-                currency: "RUB"
+                currency: "RUB",
               });
               const money2 = createBigIntMoney({
                 amount: secondValue,
-                currency: "RUB"
+                currency: "RUB",
               });
               const money3 = createBigIntMoney({
                 amount: thirdValue,
-                currency: "RUB"
+                currency: "RUB",
               });
 
               expect(
@@ -124,7 +124,7 @@ describe("bigIntMoney", () => {
       });
       test("should be multiplicative identity", () => {
         fc.assert(
-          fc.property(fc.bigInt(), value => {
+          fc.property(fc.bigInt(), (value) => {
             const money = createBigIntMoney({ amount: value, currency: "USD" });
 
             expect(money.multiply(1).getAmount()).toEqual(money.getAmount());
@@ -141,15 +141,15 @@ describe("bigIntMoney", () => {
             (firstValue, secondValue, thirdValue) => {
               const money1 = createBigIntMoney({
                 amount: firstValue,
-                currency: "RUB"
+                currency: "RUB",
               });
               const money2 = createBigIntMoney({
                 amount: secondValue,
-                currency: "RUB"
+                currency: "RUB",
               });
               const money3 = createBigIntMoney({
                 amount: thirdValue,
-                currency: "RUB"
+                currency: "RUB",
               });
 
               expect(
@@ -174,11 +174,11 @@ describe("bigIntMoney", () => {
             (firstValue, secondValue) => {
               const money1 = createBigIntMoney({
                 amount: firstValue,
-                currency: "RUB"
+                currency: "RUB",
               });
               const money2 = createBigIntMoney({
                 amount: secondValue,
-                currency: "RUB"
+                currency: "RUB",
               });
 
               if (firstValue === secondValue) {
@@ -228,11 +228,11 @@ describe("bigIntMoney", () => {
             (firstValue, secondValue) => {
               const money1 = createBigIntMoney({
                 amount: firstValue,
-                currency: "RUB"
+                currency: "RUB",
               });
               const money2 = createBigIntMoney({
                 amount: secondValue,
-                currency: "RUB"
+                currency: "RUB",
               });
 
               if (firstValue === secondValue) {
@@ -276,7 +276,7 @@ describe("bigIntMoney", () => {
       });
       test("should be multiplicative identity", () => {
         fc.assert(
-          fc.property(fc.bigInt(), value => {
+          fc.property(fc.bigInt(), (value) => {
             const money = createBigIntMoney({ amount: value, currency: "USD" });
 
             expect(money.divide(1).getAmount()).toEqual(money.getAmount());
@@ -290,11 +290,11 @@ describe("bigIntMoney", () => {
           fc.property(fc.bigInt(), fc.bigInt(), (firstValue, secondValue) => {
             const money1 = createBigIntMoney({
               amount: firstValue,
-              currency: "USD"
+              currency: "USD",
             });
             const money2 = createBigIntMoney({
               amount: secondValue,
-              currency: "USD"
+              currency: "USD",
             });
 
             if (firstValue !== secondValue) {
@@ -318,15 +318,15 @@ describe("bigIntMoney", () => {
             (firstValue, secondValue, thirdValue) => {
               const money1 = createBigIntMoney({
                 amount: firstValue,
-                currency: "USD"
+                currency: "USD",
               });
               const money2 = createBigIntMoney({
                 amount: secondValue,
-                currency: "USD"
+                currency: "USD",
               });
               const money3 = createBigIntMoney({
                 amount: thirdValue,
-                currency: "USD"
+                currency: "USD",
               });
 
               expect(
@@ -350,15 +350,15 @@ describe("bigIntMoney", () => {
             (firstValue, secondValue, thirdValue) => {
               const money1 = createBigIntMoney({
                 amount: firstValue,
-                currency: "USD"
+                currency: "USD",
               });
               const money2 = createBigIntMoney({
                 amount: secondValue,
-                currency: "USD"
+                currency: "USD",
               });
               const money3 = createBigIntMoney({
                 amount: thirdValue,
-                currency: "USD"
+                currency: "USD",
               });
 
               const money1SubMoney2 = money1.subtract(money2);
@@ -378,11 +378,11 @@ describe("bigIntMoney", () => {
       });
       test("should be additive identity", () => {
         fc.assert(
-          fc.property(fc.bigInt(), value => {
+          fc.property(fc.bigInt(), (value) => {
             const money = createBigIntMoney({ amount: value, currency: "USD" });
             const moneyZero = createBigIntMoney({
               amount: 0n,
-              currency: "USD"
+              currency: "USD",
             });
 
             expect(money.subtract(moneyZero).getAmount()).toEqual(

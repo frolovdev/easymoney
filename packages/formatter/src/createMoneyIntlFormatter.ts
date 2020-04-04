@@ -2,7 +2,7 @@ import { bind } from "@easymoney/common";
 import {
   createCurrencyList,
   CurrencyList,
-  CurrencyUnitISO
+  CurrencyUnitISO,
 } from "@easymoney/currencies";
 import { MoneyIntlOptions, MoneyIntlFormatter } from "./types";
 import { MoneyBase } from "@easymoney/money";
@@ -18,7 +18,7 @@ export function createIntlFormatterFactory(
   const privateInstance = { currencyList };
 
   const publicInstance = {
-    format: bind(format, privateInstance)
+    format: bind(format, privateInstance),
   } as MoneyIntlFormatter;
 
   return publicInstance;
@@ -33,7 +33,7 @@ export function createMoneyIntlFormatterUnit(currencies: CurrencyUnitISO[]) {
 const defaultOptions: MoneyIntlOptions = {
   currencyDisplay: "symbol",
   useGrouping: true,
-  style: "currency"
+  style: "currency",
 };
 
 function format(
@@ -82,6 +82,6 @@ function format(
     minimumFractionDigits:
       mergedOptions.minimumFractionDigits || decimalDigitsLength,
     maximumFractionDigits:
-      mergedOptions.maximumFractionDigits || decimalDigitsLength
+      mergedOptions.maximumFractionDigits || decimalDigitsLength,
   });
 }

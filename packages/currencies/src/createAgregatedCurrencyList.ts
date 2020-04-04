@@ -1,11 +1,5 @@
 import { CurrencyList, CurrencyMap } from "./types";
-import {
-  assert,
-  bind,
-  CurrencyUnit,
-  Currency,
-  AnyCurrency
-} from "@easymoney/common";
+import { assert, bind, Currency, AnyCurrency } from "@easymoney/common";
 
 type Instance<C> = {
   privateInstance: PrivateInstance<C>;
@@ -52,7 +46,7 @@ const createAgregatedCurrencyList = <C extends AnyCurrency>(
   }
 
   const privateInstance = {
-    currencies: agregatedCurrencyMap
+    currencies: agregatedCurrencyMap,
   };
 
   const publicInstance = {} as NewList<C>;
