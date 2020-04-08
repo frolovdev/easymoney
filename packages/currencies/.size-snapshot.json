@@ -1,16 +1,16 @@
 {
   "dist/index.cjs.js": {
-    "bundled": 25609,
+    "bundled": 25426,
     "minified": 14809,
     "gzipped": 4020
   },
   "dist/index.umd.js": {
-    "bundled": 28238,
+    "bundled": 28055,
     "minified": 14629,
     "gzipped": 4076
   },
   "dist/index.es.js": {
-    "bundled": 25362,
+    "bundled": 25179,
     "minified": 14576,
     "gzipped": 3947,
     "treeshaked": {

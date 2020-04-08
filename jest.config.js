@@ -6,7 +6,6 @@ module.exports = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
-  testMatch: ["**/__tests__/**/*.test.*"],
   modulePathIgnorePatterns: ["dist"],
 
   testMatch: [`**/*.test.ts`, `**/*.propbased-test.ts`],
