@@ -1,8 +1,8 @@
-import { bind, Money } from "@easymoney/common";
+import { bind, Money } from "@easymoney/core";
 import { MoneyInput } from "./types";
 
-import { RoundingModes, RoundingModesType } from "@easymoney/common";
-import { assert } from "@easymoney/common";
+import { RoundingModes, RoundingModesType } from "@easymoney/core";
+import { assert } from "@easymoney/core";
 import { isNumeric } from "../assert";
 import { CalculatorBase } from "../calculator/";
 import { MoneyBase } from "./types";

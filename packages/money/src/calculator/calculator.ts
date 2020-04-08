@@ -1,7 +1,7 @@
 import { fromNumber } from "../number";
 
 import { customRound } from "./round";
-import { assert } from "@easymoney/common";
+import { assert } from "@easymoney/core";
 import { CalculatorBase } from "./types";
 
 export function createCalculator(): CalculatorBase {

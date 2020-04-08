@@ -1,4 +1,4 @@
-import { bind } from "@easymoney/common";
+import { bind } from "@easymoney/core";
 import { NumberInstance } from "./types";
 type Numbers = {
   [digit: string]: number;

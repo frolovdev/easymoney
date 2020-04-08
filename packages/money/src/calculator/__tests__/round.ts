@@ -1,4 +1,4 @@
-import * as RoundingModes from "@easymoney/common";
+import * as RoundingModes from "@easymoney/core";
 
 export const roundExamples = [
   [2.6, RoundingModes.RoundingModes.HALF_EVEN, "3"],

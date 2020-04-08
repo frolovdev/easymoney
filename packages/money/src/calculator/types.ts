@@ -1,4 +1,4 @@
-import { RoundingModesType } from "@easymoney/common";
+import { RoundingModesType } from "@easymoney/core";
 
 export interface CalculatorBase {
   compare: (a: string, b: string) => -1 | 1 | 0;

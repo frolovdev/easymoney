@@ -1,7 +1,7 @@
 import { createMoneyUnit } from "../money";
 import { createCalculator } from "../../calculator";
 import { CreateMoney } from "../types";
-import { RoundingModes } from "@easymoney/common";
+import { RoundingModes } from "@easymoney/core";
 
 describe("money", () => {
   let createMoney: CreateMoney;

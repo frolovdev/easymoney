@@ -1,5 +1,5 @@
 import { isEven, isHalf } from "../number/number";
-import { RoundingModes, RoundingModesType } from "@easymoney/common";
+import { RoundingModes, RoundingModesType } from "@easymoney/core";
 
 export function roundHalfEven(number: number) {
   const rounded = Math.round(number);
