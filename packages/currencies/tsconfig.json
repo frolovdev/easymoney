@@ -9,7 +9,7 @@
   "exclude": ["src/**/__tests__/*.ts"],
   "references": [
     {
-      "path": "../common"
+      "path": "../core"
     }
   ]
 }

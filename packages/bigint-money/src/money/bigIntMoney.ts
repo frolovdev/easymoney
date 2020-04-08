@@ -5,7 +5,7 @@ import {
   RoundingModesType,
   RoundingModes,
   assert
-} from "@easymoney/common";
+} from "@easymoney/core";
 
 import {
   BigIntMoneyBase,

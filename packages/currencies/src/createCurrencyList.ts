@@ -1,4 +1,4 @@
-import { assert, bind, AnyCurrency, Currency } from "@easymoney/common";
+import { assert, bind, AnyCurrency, Currency } from "@easymoney/core";
 import { CurrencyList, CurrencyMap } from "./types";
 
 type PrivateInstance<C extends AnyCurrency> = {

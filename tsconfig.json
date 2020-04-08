@@ -30,7 +30,7 @@
   "files": [],
   "references": [
     {
-      "path": "packages/common"
+      "path": "packages/core"
     },
     {
       "path": "packages/money"

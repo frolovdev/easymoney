@@ -5,7 +5,7 @@ import {
   createCommon,
 } from "../../tools/rollup.config";
 
-const name = "money";
+const name = "currencies";
 export default {
   ...createCommon(name),
   output: [
@@ -17,9 +17,11 @@ export default {
     }),
     createUmd(name, {
       file: pkg.unpkg,
-      umdName: "easymoneyMoney",
-      globals: { "@easymoney/common": "easyMoneyCommon" },
+      umdName: "easymoneyCurrencies",
+      globals: {
+        "@easymoney/core": "easyMoneyCore",
+      },
     }),
   ],
-  external: ["@easymoney/common"],
+  external: ["@easymoney/core"],
 };

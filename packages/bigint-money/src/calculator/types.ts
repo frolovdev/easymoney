@@ -1,4 +1,4 @@
-import { RoundingModesType } from "@easymoney/common";
+import { RoundingModesType } from "@easymoney/core";
 
 export interface BigIntCalculatorBase {
   compare: (a: bigint, b: bigint) => -1 | 1 | 0;

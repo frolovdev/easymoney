@@ -1,7 +1,7 @@
 import { BigIntCalculatorBase } from "../types";
 
 import { createBigIntCalculator } from "../bigIntCalcaulator";
-import { RoundingModes } from "@easymoney/common";
+import { RoundingModes } from "@easymoney/core";
 
 describe("bigIntCalculator", () => {
   let calculator: BigIntCalculatorBase;
@@ -11,7 +11,7 @@ describe("bigIntCalculator", () => {
   describe("compare", () => {
     test.each<bigint[]>([
       [0n, 1n],
-      [-1000n, 1000n],
+      [-1000n, 1000n]
     ])("should should it compares values less %i and %i)", (left, right) => {
       expect(calculator.compare(left, right)).toBeLessThan(0);
       expect(calculator.compare(right, left)).toBeGreaterThan(0);
@@ -53,7 +53,7 @@ describe("bigIntCalculator", () => {
         [10n, 7n, 1n],
         [6n, 4n, 2n],
         [10n, 5n, 2n],
-        [10n, 6n, 2n],
+        [10n, 6n, 2n]
       ])(
         "should correctly round positive even results",
         (left, right, result) => {
@@ -70,7 +70,7 @@ describe("bigIntCalculator", () => {
         [5n, 2n, 2n],
         [13n, 5n, 3n],
         [14n, 5n, 3n],
-        [15n, 5n, 3n],
+        [15n, 5n, 3n]
       ])(
         "should correctly round positive odd results",
         (left, right, result) => {
@@ -85,7 +85,7 @@ describe("bigIntCalculator", () => {
         [10n, -6n, -2n],
         [6n, -4n, -2n],
         [5n, -4n, -1n],
-        [10n, -2n, -5n],
+        [10n, -2n, -5n]
       ])(
         "should correctly round negative even results",
         (left, right, result) => {
@@ -101,7 +101,7 @@ describe("bigIntCalculator", () => {
         [10n, -4n, -2n],
         [13n, -5n, -3n],
         [14n, -5n, -3n],
-        [15n, -5n, -3n],
+        [15n, -5n, -3n]
       ])(
         "should correctly round negative odd results",
         (left, right, result) => {
@@ -119,7 +119,7 @@ describe("bigIntCalculator", () => {
         [10n, 7n, 1n],
         [6n, 4n, 2n],
         [6n, 6n, 1n],
-        [10n, 6n, 2n],
+        [10n, 6n, 2n]
       ])(
         "should correctly round positive even results",
         (left, right, result) => {
@@ -136,7 +136,7 @@ describe("bigIntCalculator", () => {
         [5n, 2n, 3n],
         [13n, 5n, 3n],
         [14n, 5n, 3n],
-        [15n, 5n, 3n],
+        [15n, 5n, 3n]
       ])(
         "should correctly round positive odd results",
         (left, right, result) => {
@@ -151,7 +151,7 @@ describe("bigIntCalculator", () => {
         [10n, -6n, -2n],
         [6n, -4n, -2n],
         [5n, -4n, -1n],
-        [10n, -2n, -5n],
+        [10n, -2n, -5n]
       ])(
         "should correctly round negative even results",
         (left, right, result) => {
@@ -167,7 +167,7 @@ describe("bigIntCalculator", () => {
         [10n, -4n, -3n],
         [13n, -5n, -3n],
         [14n, -5n, -3n],
-        [15n, -5n, -3n],
+        [15n, -5n, -3n]
       ])(
         "should correctly round negative odd results",
         (left, right, result) => {
@@ -185,7 +185,7 @@ describe("bigIntCalculator", () => {
         [10n, 7n, 1n],
         [6n, 4n, 1n],
         [6n, 6n, 1n],
-        [10n, 6n, 2n],
+        [10n, 6n, 2n]
       ])(
         "should correctly round positive even results",
         (left, right, result) => {
@@ -202,7 +202,7 @@ describe("bigIntCalculator", () => {
         [5n, 2n, 2n],
         [13n, 5n, 3n],
         [14n, 5n, 3n],
-        [15n, 5n, 3n],
+        [15n, 5n, 3n]
       ])(
         "should correctly round positive odd results",
         (left, right, result) => {
@@ -217,7 +217,7 @@ describe("bigIntCalculator", () => {
         [10n, -6n, -2n],
         [6n, -4n, -1n],
         [5n, -4n, -1n],
-        [10n, -2n, -5n],
+        [10n, -2n, -5n]
       ])(
         "should correctly round negative even results",
         (left, right, result) => {
@@ -233,7 +233,7 @@ describe("bigIntCalculator", () => {
         [10n, -4n, -2n],
         [13n, -5n, -3n],
         [14n, -5n, -3n],
-        [15n, -5n, -3n],
+        [15n, -5n, -3n]
       ])(
         "should correctly round negative odd results",
         (left, right, result) => {
@@ -251,7 +251,7 @@ describe("bigIntCalculator", () => {
         [10n, 7n, 1n],
         [6n, 4n, 1n],
         [6n, 6n, 1n],
-        [10n, 6n, 1n],
+        [10n, 6n, 1n]
       ])(
         "should correctly round positive even results",
         (left, right, result) => {
@@ -268,7 +268,7 @@ describe("bigIntCalculator", () => {
         [5n, 2n, 2n],
         [13n, 5n, 2n],
         [14n, 5n, 2n],
-        [15n, 5n, 3n],
+        [15n, 5n, 3n]
       ])(
         "should correctly round positive odd results",
         (left, right, result) => {
@@ -283,7 +283,7 @@ describe("bigIntCalculator", () => {
         [10n, -6n, -2n],
         [6n, -4n, -2n],
         [5n, -4n, -2n],
-        [10n, -2n, -5n],
+        [10n, -2n, -5n]
       ])(
         "should correctly round negative even results",
         (left, right, result) => {
@@ -299,7 +299,7 @@ describe("bigIntCalculator", () => {
         [10n, -4n, -3n],
         [13n, -5n, -3n],
         [14n, -5n, -3n],
-        [15n, -5n, -3n],
+        [15n, -5n, -3n]
       ])(
         "should correctly round negative odd results",
         (left, right, result) => {
@@ -324,7 +324,7 @@ describe("bigIntCalculator", () => {
         [5n, 2n, 3n],
         [13n, 5n, 3n],
         [14n, 5n, 3n],
-        [15n, 5n, 3n],
+        [15n, 5n, 3n]
       ])(
         "it should correctly round positive results %s %s %s",
         (left, right, result) => {
@@ -345,7 +345,7 @@ describe("bigIntCalculator", () => {
         [10n, -4n, -2n],
         [13n, -5n, -2n],
         [14n, -5n, -2n],
-        [15n, -5n, -3n],
+        [15n, -5n, -3n]
       ])(
         "it should correctly round negative results %s %s %s",
         (left, right, result) => {
@@ -370,7 +370,7 @@ describe("bigIntCalculator", () => {
         [5n, 2n, 2n],
         [13n, 5n, 2n],
         [14n, 5n, 2n],
-        [15n, 5n, 3n],
+        [15n, 5n, 3n]
       ])(
         "it should correctly round positive results",
         (left, right, result) => {
@@ -391,7 +391,7 @@ describe("bigIntCalculator", () => {
         [10n, -4n, -2n],
         [13n, -5n, -2n],
         [14n, -5n, -2n],
-        [15n, -5n, -3n],
+        [15n, -5n, -3n]
       ])(
         "it should correctly round negative results",
         (left, right, result) => {
@@ -416,7 +416,7 @@ describe("bigIntCalculator", () => {
         [5n, 2n, 3n],
         [13n, 5n, 3n],
         [14n, 5n, 3n],
-        [15n, 5n, 3n],
+        [15n, 5n, 3n]
       ])(
         "it should correctly round positive results",
         (left, right, result) => {
@@ -437,7 +437,7 @@ describe("bigIntCalculator", () => {
         [10n, -4n, -3n],
         [13n, -5n, -3n],
         [14n, -5n, -3n],
-        [15n, -5n, -3n],
+        [15n, -5n, -3n]
       ])(
         "it should correctly round negative results",
         (left, right, result) => {

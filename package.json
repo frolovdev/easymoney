@@ -27,15 +27,13 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
-    "bootstrap": "lerna bootstrap && lerna run rebuild",
-    "build": "rollup --config",
+    "bootstrap": "lerna bootstrap && lerna run build",
     "tsc:build": "tsc --build",
     "start:watch": "tsc --build --watch",
     "test": "lerna run test-prehook",
     "size": "lerna run size",
     "test:watch": "jest --watchAll",
     "prepublishOnly": "npm run rebuild && npm run test-prehook",
-    "rebuild": "lerna run rebuild",
     "postpublish": "npm run clean",
     "clean": "cross-env fixme=fixme ./node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",
@@ -48,7 +46,11 @@
     "registry": "https://registry.npmjs.org"
   },
   "alias": {
-    "money": "./packages/money/src/index.ts"
+    "money": "./packages/money/src/index.ts",
+    "core": "./packages/core/src/index.ts",
+    "currencies": "./packages/currencies/src/index.ts",
+    "formatter": "./packages/formatter/src/index.ts",
+    "bigint-money": "./packages/bigint-money/src/index.ts"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",

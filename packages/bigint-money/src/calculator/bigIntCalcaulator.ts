@@ -1,9 +1,9 @@
 import { bigIntDivide, convertValueToBigInt, bigIntAbs } from "../number/";
-import { assert } from "@easymoney/common";
+import { assert } from "@easymoney/core";
 import { BigIntCalculatorBase } from "./types";
 
 import { BIG_INT_PRECISION_M } from "../consts/precisions";
-import { RoundingModes } from "@easymoney/common";
+import { RoundingModes } from "@easymoney/core";
 
 export function createBigIntCalculator(): BigIntCalculatorBase {
   const instance = {

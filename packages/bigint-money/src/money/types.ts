@@ -1,4 +1,4 @@
-import { Money, RoundingModesType, Currency } from "@easymoney/common";
+import { Money, RoundingModesType, Currency } from "@easymoney/core";
 import { BigIntCalculatorBase } from "../calculator/";
 
 export type CreateMoney<MI, MB> = (money: MI) => MB;

@@ -1,4 +1,4 @@
-import { Currency, CurrencyUnitISO } from "@easymoney/common";
+import { Currency, CurrencyUnitISO } from "@easymoney/core";
 
 export interface CurrencyList<C> {
   contains: (currency: Currency) => boolean;

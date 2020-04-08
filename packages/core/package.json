@@ -1,6 +1,6 @@
 {
-  "name": "@easymoney/money",
-  "version": "0.0.4",
+  "name": "@easymoney/core",
+  "version": "0.0.1",
   "author": "Whispers12",
   "sideEffects": false,
   "main": "dist/index.cjs.js",
@@ -42,9 +42,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "dependencies": {
-    "@easymoney/common": "^0.0.5"
-  },
   "devDependencies": {
     "typescript": "^3.8.3"
   },
@@ -65,5 +62,6 @@
     "amount",
     "immutable",
     "monetary"
-  ]
+  ],
+  "dependencies": {}
 }
