@@ -27,6 +27,7 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
+    "postinstall": "lerna bootstrap",
     "bootstrap": "lerna bootstrap && lerna run build",
     "tsc:build": "tsc --build",
     "start:watch": "tsc --build --watch",
