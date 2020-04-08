@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "author": "Whispers12",
   "sideEffects": false,
-  "source": "src/index.ts",
-  "main": "dist/index.js",
-  "umd:main": "dist/index.umd.js",
+  "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "umd:main": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "maintainers": [

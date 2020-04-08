@@ -1,47 +1,25 @@
-import babel from "rollup-plugin-babel";
-import resolve from "rollup-plugin-node-resolve";
-import typescript from "rollup-plugin-typescript2";
-import { terser } from "rollup-plugin-terser";
-import analyze from "rollup-plugin-visualizer";
 import pkg from "./package.json";
+import {
+  createEsCjs,
+  createUmd,
+  createCommon,
+} from "../../tools/rollup.config";
 
-const production = !process.env.ROLLUP_WATCH;
-
+const name = "money";
 export default {
-  input: "src/index.ts",
+  ...createCommon(name),
   output: [
-    {
-      file: pkg.main,
-      format: "cjs",
-      sourcemap: true,
-    },
-    {
-      file: pkg.module,
-      format: "esm",
-      sourcemap: true,
-    },
-    {
-      name: "EasyMoneyCommon",
+    ...createEsCjs(name, {
+      file: {
+        cjs: pkg.main,
+        es: pkg.module,
+      },
+    }),
+    createUmd(name, {
       file: pkg.unpkg,
-      format: "umd",
-      sourcemap: true,
-    },
-  ],
-  plugins: [
-    typescript({ tsconfig: "./tsconfig.json" }),
-    resolve(),
-    babel({ exclude: "node_modules/**" }),
-    production && terser(),
-    analyze({
-      filename: `stats/${pkg.name}.html`,
-      title: `${pkg.name} size report`,
-      sourcemap: true,
-      template: "treemap",
-    }),
-    analyze({
-      sourcemap: true,
-      json: true,
-      filename: `stats/${pkg.name}.json`,
+      umdName: "easymoneyMoney",
+      globals: { "@easymoney/common": "easyMoneyCommon" },
     }),
   ],
+  external: ["@easymoney/common"],
 };
