@@ -28,6 +28,54 @@ Feel free to ask any questions or just contact, I open to any suggestions or ide
 
 [Facebook](https://www.facebook.com/andrey.frolov.94617)
 
+### Packages
+
+|      Package       |                   Version                |            Dependencies                    |               Size                  |
+| :----------------: | :--------------------------------------: | :----------------------------------------: | :---------------------------------: |
+|   [`bigint-money`] | [![npm-bigint-money]][pack-bigint-money] | [![deps-bigint-money]][david-bigint-money] |                                     |
+|      [`core`]      |      [![npm-core]][pack-core]            | [![deps-core]][david-core]                 | [![size-core]][pho-core]            |
+|   [`currencies`]   |   [![npm-currencies]][pack-currencies]   | [![deps-currencies]][david-currencies]     | [![size-currencies]][pho-currencies]|
+|     [`money`]      |    [![npm-money]][pack-money]            | [![deps-money]][david-money]               | [![size-money]][pho-money]          |
+|   [`formatter`]    |  [![npm-formatter]][pack-formatter]      | [![deps-formatter]][david-formatter]       | [![size-formatter]][pho-formatter]  |
+
+[`bigint-money`]: https://github.com/frolovdev/easymoney/tree/master/packages/bigint-money
+[npm-bigint-money]: https://img.shields.io/npm/v/@easymoney/money?color=blue
+[pack-bigint-money]: https://www.npmjs.com/package/@easymoney/money
+[deps-bigint-money]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/bigint-money
+[david-bigint-money]: https://david-dm.org/frolovdev/easymoney?path=packages/bigint-money
+
+[`core`]: https://github.com/frolovdev/easymoney/tree/master/packages/core
+[npm-core]: https://img.shields.io/npm/v/@easymoney/core?color=blue
+[pack-core]: https://www.npmjs.com/package/@easymoney/core
+[deps-core]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/core
+[david-core]: https://david-dm.org/frolovdev/easymoney?path=packages/core
+[size-core]: https://img.shields.io/bundlephobia/minzip/@easymoney/core
+[pho-core]: https://bundlephobia.com/result?p=@easymoney/core
+
+[`currencies`]: https://github.com/frolovdev/easymoney/tree/master/packages/currencies
+[npm-currencies]: https://img.shields.io/npm/v/@easymoney/currencies?color=blue
+[pack-currencies]: https://www.npmjs.com/package/@easymoney/currencies
+[deps-currencies]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/currencies
+[david-currencies]: https://david-dm.org/frolovdev/easymoney?path=packages/currencies
+[size-currencies]: https://img.shields.io/bundlephobia/minzip/@easymoney/currencies
+[pho-currencies]: https://bundlephobia.com/result?p=@easymoney/currencies
+
+[`money`]: https://github.com/frolovdev/easymoney/tree/master/packages/money
+[npm-money]: https://img.shields.io/npm/v/@easymoney/money?color=blue
+[pack-money]: https://www.npmjs.com/package/@easymoney/money
+[deps-money]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/money
+[david-money]: https://david-dm.org/frolovdev/easymoney?path=packages/money
+[size-money]: https://img.shields.io/bundlephobia/minzip/@easymoney/money
+[pho-money]: https://bundlephobia.com/result?p=@easymoney/money
+
+[`formatter`]: https://github.com/frolovdev/easymoney/tree/master/packages/formatter
+[npm-formatter]: https://img.shields.io/npm/v/@easymoney/formatter?color=blue
+[pack-formatter]: https://www.npmjs.com/package/@easymoney/formatter
+[deps-formatter]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/formatter
+[david-formatter]: https://david-dm.org/frolovdev/easymoney?path=packages/formatter
+[size-formatter]: https://img.shields.io/bundlephobia/minzip/@easymoney/formatter
+[pho-formatter]: https://bundlephobia.com/result?p=@easymoney/formatter
+
 ## Main features
 
 - 🎁 **composable and modular api**: easy tree shaking with webpack
