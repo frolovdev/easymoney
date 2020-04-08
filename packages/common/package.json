@@ -29,7 +29,7 @@
     "prepublishOnly": "npm run build && npm run test-prehook",
     "postpublish": "npm run clean",
     "prebuild": "npm run clean",
-    "build": "rollup -c",
+    "build": "../../node_modules/.bin/rollup -c",
     "clean": "../../node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",
     "test": "../../node_modules/.bin/jest --watchAll",
