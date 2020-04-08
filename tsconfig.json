@@ -7,11 +7,42 @@
     "esModuleInterop": true,
     "strict": true,
     "declaration": true,
+    "declarationMap": true,
     "sourceMap": true,
+    "rootDir": ".",
     "removeComments": true,
     "noUnusedParameters": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "baseUrl": ".",
+    "composite": true,
+    "paths": {
+      "@easymoney/*": ["packages/*/src"]
+    }
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["src/**/__tests__/*.ts", "website"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "lib",
+    "__tests__",
+    "**/*.test*",
+    "**/*.spec*"
+  ],
+  "files": [],
+  "references": [
+    {
+      "path": "packages/core"
+    },
+    {
+      "path": "packages/money"
+    },
+    {
+      "path": "packages/currencies"
+    },
+    {
+      "path": "packages/bigint-money"
+    },
+    {
+      "path": "packages/formatter"
+    }
+  ]
 }
