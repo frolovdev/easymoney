@@ -11,7 +11,7 @@ sidebar_label: compare
 
 ```js
 
-import { createBigIntMoney } from 'easy-money';
+import { createBigIntMoney } from '@easymoney/bigint-money';
 
 const money = createBigIntMoney({ amount: 100n, currency: 'USD' });
 

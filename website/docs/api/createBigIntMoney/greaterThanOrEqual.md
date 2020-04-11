@@ -11,7 +11,7 @@ sidebar_label: greaterThanOrEqual
 
 ```js
 
-import { createBigIntMoney } from 'easy-money';
+import { createBigIntMoney } from '@easymoney/bigint-money';
 
 //if first value equals second
 const money = createBigIntMoney({ amount: 100n, currency: 'USD' });

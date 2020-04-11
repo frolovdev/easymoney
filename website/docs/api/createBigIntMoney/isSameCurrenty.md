@@ -11,7 +11,7 @@ sidebar_label: isSameCurrency
 
 ```js
 
-import { createBigIntMoney } from 'easy-money';
+import { createBigIntMoney } from '@easymoney/bigint-money';
 
 //if currencies are same
 const money = createBigIntMoney({ amount: 100n, currency: 'USD' });

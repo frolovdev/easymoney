@@ -11,7 +11,7 @@ sidebar_label: isZero
 
 ```js
 
-import { createMoney } from 'easy-money';
+import { createMoney } from '@easymoney/money';
 
 //if amount value is zero
 const money = createMoney({ amount: 0, currency: 'USD' });

@@ -11,7 +11,7 @@ sidebar_label: divide
 
 ```js
 
-import { createMoney } from 'easy-money';
+import { createMoney } from '@easymoney/money';
 
 const money1 = createMoney({ amount: 100, currency: 'USD' });
 

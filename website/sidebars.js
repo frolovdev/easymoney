@@ -7,7 +7,7 @@
       "api/api-reference",
       {
         type: "category",
-        label: "createMoney",
+        label: "money",
         items: [
           "api/createMoney/Description",
           "api/createMoney/add",
@@ -36,7 +36,7 @@
       },
       {
         type: "category",
-        label: "createBigIntMoney",
+        label: "bigint-money",
         items: [
           "api/createBigIntMoney/Description",
           "api/createBigIntMoney/add",
@@ -59,20 +59,26 @@
       },
       {
         type: "category",
-        label: "createCurrencyList",
+        label: "currencies",
         items: [
-          "api/createCurrencyList/Description",
-          "api/createCurrencyList/contains",
-          "api/createCurrencyList/getCurrencies"
-        ]
-      },
-      {
-        type: "category",
-        label: "createAgregatedCurrencyList",
-        items: [
-          "api/createAgregatedCurrencyList/Description",
-          "api/createAgregatedCurrencyList/contains",
-          "api/createAgregatedCurrencyList/getCurrencies"
+          {
+            type: "category",
+            label: "createCurrencyList",
+            items: [
+              "api/createCurrencyList/Description",
+              "api/createCurrencyList/contains",
+              "api/createCurrencyList/getCurrencies"
+            ]
+          },
+          {
+            type: "category",
+            label: "createAgregatedCurrencyList",
+            items: [
+              "api/createAgregatedCurrencyList/Description",
+              "api/createAgregatedCurrencyList/contains",
+              "api/createAgregatedCurrencyList/getCurrencies"
+            ]
+          }
         ]
       },
       {

@@ -11,7 +11,7 @@ sidebar_label: getCurrencies
 
 ```js
 
-import { createCurrencyList } from 'easy-money';
+import { createCurrencyList } from '@easymoney/currencies';
 
 const currency = { minorUnit: 2, code: 'XBT' };
 const currency1 = { minorUnit: 5, code: 'DXBT' };

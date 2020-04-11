@@ -11,7 +11,7 @@ sidebar_label: getCurrency
 
 ```js
 
-import { createBigIntMoney } from 'easy-money';
+import { createBigIntMoney } from '@easymoney/bigint-money';
 
 const result1 = createBigIntMoney({ amount: 100n, currency: 'USD' });
 

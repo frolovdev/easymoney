@@ -11,7 +11,7 @@ sidebar_label: contains
 
 ```js
 
-import { createCurrencyList } from 'easy-money';
+import { createCurrencyList } from '@easymoney/currencies';
 
 //if currency doesnt exist in list
 const currency = { minorUnit: 2, code: 'XBT' };

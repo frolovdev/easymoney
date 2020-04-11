@@ -11,7 +11,7 @@ sidebar_label: isPositive
 
 ```js
 
-import { createMoney } from 'easy-money';
+import { createMoney } from '@easymoney/money';
 
 //if amount value is zero
 const money = createMoney({ amount: 100, currency: 'USD' });

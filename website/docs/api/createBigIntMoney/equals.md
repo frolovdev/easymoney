@@ -11,7 +11,7 @@ sidebar_label: equals
 
 ```js
 
-import { createBigIntMoney } from 'easy-money';
+import { createBigIntMoney } from '@easymoney/bigint-money';
 
 //if money objects are equal
 const money = createBigIntMoney({ amount: 100n, currency: 'USD' });

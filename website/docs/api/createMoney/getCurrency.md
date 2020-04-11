@@ -11,7 +11,7 @@ sidebar_label: getCurrency
 
 ```js
 
-import { createMoney } from 'easy-money';
+import { createMoney } from '@easymoney/money';
 
 const result1 = createMoney({ amount: 100, currency: 'USD' });
 

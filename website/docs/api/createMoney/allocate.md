@@ -11,7 +11,7 @@ sidebar_label: allocate
 
 ```js
 
-import { createMoney } from 'easy-money';
+import { createMoney } from '@easymoney/money';
 
 const money = createMoney({ amount: 100, currency: 'RUB' });
 const money1 = createMoney({ amount: 101, currency: 'USD' });

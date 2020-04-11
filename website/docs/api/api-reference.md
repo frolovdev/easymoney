@@ -11,9 +11,9 @@ This section documents the complete library api.
 
 You can watch examples of using methods in original repo modulename/______tests______ folder
 
-## Money
+## @easymoney/money
 
-- [createMoney](createMoney/Description.md)
+- [money](createMoney/Description.md)
   - [absolute](createMoney/absolute.md)
   - [add](createMoney/add.md)
   - [allocate](createMoney/allocate.md)
@@ -36,8 +36,22 @@ You can watch examples of using methods in original repo modulename/______tests_
   - [negative](createMoney/negative.md)
   - [ratioOf](createMoney/ratioOf.md)
   - [subtract](createMoney/subtract.md)
-- [createMoneyUnit](createMoney/index.md)
-- [createBigIntMoney](createBigIntMoney/Description.md)
+- [calculator](createCalculator/Description.md)
+  - [absolute](createCalculator/absolute.md)
+  - [add](createCalculator/add.md)
+  - [ceil](createCalculator/ceil.md)
+  - [compare](createCalculator/compare.md)
+  - [divide](createCalculator/divide.md)
+  - [floor](createCalculator/floor.md)
+  - [mod](createCalculator/mod.md)
+  - [multiply](createCalculator/multiply.md)
+  - [round](createCalculator/round.md)
+  - [share](createCalculator/share.md)
+  - [subtract](createCalculator/subtract.md)
+
+## @easymoney/bigint-money
+
+- [money](createBigIntMoney/Description.md)
   - [add](createBigIntMoney/add.md)
   - [allocate](createBigIntMoney/allocate.md)
   - [allocateTo](createBigIntMoney/allocateTo.md)
@@ -54,6 +68,28 @@ You can watch examples of using methods in original repo modulename/______tests_
   - [lessThanOrEqual](createBigIntMoney/lessThanOrEqual.md)
   - [multiply](createBigIntMoney/multiply.md)
   - [subtract](createBigIntMoney/subtract.md)
+- [calculator](createBigIntCalculator/Description.md)
+  - [absolute](createBigIntCalculator/absolute.md)
+  - [add](createBigIntCalculator/add.md)
+  - [compare](createBigIntCalculator/compare.md)
+  - [divide](createBigIntCalculator/divide.md)
+  - [mod](createBigIntCalculator/mod.md)
+  - [multiply](createBigIntCalculator/multiply.md)
+  - [share](createBigIntCalculator/share.md)
+  - [subtract](createBigIntCalculator/subtract.md)
+
+## @easymoney/currencies
+
+- [createCurrencyList](createCurrencyList/Description.md)
+  - [contains](createCurrencyList/contains.md)
+  - [getCurrencies](createCurrencyList/getCurrencies.md)
+- [createAgregatedCurrencyList](createAgregatedCurrencyList/Description.md)
+  - [contains](createAgregatedCurrencyList/contains.md)
+  - [getCurrencies](createAgregatedCurrencyList/getCurrencies.md)
+
+
+
+
 
 ## Calculator
 
@@ -79,12 +115,3 @@ You can watch examples of using methods in original repo modulename/______tests_
   - [share](createBigIntCalculator/share.md)
   - [subtract](createBigIntCalculator/subtract.md)
 
-## Currencies
-
-- [createCurrencyList](createCurrencyList/Description.md)
-  - [contains](createCurrencyList/contains.md)
-  - [getCurrencies](createCurrencyList/getCurrencies.md)
-- [createAgregatedCurrencyList](createAgregatedCurrencyList/Description.md)
-  - [contains](createAgregatedCurrencyList/contains.md)
-  - [getCurrencies](createAgregatedCurrencyList/getCurrencies.md)
-- [isoCurrencyLsit](createMoney/index.md)
