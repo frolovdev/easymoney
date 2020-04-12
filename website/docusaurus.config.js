@@ -39,11 +39,6 @@ module.exports = {
         },
         {
           href: "https://github.com/frolovdev/easymoney",
-          label: "Community",
-          position: "right"
-        },
-        {
-          href: "https://github.com/frolovdev/easymoney",
           label: "GitHub",
           position: "right"
         }
