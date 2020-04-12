@@ -7,6 +7,7 @@ module.exports = {
   organizationName: "whispers12", // Usually your GitHub org/user name.
   projectName: "easymoney", // Usually your repo name.
   themeConfig: {
+    sidebarCollapsible: false,
     prism: {
       theme: require("prism-react-renderer/themes/vsDark"),
       darkTheme: require("prism-react-renderer/themes/vsDark")

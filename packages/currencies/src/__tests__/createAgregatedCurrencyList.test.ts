@@ -132,4 +132,26 @@ describe("createAgregatedCurrencyList", () => {
       );
     });
   });
+
+  describe("subunitFor", () => {
+    it("should throw an error if currency doesnt exist", () => {
+      const currency = { minorUnit: 2, code: "XBT" };
+      const goodMock = [currency, { minorUnit: 5, code: "DXBT" }];
+
+      const list = createCurrencyList(goodMock);
+      const agregatedList = createAgregatedCurrencyList([list]);
+
+      expect(() => list.subUnitFor("TEST")).toThrow();
+    });
+
+    it("should return minor unit if currency exist", () => {
+      const currency = { minorUnit: 2, code: "XBT" };
+      const goodMock = [currency, { minorUnit: 5, code: "DXBT" }];
+
+      const list = createCurrencyList(goodMock);
+      const agregatedList = createAgregatedCurrencyList([list]);
+
+      expect(agregatedList.subUnitFor("XBT")).toEqual(currency.minorUnit);
+    });
+  });
 });
