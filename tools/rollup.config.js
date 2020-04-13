@@ -17,43 +17,43 @@ import { getSourcemapPathTransform } from "./utils";
 
 const getTypescript = () =>
   typescript({
-    tsconfig: resolvePath(__dirname, "tsconfig.json"),
+    tsconfig: resolvePath(__dirname, "tsconfig.json")
   });
-const getPlugins = (name) => {
+const getPlugins = name => {
   return {
     babel: babel({
       runtimeHelpers: false,
-      exclude: /(\.re|node_modules.*)/,
+      exclude: /(\.re|node_modules.*)/
     }),
     analyzer: analyze({
       filename: `stats/${name}.html`,
       title: `${name} size report`,
       sourcemap: true,
-      template: "treemap",
+      template: "treemap"
     }),
     analyzerJSON: analyze({
       sourcemap: true,
       json: true,
-      filename: `stats/${name}.json`,
+      filename: `stats/${name}.json`
     }),
     sizeSnapshot: sizeSnapshot({
-      printInfo: true,
+      printInfo: true
     }),
     terser: terser(
       minifyConfig({
         beautify: !!process.env.PRETTIFY,
-        inline: !name.endsWith(".umd"),
+        inline: !name.endsWith(".umd")
       })
     ),
     json: json({
       preferConst: true,
-      indent: "  ",
+      indent: "  "
     }),
-    typescript: getTypescript(),
+    typescript: getTypescript()
   };
 };
 
-export const createCommon = (name) => ({
+export const createCommon = (name, isBigInt) => ({
   input: resolvePath(__dirname, "src", "index.ts"),
   plugins: [
     getTypescript(),
@@ -76,19 +76,19 @@ export const createCommon = (name) => ({
                 "last 2 Chrome versions",
                 "last 2 Firefox versions",
                 "last 2 Safari versions",
-                "last 1 Edge versions",
-              ],
-            },
-          },
-        ],
+                "last 1 Edge versions"
+              ]
+            }
+          }
+        ]
       ],
       plugins: [
         "@babel/plugin-proposal-export-namespace-from",
-        ["@babel/plugin-proposal-class-properties", { loose: true }],
-      ],
+        ["@babel/plugin-proposal-class-properties", { loose: true }]
+      ]
     }),
     resolve(),
-    commonjs(),
+    commonjs()
   ],
   external: [
     "path",
@@ -121,8 +121,8 @@ export const createCommon = (name) => ({
     "buffer",
     "crypto",
     "fs",
-    "stream",
-  ],
+    "stream"
+  ]
 });
 
 export function createEsCjs(name, { file: { es, cjs }, input = "index" }) {
@@ -135,8 +135,8 @@ export function createEsCjs(name, { file: { es, cjs }, input = "index" }) {
     // plugins.replace,
 
     // plugins.commonjs,
-    plugins.sizeSnapshot,
-    plugins.terser,
+    // plugins.sizeSnapshot,
+    plugins.terser
   ].filter(Boolean);
 
   const outputConfigs = [
@@ -147,7 +147,7 @@ export function createEsCjs(name, { file: { es, cjs }, input = "index" }) {
       name,
       sourcemap: true,
       sourcemapPathTransform: getSourcemapPathTransform(name),
-      plugins: pluginList,
+      plugins: pluginList
     },
     es && {
       plugins: pluginList,
@@ -156,8 +156,8 @@ export function createEsCjs(name, { file: { es, cjs }, input = "index" }) {
       freeze: false,
       name,
       sourcemap: true,
-      sourcemapPathTransform: getSourcemapPathTransform(name),
-    },
+      sourcemapPathTransform: getSourcemapPathTransform(name)
+    }
   ];
 
   return outputConfigs;
@@ -181,9 +181,9 @@ export function createUmd(name, { file, umdName, globals }) {
       // plugins.replace,
 
       // plugins.commonjs,
-      plugins.sizeSnapshot,
-      plugins.terser,
-    ].filter(Boolean),
+      // plugins.sizeSnapshot,
+      plugins.terser
+    ].filter(Boolean)
   };
   return umdOutput;
 }
