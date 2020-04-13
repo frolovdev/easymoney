@@ -17,12 +17,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frolovdev/easy-money.git"
+    "url": "git+https://github.com/frolovdev/easymoney.git"
   },
   "bugs": {
-    "url": "https://github.com/frolovdev/easy-money/issues"
+    "url": "https://github.com/frolovdev/easymoney/issues"
   },
-  "homepage": "https://github.com/frolovdev/easy-money#readme",
+  "homepage": "https://github.com/frolovdev/easymoney#readme",
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
@@ -58,7 +58,7 @@
     "/dist"
   ],
   "keywords": [
-    "easy-money",
+    "easymoney",
     "money",
     "dinero",
     "dinero.js",

@@ -21,7 +21,7 @@ Round toward −∞ – directed rounding towards negative infinity (also known 
 | toward −∞                       | +11.0 | +12.0 | −12.0 | −13.0 |
 
 
-## EASY-MONEY
+## EASYMONEY
 
 
 **HALF_EVEN**

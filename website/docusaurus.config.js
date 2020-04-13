@@ -1,7 +1,8 @@
 module.exports = {
   title: "easymoney",
-  tagline: "Library for operating with monetary values in JavaScript and TypeScript",
-  url: process.env.SITE_URL || "https://easy-money.now.sh",
+  tagline:
+    "Library for operating with monetary values in JavaScript and TypeScript",
+  url: process.env.SITE_URL || "https://easymoney.now.sh",
   baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "whispers12", // Usually your GitHub org/user name.
@@ -96,7 +97,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/frolovdev/easy-money/tree/master/website"
+          editUrl: "https://github.com/frolovdev/easymoney/tree/master/website"
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css")

@@ -1,6 +1,6 @@
 <div align="center" text-align="center">
-  <img src="https://easy-money.now.sh/img/logo.png" align="center"
-     alt="Storeon logo by Anton Lovchikov" width="300" height="159"></img>     
+  <img src="https://easymoney.now.sh/img/logo.png" align="center"
+     alt="easy money logo" width="300" height="159"></img>     
      <br></br>
 </div>
 
