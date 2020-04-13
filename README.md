@@ -7,7 +7,7 @@
 
 library for operating with monetary values in JavaScript and TypeScript
 
-📖 [Read the documentation](https://easy-money.now.sh/docs/introduction/getting-started)
+📖 [Read the documentation](https://easymoney.now.sh/docs/introduction/getting-started)
 
 ## High-level roadmap
 
@@ -31,13 +31,13 @@ Feel free to ask any questions or just contact, I open to any suggestions or ide
 
 ### Packages
 
-|      Package            |                   Version                |            Dependencies                    |               Size                  |
-| :---------------------: | :--------------------------------------: | :----------------------------------------: | :---------------------------------: |
-| [`@easymoney/bigint-money`]|[![npm-bigint-money]][pack-bigint-money]|[![deps-bigint-money]][david-bigint-money] |[![size-bigint-money]][pho-bigint-money]|
-| [`@easymoney/core`]     |      [![npm-core]][pack-core]            | [![deps-core]][david-core]                 | [![size-core]][pho-core]            |
-|[`@easymoney/currencies`]|   [![npm-currencies]][pack-currencies]   | [![deps-currencies]][david-currencies]     | [![size-currencies]][pho-currencies]|
-|  [`@easymoney/money`]   |    [![npm-money]][pack-money]            | [![deps-money]][david-money]               | [![size-money]][pho-money]          |
-|[`@easymoney/formatter`] |  [![npm-formatter]][pack-formatter]      | [![deps-formatter]][david-formatter]       | [![size-formatter]][pho-formatter]  |
+|           Package           |                 Version                  |                Dependencies                |                   Size                   |
+| :-------------------------: | :--------------------------------------: | :----------------------------------------: | :--------------------------------------: |
+| [`@easymoney/bigint-money`] | [![npm-bigint-money]][pack-bigint-money] | [![deps-bigint-money]][david-bigint-money] | [![size-bigint-money]][pho-bigint-money] |
+|     [`@easymoney/core`]     |         [![npm-core]][pack-core]         |         [![deps-core]][david-core]         |         [![size-core]][pho-core]         |
+|  [`@easymoney/currencies`]  |   [![npm-currencies]][pack-currencies]   |   [![deps-currencies]][david-currencies]   |   [![size-currencies]][pho-currencies]   |
+|    [`@easymoney/money`]     |        [![npm-money]][pack-money]        |        [![deps-money]][david-money]        |        [![size-money]][pho-money]        |
+|  [`@easymoney/formatter`]   |    [![npm-formatter]][pack-formatter]    |    [![deps-formatter]][david-formatter]    |    [![size-formatter]][pho-formatter]    |
 
 [`@easymoney/bigint-money`]: https://github.com/frolovdev/easymoney/tree/master/packages/bigint-money
 [npm-bigint-money]: https://img.shields.io/npm/v/@easymoney/bigint-money?color=blue
@@ -91,12 +91,12 @@ Feel free to ask any questions or just contact, I open to any suggestions or ide
 ## Comparison with other money libraries
 
 |                    | easymoney | Dinero |
-| ------------------ | ---------- | ------ |
-| Custom calculators | ✅          | ❌      |
-| Big int support    | ✅          | ❌      |
-| Tree Shaking       | ✅          | ❌      |
-| Typescript         | ✅          | ❌      |
-| Flexible api       | ✅          | ❌      |
+| ------------------ | --------- | ------ |
+| Custom calculators | ✅         | ❌      |
+| Big int support    | ✅         | ❌      |
+| Tree Shaking       | ✅         | ❌      |
+| Typescript         | ✅         | ❌      |
+| Flexible api       | ✅         | ❌      |
 
 ## Installation
 
