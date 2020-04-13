@@ -9,52 +9,64 @@
         type: "category",
         label: "money",
         items: [
-          "api/money/createMoney/Description",
-          "api/money/createMoney/add",
-          "api/money/createMoney/absolute",
-          "api/money/createMoney/allocate",
-          "api/money/createMoney/allocateTo",
-          "api/money/createMoney/compare",
-          "api/money/createMoney/divide",
-          "api/money/createMoney/equals",
-          "api/money/createMoney/getAmount",
-          "api/money/createMoney/getCurrency",
-          "api/money/createMoney/greaterThan",
-          "api/money/createMoney/greaterThanOrEqual",
-          "api/money/createMoney/isNegative",
-          "api/money/createMoney/isPositive",
-          "api/money/createMoney/isSameCurrency",
-          "api/money/createMoney/isZero",
-          "api/money/createMoney/lessThan",
-          "api/money/createMoney/lessThanOrEqual",
-          "api/money/createMoney/mod",
-          "api/money/createMoney/multiply",
-          "api/money/createMoney/negative",
-          "api/money/createMoney/ratioOf",
-          "api/money/createMoney/subtract"
+          {
+            type: "category",
+            label: "createMoney",
+            items:[
+              "api/money/createMoney/Description",
+              "api/money/createMoney/add",
+              "api/money/createMoney/absolute",
+              "api/money/createMoney/allocate",
+              "api/money/createMoney/allocateTo",
+              "api/money/createMoney/compare",
+              "api/money/createMoney/divide",
+              "api/money/createMoney/equals",
+              "api/money/createMoney/getAmount",
+              "api/money/createMoney/getCurrency",
+              "api/money/createMoney/greaterThan",
+              "api/money/createMoney/greaterThanOrEqual",
+              "api/money/createMoney/isNegative",
+              "api/money/createMoney/isPositive",
+              "api/money/createMoney/isSameCurrency",
+              "api/money/createMoney/isZero",
+              "api/money/createMoney/lessThan",
+              "api/money/createMoney/lessThanOrEqual",
+              "api/money/createMoney/mod",
+              "api/money/createMoney/multiply",
+              "api/money/createMoney/negative",
+              "api/money/createMoney/ratioOf",
+              "api/money/createMoney/subtract"
+            ]
+          }
         ]
       },
       {
         type: "category",
         label: "bigint-money",
         items: [
-          "api/bigint-money/createBigIntMoney/Description",
-          "api/bigint-money/createBigIntMoney/add",
-          "api/bigint-money/createBigIntMoney/allocate",
-          "api/bigint-money/createBigIntMoney/allocateTo",
-          "api/bigint-money/createBigIntMoney/compare",
-          "api/bigint-money/createBigIntMoney/divide",
-          "api/bigint-money/createBigIntMoney/equals",
-          "api/bigint-money/createBigIntMoney/getAmount",
-          "api/bigint-money/createBigIntMoney/getCurrency",
-          "api/bigint-money/createBigIntMoney/getSource",
-          "api/bigint-money/createBigIntMoney/greaterThan",
-          "api/bigint-money/createBigIntMoney/greaterThanOrEqual",
-          "api/bigint-money/createBigIntMoney/isSameCurrency",
-          "api/bigint-money/createBigIntMoney/lessThan",
-          "api/bigint-money/createBigIntMoney/lessThanOrEqual",
-          "api/bigint-money/createBigIntMoney/multiply",
-          "api/bigint-money/createBigIntMoney/subtract"
+          {
+            type: "category",
+            label: "createBigIntMoney",
+            items: [
+              "api/bigint-money/createBigIntMoney/Description",
+              "api/bigint-money/createBigIntMoney/add",
+              "api/bigint-money/createBigIntMoney/allocate",
+              "api/bigint-money/createBigIntMoney/allocateTo",
+              "api/bigint-money/createBigIntMoney/compare",
+              "api/bigint-money/createBigIntMoney/divide",
+              "api/bigint-money/createBigIntMoney/equals",
+              "api/bigint-money/createBigIntMoney/getAmount",
+              "api/bigint-money/createBigIntMoney/getCurrency",
+              "api/bigint-money/createBigIntMoney/getSource",
+              "api/bigint-money/createBigIntMoney/greaterThan",
+              "api/bigint-money/createBigIntMoney/greaterThanOrEqual",
+              "api/bigint-money/createBigIntMoney/isSameCurrency",
+              "api/bigint-money/createBigIntMoney/lessThan",
+              "api/bigint-money/createBigIntMoney/lessThanOrEqual",
+              "api/bigint-money/createBigIntMoney/multiply",
+              "api/bigint-money/createBigIntMoney/subtract"
+            ]
+          }
         ]
       },
       {
@@ -87,8 +99,14 @@
         type: "category",
         label: "formatter",
         items: [
-          "api/formatter/createMoneyIntlFormatter/Description",
-          "api/formatter/createMoneyIntlFormatter/format",
+          {
+            type: "category",
+            label: "createMoneyIntlFormatter",
+            items: [
+              "api/formatter/createMoneyIntlFormatter/Description",
+              "api/formatter/createMoneyIntlFormatter/format",
+            ]
+          }
         ]
       },
       // {

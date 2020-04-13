@@ -33,11 +33,19 @@ Feel free to ask any questions or just contact, I open to any suggestions or ide
 
 |      Package            |                   Version                |            Dependencies                    |               Size                  |
 | :---------------------: | :--------------------------------------: | :----------------------------------------: | :---------------------------------: |
+| [`@easymoney/bigint-money`]|[![npm-bigint-money]][pack-bigint-money]|[![deps-bigint-money]][david-bigint-money] |[![size-bigint-money]][pho-bigint-money]|
 | [`@easymoney/core`]     |      [![npm-core]][pack-core]            | [![deps-core]][david-core]                 | [![size-core]][pho-core]            |
 |[`@easymoney/currencies`]|   [![npm-currencies]][pack-currencies]   | [![deps-currencies]][david-currencies]     | [![size-currencies]][pho-currencies]|
 |  [`@easymoney/money`]   |    [![npm-money]][pack-money]            | [![deps-money]][david-money]               | [![size-money]][pho-money]          |
 |[`@easymoney/formatter`] |  [![npm-formatter]][pack-formatter]      | [![deps-formatter]][david-formatter]       | [![size-formatter]][pho-formatter]  |
 
+[`@easymoney/bigint-money`]: https://github.com/frolovdev/easymoney/tree/master/packages/bigint-money
+[npm-bigint-money]: https://img.shields.io/npm/v/@easymoney/bigint-money?color=blue
+[pack-bigint-money]: https://www.npmjs.com/package/@easymoney/bigint-money
+[deps-bigint-money]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/bigint-money
+[david-bigint-money]: https://david-dm.org/frolovdev/easymoney?path=packages/bigint-money
+[size-bigint-money]: https://img.shields.io/bundlephobia/minzip/@easymoney/bigint-money
+[pho-bigint-money]: https://bundlephobia.com/result?p=@easymoney/bigint-money
 
 [`@easymoney/core`]: https://github.com/frolovdev/easymoney/tree/master/packages/core
 [npm-core]: https://img.shields.io/npm/v/@easymoney/core?color=blue
