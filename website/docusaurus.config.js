@@ -1,19 +1,20 @@
 module.exports = {
-  title: "easy-money",
-  tagline: "Library for operating monetary values in js ts",
+  title: "easymoney",
+  tagline: "Library for operating with monetary values in JavaScript and TypeScript",
   url: process.env.SITE_URL || "https://easy-money.now.sh",
   baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "whispers12", // Usually your GitHub org/user name.
-  projectName: "easy-money", // Usually your repo name.
+  projectName: "easymoney", // Usually your repo name.
   themeConfig: {
+    sidebarCollapsible: false,
     prism: {
       theme: require("prism-react-renderer/themes/vsDark"),
       darkTheme: require("prism-react-renderer/themes/vsDark")
     },
 
     navbar: {
-      title: "easy-money",
+      title: "easymoney",
       logo: {
         alt: "My Site Logo",
         src: "img/logo.png"
@@ -32,17 +33,12 @@ module.exports = {
           position: "right"
         },
         {
-          href: "https://github.com/whispers12/easy-money",
-          label: "Chat",
+          href: "https://spectrum.chat/easymoney",
+          label: "Spectrum",
           position: "right"
         },
         {
-          href: "https://github.com/whispers12/easy-money",
-          label: "Community",
-          position: "right"
-        },
-        {
-          href: "https://github.com/whispers12/easy-money",
+          href: "https://github.com/frolovdev/easymoney",
           label: "GitHub",
           position: "right"
         }
@@ -68,7 +64,7 @@ module.exports = {
             },
             {
               label: "API Reference",
-              to: "docs/introduction/getting-started"
+              to: "docs/api/api-reference"
             }
           ]
         },
@@ -77,7 +73,7 @@ module.exports = {
           items: [
             {
               label: "Spectrum",
-              href: "https://stackoverflow.com/questions/tagged/easy-money"
+              href: "https://spectrum.chat/easymoney"
             }
           ]
         },
@@ -86,12 +82,12 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/frolovdev/easy-money"
+              href: "https://github.com/frolovdev/easymoney"
             }
           ]
         }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} whispers12. Built with Docusaurus.`
+      copyright: `Copyright © ${new Date().getFullYear()} frolovdev. Built with Docusaurus.`
     }
   },
   presets: [

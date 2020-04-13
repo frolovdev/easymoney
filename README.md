@@ -26,7 +26,58 @@ library for operating with monetary values in JavaScript and TypeScript
 
 Feel free to ask any questions or just contact, I open to any suggestions or ideas
 
-[Facebook](https://www.facebook.com/andrey.frolov.94617)
+[Facebook](https://www.facebook.com/andrey.frolov.94617)    
+[Spectrum](https://spectrum.chat/easymoney)
+
+### Packages
+
+|      Package            |                   Version                |            Dependencies                    |               Size                  |
+| :---------------------: | :--------------------------------------: | :----------------------------------------: | :---------------------------------: |
+| [`@easymoney/bigint-money`]|[![npm-bigint-money]][pack-bigint-money]|[![deps-bigint-money]][david-bigint-money] |[![size-bigint-money]][pho-bigint-money]|
+| [`@easymoney/core`]     |      [![npm-core]][pack-core]            | [![deps-core]][david-core]                 | [![size-core]][pho-core]            |
+|[`@easymoney/currencies`]|   [![npm-currencies]][pack-currencies]   | [![deps-currencies]][david-currencies]     | [![size-currencies]][pho-currencies]|
+|  [`@easymoney/money`]   |    [![npm-money]][pack-money]            | [![deps-money]][david-money]               | [![size-money]][pho-money]          |
+|[`@easymoney/formatter`] |  [![npm-formatter]][pack-formatter]      | [![deps-formatter]][david-formatter]       | [![size-formatter]][pho-formatter]  |
+
+[`@easymoney/bigint-money`]: https://github.com/frolovdev/easymoney/tree/master/packages/bigint-money
+[npm-bigint-money]: https://img.shields.io/npm/v/@easymoney/bigint-money?color=blue
+[pack-bigint-money]: https://www.npmjs.com/package/@easymoney/bigint-money
+[deps-bigint-money]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/bigint-money
+[david-bigint-money]: https://david-dm.org/frolovdev/easymoney?path=packages/bigint-money
+[size-bigint-money]: https://img.shields.io/bundlephobia/minzip/@easymoney/bigint-money
+[pho-bigint-money]: https://bundlephobia.com/result?p=@easymoney/bigint-money
+
+[`@easymoney/core`]: https://github.com/frolovdev/easymoney/tree/master/packages/core
+[npm-core]: https://img.shields.io/npm/v/@easymoney/core?color=blue
+[pack-core]: https://www.npmjs.com/package/@easymoney/core
+[deps-core]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/core
+[david-core]: https://david-dm.org/frolovdev/easymoney?path=packages/core
+[size-core]: https://img.shields.io/bundlephobia/minzip/@easymoney/core
+[pho-core]: https://bundlephobia.com/result?p=@easymoney/core
+
+[`@easymoney/currencies`]: https://github.com/frolovdev/easymoney/tree/master/packages/currencies
+[npm-currencies]: https://img.shields.io/npm/v/@easymoney/currencies?color=blue
+[pack-currencies]: https://www.npmjs.com/package/@easymoney/currencies
+[deps-currencies]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/currencies
+[david-currencies]: https://david-dm.org/frolovdev/easymoney?path=packages/currencies
+[size-currencies]: https://img.shields.io/bundlephobia/minzip/@easymoney/currencies
+[pho-currencies]: https://bundlephobia.com/result?p=@easymoney/currencies
+
+[`@easymoney/money`]: https://github.com/frolovdev/easymoney/tree/master/packages/money
+[npm-money]: https://img.shields.io/npm/v/@easymoney/money?color=blue
+[pack-money]: https://www.npmjs.com/package/@easymoney/money
+[deps-money]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/money
+[david-money]: https://david-dm.org/frolovdev/easymoney?path=packages/money
+[size-money]: https://img.shields.io/bundlephobia/minzip/@easymoney/money
+[pho-money]: https://bundlephobia.com/result?p=@easymoney/money
+
+[`@easymoney/formatter`]: https://github.com/frolovdev/easymoney/tree/master/packages/formatter
+[npm-formatter]: https://img.shields.io/npm/v/@easymoney/formatter?color=blue
+[pack-formatter]: https://www.npmjs.com/package/@easymoney/formatter
+[deps-formatter]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/formatter
+[david-formatter]: https://david-dm.org/frolovdev/easymoney?path=packages/formatter
+[size-formatter]: https://img.shields.io/bundlephobia/minzip/@easymoney/formatter
+[pho-formatter]: https://bundlephobia.com/result?p=@easymoney/formatter
 
 ## Main features
 
@@ -39,7 +90,7 @@ Feel free to ask any questions or just contact, I open to any suggestions or ide
 
 ## Comparison with other money libraries
 
-|                    | easy-money | Dinero |
+|                    | easymoney | Dinero |
 | ------------------ | ---------- | ------ |
 | Custom calculators | ✅          | ❌      |
 | Big int support    | ✅          | ❌      |
@@ -50,13 +101,13 @@ Feel free to ask any questions or just contact, I open to any suggestions or ide
 ## Installation
 
 ```sh
-npm i easy-money
+npm i @easymoney/core @easymoney/money
 ```
 
 or
 
 ```sh
-yarn add easy-money
+yarn add @easymoney/core @easymoney/money
 ```
 
 ## Usage
