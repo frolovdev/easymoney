@@ -126,18 +126,18 @@ toward positive infinity
 
 **SUMMARY TABLE**
 
-| EASY-MONEY | HALF_EVEN    | HALF_UP | HALF_DOWN | FLOOR           | CEILING         | TOWARDS_ZERO   | AWAY_FROM_ZERO                        |
-| ---------- | ------------ | ------- | --------- | --------------- | --------------- | -------------- | ------------------------------------- |
-| JAVA       | HALF_EVEN    | HALF_UP | HALF_DOWN | FLOOR           | CEILING         | DOWN           | UP                                    |
-| PHP        |              |         |           |                 |                 |                |                                       |
-| IEEE 754   | Ties to even | —       | —         | Round toward -∞ | Round toward +∞ | Round toward 0 | Round to nearest, ties away from zero |
-| 5.5        | 6            | 6       | 5         | 5               | 6               | 5              | 6                                     |
-| 2.5        | 2            | 3       | 2         | 2               | 3               | 2              | 3                                     |
-| 1.6        | 2            | 2       | 2         | 1               | 2               | 1              | 2                                     |
-| 1.1        | 1            | 1       | 1         | 1               | 2               | 1              | 2                                     |
-| 1.0        | 1            | 1       | 1         | 1               | 1               | 1              | 1                                     |
-| -1.0       | -1           | -1      | -1        | -1              | -1              | -1             | -1                                    |
-| -1.1       | -1           | -1      | -1        | -2              | -1              | -1             | -2                                    |
-| -1.6       | -2           | -2      | -2        | -2              | -1              | -1             | -2                                    |
-| -2.5       | -3           | -3      | -2        | -3              | -2              | -2             | -3                                    |
-| -5.5       | -6           | -6      | -5        | -6              | -5              | -5             | -6                                    |
+| easymoney | HALF_EVEN    | HALF_UP | HALF_DOWN | FLOOR           | CEILING         | TOWARDS_ZERO   | AWAY_FROM_ZERO                        |
+| --------- | ------------ | ------- | --------- | --------------- | --------------- | -------------- | ------------------------------------- |
+| JAVA      | HALF_EVEN    | HALF_UP | HALF_DOWN | FLOOR           | CEILING         | DOWN           | UP                                    |
+| PHP       |              |         |           |                 |                 |                |                                       |
+| IEEE 754  | Ties to even | —       | —         | Round toward -∞ | Round toward +∞ | Round toward 0 | Round to nearest, ties away from zero |
+| 5.5       | 6            | 6       | 5         | 5               | 6               | 5              | 6                                     |
+| 2.5       | 2            | 3       | 2         | 2               | 3               | 2              | 3                                     |
+| 1.6       | 2            | 2       | 2         | 1               | 2               | 1              | 2                                     |
+| 1.1       | 1            | 1       | 1         | 1               | 2               | 1              | 2                                     |
+| 1.0       | 1            | 1       | 1         | 1               | 1               | 1              | 1                                     |
+| -1.0      | -1           | -1      | -1        | -1              | -1              | -1             | -1                                    |
+| -1.1      | -1           | -1      | -1        | -2              | -1              | -1             | -2                                    |
+| -1.6      | -2           | -2      | -2        | -2              | -1              | -1             | -2                                    |
+| -2.5      | -3           | -3      | -2        | -3              | -2              | -2             | -3                                    |
+| -5.5      | -6           | -6      | -5        | -6              | -5              | -5             | -6                                    |
