@@ -9,25 +9,53 @@ library for operating with monetary values in JavaScript and TypeScript
 
 📖 [Read the documentation](https://easymoney.now.sh/docs/introduction/getting-started)
 
+# Important Note ⚠️
+
+We currently hard work on adding non-intl formatting and support of cryptocurrencies, now we do not adhere to the semantic release, cause API (types) of packages might be changed.
+
+After adding formatting, we are going to commit our public API (publish 1.0.0) and support back-compatibility and semantic versioning. Please do not blame us for this decision; this allows us to move more iteratively (kind emoji).
+
+High-level roadmap described below.
+
 ## High-level roadmap
 
-| Feature                              | Status     |
-| ------------------------------------ | ---------- |
-| core functions in math               | ✅          |
-| custom calculators support           | ✅          |
-| tests on most codebase               | ✅          |
-| currencies                           | ✅          |
-| bigInt Support                       | ✅          |
-| docs base api, positive cases        | ✅          |
-| property-based tests on main methods | ✅          |
-| intl formatter for createMoney       | ✅          |
-| formatting                           | ❌(50%)     |
-| supporting crypto currencies         | not stable |
+| Feature                              | Status |
+| ------------------------------------ | ------ |
+| core functions in math               | ✅      |
+| custom calculators support           | ✅      |
+| tests on most codebase               | ✅      |
+| currencies                           | ✅      |
+| bigInt Support                       | ✅      |
+| docs base api, positive cases        | ✅      |
+| property-based tests on main methods | ✅      |
+| intl formatter for createMoney       | ✅      |
+| formatter-bigint                     | ❌      |
+| supporting crypto currencies         | ❌      |
+| formatter-crypto                     | ❌      |
 
 Feel free to ask any questions or just contact, I open to any suggestions or ideas
 
 [Facebook](https://www.facebook.com/andrey.frolov.94617)    
 [Spectrum](https://spectrum.chat/easymoney)
+
+
+## Why
+
+Javascript developers attempt to use just numbers or strings (i.g. https://github.com/MikeMcl/bignumber.js) to operate with monetary values. I think this is a wrong way, and strings or numbers are not well suited for financial applications for those main reasons:
+
+- tricky rounding
+- conversion
+- allocating (dividing money between )
+- formatting
+- working with cents (minor units of currency)
+
+The solution to these problems is the [Martin Fowler's Money Type](https://martinfowler.com/eaaCatalog/money.html) from ["Patterns of Enterprise Application Architecture"](https://www.amazon.ca/gp/product/0321127420/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=evertpot-20&creative=330641&linkCode=as2&creativeASIN=0321127420&linkId=3e43f20d3b2dd7e325a3feecdd2eaecd).
+
+It's an old pattern that is implemented in many other languages i.g.:
+
+- Java [Moneta](https://github.com/JavaMoney/jsr354-ri)
+- PHP [moneyphp](https://github.com/moneyphp/money)
+- Go [go-money](https://github.com/Rhymond/go-money)
 
 ### Packages
 
