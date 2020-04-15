@@ -1,4 +1,8 @@
-import { Currency, CurrencyUnitISO } from "@easymoney/core";
+import { Currency, CurrencyUnitISO, CurrencyUnit } from "@easymoney/core";
+
+export type CurrencyUnitCrypto = CurrencyUnit & { symbol: string } & {
+  [key: string]: any;
+};
 
 export interface CurrencyList<C> {
   contains: (currency: Currency) => boolean;
