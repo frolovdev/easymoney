@@ -13,7 +13,7 @@ library for operating with monetary values in JavaScript and TypeScript
 
 We currently hard work on adding non-intl formatting and support of cryptocurrencies, now we do not adhere to the semantic release, cause API (types) of packages might be changed.
 
-After adding formatting, we are going to commit our public API (publish 1.0.0) and support back-compatibility and semantic versioning. Please do not blame us for this decision; this allows us to move more iteratively (kind emoji).
+After adding formatting, we are going to commit our public API (publish 1.0.0) and support back-compatibility and semantic versioning. Please do not blame us for this decision; this allows us to move more iteratively 🚀.
 
 High-level roadmap described below.
 
