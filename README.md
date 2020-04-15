@@ -35,9 +35,19 @@ High-level roadmap described below.
 
 Feel free to ask any questions or just contact, I open to any suggestions or ideas
 
-[Facebook](https://www.facebook.com/andrey.frolov.94617)    
-[Spectrum](https://spectrum.chat/easymoney)
+## Quick start
 
+For main functionality you need just 2 packages (if you are not working with bigint)
+
+```sh
+npm i @easymoney/core @easymoney/money
+```
+
+or
+
+```sh
+yarn add @easymoney/core @easymoney/money
+```
 
 ## Why
 
@@ -57,7 +67,26 @@ It's an old pattern that is implemented in many other languages i.g.:
 - PHP [moneyphp](https://github.com/moneyphp/money)
 - Go [go-money](https://github.com/Rhymond/go-money)
 
-### Packages
+## Main features
+
+- 🎁 **composable and modular api**: easy tree shaking with webpack
+- 🛠 **statically typed**: first-class support of typescript
+- 💣 **reliable**: great dx and human readable errors
+- 🎁 **immutable**: immutable data
+- 💡 **big int suport**: support new standart of big int out of the box
+- 🧮 **custom calculators**: support custom calculators (for example if u need operating with big values like string) 
+
+## Comparison with other money libraries
+
+|                    | easymoney | Dinero |
+| ------------------ | --------- | ------ |
+| Custom calculators | ✅         | ❌      |
+| Big int support    | ✅         | ❌      |
+| Tree Shaking       | ✅         | ❌      |
+| Typescript         | ✅         | ❌      |
+| Flexible api       | ✅         | ❌      |
+
+## Packages
 
 |           Package           |                 Version                  |                Dependencies                |                   Size                   |
 | :-------------------------: | :--------------------------------------: | :----------------------------------------: | :--------------------------------------: |
@@ -107,47 +136,14 @@ It's an old pattern that is implemented in many other languages i.g.:
 [size-formatter]: https://img.shields.io/bundlephobia/minzip/@easymoney/formatter
 [pho-formatter]: https://bundlephobia.com/result?p=@easymoney/formatter
 
-## Main features
+## Comunity
 
-- 🎁 **composable and modular api**: easy tree shaking with webpack
-- 🛠 **statically typed**: first-class support of typescript
-- 💣 **reliable**: great dx and human readable errors
-- 🎁 **immutable**: immutable data
-- 💡 **big int suport**: support new standart of big int out of the box
-- 🧮 **custom calculators**: support custom calculators (for example if u need operating with big values like string) 
+- [Spectrum](https://spectrum.chat/easymoney)
+- [Ask question in twitter](https://twitter.com/frolovdev)
 
-## Comparison with other money libraries
+## Learn more
 
-|                    | easymoney | Dinero |
-| ------------------ | --------- | ------ |
-| Custom calculators | ✅         | ❌      |
-| Big int support    | ✅         | ❌      |
-| Tree Shaking       | ✅         | ❌      |
-| Typescript         | ✅         | ❌      |
-| Flexible api       | ✅         | ❌      |
-
-## Installation
-
-```sh
-npm i @easymoney/core @easymoney/money
-```
-
-or
-
-```sh
-yarn add @easymoney/core @easymoney/money
-```
-
-## Usage
-
-
-### Money
-```js
-
-```
-```js
-
-```
+[API Reference](https://easymoney.now.sh/docs/api/api-reference)
 
 ## Contributors ✨
 
