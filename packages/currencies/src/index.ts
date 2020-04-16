@@ -1,9 +1,9 @@
 import { currencies, currenciesMap } from "./currencies";
 
 import { createCurrencyList } from "./createCurrencyList";
-const isoCurrencyLsit = createCurrencyList(currencies);
+const isoCurrencyList = createCurrencyList(currencies);
 
-export { isoCurrencyLsit };
+export { isoCurrencyList };
 export { createAgregatedCurrencyList } from "./createAgregatedCurrencyList";
 export { CurrencyList, CurrencyListISO, CurrencyMap } from "./types";
 export { CurrencyUnit, CurrencyUnitISO } from "@easymoney/core";

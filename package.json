@@ -1,5 +1,5 @@
 {
-  "name": "easy-money",
+  "name": "easymoney",
   "version": "0.0.22",
   "author": "Whispers12",
   "sideEffects": false,
@@ -18,12 +18,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Whispers12/easy-money.git"
+    "url": "git+https://github.com/Whispers12/easymoney.git"
   },
   "bugs": {
-    "url": "https://github.com/Whispers12/easy-money/issues"
+    "url": "https://github.com/Whispers12/easymoney/issues"
   },
-  "homepage": "https://github.com/Whispers12/easy-money#readme",
+  "homepage": "https://github.com/Whispers12/easymoney#readme",
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
@@ -89,7 +89,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-size-snapshot": "^0.10.0",
-    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-typescript2": "^0.27.0",
     "rollup-plugin-visualizer": "^4.0.3",
     "ts-jest": "^25.3.1",
@@ -111,7 +111,7 @@
     "/dist"
   ],
   "keywords": [
-    "easy-money",
+    "easymoney",
     "money",
     "dinero",
     "dinero.js",

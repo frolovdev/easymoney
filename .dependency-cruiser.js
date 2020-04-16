@@ -188,7 +188,7 @@ module.exports = {
     // "moduleSystems": ["amd", "cjs", "es6", "tsd"],
 
     /* prefix for links in html and svg output (e.g. https://github.com/you/yourrepo/blob/develop/) */
-    prefix: "https://github.com/frolovdev/easy-money/blob/master/",
+    prefix: "https://github.com/frolovdev/easymoney/blob/master/",
 
     /* if true detect dependencies that only exist before typescript-to-javascript compilation */
     tsPreCompilationDeps: true,

@@ -7,8 +7,8 @@
 0 silly argv   cmd: 'npm'
 0 silly argv }
 1 notice cli v3.20.2
-2 verbose rootPath /Users/andreyfrolov/Documents/easy-money-private-fork
+2 verbose rootPath /Users/andreyfrolov/Documents/easymoney-private-fork
 3 info versioning independent
 4 error JSONError: Unexpected end of JSON input while parsing near '' in packages/bigint-money/package.json
-4 error     at module.exports (/Users/andreyfrolov/Documents/easy-money-private-fork/node_modules/parse-json/index.js:26:19)
-4 error     at parse (/Users/andreyfrolov/Documents/easy-money-private-fork/node_modules/@lerna/project/node_modules/load-json-file/index.js:15:9)
+4 error     at module.exports (/Users/andreyfrolov/Documents/easymoney-private-fork/node_modules/parse-json/index.js:26:19)
+4 error     at parse (/Users/andreyfrolov/Documents/easymoney-private-fork/node_modules/@lerna/project/node_modules/load-json-file/index.js:15:9)

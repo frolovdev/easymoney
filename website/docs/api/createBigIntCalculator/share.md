@@ -11,7 +11,7 @@ sidebar_label: share
 
 ```js
 
-import { createBigIntCalculator } from 'easy-money';
+import { createBigIntCalculator } from '@easymoney/bigint-money';
 
 const calculator = createBigIntCalculator();
 
