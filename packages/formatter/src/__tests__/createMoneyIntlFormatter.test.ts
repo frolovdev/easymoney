@@ -11,7 +11,7 @@ describe("createMoneyIntlFormatter", () => {
 
   describe("format", () => {
     it("should throw an error if currency doesn't exist", () => {
-      const money = { amount: 5, currency: "XBT" };
+      const money = { amount: 5, currency: "OLOLOL" };
 
       const expression = () => createFormatter().format(createMoney(money));
       expect(expression).toThrow();
