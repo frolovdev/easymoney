@@ -7,6 +7,5 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest",
   },
   modulePathIgnorePatterns: ["dist"],
-
   testMatch: [`**/*.test.ts`, `**/*.propbased-test.ts`],
 };
