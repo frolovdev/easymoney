@@ -26,9 +26,9 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
-    "prepublishOnly": "npm run build && npm run test-prehook",
-    "postpublish": "npm run clean",
-    "prebuild": "npm run clean",
+    "prepublishOnly": "yarn build && yarn test-prehook",
+    "postpublish": "yarn clean",
+    "prebuild": "yarn clean",
     "build": "../../node_modules/.bin/rollup -c",
     "clean": "../../node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",

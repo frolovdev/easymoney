@@ -3,7 +3,7 @@
   "version": "0.0.22",
   "author": "Whispers12",
   "sideEffects": false,
-  "private": false,
+  "private": true,
   "source": "src/main/index.ts",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
@@ -27,15 +27,15 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
-    "postinstall": "lerna bootstrap",
-    "bootstrap": "lerna bootstrap && lerna run build",
+    "postinstall": "lerna bootstrap --use-workspaces",
+    "bootstrap": "lerna bootstrap --use-workspaces && lerna run build",
     "tsc:build": "tsc --build",
-    "start:watch": "tsc --build --watch",
+    "start:watch": "tsc --build --watch ",
     "test": "lerna run test-prehook",
     "size": "lerna run size",
     "test:watch": "jest --watchAll",
-    "prepublishOnly": "npm run rebuild && npm run test-prehook",
-    "postpublish": "npm run clean",
+    "prepublishOnly": "yarn rebuild && npm run test-prehook",
+    "postpublish": "yarn clean",
     "clean": "cross-env fixme=fixme ./node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",
     "test-prop": "jest propbased-test",
@@ -46,6 +46,9 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "alias": {
     "money": "./packages/money/src/index.ts",
     "core": "./packages/core/src/index.ts",
