@@ -1,4 +1,3 @@
-# easymoney
 
 <div align="center" text-align="center">
   <img src="https://easymoney.now.sh/img/logo.png" align="center"
