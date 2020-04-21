@@ -1,8 +1,11 @@
+# easymoney
+
 <div align="center" text-align="center">
   <img src="https://easymoney.now.sh/img/logo.png" align="center"
      alt="easy money logo" width="300" height="159"></img>     
      <br></br>
 </div>
+
 
 
 library for operating with monetary values in JavaScript and TypeScript
@@ -155,7 +158,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/andrey-frolov-3b8579155/"><img src="https://avatars1.githubusercontent.com/u/30667180?v=4" width="100px;" alt=""/><br /><sub><b>Andrey Frolov</b></sub></a><br /><a href="https://github.com/frolovdev/easymoney/commits?author=frolovdev" title="Tests">⚠️</a> <a href="https://github.com/frolovdev/easymoney/commits?author=frolovdev" title="Documentation">📖</a> <a href="https://github.com/frolovdev/easymoney/commits?author=frolovdev" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/oneyan1"><img src="https://avatars1.githubusercontent.com/u/45971627?v=4" width="100px;" alt=""/><br /><sub><b>oneyan1</b></sub></a><br /><a href="https://github.com/frolovdev/easymoney/commits?author=oneyan1" title="Tests">⚠️</a> <a href="https://github.com/frolovdev/easymoney/commits?author=oneyan1" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/oneyan1"><img src="https://avatars1.githubusercontent.com/u/45971627?v=4" width="100px;" alt=""/><br /><sub><b>oneyan1</b></sub></a><br /><a href="https://github.com/frolovdev/easymoney/commits?author=oneyan1" title="Tests">⚠️</a> <a href="https://github.com/frolovdev/easymoney/commits?author=oneyan1" title="Documentation">📖</a> <a href="https://github.com/frolovdev/easymoney/commits?author=oneyan1" title="Code">💻</a></td>
   </tr>
 </table>
 

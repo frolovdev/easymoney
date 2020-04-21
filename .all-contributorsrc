@@ -5,7 +5,7 @@
   "imageSize": 100,
   "commit": false,
   "contributors": [
-     {
+    {
       "login": "frolovdev",
       "name": "Andrey Frolov",
       "avatar_url": "https://avatars1.githubusercontent.com/u/30667180?v=4",
@@ -23,7 +23,8 @@
       "profile": "https://github.com/oneyan1",
       "contributions": [
         "test",
-        "doc"
+        "doc",
+        "code"
       ]
     }
   ],
