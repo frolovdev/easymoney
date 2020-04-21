@@ -29,6 +29,7 @@
     "prepublishOnly": "yarn build && yarn test-prehook",
     "postpublish": "yarn clean",
     "prebuild": "yarn clean",
+    "start": "tsc -w --preserveWatchOutput",
     "build": "../../node_modules/.bin/rollup -c",
     "clean": "../../node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",
@@ -41,9 +42,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  },
-  "devDependencies": {
-    "typescript": "^3.8.3"
   },
   "engines": {
     "node": ">=10.8.x"

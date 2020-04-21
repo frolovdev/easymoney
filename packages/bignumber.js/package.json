@@ -26,13 +26,14 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
-    "prepublishOnly": "npm run build && npm run test-prehook",
-    "postpublish": "npm run clean",
-    "prebuild": "npm run clean",
+    "prepublishOnly": "yarn build && yarn test-prehook",
+    "postpublish": "yarn clean",
+    "prebuild": "yarn clean",
+    "start": "tsc -w --preserveWatchOutput",
     "build": "../../node_modules/.bin/rollup -c",
     "clean": "../../node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",
-    "test": "node_modules/.bin/jest --watchAll",
+    "test": "../../node_modules/.bin/jest --watchAll",
     "test-prop": "../../node_modules/.bin/jest propbased-test",
     "test-debug": "node --inspect-brk ../../node_modules/.bin/jest --runInBand",
     "test-prehook": "../../node_modules/.bin/jest --bail",
@@ -43,11 +44,15 @@
     "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
-    "@easymoney/core": "^0.0.1"
+    "@easymoney/core": "^0.0.1",
+    "@easymoney/money": "0.0.5"
   },
   "devDependencies": {
-    "typescript": "^3.8.3",
-    "@easymoney/core": "^0.0.1"
+    "@easymoney/money": "*",
+    "@easymoney/core": "*"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.0.0"
   },
   "engines": {
     "node": ">=10.8.x"
@@ -66,9 +71,5 @@
     "amount",
     "immutable",
     "monetary"
-  ],
-  "dependencies": {
-    "@easymoney/money": "0.0.5",
-    "bignumber.js": "^9.0.0"
-  }
+  ]
 }

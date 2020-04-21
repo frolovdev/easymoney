@@ -1,2 +1,2 @@
-export { createMoneyUnit, createMoney, MoneyBase } from "./money";
+export { createMoneyUnit, createMoney, MoneyBase, CreateMoney } from "./money";
 export { CalculatorBase } from "./calculator/";
