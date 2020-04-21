@@ -24,7 +24,7 @@ function construct(
   }
 
   return {
-    amount: newAmount ? newAmount : String(Number.parseInt(String(amount))),
+    amount: newAmount ? newAmount : fromString(String(amount)).toString(),
     currency
   };
 }

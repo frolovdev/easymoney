@@ -1,7 +1,7 @@
 import { createMoneyUnit } from "./money";
 import { createCalculator } from "../calculator";
-import { MoneyBase } from "./types";
+import { MoneyBase, CreateMoney } from "./types";
 
 const createMoney = createMoneyUnit(createCalculator());
 
-export { createMoneyUnit, createMoney, MoneyBase };
+export { createMoneyUnit, createMoney, MoneyBase, CreateMoney };

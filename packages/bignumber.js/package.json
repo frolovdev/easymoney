@@ -1,5 +1,5 @@
 {
-  "name": "@easymoney/core",
+  "name": "@easymoney/bignumber",
   "version": "0.0.1",
   "author": "Whispers12",
   "sideEffects": false,
@@ -43,6 +43,17 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
+  "peerDependencies": {
+    "@easymoney/core": "^0.0.1",
+    "@easymoney/money": "0.0.5"
+  },
+  "devDependencies": {
+    "@easymoney/money": "*",
+    "@easymoney/core": "*"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.0.0"
+  },
   "engines": {
     "node": ">=10.8.x"
   },
@@ -60,6 +71,5 @@
     "amount",
     "immutable",
     "monetary"
-  ],
-  "dependencies": {}
+  ]
 }

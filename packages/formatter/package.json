@@ -29,6 +29,7 @@
     "prepublishOnly": "yarn build && yarn test-prehook",
     "postpublish": "yarn clean",
     "prebuild": "yarn clean",
+    "start": "tsc -w --preserveWatchOutput",
     "build": "../../node_modules/.bin/rollup -c",
     "clean": "../../node_modules/.bin/rimraf dist/",
     "deploy": "cd website && now",
@@ -48,7 +49,7 @@
     "@easymoney/currencies": "^0.0.2"
   },
   "devDependencies": {
-    "@easymoney/core": "^0.0.1",
+    "@easymoney/core": "*",
     "@easymoney/money": "*",
     "@easymoney/currencies": "*"
   },

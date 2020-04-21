@@ -54,14 +54,22 @@ function parseIntegerPart(number: string): string {
   }
 
   let nonZero = false;
+  let withPlus = false;
 
   for (let position = 0; position < number.length; position++) {
     const digit = number[position];
 
-    if (!numbers[digit] && !(0 === position && "-" === digit)) {
+    if (
+      !numbers[digit] &&
+      !(0 === position && ("-" === digit || "+" === digit))
+    ) {
       throw new Error(
         `Invalid integer part ${number}. Invalid digit ${digit} found`
       );
+    }
+
+    if (0 === position && digit === "+") {
+      withPlus = true;
     }
 
     if (false === nonZero && digit === "0") {
@@ -69,6 +77,10 @@ function parseIntegerPart(number: string): string {
     }
 
     nonZero = true;
+  }
+
+  if (withPlus) {
+    return number.substr(1);
   }
 
   return number;

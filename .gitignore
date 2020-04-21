@@ -4,3 +4,4 @@ dist/
 .now
 .idea
 tsconfig.tsbuildinfo
+yarn-error.log
