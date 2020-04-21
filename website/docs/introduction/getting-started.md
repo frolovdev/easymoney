@@ -7,25 +7,25 @@ sidebar_label: Getting Started
 
 # Getting Started
 
-easy-money is javascript library for working with monetary values
+easymoney is javascript library for working with monetary values
 
 ## Installation
 
 ```bash
-npm install --save easy-money
+npm install --save @easymoney/core @easymoney/money
 ```
 
 ```bash
-yarn add easy-money
+yarn add @easymoney/core @easymoney/money
 ```
 
 For more details, see the Installation page.
 
 ## Help and Discussion
 
-You can also ask questions on [Stack Overflow](https://stackoverflow.com) using the **[#easy-money](https://stackoverflow.com/questions/tagged/easy-money)** tag.
+You can also ask questions on [Stack Overflow](https://stackoverflow.com) using the **[#easymoney](https://stackoverflow.com/questions/tagged/easymoney)** tag.
 
-If you have a bug report or need to leave other feedback, **[please file an issue](https://github.com/frolovdev/easy-money/issues)** on the Github repo
+If you have a bug report or need to leave other feedback, **[please file an issue](https://github.com/frolovdev/easymoney/issues)** on the Github repo
 
 ## Basic examples of api
 
@@ -35,7 +35,7 @@ Add
 
 ```js
 
-import { createMoney } from 'easy-money';
+import { createMoney } from '@easymoney/money';
 
 const money1 = createMoney({ amount: 100, currency: 'USD' });
 
@@ -50,7 +50,7 @@ Multiplication
 
 ```js
 
-import { createMoney } from 'easy-money';
+import { createMoney } from '@easymoney/money';
 
 const money1 = createMoney({ amount: 100, currency: 'USD' });
 
@@ -65,17 +65,17 @@ const money3 = money1.multiply(money2).getAmount();
 
 ```js
 
-import { createCurrencyList, isoCurrencyList, currencies } from 'easy-money';
+import { createCurrencyList, isoCurrencyList, currencies } from '@easymoney/currencies';
 
 /* it's equal already prepared isoCurrencyList, but here just for example */
 const handmadeCurrencyList = createCurrencyList(currencies);
 
 // check if list contains XBT
-const isXBTExist = isoCurrencyLsit.contains({ minorUnit: 2, code: 'XBT' });
+const isXBTExist = isoCurrencyList.contains({ minorUnit: 2, code: 'XBT' });
 // => false
 
 // check if list contains USD
-const isUSDExist = isoCurrencyLsit.contains({ minorUnit: 2, code: 'USD' });
+const isUSDExist = isoCurrencyList.contains({ minorUnit: 2, code: 'USD' });
 // => true
 
 ```

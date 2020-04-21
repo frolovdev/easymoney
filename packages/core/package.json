@@ -1,0 +1,65 @@
+{
+  "name": "@easymoney/core",
+  "version": "0.0.1",
+  "author": "Whispers12",
+  "sideEffects": false,
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "umd:main": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "maintainers": [
+    {
+      "name": "Whispers12",
+      "email": "githubFrolov@yandex.ru"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frolovdev/easymoney.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frolovdev/easymoney/issues"
+  },
+  "homepage": "https://github.com/frolovdev/easymoney#readme",
+  "license": "MIT",
+  "description": "Best way to do money in js",
+  "scripts": {
+    "prepublishOnly": "yarn build && yarn test-prehook",
+    "postpublish": "yarn clean",
+    "prebuild": "yarn clean",
+    "start": "tsc -w --preserveWatchOutput",
+    "build": "../../node_modules/.bin/rollup -c",
+    "clean": "../../node_modules/.bin/rimraf dist/",
+    "deploy": "cd website && now",
+    "test": "../../node_modules/.bin/jest --watchAll",
+    "test-prop": "../../node_modules/.bin/jest propbased-test",
+    "test-debug": "node --inspect-brk ../../node_modules/.bin/jest --runInBand",
+    "test-prehook": "../../node_modules/.bin/jest --bail",
+    "size": "size-limit"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "engines": {
+    "node": ">=10.8.x"
+  },
+  "files": [
+    "/README.md",
+    "/package.json",
+    "/src",
+    "/dist"
+  ],
+  "keywords": [
+    "easymoney",
+    "money",
+    "dinero",
+    "dinero.js",
+    "amount",
+    "immutable",
+    "monetary"
+  ],
+  "dependencies": {}
+}

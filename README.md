@@ -1,31 +1,74 @@
-# easy-money
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+# easymoney
 
-Money library for working with monetary values in js
+<div align="center" text-align="center">
+  <img src="https://easymoney.now.sh/img/logo.png" align="center"
+     alt="easy money logo" width="300" height="159"></img>     
+     <br></br>
+</div>
 
-WIP, (03.14.2020) we are still work in progress.
 
-High-level roadmap
 
-| Feature                           | Status |
-| --------------------------------- | ------ |
-| core functions in math            | ✅      |
-| custom calculators support        | ✅      |
-| tests on most codebase            | ✅      |
-| currencies                        | ✅      |
-| bigInt Support                    | ✅      |
-| docs base api, positive cases     | ✅      |
-| formatting                        | ❌(30%) |
-| docs and community                | ❌(10%) |
-| currencies stable api with crypto | ❌      |
+library for operating with monetary values in JavaScript and TypeScript
+
+📖 [Read the documentation](https://easymoney.now.sh/docs/introduction/getting-started)
+
+# Important Note ⚠️
+
+We currently hard work on adding non-intl formatting and support of cryptocurrencies, now we do not adhere to the semantic release, cause API (types) of packages might be changed.
+
+After adding formatting, we are going to commit our public API (publish 1.0.0) and support back-compatibility and semantic versioning. Please do not blame us for this decision; this allows us to move more iteratively 🚀.
+
+High-level roadmap described below.
+
+## High-level roadmap
+
+| Feature                              | Status |
+| ------------------------------------ | ------ |
+| core functions in math               | ✅      |
+| custom calculators support           | ✅      |
+| tests on most codebase               | ✅      |
+| currencies                           | ✅      |
+| bigInt Support                       | ✅      |
+| docs base api, positive cases        | ✅      |
+| property-based tests on main methods | ✅      |
+| intl formatter for createMoney       | ✅      |
+| formatter-bigint                     | ❌      |
+| supporting crypto currencies         | ❌      |
+| formatter-crypto                     | ❌      |
 
 Feel free to ask any questions or just contact, I open to any suggestions or ideas
 
-[Facebook](https://www.facebook.com/andrey.frolov.94617)
+## Quick start
 
-[Telegram](https://t.me/frolovandrei)
+For main functionality you need just 2 packages (if you are not working with bigint)
+
+```sh
+npm i @easymoney/core @easymoney/money
+```
+
+or
+
+```sh
+yarn add @easymoney/core @easymoney/money
+```
+
+## Why
+
+Javascript developers attempt to use just numbers or strings (i.g. https://github.com/MikeMcl/bignumber.js) to operate with monetary values. I think this is a wrong way, and strings or numbers are not well suited for financial applications for those main reasons:
+
+- tricky rounding
+- conversion
+- allocating (dividing money between )
+- formatting
+- working with cents (minor units of currency)
+
+The solution to these problems is the [Martin Fowler's Money Type](https://martinfowler.com/eaaCatalog/money.html) from ["Patterns of Enterprise Application Architecture"](https://www.amazon.ca/gp/product/0321127420/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=evertpot-20&creative=330641&linkCode=as2&creativeASIN=0321127420&linkId=3e43f20d3b2dd7e325a3feecdd2eaecd).
+
+It's an old pattern that is implemented in many other languages i.g.:
+
+- Java [Moneta](https://github.com/JavaMoney/jsr354-ri)
+- PHP [moneyphp](https://github.com/moneyphp/money)
+- Go [go-money](https://github.com/Rhymond/go-money)
 
 ## Main features
 
@@ -38,192 +81,72 @@ Feel free to ask any questions or just contact, I open to any suggestions or ide
 
 ## Comparison with other money libraries
 
-|                    | easy-money | Dinero |
-| ------------------ | ---------- | ------ |
-| Custom calculators | ✅          | ❌      |
-| Big int support    | ✅          | ❌      |
-| Tree Shaking       | ✅          | ❌      |
-| Typescript         | ✅          | ❌      |
-| Flexible api       | ✅          | ❌      |
+|                    | easymoney | Dinero |
+| ------------------ | --------- | ------ |
+| Custom calculators | ✅         | ❌      |
+| Big int support    | ✅         | ❌      |
+| Tree Shaking       | ✅         | ❌      |
+| Typescript         | ✅         | ❌      |
+| Flexible api       | ✅         | ❌      |
 
-## Installation
+## Packages
 
-```sh
-npm i easy-money
-```
+|           Package           |                 Version                  |                Dependencies                |                   Size                   |
+| :-------------------------: | :--------------------------------------: | :----------------------------------------: | :--------------------------------------: |
+| [`@easymoney/bigint-money`] | [![npm-bigint-money]][pack-bigint-money] | [![deps-bigint-money]][david-bigint-money] | [![size-bigint-money]][pho-bigint-money] |
+|     [`@easymoney/core`]     |         [![npm-core]][pack-core]         |         [![deps-core]][david-core]         |         [![size-core]][pho-core]         |
+|  [`@easymoney/currencies`]  |   [![npm-currencies]][pack-currencies]   |   [![deps-currencies]][david-currencies]   |   [![size-currencies]][pho-currencies]   |
+|    [`@easymoney/money`]     |        [![npm-money]][pack-money]        |        [![deps-money]][david-money]        |        [![size-money]][pho-money]        |
+|  [`@easymoney/formatter`]   |    [![npm-formatter]][pack-formatter]    |    [![deps-formatter]][david-formatter]    |    [![size-formatter]][pho-formatter]    |
 
-or
+[`@easymoney/bigint-money`]: https://github.com/frolovdev/easymoney/tree/master/packages/bigint-money
+[npm-bigint-money]: https://img.shields.io/npm/v/@easymoney/bigint-money?color=blue
+[pack-bigint-money]: https://www.npmjs.com/package/@easymoney/bigint-money
+[deps-bigint-money]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/bigint-money
+[david-bigint-money]: https://david-dm.org/frolovdev/easymoney?path=packages/bigint-money
+[size-bigint-money]: https://img.shields.io/bundlephobia/minzip/@easymoney/bigint-money
+[pho-bigint-money]: https://bundlephobia.com/result?p=@easymoney/bigint-money
 
-```sh
-yarn add easy-money
-```
+[`@easymoney/core`]: https://github.com/frolovdev/easymoney/tree/master/packages/core
+[npm-core]: https://img.shields.io/npm/v/@easymoney/core?color=blue
+[pack-core]: https://www.npmjs.com/package/@easymoney/core
+[deps-core]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/core
+[david-core]: https://david-dm.org/frolovdev/easymoney?path=packages/core
+[size-core]: https://img.shields.io/bundlephobia/minzip/@easymoney/core
+[pho-core]: https://bundlephobia.com/result?p=@easymoney/core
 
-## Usage
+[`@easymoney/currencies`]: https://github.com/frolovdev/easymoney/tree/master/packages/currencies
+[npm-currencies]: https://img.shields.io/npm/v/@easymoney/currencies?color=blue
+[pack-currencies]: https://www.npmjs.com/package/@easymoney/currencies
+[deps-currencies]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/currencies
+[david-currencies]: https://david-dm.org/frolovdev/easymoney?path=packages/currencies
+[size-currencies]: https://img.shields.io/bundlephobia/minzip/@easymoney/currencies
+[pho-currencies]: https://bundlephobia.com/result?p=@easymoney/currencies
 
+[`@easymoney/money`]: https://github.com/frolovdev/easymoney/tree/master/packages/money
+[npm-money]: https://img.shields.io/npm/v/@easymoney/money?color=blue
+[pack-money]: https://www.npmjs.com/package/@easymoney/money
+[deps-money]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/money
+[david-money]: https://david-dm.org/frolovdev/easymoney?path=packages/money
+[size-money]: https://img.shields.io/bundlephobia/minzip/@easymoney/money
+[pho-money]: https://bundlephobia.com/result?p=@easymoney/money
 
-### Money
-```js
+[`@easymoney/formatter`]: https://github.com/frolovdev/easymoney/tree/master/packages/formatter
+[npm-formatter]: https://img.shields.io/npm/v/@easymoney/formatter?color=blue
+[pack-formatter]: https://www.npmjs.com/package/@easymoney/formatter
+[deps-formatter]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/formatter
+[david-formatter]: https://david-dm.org/frolovdev/easymoney?path=packages/formatter
+[size-formatter]: https://img.shields.io/bundlephobia/minzip/@easymoney/formatter
+[pho-formatter]: https://bundlephobia.com/result?p=@easymoney/formatter
 
-```
-```js
+## Comunity
 
-```
+- [Spectrum](https://spectrum.chat/easymoney)
+- [Ask question in twitter](https://twitter.com/frolovdev)
 
-### Pass custom calculator 
+## Learn more
 
-In example we just pass base calculator
-
-
-
-### Formatting
-
-### Working with currencies
-
-
-## IEEE 754 starndart
-
-WIKI
-
-
-Roundings to nearest
-- **Round to nearest, ties to even** – rounds to the nearest value; if the number falls midway, it is rounded to the nearest value with an even least significant digit; this is the default for binary floating point and the recommended default for decimal.
-- **Round to nearest, ties away from zero** – rounds to the nearest value; if the number falls midway, it is rounded to the nearest value above (for positive numbers) or below (for negative numbers); this is intended as an option for decimal floating point.
-
-Directed roundings
-Round toward 0 – directed rounding towards zero (also known as truncation).
-Round toward +∞ – directed rounding towards positive infinity (also known as rounding up or ceiling).
-Round toward −∞ – directed rounding towards negative infinity (also known as rounding down or floor).
-
-| Mode / Example Value            | +11.5 | +12.5 | −11.5 | −12.5 |
-| ------------------------------- | ----- | ----- | ----- | ----- |
-| to nearest, ties to even        | +12.0 | +12.0 | −12.0 | −12.0 |
-| to nearest, ties away from zero | +12.0 | +13.0 | -12.0 | -13.0 |
-| toward 0                        | +11.0 | +12.0 | -11.0 | -12.0 |
-| toward +∞                       | +12.0 | +13.0 | −11.0 | -12.0 |
-| toward −∞                       | +11.0 | +12.0 | −12.0 | −13.0 |
-
-
-## EASY-MONEY
-
-
-**HALF_EVEN**
-aka (Banker's Rounding)
-
-| +5.0 | +5.1 | +5.4 | +5.5    | +5.6 | +5.9 | +6.0   | +6.1 | +6.4 | +6.5    | +6.6 | +6.9 | +7.0 |
-| ---- | ---- | ---- | ------- | ---- | ---- | ------ | ---- | ---- | ------- | ---- | ---- | ---- |
-| +5   | +5   | +5   | +6      | +6   | +6   | **6**  | +6   | +6   | +6      | +7   | +7   | +7   |
-|      |      |      | **-->** |      |      | center |      |      | **<--** |      |      |      |
-
-
-| -7.0 | -6.9 | -6.6 | -6.5    | -6.4 | -6.1 | -6.0   | -5.9 | -5.6 | -5.5    | -5.4 | -5.1 | -5.0 |
-| ---- | ---- | ---- | ------- | ---- | ---- | ------ | ---- | ---- | ------- | ---- | ---- | ---- |
-| -7   | -7   | -7   | -6      | -6   | -6   | **-6** | -6   | -6   | -6      | -5   | -5   | -5   |
-|      |      |      | **-->** |      |      | center |      |      | **<--** |      |      |      |
-
-
-**HALF_UP**
-aka arithmetic rounding | half up with symmetric implementation (like in Java, PHP or Python)
-
-| +5.0 | +5.1 | +5.4 | +5.5   | +5.6 | +5.9 | +6.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ---- |
-| +5   | +5   | +5   | +6     | +6   | +6   | 6    |
-| <—   | <—   | <—   | **—>** | —>   | —>   | <—   |
-
-| -7.0 | -6.9 | -6.6 | -6.5   | -6.4 | -6.1 | -6.0   | -5.9 | -5.6 | -5.5   | -5.4 | -5.1 | -5.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ------ | ---- | ---- | ------ | ---- | ---- | ---- |
-| -7   | -7   | -7   | -7     | -6   | -6   | **-6** | -6   | -6   | -6     | -5   | -5   | -5   |
-|      |      |      | **<—** |      |      |        |      |      | **<—** |      |      |      |
-
-
-**HALF_DOWN**
-aka arithmetic rounding | half down with symmetric implementation 
-
-| +5.0 | +5.1 | +5.4 | +5.5   | +5.6 | +5.9 | +6.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ---- |
-| +5   | +5   | +5   | +5     | +6   | +6   | 6    |
-| <—   | <—   | <—   | **<—** | —>   | —>   | <—   |
-
-| -7.0 | -6.9 | -6.6 | -6.5    | -6.4 | -6.1 | -6.0   | -5.9 | -5.6 | -5.5   | -5.4 | -5.1 | -5.0 |
-| ---- | ---- | ---- | ------- | ---- | ---- | ------ | ---- | ---- | ------ | ---- | ---- | ---- |
-| -7   | -7   | -7   | -6      | -6   | -6   | **-6** | -6   | -6   | -5     | -5   | -5   | -5   |
-|      |      |      | **-->** |      |      |        |      |      | **—>** |      |      |      |
-
-
-**FLOOR**
-TOWARD negative infinity
-
-| +5.0 | +5.1 | +5.4 | +5.5   | +5.6 | +5.9 | +6.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ---- |
-| +5   | +5   | +5   | +5     | +5   | +5   | 6    |
-| <—   | <—   | <—   | **<—** | <—   | <—   | <—   |
-
-
-| -6.0 | -5.9 | -5.6 | -5.5   | -5.4 | -5.2 | -5.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ---- |
-| -6   | -6   | -6   | -6     | -6   | -6   | -5   |
-| —>   | <—   | <—   | **<—** | <—   | <—   | —>   |
-
-**CEILING**
-toward positive infinity
-
-| +5.0 | +5.1 | +5.4 | +5.5   | +5.6 | +5.9 | +6.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ---- |
-| +5   | +6   | +6   | +6     | +6   | +6   | 6    |
-| <—   | —>   | —>   | **—>** | —>   | —>   | <—   |
-
-
-| -6.0 | -5.9 | -5.6 | -5.5   | -5.4 | -5.2 | -5.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ---- |
-| -6   | -5   | -5   | -5     | -5   | -5   | -5   |
-| —>   | —>   | —>   | **—>** | —>   | —>   | —>   |
-
-
-**TOWARD_ZERO**
-
-| +5.0 | +5.1 | +5.4 | +5.5   | +5.6 | +5.9 | +6.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ---- |
-| +5   | +5   | +5   | +5     | +5   | +5   | +6   |
-| <—   | <—   | <—   | **<—** | <—   | <—   | <—   |
-
-
-| -6.0 | -5.9 | -5.6 | -5.5   | -5.4 | -5.2 | -5.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ---- |
-| -6   | -5   | -5   | -5     | -5   | -5   | -5   |
-| —>   | —>   | —>   | **—>** | —>   | —>   | —>   |
-
-
-
-**AWAY_FROM_ZERO**
-
-| +5.0 | +5.1 | +5.4 | +5.5   | +5.6 | +5.9 | +6.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ---- |
-| +5   | +6   | +6   | +6     | +6   | +6   | +6   |
-| <—   | —>   | —>   | **—>** | —>   | —>   | <—   |
-
-
-| -6.0 | -5.9 | -5.6 | -5.5   | -5.4 | -5.2 | -5.0 |
-| ---- | ---- | ---- | ------ | ---- | ---- | ---- |
-| -6   | -6   | -6   | -6     | -6   | -6   | -5   |
-| —>   | <—   | <—   | **<—** | <—   | <—   | —>   |
-
-**SUMMARY TABLE**
-
-| EASY-MONEY | HALF_EVEN    | HALF_UP | HALF_DOWN | FLOOR           | CEILING         | TOWARDS_ZERO   | AWAY_FROM_ZERO                        |
-| ---------- | ------------ | ------- | --------- | --------------- | --------------- | -------------- | ------------------------------------- |
-| JAVA       | HALF_EVEN    | HALF_UP | HALF_DOWN | FLOOR           | CEILING         | DOWN           | UP                                    |
-| PHP        |              |         |           |                 |                 |                |                                       |
-| IEEE 754   | Ties to even | —       | —         | Round toward -∞ | Round toward +∞ | Round toward 0 | Round to nearest, ties away from zero |
-| 5.5        | 6            | 6       | 5         | 5               | 6               | 5              | 6                                     |
-| 2.5        | 2            | 3       | 2         | 2               | 3               | 2              | 3                                     |
-| 1.6        | 2            | 2       | 2         | 1               | 2               | 1              | 2                                     |
-| 1.1        | 1            | 1       | 1         | 1               | 2               | 1              | 2                                     |
-| 1.0        | 1            | 1       | 1         | 1               | 1               | 1              | 1                                     |
-| -1.0       | -1           | -1      | -1        | -1              | -1              | -1             | -1                                    |
-| -1.1       | -1           | -1      | -1        | -2              | -1              | -1             | -2                                    |
-| -1.6       | -2           | -2      | -2        | -2              | -1              | -1             | -2                                    |
-| -2.5       | -3           | -3      | -2        | -3              | -2              | -2             | -3                                    |
-| -5.5       | -6           | -6      | -5        | -6              | -5              | -5             | -6                                    |
-
+[API Reference](https://easymoney.now.sh/docs/api/api-reference)
 
 ## Contributors ✨
 

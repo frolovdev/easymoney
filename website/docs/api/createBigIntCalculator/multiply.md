@@ -11,7 +11,7 @@ sidebar_label: multiply
 
 ```js
 
-import { createBigIntCalculator } from 'easy-money';
+import { createBigIntCalculator } from '@easymoney/bigint-money';
 
 const calculator = createBigIntCalculator();
 

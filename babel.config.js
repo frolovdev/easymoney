@@ -1,6 +1,7 @@
-const config = {
-  presets: ["@babel/typescript"],
-  plugins: ["@babel/plugin-syntax-bigint"]
+module.exports = {
+  presets: [
+    ["@babel/preset-env", { targets: { node: "current" } }],
+    "@babel/preset-react",
+    // "@babel/preset-typescript"
+  ],
 };
-
-module.exports = config;

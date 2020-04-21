@@ -11,7 +11,7 @@ sidebar_label: absolute
 
 ```js
 
-import { createCalculator } from 'easy-money';
+import { createCalculator } from '@easymoney/money';
 
 const calculator = createCalculator();
 

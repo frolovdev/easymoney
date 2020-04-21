@@ -11,53 +11,76 @@ This section documents the complete library api.
 
 You can watch examples of using methods in original repo modulename/______tests______ folder
 
-## Money
+## @easymoney/money
 
-- [createMoney](createMoney/index.md)
-  - [absolute](createMoney/absolute.md)
-  - [add](createMoney/add.md)
-  - [allocate](createMoney/allocate.md)
-  - [allocateTo](createMoney/allocateTo.md)
-  - [compare](createMoney/compare.md)
-  - [divide](createMoney/divide.md)
-  - [equals](createMoney/equalse.md)
-  - [getAmount](createMoney/getAmount.md)
-  - [getCurrency](createMoney/getCurrency.md)
-  - [greaterThan](createMoney/greaterThan.md)
-  - [greaterThanOrEqual](createMoney/greaterThanOrEqual.md)
-  - [isNegative](createMoney/isNegative.md)
-  - [isPositive](createMoney/isPositive.md)
-  - [isSameCurrency](createMoney/isSameCurrency.md)
-  - [isZero](createMoney/isZero.md)
-  - [lessThan](createMoney/lessThan.md)
-  - [lessThanOrEqual](createMoney/lessThanOrEqual.md)
-  - [mod](createMoney/mod.md)
-  - [multiply](createMoney/multiply.md)
-  - [negative](createMoney/negative.md)
-  - [ratioOf](createMoney/ratioOf.md)
-  - [subtract](createMoney/subtract.md)
-- [createMoneyUnit](createMoney/index.md)
-- [createBigIntMoney](createBigIntMoney/index.md)
-  - [add](createBigIntMoney/add.md)
-  - [allocate](createBigIntMoney/allocate.md)
-  - [allocateTo](createBigIntMoney/allocateTo.md)
-  - [compare](createBigIntMoney/compare.md)
-  - [divide](createBigIntMoney/divide.md)
-  - [equals](createBigIntMoney/equalse.md)
-  - [getAmount](createBigIntMoney/getAmount.md)
-  - [getCurrency](createBigIntMoney/getCurrency.md)
-  - [getSource](createBigIntMoney/getSource.md)
-  - [greaterThan](createBigIntMoney/greaterThan.md)
-  - [greaterThanOrEqual](createBigIntMoney/greaterThanOrEqual.md)
-  - [isSameCurrency](createBigIntMoney/isSameCurrency.md)
-  - [lessThan](createBigIntMoney/lessThan.md)
-  - [lessThanOrEqual](createBigIntMoney/lessThanOrEqual.md)
-  - [multiply](createBigIntMoney/multiply.md)
-  - [subtract](createBigIntMoney/subtract.md)
+- [createMoney](money/createMoney/Description.md)
+  - [absolute](money/createMoney/absolute.md)
+  - [add](money/createMoney/add.md)
+  - [allocate](money/createMoney/allocate.md)
+  - [allocateTo](money/createMoney/allocateTo.md)
+  - [compare](money/createMoney/compare.md)
+  - [divide](money/createMoney/divide.md)
+  - [equals](money/createMoney/equalse.md)
+  - [getAmount](money/createMoney/getAmount.md)
+  - [getCurrency](money/createMoney/getCurrency.md)
+  - [greaterThan](money/createMoney/greaterThan.md)
+  - [greaterThanOrEqual](money/createMoney/greaterThanOrEqual.md)
+  - [isNegative](money/createMoney/isNegative.md)
+  - [isPositive](money/createMoney/isPositive.md)
+  - [isSameCurrency](money/createMoney/isSameCurrency.md)
+  - [isZero](money/createMoney/isZero.md)
+  - [lessThan](money/createMoney/lessThan.md)
+  - [lessThanOrEqual](money/createMoney/lessThanOrEqual.md)
+  - [mod](money/createMoney/mod.md)
+  - [multiply](money/createMoney/multiply.md)
+  - [negative](money/createMoney/negative.md)
+  - [ratioOf](money/createMoney/ratioOf.md)
+  - [subtract](money/createMoney/subtract.md)
+
+
+## @easymoney/bigint-money
+
+- [createBigIntMoney](bigint-money/createBigIntMoney/Description.md)
+  - [add](bigint-money/createBigIntMoney/add.md)
+  - [allocate](bigint-money/createBigIntMoney/allocate.md)
+  - [allocateTo](bigint-money/createBigIntMoney/allocateTo.md)
+  - [compare](bigint-money/createBigIntMoney/compare.md)
+  - [divide](bigint-money/createBigIntMoney/divide.md)
+  - [equals](bigint-money/createBigIntMoney/equalse.md)
+  - [getAmount](bigint-money/createBigIntMoney/getAmount.md)
+  - [getCurrency](bigint-money/createBigIntMoney/getCurrency.md)
+  - [getSource](bigint-money/createBigIntMoney/getSource.md)
+  - [greaterThan](bigint-money/createBigIntMoney/greaterThan.md)
+  - [greaterThanOrEqual](bigint-money/createBigIntMoney/greaterThanOrEqual.md)
+  - [isSameCurrency](bigint-money/createBigIntMoney/isSameCurrency.md)
+  - [lessThan](bigint-money/createBigIntMoney/lessThan.md)
+  - [lessThanOrEqual](bigint-money/createBigIntMoney/lessThanOrEqual.md)
+  - [multiply](bigint-money/createBigIntMoney/multiply.md)
+  - [subtract](bigint-money/createBigIntMoney/subtract.md)
+
+
+## @easymoney/currencies
+
+- [createCurrencyList](currencies/createCurrencyList/Description.md)
+  - [contains](currencies/createCurrencyList/contains.md)
+  - [getCurrencies](currencies/createCurrencyList/getCurrencies.md)
+  - [subUnitFor](currencies/createCurrencyList/subUnitFor.md)
+- [createAgregatedCurrencyList](currencies/createAgregatedCurrencyList/Description.md)
+  - [contains](currencies/createAgregatedCurrencyList/contains.md)
+  - [getCurrencies](currencies/createAgregatedCurrencyList/getCurrencies.md)
+  - [subUnitFor](currencies/createAgregatedCurrencyList/subUnitFor.md)
+
+## @easymoney/formatter
+
+- [createMoneyIntlFormatter](formatter/createMoneyIntlFormatter/Description.md)
+  - [format](formatter/createMoneyIntlFormatter/format.md)
+
+
+
 
 ## Calculator
 
-- [createCalculator](createCalculator/index.md)
+- [createCalculator](createCalculator/Description.md)
   - [absolute](createCalculator/absolute.md)
   - [add](createCalculator/add.md)
   - [ceil](createCalculator/ceil.md)
@@ -69,7 +92,7 @@ You can watch examples of using methods in original repo modulename/______tests_
   - [round](createCalculator/round.md)
   - [share](createCalculator/share.md)
   - [subtract](createCalculator/subtract.md)
-- [createBigIntCalculator](createBigIntCalculator/index.md)
+- [createBigIntCalculator](createBigIntCalculator/Description.md)
   - [absolute](createBigIntCalculator/absolute.md)
   - [add](createBigIntCalculator/add.md)
   - [compare](createBigIntCalculator/compare.md)
@@ -79,12 +102,3 @@ You can watch examples of using methods in original repo modulename/______tests_
   - [share](createBigIntCalculator/share.md)
   - [subtract](createBigIntCalculator/subtract.md)
 
-## Currencies
-
-- [createCurrencyList](createCurrencyList/index.md)
-  - [contains](createCurrencyList/contains.md)
-  - [getCurrencies](createCurrencyList/getCurrencies.md)
-- [createAgregatedCurrencyList](createAgregatedCurrencyList/index.md)
-  - [contains](createAgregatedCurrencyList/contains.md)
-  - [getCurrencies](createAgregatedCurrencyList/getCurrencies.md)
-- [isoCurrencyLsit](createMoney/index.md)

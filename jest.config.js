@@ -1,9 +1,24 @@
+const base = require("./jest.config.base.js");
 module.exports = {
-  preset: "ts-jest",
-  testEnvironment: "node",
-  transform: {
-    "^.+\\.tsx?$": "ts-jest"
-  },
+  // p: ["<rootDir>/packages/*"],
+  ...base,
+  roots: ["<rootDir>"],
+  projects: ["<rootDir>/packages/*/jest.config.js"],
 
-  testMatch: [`<rootDir>/src/**/*.test.ts`]
+  // moduleNameMapper: {
+  //   "@easymoney/(.*)$": "<rootDir>/packages/$1",
+  // },
+  // preset: "ts-jest",
+  // testEnvironment: "node",
+  // globals: {
+  //   "ts-jest": {
+  //     tsConfig: "tsconfig.json",
+  //   },
+  // },
+  // transform: {
+  //   "^.+\\.tsx?$": "ts-jest",
+  // },
+
+  // modulePathIgnorePatterns: ["dist"],
+  // testMatch: [`**/__tests__/*.test.ts`, `**/__tests__/*.propbased-test.ts`],
 };
