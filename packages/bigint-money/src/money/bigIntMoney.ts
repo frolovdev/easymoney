@@ -193,7 +193,6 @@ function subtract(instance: BigIntInstance, money: BigIntMoneyBase) {
   );
 }
 
-// TODO: move to common core
 function equals(moneyInstance: BigIntInstance, money: BigIntMoneyBase) {
   return (
     moneyInstance.publicInstance.isSameCurrency(money) &&
@@ -201,7 +200,6 @@ function equals(moneyInstance: BigIntInstance, money: BigIntMoneyBase) {
   );
 }
 
-// TODO: move to common
 function compare(instance: BigIntInstance, money: BigIntMoneyBase) {
   const { publicInstance, privateInstance } = instance;
 
@@ -213,22 +211,21 @@ function compare(instance: BigIntInstance, money: BigIntMoneyBase) {
   );
 }
 
-// TODO: move to common
 function greaterThan(publicInstance: BigIntMoneyBase, money: BigIntMoneyBase) {
   return publicInstance.compare(money) > 0;
 }
-// TODO: move to common
+
 function greaterThanOrEqual(
   publicInstance: BigIntMoneyBase,
   money: BigIntMoneyBase
 ) {
   return publicInstance.compare(money) >= 0;
 }
-// TODO: move to common
+
 function lessThan(publicInstance: BigIntMoneyBase, money: BigIntMoneyBase) {
   return publicInstance.compare(money) < 0;
 }
-// TODO: move to common
+
 function lessThanOrEqual(
   publicInstance: BigIntMoneyBase,
   money: BigIntMoneyBase
@@ -236,7 +233,6 @@ function lessThanOrEqual(
   return publicInstance.compare(money) <= 0;
 }
 
-// TODO: move to common core
 function isSameCurrency(
   moneyInstance: BigIntMoneyBase,
   money: BigIntMoneyBase
@@ -244,7 +240,6 @@ function isSameCurrency(
   return moneyInstance.getCurrency() === money.getCurrency();
 }
 
-// TODO: move to common core
 function assertSameCurrency(
   moneyInstance: BigIntMoneyBase,
   money: BigIntMoneyBase
@@ -255,7 +250,6 @@ function assertSameCurrency(
   );
 }
 
-// TODO: move to common
 function assertRoundingMode(roundingMode: any): asserts roundingMode {
   assert(
     [

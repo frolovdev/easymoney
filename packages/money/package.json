@@ -47,7 +47,8 @@
     "@easymoney/core": "^0.0.1"
   },
   "devDependencies": {
-    "@easymoney/core": "*"
+    "@easymoney/core": "*",
+    "@easymoney/currencies": "*"
   },
   "engines": {
     "node": ">=10.8.x"
