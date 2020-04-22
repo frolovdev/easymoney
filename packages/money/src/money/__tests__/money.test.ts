@@ -1,11 +1,12 @@
 import { createMoneyUnit } from "../money";
 import { createCalculator } from "../../calculator";
-import { CreateMoney } from "../types";
+import { CreateMoney, MoneyInput } from "../types";
 import { RoundingModes } from "@easymoney/core";
 import { cryptoCurrenciesMap, currenciesMap } from "@easymoney/currencies";
+import { MoneyBase } from "..";
 
 describe("money", () => {
-  let createMoney: CreateMoney;
+  let createMoney: <CT>({ amount, currency }: MoneyInput<CT>) => MoneyBase<CT>;
   beforeEach(() => {
     const calculator = createCalculator();
     const createMoneyFunc = createMoneyUnit(calculator);
