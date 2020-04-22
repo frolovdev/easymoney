@@ -29,10 +29,10 @@ function construct<CT>(
   };
 }
 
-function createMoneyFactory<CT>(
-  calculator: CalculatorBase,
-  { amount, currency }: MoneyInput<CT>
-) {
+const createMoneyFactory = (calculator: CalculatorBase) => <CT>({
+  amount,
+  currency
+}: MoneyInput<CT>) => {
   const money = construct(amount, currency);
   const privateInstance = {
     calculator,
@@ -69,12 +69,10 @@ function createMoneyFactory<CT>(
   publicInstance.ratioOf = bind(ratioOf, instance);
 
   return publicInstance;
-}
+};
 
-export function createMoneyUnit<CT>(calculator: CalculatorBase): MoneyBase<CT> {
-  return (createMoneyFactory.bind(null, calculator) as unknown) as MoneyBase<
-    CT
-  >;
+export function createMoneyUnit(calculator: CalculatorBase) {
+  return createMoneyFactory(calculator);
 }
 
 function round<CT>(
@@ -106,7 +104,7 @@ function add<CT>(instance: Instance<CT>, money: MoneyBase<CT>) {
 
   const newAmount = calculator.add(money.getAmount(), instanceMoney.amount);
 
-  return createMoneyFactory(privateInstance.calculator, {
+  return createMoneyFactory(privateInstance.calculator)({
     amount: newAmount,
     currency: money.getCurrency()
   });
@@ -124,7 +122,7 @@ function subtract<CT>(instance: Instance<CT>, money: MoneyBase<CT>) {
     money.getAmount()
   );
 
-  return createMoneyFactory(privateInstance.calculator, {
+  return createMoneyFactory(privateInstance.calculator)({
     amount: newAmount,
     currency: money.getCurrency()
   });
@@ -211,7 +209,7 @@ function multiply<CT>(
 
   const roundedAmount = privateInstance.round(newAmount, roundingMode);
 
-  return createMoneyFactory(privateInstance.calculator, {
+  return createMoneyFactory(privateInstance.calculator)({
     amount: roundedAmount,
     currency: publicInstance.getCurrency()
   });
@@ -264,7 +262,7 @@ function divide<CT>(
     roundingMode
   );
 
-  return createMoneyFactory(calculator, {
+  return createMoneyFactory(calculator)({
     amount: quotient,
     currency: publicInstance.getCurrency()
   });
@@ -309,7 +307,7 @@ function allocate<CT>(instance: Instance<CT>, ratios: number[]) {
 
   if (calculator.compare(reminder, "0") === 0) {
     return results.map(result =>
-      createMoneyFactory(calculator, {
+      createMoneyFactory(calculator)({
         amount: result,
         currency: publicInstance.getCurrency()
       })
@@ -349,7 +347,7 @@ function allocate<CT>(instance: Instance<CT>, ratios: number[]) {
   debugger;
 
   return results.map(result =>
-    createMoneyFactory(calculator, {
+    createMoneyFactory(calculator)({
       amount: result,
       currency: publicInstance.getCurrency()
     })
@@ -382,7 +380,7 @@ function mod<CT>(instance: Instance<CT>, divisor: MoneyBase<CT>) {
     divisor.getAmount()
   );
 
-  return createMoneyFactory(privateInstance.calculator, {
+  return createMoneyFactory(privateInstance.calculator)({
     amount: newAmount,
     currency: publicInstance.getCurrency()
   });
@@ -390,7 +388,7 @@ function mod<CT>(instance: Instance<CT>, divisor: MoneyBase<CT>) {
 
 function absolute<CT>(instance: Instance<CT>) {
   const { privateInstance, publicInstance } = instance;
-  return createMoneyFactory(privateInstance.calculator, {
+  return createMoneyFactory(privateInstance.calculator)({
     amount: privateInstance.calculator.absolute(publicInstance.getAmount()),
     currency: publicInstance.getCurrency()
   });
@@ -401,7 +399,7 @@ function negative<CT>(instance: Instance<CT>) {
   const { calculator } = privateInstance;
 
   const newAmount = calculator.subtract("0", publicInstance.getAmount());
-  return createMoneyFactory(calculator, {
+  return createMoneyFactory(calculator)({
     amount: newAmount,
     currency: publicInstance.getCurrency()
   });
