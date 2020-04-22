@@ -58,33 +58,5 @@ describe("createMoneyIntlFormatter", () => {
       }).format(createMoney(money));
       expect(formattedValue).toEqual("ETH 0.000000000000000005");
     });
-
-    // it("should valid format and merge options", () => {
-    //   const money = { amount: 50, currency: "USD" };
-
-    //   const formattedValue = createFormatter().format(
-    //     createMoney(money),
-    //     "en-US",
-    //     { minimumFractionDigits: 1, maximumFractionDigits: 1 }
-    //   );
-    //   expect(formattedValue).toEqual("$0.5");
-    // });
-
-    // it("should valid format ", () => {
-    //   const money = { amount: 500, currency: "USD" };
-
-    //   const formattedValue = createFormatter().format(createMoney(money));
-    //   expect(formattedValue).toEqual("$5.00");
-    // });
-
-    // it("should be possible pass different locales", () => {
-    //   const money = { amount: 500, currency: "USD" };
-
-    //   const formattedValue = createFormatter().format(
-    //     createMoney(money),
-    //     "ru-RU"
-    //   );
-    //   expect(formattedValue).toEqual("$5.00");
-    // });
   });
 });
