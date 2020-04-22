@@ -8,6 +8,16 @@ export type MoneyIntlOptions = {
   style?: "currency" | "decimal";
 };
 
+export type CryptoOptions = {
+  fractionDigits?: number;
+  currencyPosition?: -1 | 1;
+  space?: boolean;
+};
+
 export type MoneyIntlFormatter = {
   format(money: MoneyBase, locale?: string, options?: MoneyIntlOptions): string;
+};
+
+export type MoneyCryptoFormatter = {
+  format(money: MoneyBase, options?: CryptoOptions): string;
 };

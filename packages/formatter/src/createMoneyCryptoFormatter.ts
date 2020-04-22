@@ -4,22 +4,25 @@ import {
   CurrencyList,
   CurrencyUnitCrypto
 } from "@easymoney/currencies";
-import { MoneyIntlOptions, MoneyIntlFormatter } from "./types";
+import { CryptoOptions, MoneyCryptoFormatter } from "./types";
 import { MoneyBase } from "@easymoney/money";
 import { lpad } from "./lpad";
+import { roundMoneyValue } from "./roundMoneyValue";
 
 type PrivateInstance = {
   currencyList: CurrencyList<CurrencyUnitCrypto>;
+  options: CryptoOptions;
 };
 
 export function createCryptoFormatterFactory(
-  currencyList: CurrencyList<CurrencyUnitCrypto>
+  currencyList: CurrencyList<CurrencyUnitCrypto>,
+  options?: CryptoOptions
 ) {
-  const privateInstance = { currencyList };
+  const privateInstance = { currencyList, options };
 
   const publicInstance = {
     format: bind(format, privateInstance)
-  } as MoneyIntlFormatter;
+  } as MoneyCryptoFormatter;
 
   return publicInstance;
 }
@@ -32,10 +35,12 @@ export function createMoneyCryptoFormatterUnit(
   return createCryptoFormatterFactory.bind(null, currencyList);
 }
 
-const defaultOptions: MoneyIntlOptions = {
-  currencyDisplay: "symbol",
-  useGrouping: true,
-  style: "currency"
+const defaultOptions: CryptoOptions = {
+  // currencyDisplay: "symbol",
+  // useGrouping: true,
+  // style: "currency"
+  space: false,
+  currencyPosition: 1
 };
 
 // function format(
@@ -91,10 +96,14 @@ const defaultOptions: MoneyIntlOptions = {
 function format(
   privateInstance: PrivateInstance,
   money: MoneyBase,
-  locale: string = "en-US",
-  options: MoneyIntlOptions
+  options: CryptoOptions
 ) {
-  const mergedOptions = { ...defaultOptions, ...options };
+  const mergedOptions = {
+    ...defaultOptions,
+    ...privateInstance.options,
+    ...options
+  };
+
   let valueBase = money.getAmount();
   let negative = false;
 
@@ -104,36 +113,48 @@ function format(
   }
 
   const subunit = privateInstance.currencyList.subUnitFor(money.getCurrency());
+  const fractionDigits = mergedOptions.fractionDigits
+    ? mergedOptions.fractionDigits
+    : subunit;
+  valueBase = roundMoneyValue(valueBase, fractionDigits, subunit);
   const valueLength = valueBase.length;
 
   let formatted: string;
-  let decimalDigitsLength;
+  // let decimalDigitsLength;
   if (valueLength > subunit) {
     formatted = valueBase.slice(0, valueLength - subunit);
-    const decimalDigits = valueBase.slice(valueLength - subunit);
 
-    decimalDigitsLength = decimalDigits.length;
-    if (decimalDigitsLength > 0) {
-      formatted = `${formatted}.${decimalDigits}`;
+    if (subunit) {
+      formatted = `.${formatted}${valueBase.substr(valueLength - subunit)}`;
     }
   } else {
-    const zeros = lpad("", "0", subunit - valueLength);
-    formatted = `0.${zeros}${valueBase}`;
+    formatted = "0."
+      .concat(lpad("", "0", subunit - valueLength))
+      .concat(valueBase);
+  }
+
+  if (fractionDigits === 0) {
+    formatted = formatted.substr(0, formatted.indexOf("."));
+  } else if (fractionDigits > subunit) {
+    formatted = formatted.concat(lpad("", "0", fractionDigits - subunit));
+  } else if (fractionDigits < subunit) {
+    const lastDigit = formatted.indexOf(".") + fractionDigits + 1;
+    formatted = formatted.substr(0, lastDigit);
+  }
+
+  const currency = money.getCurrency();
+  const code = typeof currency === "object" ? currency.code : currency;
+
+  const space = mergedOptions.space ? " " : "";
+  if (mergedOptions.currencyPosition === -1) {
+    formatted = `${code}${space}${formatted}`;
+  } else if (mergedOptions.currencyPosition === 1) {
+    formatted = `${formatted}${space}${code}`;
   }
 
   if (negative === true) {
     formatted = `-${formatted}`;
   }
 
-  const currency = money.getCurrency();
-  return Number(formatted).toLocaleString(locale, {
-    currency: typeof currency === "object" ? currency.code : currency,
-    useGrouping: mergedOptions.useGrouping,
-    style: mergedOptions.style,
-    currencyDisplay: mergedOptions.currencyDisplay,
-    minimumFractionDigits:
-      mergedOptions.minimumFractionDigits || decimalDigitsLength,
-    maximumFractionDigits:
-      mergedOptions.maximumFractionDigits || decimalDigitsLength
-  });
+  return formatted;
 }

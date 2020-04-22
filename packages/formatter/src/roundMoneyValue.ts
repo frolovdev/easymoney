@@ -97,4 +97,6 @@ export function roundMoneyValue(
       }
     }
   }
+
+  return scopedMoneyValue;
 }
