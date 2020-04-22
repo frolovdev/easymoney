@@ -1,4 +1,4 @@
-import { bind, Money } from "@easymoney/core";
+import { bind, Money, AnyCurrency } from "@easymoney/core";
 import { MoneyInput } from "./types";
 
 import { RoundingModes, RoundingModesType } from "@easymoney/core";
@@ -9,10 +9,10 @@ import { MoneyBase } from "./types";
 import { fromString, fromNumber } from "../number";
 import { PrivateInstance, Instance, CreateMoney } from "./types";
 
-function construct(
-  amount: MoneyInput["amount"],
-  currency: MoneyInput["currency"]
-): Money {
+function construct<CT>(
+  amount: MoneyInput<CT>["amount"],
+  currency: MoneyInput<CT>["currency"]
+): Money<CT> {
   let newAmount: string | null = null;
   if (!Number.isInteger(Number(amount))) {
     let numberFromString = fromString((amount as unknown) as string);
@@ -29,21 +29,21 @@ function construct(
   };
 }
 
-function createMoneyFactory(
+function createMoneyFactory<CT>(
   calculator: CalculatorBase,
-  { amount, currency }: MoneyInput
+  { amount, currency }: MoneyInput<CT>
 ) {
   const money = construct(amount, currency);
   const privateInstance = {
     calculator,
     instanceMoney: money
-  } as PrivateInstance;
+  } as PrivateInstance<CT>;
 
   privateInstance.round = bind(round, privateInstance);
 
-  const publicInstance = {} as MoneyBase;
+  const publicInstance = {} as MoneyBase<CT>;
 
-  const instance: Instance = { privateInstance, publicInstance };
+  const instance: Instance<CT> = { privateInstance, publicInstance };
 
   publicInstance.add = bind(add, instance);
   publicInstance.isSameCurrency = bind(isSameCurrency, publicInstance);
@@ -71,12 +71,14 @@ function createMoneyFactory(
   return publicInstance;
 }
 
-export function createMoneyUnit(calculator: CalculatorBase): CreateMoney {
-  return createMoneyFactory.bind(null, calculator);
+export function createMoneyUnit<CT>(calculator: CalculatorBase): MoneyBase<CT> {
+  return (createMoneyFactory.bind(null, calculator) as unknown) as MoneyBase<
+    CT
+  >;
 }
 
-function round(
-  privateInstance: PrivateInstance,
+function round<CT>(
+  privateInstance: PrivateInstance<CT>,
   amount: string,
   roundingMode: RoundingModesType
 ) {
@@ -95,7 +97,7 @@ function round(
   return calculator.round(amount, roundingMode);
 }
 
-function add(instance: Instance, money: MoneyBase) {
+function add<CT>(instance: Instance<CT>, money: MoneyBase<CT>) {
   const { publicInstance, privateInstance } = instance;
 
   const { calculator, instanceMoney } = privateInstance;
@@ -110,7 +112,7 @@ function add(instance: Instance, money: MoneyBase) {
   });
 }
 
-function subtract(instance: Instance, money: MoneyBase) {
+function subtract<CT>(instance: Instance<CT>, money: MoneyBase<CT>) {
   const { publicInstance, privateInstance } = instance;
 
   const { calculator } = privateInstance;
@@ -128,33 +130,39 @@ function subtract(instance: Instance, money: MoneyBase) {
   });
 }
 
-function getAmount(privateInstance: PrivateInstance) {
+function getAmount<CT>(privateInstance: PrivateInstance<CT>) {
   return privateInstance.instanceMoney.amount;
 }
 
-function getCurrency(privateInstance: PrivateInstance) {
+function getCurrency<CT>(privateInstance: PrivateInstance<CT>) {
   return privateInstance.instanceMoney.currency;
 }
 
-function isSameCurrency(moneyInstance: MoneyBase, money: MoneyBase): boolean {
+function isSameCurrency<CT>(
+  moneyInstance: MoneyBase<CT>,
+  money: MoneyBase<CT>
+): boolean {
   return moneyInstance.getCurrency() === money.getCurrency();
 }
 
-function assertSameCurrency(moneyInstance: MoneyBase, money: MoneyBase) {
+function assertSameCurrency<CT>(
+  moneyInstance: MoneyBase<CT>,
+  money: MoneyBase<CT>
+) {
   assert(
     isSameCurrency(moneyInstance, money),
     new TypeError("Currencies must be identical")
   );
 }
 
-function equals(moneyInstance: Instance, money: MoneyBase) {
+function equals<CT>(moneyInstance: Instance<CT>, money: MoneyBase<CT>) {
   return (
     moneyInstance.publicInstance.isSameCurrency(money) &&
     moneyInstance.privateInstance.instanceMoney.amount === money.getAmount()
   );
 }
 
-function compare(instance: Instance, money: MoneyBase) {
+function compare<CT>(instance: Instance<CT>, money: MoneyBase<CT>) {
   const { publicInstance, privateInstance } = instance;
 
   assertSameCurrency(publicInstance, money);
@@ -165,24 +173,30 @@ function compare(instance: Instance, money: MoneyBase) {
   );
 }
 
-function greaterThan(publicInstance: MoneyBase, money: MoneyBase) {
+function greaterThan<CT>(publicInstance: MoneyBase<CT>, money: MoneyBase<CT>) {
   return publicInstance.compare(money) > 0;
 }
 
-function greaterThanOrEqual(publicInstance: MoneyBase, money: MoneyBase) {
+function greaterThanOrEqual<CT>(
+  publicInstance: MoneyBase<CT>,
+  money: MoneyBase<CT>
+) {
   return publicInstance.compare(money) >= 0;
 }
 
-function lessThan(publicInstance: MoneyBase, money: MoneyBase) {
+function lessThan<CT>(publicInstance: MoneyBase<CT>, money: MoneyBase<CT>) {
   return publicInstance.compare(money) < 0;
 }
 
-function lessThanOrEqual(publicInstance: MoneyBase, money: MoneyBase) {
+function lessThanOrEqual<CT>(
+  publicInstance: MoneyBase<CT>,
+  money: MoneyBase<CT>
+) {
   return publicInstance.compare(money) <= 0;
 }
 
-function multiply(
-  instance: Instance,
+function multiply<CT>(
+  instance: Instance<CT>,
   multiplier: string | number,
   roundingMode: RoundingModesType = RoundingModes.HALF_EVEN
 ) {
@@ -227,9 +241,8 @@ function assertRoundingMode(roundingMode: any): asserts roundingMode {
   );
 }
 
-// TODO: ramke to assertions
-function divide(
-  instance: Instance,
+function divide<CT>(
+  instance: Instance<CT>,
   divisor: string | number,
   roundingMode: RoundingModesType = RoundingModes.HALF_EVEN
 ) {
@@ -257,9 +270,7 @@ function divide(
   });
 }
 
-// TODO: ramke to assertions
-
-function allocate(instance: Instance, ratios: number[]) {
+function allocate<CT>(instance: Instance<CT>, ratios: number[]) {
   if (ratios.length === 0) {
     throw new TypeError(
       "Cannot allocate to none, ratios cannot be an empty array"
@@ -345,7 +356,7 @@ function allocate(instance: Instance, ratios: number[]) {
   );
 }
 
-function allocateTo(instance: Instance, n: number) {
+function allocateTo<CT>(instance: Instance<CT>, n: number) {
   if (!Number.isInteger(n)) {
     throw new TypeError("Number of targets must be an integer");
   }
@@ -359,7 +370,7 @@ function allocateTo(instance: Instance, n: number) {
   return instance.publicInstance.allocate(Array(n).fill(1));
 }
 
-function mod(instance: Instance, divisor: MoneyBase) {
+function mod<CT>(instance: Instance<CT>, divisor: MoneyBase<CT>) {
   assertSameCurrency(instance.publicInstance, divisor);
 
   const { publicInstance, privateInstance } = instance;
@@ -377,7 +388,7 @@ function mod(instance: Instance, divisor: MoneyBase) {
   });
 }
 
-function absolute(instance: Instance) {
+function absolute<CT>(instance: Instance<CT>) {
   const { privateInstance, publicInstance } = instance;
   return createMoneyFactory(privateInstance.calculator, {
     amount: privateInstance.calculator.absolute(publicInstance.getAmount()),
@@ -385,7 +396,7 @@ function absolute(instance: Instance) {
   });
 }
 
-function negative(instance: Instance) {
+function negative<CT>(instance: Instance<CT>) {
   const { privateInstance, publicInstance } = instance;
   const { calculator } = privateInstance;
 
@@ -396,28 +407,28 @@ function negative(instance: Instance) {
   });
 }
 
-function isZero(instance: Instance) {
+function isZero<CT>(instance: Instance<CT>) {
   const { privateInstance, publicInstance } = instance;
   const { calculator } = privateInstance;
 
   return calculator.compare(publicInstance.getAmount(), "0") === 0;
 }
 
-function isPositive(instance: Instance) {
+function isPositive<CT>(instance: Instance<CT>) {
   const { privateInstance, publicInstance } = instance;
   const { calculator } = privateInstance;
 
   return calculator.compare(publicInstance.getAmount(), "0") > 0;
 }
 
-function isNegative(instance: Instance) {
+function isNegative<CT>(instance: Instance<CT>) {
   const { privateInstance, publicInstance } = instance;
   const { calculator } = privateInstance;
 
   return calculator.compare(publicInstance.getAmount(), "0") < 0;
 }
 
-function ratioOf(instance: Instance, money: MoneyBase) {
+function ratioOf<CT>(instance: Instance<CT>, money: MoneyBase<CT>) {
   if (money.isZero()) {
     throw new TypeError("Cannot calculate a ratio of zero");
   }

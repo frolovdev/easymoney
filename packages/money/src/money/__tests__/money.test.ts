@@ -2,6 +2,7 @@ import { createMoneyUnit } from "../money";
 import { createCalculator } from "../../calculator";
 import { CreateMoney } from "../types";
 import { RoundingModes } from "@easymoney/core";
+import { cryptoCurrenciesMap, currenciesMap } from "@easymoney/currencies";
 
 describe("money", () => {
   let createMoney: CreateMoney;
@@ -26,6 +27,29 @@ describe("money", () => {
     });
 
     describe("constructor", () => {
+      it("should be possible pass currency as object and as string", () => {
+        const a = {
+          amount: 100,
+          currency: "USD"
+        };
+        const b = {
+          amount: 100,
+          currency: currenciesMap.USD
+        };
+
+        expect(createMoney(a).getCurrency()).toEqual("USD");
+
+        expect(createMoney(b).getCurrency()).toEqual(currenciesMap.USD);
+      });
+
+      it("should be possible determine type if we pass currency object", () => {
+        const b = {
+          amount: 100,
+          currency: currenciesMap.USD
+        };
+        expect(createMoney(b).getCurrency().code).toEqual("USD");
+      });
+
       it("should throws an error if value is float", () => {
         const money1 = { amount: 100.1, currency: "USD" };
         const moneyFn = () => createMoney(money1);
