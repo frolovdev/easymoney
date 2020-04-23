@@ -75,6 +75,11 @@ You can watch examples of using methods in original repo modulename/______tests_
 - [createMoneyIntlFormatter](formatter/createMoneyIntlFormatter/Description.md)
   - [format](formatter/createMoneyIntlFormatter/format.md)
 
+## @easymoney/crypto-formatter
+
+- [createMoneyCryptoFormatter](crypto-formatter/createMoneyCryptoFormatter/Description.md)
+  - [format](crypto-formatter/createMoneyCryptoFormatter/format.md)
+
 
 
 

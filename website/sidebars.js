@@ -1,8 +1,6 @@
-  module.exports = {
+module.exports = {
   someSidebar: {
-    Introduction: [
-    "introduction/getting-started",
-    "introduction/installation"],
+    Introduction: ["introduction/getting-started", "introduction/installation"],
     "API Reference": [
       "api/api-reference",
       {
@@ -12,7 +10,7 @@
           {
             type: "category",
             label: "createMoney",
-            items:[
+            items: [
               "api/money/createMoney/Description",
               "api/money/createMoney/add",
               "api/money/createMoney/absolute",
@@ -35,10 +33,10 @@
               "api/money/createMoney/multiply",
               "api/money/createMoney/negative",
               "api/money/createMoney/ratioOf",
-              "api/money/createMoney/subtract"
-            ]
-          }
-        ]
+              "api/money/createMoney/subtract",
+            ],
+          },
+        ],
       },
       {
         type: "category",
@@ -64,10 +62,10 @@
               "api/bigint-money/createBigIntMoney/lessThan",
               "api/bigint-money/createBigIntMoney/lessThanOrEqual",
               "api/bigint-money/createBigIntMoney/multiply",
-              "api/bigint-money/createBigIntMoney/subtract"
-            ]
-          }
-        ]
+              "api/bigint-money/createBigIntMoney/subtract",
+            ],
+          },
+        ],
       },
       {
         type: "category",
@@ -80,8 +78,8 @@
               "api/currencies/createCurrencyList/Description",
               "api/currencies/createCurrencyList/contains",
               "api/currencies/createCurrencyList/getCurrencies",
-              "api/currencies/createCurrencyList/subUnitFor"
-            ]
+              "api/currencies/createCurrencyList/subUnitFor",
+            ],
           },
           {
             type: "category",
@@ -90,10 +88,10 @@
               "api/currencies/createAgregatedCurrencyList/Description",
               "api/currencies/createAgregatedCurrencyList/contains",
               "api/currencies/createAgregatedCurrencyList/getCurrencies",
-              "api/currencies/createAgregatedCurrencyList/subUnitFor"
-            ]
-          }
-        ]
+              "api/currencies/createAgregatedCurrencyList/subUnitFor",
+            ],
+          },
+        ],
       },
       {
         type: "category",
@@ -105,9 +103,23 @@
             items: [
               "api/formatter/createMoneyIntlFormatter/Description",
               "api/formatter/createMoneyIntlFormatter/format",
-            ]
-          }
-        ]
+            ],
+          },
+        ],
+      },
+      {
+        type: "category",
+        label: "crypto-formatter",
+        items: [
+          {
+            type: "category",
+            label: "createMoneyCryptoFormatter",
+            items: [
+              "api/crypto-formatter/createMoneyCryptoFormatter/Description",
+              "api/crypto-formatter/createMoneyCryptoFormatter/format",
+            ],
+          },
+        ],
       },
       // {
       //   type: "category",
@@ -142,6 +154,6 @@
       //     "api/createBigIntCalculator/subtract"
       //   ]
       // }
-    ]
-  }
+    ],
+  },
 };
