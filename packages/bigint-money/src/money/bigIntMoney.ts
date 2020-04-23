@@ -9,7 +9,6 @@ import {
 
 import {
   BigIntMoneyBase,
-  CreateMoney,
   BigIntInstance,
   BigIntPrivateInstance,
   BigIntMoneyInput
@@ -18,12 +17,12 @@ import { BigIntCalculatorBase } from "../calculator";
 
 import { convertValueToBigInt } from "../number/";
 
-function construct(
-  amount: BigIntMoneyInput["amount"],
-  currency: BigIntMoneyInput["currency"],
+function construct<CT>(
+  amount: BigIntMoneyInput<CT>["amount"],
+  currency: BigIntMoneyInput<CT>["currency"],
 
   config: Config
-): Money<bigint> {
+): Money<CT, bigint> {
   if (config && config.source) {
     // TODO: reimplement this code
     // @ts-ignore
@@ -80,77 +79,81 @@ function construct(
   }
 }
 
-type Config = { source?: boolean } | null;
+export type Config = { source?: boolean } | null;
 
 function createBigIntMoneyFactory(
   calculator: BigIntCalculatorBase,
   roundindMode: RoundingModesType,
-  config: Config,
-  { amount, currency }: BigIntMoneyInput
+  config: Config
 ) {
-  const money = construct(amount, currency, config);
-  const privateInstance = {
-    calculator,
-    instanceMoney: money,
-    roundindMode
-  } as BigIntPrivateInstance;
+  return function<CT>({ amount, currency }: BigIntMoneyInput<CT>) {
+    const money = construct(amount, currency, config);
+    const privateInstance = {
+      calculator,
+      instanceMoney: money,
+      roundindMode
+    } as BigIntPrivateInstance<CT>;
 
-  // privateInstance.round = bind(round, privateInstance);
+    // privateInstance.round = bind(round, privateInstance);
 
-  // privateInstance.getSource = bind(getSource, privateInstance);
+    // privateInstance.getSource = bind(getSource, privateInstance);
 
-  const publicInstance = {} as BigIntMoneyBase;
+    const publicInstance = {} as BigIntMoneyBase<CT>;
 
-  const instance: BigIntInstance = { privateInstance, publicInstance };
+    const instance: BigIntInstance<CT> = { privateInstance, publicInstance };
 
-  publicInstance.add = bind(add, instance);
-  publicInstance.getSource = bind(getSource, privateInstance);
-  publicInstance.getAmount = bind(getAmount, privateInstance);
-  publicInstance.getCurrency = bind(getCurrency, privateInstance);
-  publicInstance.subtract = bind(subtract, instance);
-  publicInstance.isSameCurrency = bind(isSameCurrency, publicInstance);
-  publicInstance.equals = bind(equals, instance);
-  publicInstance.compare = bind(compare, instance);
-  publicInstance.greaterThan = bind(greaterThan, publicInstance);
-  publicInstance.greaterThanOrEqual = bind(greaterThanOrEqual, publicInstance);
-  publicInstance.lessThan = bind(lessThan, publicInstance);
-  publicInstance.lessThanOrEqual = bind(lessThanOrEqual, publicInstance);
-  publicInstance.multiply = bind(multiply, instance);
-  publicInstance.divide = bind(divide, instance);
-  publicInstance.allocate = bind(allocate, instance);
-  publicInstance.allocateTo = bind(allocateTo, instance);
+    publicInstance.add = bind(add, instance);
+    publicInstance.getSource = bind(getSource, privateInstance);
+    publicInstance.getAmount = bind(getAmount, privateInstance);
+    publicInstance.getCurrency = bind(getCurrency, privateInstance);
+    publicInstance.subtract = bind(subtract, instance);
+    publicInstance.isSameCurrency = bind(isSameCurrency, publicInstance);
+    publicInstance.equals = bind(equals, instance);
+    publicInstance.compare = bind(compare, instance);
+    publicInstance.greaterThan = bind(greaterThan, publicInstance);
+    publicInstance.greaterThanOrEqual = bind(
+      greaterThanOrEqual,
+      publicInstance
+    );
+    publicInstance.lessThan = bind(lessThan, publicInstance);
+    publicInstance.lessThanOrEqual = bind(lessThanOrEqual, publicInstance);
+    publicInstance.multiply = bind(multiply, instance);
+    publicInstance.divide = bind(divide, instance);
+    publicInstance.allocate = bind(allocate, instance);
+    publicInstance.allocateTo = bind(allocateTo, instance);
 
-  // publicInstance.mod = bind(mod, instance);
-  // publicInstance.absolute = bind(absolute, instance);
-  // publicInstance.negative = bind(negative, instance);
-  // publicInstance.isZero = bind(isZero, instance);
-  // publicInstance.isPositive = bind(isPositive, instance);
-  // publicInstance.isNegative = bind(isNegative, instance);
-  // publicInstance.ratioOf = bind(ratioOf, instance);
+    // publicInstance.mod = bind(mod, instance);
+    // publicInstance.absolute = bind(absolute, instance);
+    // publicInstance.negative = bind(negative, instance);
+    // publicInstance.isZero = bind(isZero, instance);
+    // publicInstance.isPositive = bind(isPositive, instance);
+    // publicInstance.isNegative = bind(isNegative, instance);
+    // publicInstance.ratioOf = bind(ratioOf, instance);
 
-  return publicInstance;
+    return publicInstance;
+  };
 }
 
 export function createBigIntMoneyUnit(
   calculator: BigIntCalculatorBase,
   roundingMode: RoundingModesType = RoundingModes.HALF_EVEN
-): CreateMoney<BigIntMoneyInput, BigIntMoneyBase> {
-  return createBigIntMoneyFactory.bind(null, calculator, roundingMode, null);
+) {
+  return createBigIntMoneyFactory(calculator, roundingMode, null);
 }
 
-function getAmount(privateInstance: BigIntPrivateInstance) {
+function getAmount<CT>(privateInstance: BigIntPrivateInstance<CT>) {
   return privateInstance.instanceMoney.amount / BIG_INT_PRECISION_M;
 }
 
-function getSource(privateInstance: BigIntPrivateInstance) {
+function getSource<CT>(privateInstance: BigIntPrivateInstance<CT>) {
   return privateInstance.instanceMoney.amount;
 }
 
-function getCurrency(privateInstance: BigIntPrivateInstance) {
+function getCurrency<CT>(privateInstance: BigIntPrivateInstance<CT>) {
   return privateInstance.instanceMoney.currency;
 }
 
-function add(instance: BigIntInstance, money: BigIntMoneyBase) {
+function add<CT>(instance: BigIntInstance<CT>, money: BigIntMoneyBase<CT>) {
   const { publicInstance, privateInstance } = instance;
 
   const { calculator, instanceMoney, roundindMode } = privateInstance;
@@ -159,18 +162,18 @@ function add(instance: BigIntInstance, money: BigIntMoneyBase) {
 
   const newAmount = calculator.add(instanceMoney.amount, money.getSource());
 
-  return createBigIntMoneyFactory(
-    privateInstance.calculator,
-    roundindMode,
-    { source: true },
-    {
-      amount: newAmount,
-      currency: money.getCurrency()
-    }
-  );
+  return createBigIntMoneyFactory(privateInstance.calculator, roundindMode, {
+    source: true
+  })({
+    amount: newAmount,
+    currency: money.getCurrency()
+  });
 }
 
-function subtract(instance: BigIntInstance, money: BigIntMoneyBase) {
+function subtract<CT>(
+  instance: BigIntInstance<CT>,
+  money: BigIntMoneyBase<CT>
+) {
   const { publicInstance, privateInstance } = instance;
 
   const { calculator, instanceMoney, roundindMode } = privateInstance;
@@ -182,25 +185,25 @@ function subtract(instance: BigIntInstance, money: BigIntMoneyBase) {
     money.getSource()
   );
 
-  return createBigIntMoneyFactory(
-    privateInstance.calculator,
-    roundindMode,
-    { source: true },
-    {
-      amount: newAmount,
-      currency: money.getCurrency()
-    }
-  );
+  return createBigIntMoneyFactory(privateInstance.calculator, roundindMode, {
+    source: true
+  })({
+    amount: newAmount,
+    currency: money.getCurrency()
+  });
 }
 
-function equals(moneyInstance: BigIntInstance, money: BigIntMoneyBase) {
+function equals<CT>(
+  moneyInstance: BigIntInstance<CT>,
+  money: BigIntMoneyBase<CT>
+) {
   return (
     moneyInstance.publicInstance.isSameCurrency(money) &&
     moneyInstance.privateInstance.instanceMoney.amount === money.getSource()
   );
 }
 
-function compare(instance: BigIntInstance, money: BigIntMoneyBase) {
+function compare<CT>(instance: BigIntInstance<CT>, money: BigIntMoneyBase<CT>) {
   const { publicInstance, privateInstance } = instance;
 
   assertSameCurrency(publicInstance, money);
@@ -211,38 +214,44 @@ function compare(instance: BigIntInstance, money: BigIntMoneyBase) {
   );
 }
 
-function greaterThan(publicInstance: BigIntMoneyBase, money: BigIntMoneyBase) {
+function greaterThan<CT>(
+  publicInstance: BigIntMoneyBase<CT>,
+  money: BigIntMoneyBase<CT>
+) {
   return publicInstance.compare(money) > 0;
 }
 
-function greaterThanOrEqual(
-  publicInstance: BigIntMoneyBase,
-  money: BigIntMoneyBase
+function greaterThanOrEqual<CT>(
+  publicInstance: BigIntMoneyBase<CT>,
+  money: BigIntMoneyBase<CT>
 ) {
   return publicInstance.compare(money) >= 0;
 }
 
-function lessThan(publicInstance: BigIntMoneyBase, money: BigIntMoneyBase) {
+function lessThan<CT>(
+  publicInstance: BigIntMoneyBase<CT>,
+  money: BigIntMoneyBase<CT>
+) {
   return publicInstance.compare(money) < 0;
 }
 
-function lessThanOrEqual(
-  publicInstance: BigIntMoneyBase,
-  money: BigIntMoneyBase
+function lessThanOrEqual<CT>(
+  publicInstance: BigIntMoneyBase<CT>,
+  money: BigIntMoneyBase<CT>
 ) {
   return publicInstance.compare(money) <= 0;
 }
 
-function isSameCurrency(
-  moneyInstance: BigIntMoneyBase,
-  money: BigIntMoneyBase
+function isSameCurrency<CT>(
+  moneyInstance: BigIntMoneyBase<CT>,
+  money: BigIntMoneyBase<CT>
 ): boolean {
   return moneyInstance.getCurrency() === money.getCurrency();
 }
 
-function assertSameCurrency(
-  moneyInstance: BigIntMoneyBase,
-  money: BigIntMoneyBase
+function assertSameCurrency<CT>(
+  moneyInstance: BigIntMoneyBase<CT>,
+  money: BigIntMoneyBase<CT>
 ) {
   assert(
     isSameCurrency(moneyInstance, money),
@@ -267,8 +276,8 @@ function assertRoundingMode(roundingMode: any): asserts roundingMode {
   );
 }
 
-function multiply(
-  instance: BigIntInstance,
+function multiply<CT>(
+  instance: BigIntInstance<CT>,
   multiplier: string | number | bigint,
   roundingMode: RoundingModesType = RoundingModes.HALF_EVEN
 ) {
@@ -284,19 +293,16 @@ function multiply(
     roundingMode
   );
 
-  return createBigIntMoneyFactory(
-    privateInstance.calculator,
-    roundingMode,
-    { source: true },
-    {
-      amount: newAmount,
-      currency: publicInstance.getCurrency()
-    }
-  );
+  return createBigIntMoneyFactory(privateInstance.calculator, roundingMode, {
+    source: true
+  })({
+    amount: newAmount,
+    currency: publicInstance.getCurrency()
+  });
 }
 
-function divide(
-  instance: BigIntInstance,
+function divide<CT>(
+  instance: BigIntInstance<CT>,
   divisor: string | number | bigint,
   roundingMode: RoundingModesType = RoundingModes.HALF_EVEN
 ) {
@@ -314,13 +320,17 @@ function divide(
     roundingMode
   );
 
-  return createBigIntMoneyFactory(calculator, roundingMode, null, {
+  return createBigIntMoneyFactory(
+    calculator,
+    roundingMode,
+    null
+  )({
     amount: newAmount,
     currency: publicInstance.getCurrency()
   });
 }
 
-function allocate(instance: BigIntInstance, ratios: number[]) {
+function allocate<CT>(instance: BigIntInstance<CT>, ratios: number[]) {
   if (ratios.length === 0) {
     throw new TypeError(
       "Cannot allocate to none, ratios cannot be an empty array"
@@ -374,12 +384,11 @@ function allocate(instance: BigIntInstance, ratios: number[]) {
       createBigIntMoneyFactory(
         calculator,
         instance.privateInstance.roundindMode,
-        null,
-        {
-          amount: result,
-          currency: publicInstance.getCurrency()
-        }
-      )
+        null
+      )({
+        amount: result,
+        currency: publicInstance.getCurrency()
+      })
     );
   }
 
@@ -417,16 +426,15 @@ function allocate(instance: BigIntInstance, ratios: number[]) {
     createBigIntMoneyFactory(
       calculator,
       instance.privateInstance.roundindMode,
-      null,
-      {
-        amount: result,
-        currency: publicInstance.getCurrency()
-      }
-    )
+      null
+    )({
+      amount: result,
+      currency: publicInstance.getCurrency()
+    })
   );
 }
 
-function allocateTo(instance: BigIntInstance, n: number) {
+function allocateTo<CT>(instance: BigIntInstance<CT>, n: number) {
   if (!Number.isInteger(n)) {
     throw new TypeError("Number of targets must be an integer");
   }

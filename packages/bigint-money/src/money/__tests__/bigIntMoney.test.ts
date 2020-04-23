@@ -1,11 +1,14 @@
 import { BigIntMoneyInput } from "../types";
-import { CreateMoney, BigIntMoneyBase } from "../../money/types";
+import { BigIntMoneyBase } from "../../money/types";
 import { createBigIntCalculator } from "../../calculator";
 import { createBigIntMoneyUnit } from "../bigIntMoney";
 import { BIG_INT_PRECISION_M } from "../../consts/precisions";
 
 describe("bigIntMoney", () => {
-  let createMoney: CreateMoney<BigIntMoneyInput, BigIntMoneyBase>;
+  let createMoney: <CT>({
+    amount,
+    currency
+  }: BigIntMoneyInput<CT>) => BigIntMoneyBase<CT>;
   beforeEach(() => {
     const calculator = createBigIntCalculator();
     const createMoneyFunc = createBigIntMoneyUnit(calculator);
@@ -108,7 +111,7 @@ describe("bigIntMoney", () => {
         const money1 = { amount: 100, currency: "USD" };
         const money2 = {
           amount: 200,
-          currency: "RUB",
+          currency: "RUB"
         };
         expect(() => {
           createMoney(money1).add(createMoney(money2));
@@ -118,7 +121,7 @@ describe("bigIntMoney", () => {
         const money1 = { amount: 100, currency: "USD" };
         const money2 = {
           amount: 200,
-          currency: "USD",
+          currency: "USD"
         };
         expect(
           createMoney(money1)
@@ -131,17 +134,17 @@ describe("bigIntMoney", () => {
         const money1 = { amount: 100, currency: "USD" };
         const money2 = {
           amount: 200,
-          currency: "USD",
+          currency: "USD"
         };
 
         const money3 = {
           amount: 200,
-          currency: "USD",
+          currency: "USD"
         };
 
         const money4 = {
           amount: 50,
-          currency: "USD",
+          currency: "USD"
         };
 
         const result1 = createMoney(money1).add(createMoney(money2));
@@ -218,7 +221,7 @@ describe("bigIntMoney", () => {
         const data1 = { amount: 100, currency: "USD" };
         const data2 = {
           amount: 200,
-          currency: "USD",
+          currency: "USD"
         };
 
         const money1 = createMoney(data1);
@@ -231,7 +234,7 @@ describe("bigIntMoney", () => {
         const data1 = { amount: 100, currency: "USD" };
         const data2 = {
           amount: 200,
-          currency: "RUB",
+          currency: "RUB"
         };
 
         const money1 = createMoney(data1);
@@ -246,7 +249,7 @@ describe("bigIntMoney", () => {
         const data1 = { amount: 100, currency: "USD" };
         const data2 = {
           amount: 100,
-          currency: "USD",
+          currency: "USD"
         };
 
         const money1 = createMoney(data1);
@@ -259,7 +262,7 @@ describe("bigIntMoney", () => {
         const data1 = { amount: 100, currency: "USD" };
         const data2 = {
           amount: 200,
-          currency: "RUB",
+          currency: "RUB"
         };
 
         const money1 = createMoney(data1);
@@ -272,7 +275,7 @@ describe("bigIntMoney", () => {
         const data1 = { amount: 100, currency: "RUB" };
         const data2 = {
           amount: 200,
-          currency: "RUB",
+          currency: "RUB"
         };
 
         const money1 = createMoney(data1);
@@ -285,7 +288,7 @@ describe("bigIntMoney", () => {
         const data1 = { amount: 100, currency: "USD" };
         const data2 = {
           amount: 100,
-          currency: "RUB",
+          currency: "RUB"
         };
 
         const money1 = createMoney(data1);
@@ -300,7 +303,7 @@ describe("bigIntMoney", () => {
         const money1 = { amount: 100, currency: "USD" };
         const money2 = {
           amount: 100,
-          currency: "USD",
+          currency: "USD"
         };
 
         const result1 = createMoney(money1);
@@ -317,7 +320,7 @@ describe("bigIntMoney", () => {
         const money1 = { amount: 100, currency: "USD" };
         const money2 = {
           amount: 100,
-          currency: "RUB",
+          currency: "RUB"
         };
 
         const result1 = createMoney(money1);
@@ -428,28 +431,28 @@ describe("bigIntMoney", () => {
         [1, [33, 67], [0, 1]],
         [101, [3, 7], [30, 71]],
         [101, [7, 3], [71, 30]],
-        [101, [7, 3], [71, 30]],
+        [101, [7, 3], [71, 30]]
       ])(
         "should correctly allocate values",
         (value, ratios, allocatedResults) => {
           const results = allocatedResults.map(
-            (result) => BigInt(result) * BIG_INT_PRECISION_M
+            result => BigInt(result) * BIG_INT_PRECISION_M
           );
           const money = createMoney({ amount: value, currency: "USD" });
           expect(
-            money.allocate(ratios).map((money) => money.getSource())
+            money.allocate(ratios).map(money => money.getSource())
           ).toEqual(results);
         }
       );
 
       it("should valid allocate for negative values op", () => {
         const results = [-3, -2].map(
-          (result) => BigInt(result) * BIG_INT_PRECISION_M
+          result => BigInt(result) * BIG_INT_PRECISION_M
         );
 
         const money = createMoney({ amount: -5, currency: "USD" });
 
-        const test = money.allocate([7, 3]).map((money) => money.getSource());
+        const test = money.allocate([7, 3]).map(money => money.getSource());
         expect(test).toEqual(results);
       });
 
@@ -461,10 +464,10 @@ describe("bigIntMoney", () => {
         const allocated = money.allocate([1, 1, 1]);
 
         expect(Array.isArray(allocated)).toBe(true);
-        expect(allocated.map((result) => result.getAmount())).toEqual([
+        expect(allocated.map(result => result.getAmount())).toEqual([
           34n,
           33n,
-          33n,
+          33n
         ]);
       });
 
@@ -475,7 +478,7 @@ describe("bigIntMoney", () => {
 
         const allocated = money.allocate([3, 7]);
 
-        expect(allocated.map((result) => result.getAmount())).toEqual([2n, 3n]);
+        expect(allocated.map(result => result.getAmount())).toEqual([2n, 3n]);
       });
 
       it("should throw an error when ratio array is empty", () => {
@@ -514,14 +517,14 @@ describe("bigIntMoney", () => {
         [15, 2, [8, 7]],
         [10, 2, [5, 5]],
         [15, 3, [5, 5, 5]],
-        [10, 3, [4, 3, 3]],
+        [10, 3, [4, 3, 3]]
       ])(
         "should correctly allocate values",
         (value, ratios, allocatedResults) => {
           const results = allocatedResults.map(BigInt);
           const money = createMoney({ amount: value, currency: "USD" });
           expect(
-            money.allocateTo(ratios).map((money) => money.getAmount())
+            money.allocateTo(ratios).map(money => money.getAmount())
           ).toEqual(results);
         }
       );
@@ -532,7 +535,7 @@ describe("bigIntMoney", () => {
         const moneyArr = createMoney(data1).allocateTo(2);
 
         expect(createMoney(data1).getAmount()).toEqual(15n);
-        expect(moneyArr.map((money) => money.getAmount())).toEqual([8n, 7n]);
+        expect(moneyArr.map(money => money.getAmount())).toEqual([8n, 7n]);
       });
 
       it("should throw an error when allocation target is not an integer", () => {

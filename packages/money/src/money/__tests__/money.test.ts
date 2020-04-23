@@ -1,8 +1,8 @@
 import { createMoneyUnit } from "../money";
 import { createCalculator } from "../../calculator";
-import { CreateMoney, MoneyInput } from "../types";
+import { MoneyInput } from "../types";
 import { RoundingModes } from "@easymoney/core";
-import { cryptoCurrenciesMap, currenciesMap } from "@easymoney/currencies";
+import { currenciesMap } from "@easymoney/currencies";
 import { MoneyBase } from "..";
 
 describe("money", () => {

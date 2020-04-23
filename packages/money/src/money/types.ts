@@ -1,9 +1,4 @@
-import {
-  Money,
-  RoundingModesType,
-  Currency,
-  AnyCurrency
-} from "@easymoney/core";
+import { Money, RoundingModesType, AnyCurrency } from "@easymoney/core";
 
 import { CalculatorBase } from "../calculator/";
 
