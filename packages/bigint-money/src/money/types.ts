@@ -1,47 +1,45 @@
-import { Money, RoundingModesType, Currency } from "@easymoney/core";
+import { Money, RoundingModesType, AnyCurrency } from "@easymoney/core";
 import { BigIntCalculatorBase } from "../calculator/";
 
-export type CreateMoney<MI, MB> = (money: MI) => MB;
-
-export interface BigIntMoneyBase {
-  getAmount: () => Money<bigint>["amount"];
-  getCurrency: () => Money<bigint>["currency"];
-  add(money: BigIntMoneyBase): BigIntMoneyBase;
-  subtract(money: BigIntMoneyBase): BigIntMoneyBase;
-  isSameCurrency(money: BigIntMoneyBase): boolean;
-  equals(money: BigIntMoneyBase): boolean;
-  compare(money: BigIntMoneyBase): 1 | 0 | -1;
-  greaterThan(money: BigIntMoneyBase): boolean;
-  greaterThanOrEqual(money: BigIntMoneyBase): boolean;
-  lessThan(money: BigIntMoneyBase): boolean;
-  lessThanOrEqual(money: BigIntMoneyBase): boolean;
+export interface BigIntMoneyBase<CT> {
+  getAmount: () => Money<CT, bigint>["amount"];
+  getCurrency: () => Money<CT, bigint>["currency"];
+  add(money: BigIntMoneyBase<CT>): BigIntMoneyBase<CT>;
+  subtract(money: BigIntMoneyBase<CT>): BigIntMoneyBase<CT>;
+  isSameCurrency(money: BigIntMoneyBase<CT>): boolean;
+  equals(money: BigIntMoneyBase<CT>): boolean;
+  compare(money: BigIntMoneyBase<CT>): 1 | 0 | -1;
+  greaterThan(money: BigIntMoneyBase<CT>): boolean;
+  greaterThanOrEqual(money: BigIntMoneyBase<CT>): boolean;
+  lessThan(money: BigIntMoneyBase<CT>): boolean;
+  lessThanOrEqual(money: BigIntMoneyBase<CT>): boolean;
 
   multiply(
     number: number | string | bigint,
     roundingMode?: RoundingModesType
-  ): BigIntMoneyBase;
+  ): BigIntMoneyBase<CT>;
   divide(
     number: number | string | bigint,
     roundingMode?: RoundingModesType
-  ): BigIntMoneyBase;
+  ): BigIntMoneyBase<CT>;
 
-  allocate(ratios: number[]): BigIntMoneyBase[];
-  allocateTo(number: number): BigIntMoneyBase[];
+  allocate(ratios: number[]): BigIntMoneyBase<CT>[];
+  allocateTo(number: number): BigIntMoneyBase<CT>[];
   getSource: () => bigint;
 }
 
-export type BigIntPrivateInstance = {
+export type BigIntPrivateInstance<CT> = {
   calculator: BigIntCalculatorBase;
-  instanceMoney: Money<bigint>;
+  instanceMoney: Money<CT, bigint>;
   roundindMode: RoundingModesType;
 };
 
-export type BigIntMoneyInput = {
+export type BigIntMoneyInput<CT> = {
   amount: number | string | bigint;
-  currency: Currency;
+  currency: CT extends string ? CT : CT extends AnyCurrency ? CT : never;
 };
 
-export type BigIntInstance = {
-  privateInstance: BigIntPrivateInstance;
-  publicInstance: BigIntMoneyBase;
+export type BigIntInstance<CT> = {
+  privateInstance: BigIntPrivateInstance<CT>;
+  publicInstance: BigIntMoneyBase<CT>;
 };
