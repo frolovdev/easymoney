@@ -38,7 +38,7 @@ const defaultOptions: MoneyIntlOptions = {
 
 function format(
   privateInstance: PrivateInstance,
-  money: MoneyBase,
+  money: MoneyBase<CurrencyUnitISO | string>,
   locale: string = "en-US",
   options: MoneyIntlOptions
 ) {
@@ -74,8 +74,9 @@ function format(
   }
 
   const currency = money.getCurrency();
+
   return Number(formatted).toLocaleString(locale, {
-    currency: typeof currency === "object" ? currency.code : currency,
+    currency: typeof currency === "string" ? currency : currency.code,
     useGrouping: mergedOptions.useGrouping,
     style: mergedOptions.style,
     currencyDisplay: mergedOptions.currencyDisplay,
