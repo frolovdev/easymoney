@@ -32,8 +32,8 @@ High-level roadmap described below.
 | property-based tests on main methods | ✅      |
 | intl formatter for createMoney       | ✅      |
 | formatter-crypto                     | ✅      |
+| supporting crypto currencies         | ✅      |
 | formatter-bigint                     | ❌      |
-| supporting crypto currencies         | ❌      |
 
 Feel free to ask any questions or just contact, I open to any suggestions or ideas
 
@@ -137,6 +137,15 @@ It's an old pattern that is implemented in many other languages i.g.:
 [david-formatter]: https://david-dm.org/frolovdev/easymoney?path=packages/formatter
 [size-formatter]: https://img.shields.io/bundlephobia/minzip/@easymoney/formatter
 [pho-formatter]: https://bundlephobia.com/result?p=@easymoney/formatter
+
+
+[`@easymoney/crypto-formatter`]: https://github.com/frolovdev/easymoney/tree/master/packages/crypto-formatter
+[npm-crypto-formatter]: https://img.shields.io/npm/v/@easymoney/crypto-formatter?color=blue
+[pack-crypto-formatter]: https://www.npmjs.com/package/@easymoney/crypto-formatter
+[deps-crypto-formatter]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/crypto-formatter
+[david-crypto-formatter]: https://david-dm.org/frolovdev/easymoney?path=packages/crypto-formatter
+[size-crypto-formatter]: https://img.shields.io/bundlephobia/minzip/@easymoney/crypto-formatter
+[pho-crypto-formatter]: https://bundlephobia.com/result?p=@easymoney/crypto-formatter
 
 ## Comunity
 
