@@ -42,7 +42,7 @@ const defaultOptions: CryptoOptions = {
 
 function format(
   privateInstance: PrivateInstance,
-  money: MoneyBase,
+  money: MoneyBase<CurrencyUnitCrypto>,
   options: CryptoOptions
 ) {
   const mergedOptions = {

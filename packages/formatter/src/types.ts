@@ -15,9 +15,13 @@ export type CryptoOptions = {
 };
 
 export type MoneyIntlFormatter = {
-  format(money: MoneyBase, locale?: string, options?: MoneyIntlOptions): string;
+  format<CT>(
+    money: MoneyBase<CT>,
+    locale?: string,
+    options?: MoneyIntlOptions
+  ): string;
 };
 
 export type MoneyCryptoFormatter = {
-  format(money: MoneyBase, options?: CryptoOptions): string;
+  format<CT>(money: MoneyBase<CT>, options?: CryptoOptions): string;
 };
