@@ -44,6 +44,9 @@
     },
     {
       "path": "packages/formatter"
+    },
+    {
+      "path": "packages/crypto-formatter"
     }
   ]
 }
