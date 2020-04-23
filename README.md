@@ -31,9 +31,9 @@ High-level roadmap described below.
 | docs base api, positive cases        | ✅      |
 | property-based tests on main methods | ✅      |
 | intl formatter for createMoney       | ✅      |
+| formatter-crypto                     | ✅      |
 | formatter-bigint                     | ❌      |
 | supporting crypto currencies         | ❌      |
-| formatter-crypto                     | ❌      |
 
 Feel free to ask any questions or just contact, I open to any suggestions or ideas
 
