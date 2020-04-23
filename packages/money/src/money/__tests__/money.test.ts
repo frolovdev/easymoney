@@ -40,7 +40,9 @@ describe("money", () => {
 
         expect(createMoney(a).getCurrency()).toEqual("USD");
 
-        expect(createMoney(b).getCurrency()).toEqual(currenciesMap.USD);
+        expect(createMoney(b).getCurrency().code).toEqual(
+          currenciesMap.USD.code
+        );
       });
 
       it("should be possible determine type if we pass currency object", () => {
