@@ -122,7 +122,8 @@ export function fromString(number: string): NumberInstance {
 
 export function fromNumber(number: string | number): NumberInstance {
   if (
-    !isNaN(parseInt(number as string)) &&
+    typeof number === "number" &&
+    !isNaN(parseInt((number as unknown) as string)) &&
     isFinite(number as number) &&
     !Number.isInteger(number as number)
   ) {
