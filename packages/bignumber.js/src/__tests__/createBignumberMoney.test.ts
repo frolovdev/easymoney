@@ -591,12 +591,12 @@ describe("bignumberMoney", () => {
 
       const result2 = createMoney(data1).divide(1 / 2);
 
-      //const result3 = createMoney(data1).divide("1122334455667788990011223344");
-      const result3 = createMoney(data1).divide(11223344556);
+      const result3 = createMoney(data1).divide("1122334455667788990011223344");
+      // const result3 = createMoney(data1).divide(11223344556);
 
       expect(result.getAmount()).toEqual("19823764554673289118256798224");
       expect(result2.getAmount()).toEqual("198237645546732891182567982244");
-      expect(result3.getAmount()).toEqual("8831487109640372124");
+      expect(result3.getAmount()).toEqual("88");
     });
 
     it("should throws an error if round mode is invalid", () => {

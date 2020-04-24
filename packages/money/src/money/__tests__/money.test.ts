@@ -464,6 +464,14 @@ describe("money", () => {
         expect(result2.getAmount()).toEqual("200");
       });
 
+      it("should divide the amount", () => {
+        const data1 = { amount: 100, currency: "RUB" };
+
+        const result = createMoney(data1).divide("5");
+
+        expect(result.getAmount()).toEqual("20");
+      });
+
       it("should throws an error if round mode is invalid", () => {
         const data1 = { amount: 100, currency: "RUB" };
 
