@@ -1,5 +1,10 @@
 import { createBignumberCalculator } from "../bignumberCalculator";
-import { createMoneyUnit, CreateMoney } from "@easymoney/money";
+// import {createMoneyUnit} from "../../../money/src/index";
+// import { CreateMoney } from "../../../money/src/index";
+// import {RoundingModes} from "../../../core/src/index";
+
+import { createMoneyUnit } from "@easymoney/money";
+import { CreateMoney } from "@easymoney/money";
 import { RoundingModes } from "@easymoney/core";
 
 describe("bignumberMoney", () => {
@@ -76,13 +81,15 @@ describe("bignumberMoney", () => {
       expect(money1.getCurrency()).toEqual(data1.currency);
     });
 
-    //ERROR - wrong format
     it("should valid construct bignumber with decimals zero", () => {
-      const data1 = { amount: "10000000000000000000009.00", currency: "USD" };
+      const data1 = {
+        amount: "1111222233334444555566667777.00",
+        currency: "USD"
+      };
 
       const money1 = createMoney(data1);
 
-      expect(money1.getAmount()).toEqual("10000000000000000000009");
+      expect(money1.getAmount()).toEqual("1111222233334444555566667777");
 
       expect(money1.getCurrency()).toEqual(data1.currency);
     });
@@ -101,7 +108,10 @@ describe("bignumberMoney", () => {
   describe("methods", () => {
     describe("isSameCurrency", () => {
       it("should return true if currencies are same", () => {
-        const data1 = { amount: 100, currency: "USD" };
+        const data1 = {
+          amount: "1111222233334444555566667777",
+          currency: "USD"
+        };
         const data2 = {
           amount: 200,
           currency: "USD"
@@ -125,14 +135,30 @@ describe("bignumberMoney", () => {
 
         expect(money1.isSameCurrency(money2)).toBe(false);
       });
+
+      it("should return true if currencies are same", () => {
+        const data1 = { amount: 100, currency: "USD" };
+        const data2 = {
+          amount: 200,
+          currency: "USD"
+        };
+
+        const money1 = createMoney(data1);
+        const money2 = createMoney(data2);
+
+        expect(money1.isSameCurrency(money2)).toBe(true);
+      });
     });
   });
 
   describe("equals", () => {
     it("should return true if money objects are equal", () => {
-      const data1 = { amount: 100, currency: "USD" };
+      const data1 = {
+        amount: "11112222333344445555666677778888",
+        currency: "USD"
+      };
       const data2 = {
-        amount: 100,
+        amount: "11112222333344445555666677778888",
         currency: "USD"
       };
 
@@ -143,9 +169,12 @@ describe("bignumberMoney", () => {
     });
 
     it("should return false if money objects arent equal with amount and currency", () => {
-      const data1 = { amount: 100, currency: "USD" };
+      const data1 = {
+        amount: "11112222333344445555666677778888",
+        currency: "USD"
+      };
       const data2 = {
-        amount: 200,
+        amount: "11112222333344445555666677778888",
         currency: "RUB"
       };
 
@@ -156,9 +185,12 @@ describe("bignumberMoney", () => {
     });
 
     it("should return false if money objects arent equal with amounts", () => {
-      const data1 = { amount: 100, currency: "RUB" };
+      const data1 = {
+        amount: "11112222333344445555666677778888",
+        currency: "RUB"
+      };
       const data2 = {
-        amount: 200,
+        amount: "88887777666655554444333322221111",
         currency: "RUB"
       };
 
@@ -184,7 +216,10 @@ describe("bignumberMoney", () => {
 
   describe("add", () => {
     it("should throw an error", () => {
-      const money1 = { amount: 100, currency: "USD" };
+      const money1 = {
+        amount: "111122223333444455556666777788889999",
+        currency: "USD"
+      };
       const money2 = {
         amount: 200,
         currency: "RUB"
@@ -204,6 +239,22 @@ describe("bignumberMoney", () => {
           .add(createMoney(money2))
           .getAmount()
       ).toEqual("300");
+    });
+
+    it("should add bignumber values", () => {
+      const money1 = {
+        amount: "111122223333444455556666777788889999",
+        currency: "USD"
+      };
+      const money2 = {
+        amount: "22223334444555566667777888899991111",
+        currency: "USD"
+      };
+      expect(
+        createMoney(money1)
+          .add(createMoney(money2))
+          .getAmount()
+      ).toEqual("133345557778000022224444666688881110");
     });
 
     it("should add values when chaining", () => {
@@ -231,13 +282,51 @@ describe("bignumberMoney", () => {
       expect(result2.getAmount()).toEqual("500");
       expect(result3.getAmount()).toEqual("550");
     });
+
+    it("should add bignumber values when chaining", () => {
+      const money1 = {
+        amount: "111199992222888833337777444466665555",
+        currency: "USD"
+      };
+      const money2 = {
+        amount: "999911118888111177771111666611115555",
+        currency: "USD"
+      };
+
+      const money3 = {
+        amount: "99999999988888888881111111",
+        currency: "USD"
+      };
+
+      const money4 = {
+        amount: "50000000000000000000000000001",
+        currency: "USD"
+      };
+
+      const result1 = createMoney(money1).add(createMoney(money2));
+
+      const result2 = result1.add(createMoney(money3));
+      const result3 = result2.add(createMoney(money4));
+      expect(result1.getAmount()).toEqual(
+        "1111111111111000011108889111077781110"
+      );
+      expect(result2.getAmount()).toEqual(
+        "1111111111211000011097777999958892221"
+      );
+      expect(result3.getAmount()).toEqual(
+        "1111111161211000011097777999958892222"
+      );
+    });
   });
 
   describe("compare", () => {
     it("should valid comapares money", () => {
-      const money1 = { amount: 100, currency: "USD" };
+      const money1 = {
+        amount: "111199992222888833337777444466665555",
+        currency: "USD"
+      };
       const money2 = {
-        amount: 100,
+        amount: "111199992222888833337777444466665555",
         currency: "USD"
       };
 
@@ -252,9 +341,9 @@ describe("bignumberMoney", () => {
     });
 
     it("should throw an error during comparison if currencies are different", () => {
-      const money1 = { amount: 100, currency: "USD" };
+      const money1 = { amount: "222888833337777444466665555", currency: "USD" };
       const money2 = {
-        amount: 100,
+        amount: "222888833337777444466665555",
         currency: "RUB"
       };
 
@@ -277,16 +366,20 @@ describe("bignumberMoney", () => {
 
   describe("getAmount", () => {
     it("should return same amount that was passed", () => {
-      const money1 = { amount: 100, currency: "USD" };
+      const money1 = { amount: "222888833337777444466665555", currency: "USD" };
 
       const result1 = createMoney(money1);
-      expect(result1.getAmount()).toEqual(String(money1.amount));
+      expect(result1.getAmount()).toEqual(money1.amount);
+      expect(result1.getAmount()).toEqual("222888833337777444466665555");
     });
   });
 
   describe("getCurrency", () => {
     it("should return same currency that was passed", () => {
-      const money1 = { amount: 100, currency: "USD" };
+      const money1 = {
+        amount: "1111999999222888833337777444466665555",
+        currency: "USD"
+      };
 
       const result1 = createMoney(money1);
       expect(result1.getCurrency()).toEqual(money1.currency);
@@ -295,8 +388,8 @@ describe("bignumberMoney", () => {
 
   describe("subtract", () => {
     it("should throw an error when currencies are different", () => {
-      const data1 = { amount: 100, currency: "USD" };
-      const data2 = { amount: 100, currency: "RUB" };
+      const data1 = { amount: 1009999911111, currency: "USD" };
+      const data2 = { amount: 1001111199991, currency: "RUB" };
 
       const money1 = createMoney(data1);
       const money2 = createMoney(data2);
@@ -307,8 +400,8 @@ describe("bignumberMoney", () => {
     });
 
     it("should subtract money if data is valid", () => {
-      const data1 = { amount: 100, currency: "RUB" };
-      const data2 = { amount: 101, currency: "RUB" };
+      const data1 = { amount: "222888833337777444466665555", currency: "RUB" };
+      const data2 = { amount: "222888833337777444466665556", currency: "RUB" };
 
       const money1 = createMoney(data1);
       const money2 = createMoney(data2);
@@ -322,9 +415,9 @@ describe("bignumberMoney", () => {
       const data1 = { amount: 100, currency: "RUB" };
       const data2 = { amount: 101, currency: "RUB" };
 
-      const data3 = { amount: 1050, currency: "RUB" };
+      const data3 = { amount: "222888833337777444466665555", currency: "RUB" };
 
-      const data4 = { amount: 2000, currency: "RUB" };
+      const data4 = { amount: "9999999999999999999999", currency: "RUB" };
 
       const money1 = createMoney(data1);
       const money2 = createMoney(data2);
@@ -336,11 +429,11 @@ describe("bignumberMoney", () => {
         .subtract(money3)
         .subtract(money4);
 
-      expect(result.getAmount()).toEqual("-3051");
+      expect(result.getAmount()).toEqual("-222898833337777444466665555");
     });
 
     it("should be same value is subtract 0", () => {
-      const data1 = { amount: 100, currency: "RUB" };
+      const data1 = { amount: "222898833337777444466665555", currency: "RUB" };
       const data2 = { amount: 0, currency: "RUB" };
 
       const money1 = createMoney(data1);
@@ -348,13 +441,13 @@ describe("bignumberMoney", () => {
 
       const result = money1.subtract(money2);
 
-      expect(result.getAmount()).toEqual("100");
+      expect(result.getAmount()).toEqual("222898833337777444466665555");
     });
   });
 
   describe("multiply", () => {
     it("should throw an error is passed data is incorrect", () => {
-      const data1 = { amount: 100, currency: "RUB" };
+      const data1 = { amount: "111222333444555666777888999", currency: "RUB" };
 
       const money1 = createMoney(data1);
 
@@ -364,92 +457,131 @@ describe("bignumberMoney", () => {
     });
 
     it("should multiplies the amount", () => {
-      const data1 = { amount: 100, currency: "RUB" };
+      const data1 = { amount: "77778888111133339999111", currency: "RUB" };
 
       const result = createMoney(data1).multiply(6);
 
-      expect(result.getAmount()).toEqual("600");
+      expect(result.getAmount()).toEqual("466673328666800039994666");
+    });
+
+    it("should negative multiplies the amount", () => {
+      const data1 = { amount: "77778888111133339999111", currency: "RUB" };
+
+      const result = createMoney(data1).multiply("-55432156789");
+
+      expect(result.getAmount()).toEqual("-4311451520650431359315966072614579");
     });
 
     it("should throws an error if round mode is invalid", () => {
-      const data1 = { amount: 100, currency: "RUB" };
+      const data1 = {
+        amount: "1451520650431359315966072614579",
+        currency: "RUB"
+      };
 
       const money1 = createMoney(data1);
 
       // @ts-ignore
-      const expression = () => money1.multiply(5, "random");
+      const expression = () =>
+        money1.multiply("-53333331111115555555555555", "random");
 
       expect(expression).toThrow();
     });
 
     describe("rounding", () => {
       it("should round bankers rounding by default", () => {
-        const data1 = { amount: 5, currency: "RUB" };
+        const data1 = {
+          amount: "111122223333444455556666777788889999",
+          currency: "RUB"
+        };
 
         const money1 = createMoney(data1);
 
-        expect(money1.multiply(1.0).getAmount()).toEqual("5");
-        expect(money1.multiply(1.02).getAmount()).toEqual("5");
-        expect(money1.multiply(1.08).getAmount()).toEqual("5");
-        expect(money1.multiply(1.1).getAmount()).toEqual("6");
-        expect(money1.multiply(1.12).getAmount()).toEqual("6");
-        expect(money1.multiply(1.18).getAmount()).toEqual("6");
-        expect(money1.multiply(1.2).getAmount()).toEqual("6");
-        expect(money1.multiply(1.22).getAmount()).toEqual("6");
-        expect(money1.multiply(1.28).getAmount()).toEqual("6");
-        expect(money1.multiply(1.3).getAmount()).toEqual("6");
-        expect(money1.multiply(1.32).getAmount()).toEqual("7");
-        expect(money1.multiply(1.38).getAmount()).toEqual("7");
-        expect(money1.multiply(1.4).getAmount()).toEqual("7");
+        expect(money1.multiply(1.0).getAmount()).toEqual(
+          "111122223333444455556666777788889999"
+        );
+        expect(money1.multiply(1.02).getAmount()).toEqual(
+          "113344667800113344667800113344667799"
+        );
+        expect(money1.multiply(1.08).getAmount()).toEqual(
+          "120012001200120012001200120012001199"
+        );
+        expect(money1.multiply(1.1).getAmount()).toEqual(
+          "122234445666788901112333455567778999"
+        );
+        expect(money1.multiply(1.32).getAmount()).toEqual(
+          "146681334800146681334800146681334799"
+        );
+        expect(money1.multiply("23.145638972").getAmount()).toEqual(
+          "2571994863041859741529708526408196349"
+        );
+        expect(money1.multiply("2030405060.51").getAmount()).toEqual(
+          "225623124591348023691258014690357922425328839"
+        );
 
-        expect(money1.multiply(-1.4).getAmount()).toEqual("-7");
-        expect(money1.multiply(-1.38).getAmount()).toEqual("-7");
-        expect(money1.multiply(-1.32).getAmount()).toEqual("-7");
-        expect(money1.multiply(-1.3).getAmount()).toEqual("-6");
-        expect(money1.multiply(-1.28).getAmount()).toEqual("-6");
-        expect(money1.multiply(-1.22).getAmount()).toEqual("-6");
-        expect(money1.multiply(-1.2).getAmount()).toEqual("-6");
-        expect(money1.multiply(-1.18).getAmount()).toEqual("-6");
-        expect(money1.multiply(-1.12).getAmount()).toEqual("-6");
-        expect(money1.multiply(-1.1).getAmount()).toEqual("-6");
-        expect(money1.multiply(-1.08).getAmount()).toEqual("-5");
-        expect(money1.multiply(-1.02).getAmount()).toEqual("-5");
-        expect(money1.multiply(-1.0).getAmount()).toEqual("-5");
+        expect(money1.multiply(-1.4).getAmount()).toEqual(
+          "-155571112666822237779333488904445999"
+        );
+        expect(money1.multiply(-1.38).getAmount()).toEqual(
+          "-153348668200153348668200153348668199"
+        );
+        expect(money1.multiply(-1.32).getAmount()).toEqual(
+          "-146681334800146681334800146681334799"
+        );
+        expect(money1.multiply("-234567891.0000514678").getAmount()).toEqual(
+          "-26065705570562774921936638108255269710807992"
+        );
+        expect(money1.multiply("-234567189.91825761").getAmount()).toEqual(
+          "-26065627664795102843617695102843617434470026"
+        );
+        expect(money1.multiply(-1.0).getAmount()).toEqual(
+          "-111122223333444455556666777788889999"
+        );
       });
     });
 
     it("should be possible to pass another rounding method", () => {
-      const data1 = { amount: 5, currency: "RUB" };
+      const data1 = { amount: "991188227733664455912834765", currency: "RUB" };
 
       const money1 = createMoney(data1);
 
-      expect(money1.multiply(1.0, "DOWN").getAmount()).toEqual("5");
-      expect(money1.multiply(1.02, "DOWN").getAmount()).toEqual("5");
-      expect(money1.multiply(1.08, "DOWN").getAmount()).toEqual("5");
-      expect(money1.multiply(1.1, "DOWN").getAmount()).toEqual("5");
-      expect(money1.multiply(1.12, "DOWN").getAmount()).toEqual("5");
-      expect(money1.multiply(1.18, "DOWN").getAmount()).toEqual("5");
-      expect(money1.multiply(1.2, "DOWN").getAmount()).toEqual("6");
-      expect(money1.multiply(1.22, "DOWN").getAmount()).toEqual("6");
-      expect(money1.multiply(1.28, "DOWN").getAmount()).toEqual("6");
-      expect(money1.multiply(1.3, "DOWN").getAmount()).toEqual("6");
-      expect(money1.multiply(1.32, "DOWN").getAmount()).toEqual("6");
-      expect(money1.multiply(1.38, "DOWN").getAmount()).toEqual("6");
-      expect(money1.multiply(1.4, "DOWN").getAmount()).toEqual("7");
+      expect(money1.multiply(1.0, "DOWN").getAmount()).toEqual(
+        "991188227733664455912834765"
+      );
+      expect(money1.multiply(1.02, "DOWN").getAmount()).toEqual(
+        "1011011992288337745031091460"
+      );
+      expect(
+        money1.multiply("222333111444555666.5", "DOWN").getAmount()
+      ).toEqual("220373962699240441120315884817094039858945872");
+      expect(money1.multiply("1.1234567891234124", "DOWN").getAmount()).toEqual(
+        "1113557143746588334879623500"
+      );
+      expect(money1.multiply(1234567.5, "DOWN").getAmount()).toEqual(
+        "1223688772342580793175168633739137"
+      );
+      expect(money1.multiply(1.45, "DOWN").getAmount()).toEqual(
+        "1437222930213813461073610409"
+      );
 
-      expect(money1.multiply(-1.4, "DOWN").getAmount()).toEqual("-7");
-      expect(money1.multiply(-1.38, "DOWN").getAmount()).toEqual("-6");
-      expect(money1.multiply(-1.32, "DOWN").getAmount()).toEqual("-6");
-      expect(money1.multiply(-1.3, "DOWN").getAmount()).toEqual("-6");
-      expect(money1.multiply(-1.28, "DOWN").getAmount()).toEqual("-6");
-      expect(money1.multiply(-1.22, "DOWN").getAmount()).toEqual("-6");
-      expect(money1.multiply(-1.2, "DOWN").getAmount()).toEqual("-6");
-      expect(money1.multiply(-1.18, "DOWN").getAmount()).toEqual("-5");
-      expect(money1.multiply(-1.12, "DOWN").getAmount()).toEqual("-5");
-      expect(money1.multiply(-1.1, "DOWN").getAmount()).toEqual("-5");
-      expect(money1.multiply(-1.08, "DOWN").getAmount()).toEqual("-5");
-      expect(money1.multiply(-1.02, "DOWN").getAmount()).toEqual("-5");
-      expect(money1.multiply(-1.0, "DOWN").getAmount()).toEqual("-5");
+      expect(money1.multiply(-1.4, "DOWN").getAmount()).toEqual(
+        "-1387663518827130238277968671"
+      );
+      expect(money1.multiply(-1.38, "DOWN").getAmount()).toEqual(
+        "-1367839754272456949159711975"
+      );
+      expect(money1.multiply(-2512345.5, "DOWN").getAmount()).toEqual(
+        "-2490207283599647094322558814091307"
+      );
+      expect(
+        money1
+          .multiply("-111122223333444455556666777788889999.25", "DOWN")
+          .getAmount()
+      ).toEqual(
+        "-110143039607701265227948879887988798026353778390930280826223926"
+      );
+      expect(money1.multiply(-1.0, "DOWN").getAmount()).toEqual(
+        "-991188227733664455912834765"
+      );
     });
   });
 
@@ -465,18 +597,25 @@ describe("bignumberMoney", () => {
     });
 
     it("should divide the amount", () => {
-      const data1 = { amount: 100, currency: "RUB" };
+      const data1 = {
+        amount: "99118822773366445591283991122",
+        currency: "RUB"
+      };
 
       const result = createMoney(data1).divide(5);
 
       const result2 = createMoney(data1).divide(1 / 2);
 
-      expect(result.getAmount()).toEqual("20");
-      expect(result2.getAmount()).toEqual("200");
+      //const result3 = createMoney(data1).divide("1122334455667788990011223344");
+      const result3 = createMoney(data1).divide(11223344556);
+
+      expect(result.getAmount()).toEqual("19823764554673289118256798224");
+      expect(result2.getAmount()).toEqual("198237645546732891182567982244");
+      expect(result3.getAmount()).toEqual("8831487109640372124");
     });
 
     it("should throws an error if round mode is invalid", () => {
-      const data1 = { amount: 100, currency: "RUB" };
+      const data1 = { amount: "8831487109640372124", currency: "RUB" };
 
       const money1 = createMoney(data1);
 
@@ -487,7 +626,10 @@ describe("bignumberMoney", () => {
     });
 
     it("should throws an error if divizor is zero", () => {
-      const data1 = { amount: 100, currency: "RUB" };
+      const data1 = {
+        amount: "88314871096403721248831487109640372124",
+        currency: "RUB"
+      };
 
       const result = () => createMoney(data1).divide(0);
 
@@ -646,27 +788,34 @@ describe("bignumberMoney", () => {
 
     describe("allocate", () => {
       test.each([
-        [100, [1, 1, 1], [34, 33, 33]],
-        [101, [1, 1, 1], [34, 34, 33]],
-        [5, [3, 7], [2, 3]],
-        [5, [7, 3], [4, 1]],
-        [5, [7, 3, 0], [4, 1, 0]],
-        [-5, [7, 3], [-3, -2]],
-        [5, [0, 7, 3], [0, 4, 1]],
-        [5, [7, 0, 3], [4, 0, 1]],
-        [5, [0, 0, 1], [0, 0, 5]],
-        [5, [0, 3, 7], [0, 2, 3]],
-        [0, [0, 0, 1], [0, 0, 0]],
-        [2, [1, 1, 1], [1, 1, 0]],
-        [1, [1, 1], [1, 0]],
-        [1, [0.33, 0.66], [0, 1]],
-        [101, [3, 7], [30, 71]],
-        [101, [7, 3], [71, 30]],
-        [101, [7, 3], [71, 30]]
+        // [100, [1, 1, 1], [34, 33, 33]],
+        // [101, [1, 1, 1], [34, 34, 33]],
+        // [5, [3, 7], [2, 3]],
+        // [5, [7, 3], [4, 1]],
+        // [5, [7, 3, 0], [4, 1, 0]],
+        // [-5, [7, 3], [-3, -2]],
+        // [5, [0, 7, 3], [0, 4, 1]],
+        // [5, [7, 0, 3], [4, 0, 1]],
+        // [5, [0, 0, 1], [0, 0, 5]],
+        // [5, [0, 3, 7], [0, 2, 3]],
+        // [0, [0, 0, 1], [0, 0, 0]],
+        // [2, [1, 1, 1], [1, 1, 0]],
+        // [1, [1, 1], [1, 0]],
+        // [1, [0.33, 0.66], [0, 1]],
+        // [101, [3, 7], [30, 71]],
+        // [101, [7, 3], [71, 30]],
+        // [101, [7, 3], [71, 30]],
+        //["150", [3, 4, 3], ["45", "60", "45"]],
+        [
+          "8831487109640372124",
+          [3, 4, 3],
+          ["2649446132892111637", "3532594843856148850", "2649446132892111638"]
+        ]
       ])(
         "should correctly allocate values",
         (value, ratios, allocatedResults) => {
-          const results = allocatedResults.map(String);
+          //const results = allocatedResults.map(String);
+          const results = allocatedResults;
           const money = createMoney({ amount: value, currency: "USD" });
           expect(
             money.allocate(ratios).map(money => money.getAmount())

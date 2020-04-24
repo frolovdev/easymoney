@@ -1,38 +1,46 @@
 import BigNumber from "bignumber.js";
 import { RoundingModes, RoundingModesType } from "@easymoney/core";
 
-export function roundHalfEven(number: BigNumber) {
-  const rounded = number.dp(0, BigNumber.ROUND_HALF_EVEN);
+export function roundHalfEven(number: string | number) {
+  const newNumber = new BigNumber(number);
+  const rounded = newNumber.dp(0, BigNumber.ROUND_HALF_EVEN).toFixed();
+
   return rounded;
 }
 
-export function roundHalfUp(number: BigNumber) {
-  const rounded = number.dp(0, BigNumber.ROUND_HALF_UP);
+export function roundHalfUp(number: string | number) {
+  const newNumber = new BigNumber(number);
+  const rounded = newNumber.dp(0, BigNumber.ROUND_HALF_UP).toFixed();
   return rounded;
 }
 
-export function roundHalfDown(number: BigNumber) {
-  const rounded = number.dp(0, BigNumber.ROUND_HALF_DOWN);
+export function roundHalfDown(number: string | number) {
+  const newNumber = new BigNumber(number);
+  const rounded = newNumber.dp(0, BigNumber.ROUND_HALF_DOWN).toFixed();
   return rounded;
 }
 
-export function roundNegativeInfinity(number: BigNumber) {
-  const rounded = number.dp(0, BigNumber.ROUND_FLOOR);
+export function roundNegativeInfinity(number: string | number) {
+  const newNumber = new BigNumber(number);
+  const rounded = newNumber.dp(0, BigNumber.ROUND_FLOOR).toFixed();
   return rounded;
 }
 
-export function roundPositiveInfinity(number: BigNumber) {
-  const rounded = number.dp(0, BigNumber.ROUND_CEIL);
+export function roundPositiveInfinity(number: string | number) {
+  const newNumber = new BigNumber(number);
+  const rounded = newNumber.dp(0, BigNumber.ROUND_CEIL).toFixed();
   return rounded;
 }
 
-export function roundTowardsZero(number: BigNumber) {
-  const rounded = new BigNumber(number).dp(0, BigNumber.ROUND_DOWN);
+export function roundTowardsZero(number: string | number) {
+  const newNumber = new BigNumber(number);
+  const rounded = newNumber.dp(0, BigNumber.ROUND_DOWN).toFixed();
   return rounded;
 }
 
-export function roundAwayFromZero(number: BigNumber) {
-  const rounded = number.dp(0, BigNumber.ROUND_UP);
+export function roundAwayFromZero(number: string | number) {
+  const newNumber = new BigNumber(number);
+  const rounded = newNumber.dp(0, BigNumber.ROUND_UP).toFixed();
   return rounded;
 }
 
@@ -50,5 +58,5 @@ export function customRound(
     [RoundingModes.UP]: roundAwayFromZero
   };
 
-  return roundTypes[roundType](new BigNumber(number));
+  return roundTypes[roundType](number);
 }
