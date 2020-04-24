@@ -472,21 +472,6 @@ describe("bignumberMoney", () => {
       expect(result.getAmount()).toEqual("-4311451520650431359315966072614579");
     });
 
-    it("should throws an error if round mode is invalid", () => {
-      const data1 = {
-        amount: "1451520650431359315966072614579",
-        currency: "RUB"
-      };
-
-      const money1 = createMoney(data1);
-
-      // @ts-ignore
-      const expression = () =>
-        money1.multiply("-53333331111115555555555555", "random");
-
-      expect(expression).toThrow();
-    });
-
     describe("rounding", () => {
       it("should round bankers rounding by default", () => {
         const data1 = {
@@ -957,6 +942,14 @@ describe("bignumberMoney", () => {
       expect(expression).toThrow();
     });
 
+    it("for bignumber value should throw an error if passed money is zero", () => {
+      const data1 = { amount: "2222333344441111555566667777", currency: "RUB" };
+      const data2 = { amount: 0, currency: "RUB" };
+      const expression = () => createMoney(data1).ratioOf(createMoney(data2));
+
+      expect(expression).toThrow();
+    });
+
     it("should get ratio if passed valid data", () => {
       const data1 = { amount: 100, currency: "RUB" };
       const data2 = { amount: 20, currency: "RUB" };
@@ -964,12 +957,37 @@ describe("bignumberMoney", () => {
 
       expect(result).toEqual("5");
     });
+
+    it("for bignumber value should get ratio if passed valid data", () => {
+      const data1 = {
+        amount: "100000000000000000000000000000000",
+        currency: "RUB"
+      };
+      const data2 = { amount: "20000000000000000", currency: "RUB" };
+      const result = createMoney(data1).ratioOf(createMoney(data2));
+
+      expect(result).toEqual("5000000000000000");
+    });
   });
 
   describe("mod", () => {
     it("should throw an error when currencies is different", () => {
       const data1 = { amount: 100, currency: "RUB" };
       const data2 = { amount: 100, currency: "USD" };
+      const expression = () => createMoney(data1).mod(createMoney(data2));
+
+      expect(expression).toThrow();
+    });
+
+    it("for bignumber value should throw an error when currencies is different", () => {
+      const data1 = {
+        amount: "111122223333444455556666777788889999",
+        currency: "RUB"
+      };
+      const data2 = {
+        amount: "111122223333444455556666777788889999",
+        currency: "USD"
+      };
       const expression = () => createMoney(data1).mod(createMoney(data2));
 
       expect(expression).toThrow();
@@ -983,10 +1001,24 @@ describe("bignumberMoney", () => {
       expect(result.getAmount()).toEqual("100");
     });
 
+    it("for bignumber value should calculates a modulus with an other money", () => {
+      const data1 = {
+        amount: "111122223333444455556666777788889999",
+        currency: "RUB"
+      };
+      const data2 = { amount: "222299991111133334444", currency: "RUB" };
+
+      const result = createMoney(data1).mod(createMoney(data2));
+      expect(result.getAmount()).toEqual("70856833948128988399");
+    });
+
     it("should be valid chainable", () => {
-      const data1 = { amount: 100, currency: "RUB" };
-      const data2 = { amount: 200, currency: "RUB" };
-      const data3 = { amount: 100, currency: "RUB" };
+      const data1 = {
+        amount: "111122223333444455556666777788889999",
+        currency: "RUB"
+      };
+      const data2 = { amount: "222299991111133334444", currency: "RUB" };
+      const data3 = { amount: "70856833948128988399", currency: "RUB" };
 
       const result = createMoney(data1)
         .mod(createMoney(data2))
@@ -1004,6 +1036,19 @@ describe("bignumberMoney", () => {
       expect(result.getAmount()).toEqual("100");
     });
 
+    it("for bignumber value should calculates absolute amount", () => {
+      const data1 = {
+        amount: "-222233334444111155556666777788889999",
+        currency: "USD"
+      };
+      const money = createMoney(data1);
+      const result = money.absolute();
+
+      expect(result.getAmount()).toEqual(
+        "222233334444111155556666777788889999"
+      );
+    });
+
     it("should be chainable", () => {
       const data1 = { amount: -100, currency: "USD" };
       const money = createMoney(data1)
@@ -1012,7 +1057,20 @@ describe("bignumberMoney", () => {
 
       expect(money.getAmount()).toEqual("0");
     });
+
+    it("for bignumber value should be chainable", () => {
+      const data1 = {
+        amount: "-222233334444111155556666777788889999",
+        currency: "USD"
+      };
+      const money = createMoney(data1)
+        .absolute()
+        .add(createMoney(data1));
+
+      expect(money.getAmount()).toEqual("0");
+    });
   });
+
   describe("negative", () => {
     it("should calculates absolute amount", () => {
       const data1 = { amount: 100, currency: "USD" };
@@ -1020,6 +1078,19 @@ describe("bignumberMoney", () => {
       const result = money.negative();
 
       expect(result.getAmount()).toEqual("-100");
+    });
+
+    it("for bignumber value should calculates absolute amount", () => {
+      const data1 = {
+        amount: "999988887777666655554444333322221111",
+        currency: "USD"
+      };
+      const money = createMoney(data1);
+      const result = money.negative();
+
+      expect(result.getAmount()).toEqual(
+        "-999988887777666655554444333322221111"
+      );
     });
 
     it("should be chainable", () => {
@@ -1030,37 +1101,61 @@ describe("bignumberMoney", () => {
 
       expect(money.getAmount()).toEqual("0");
     });
+
+    it("for bignumber value should be chainable", () => {
+      const data1 = {
+        amount: "999988887777666655554444333322221111",
+        currency: "USD"
+      };
+      const money = createMoney(data1)
+        .negative()
+        .add(createMoney(data1));
+
+      expect(money.getAmount()).toEqual("0");
+    });
   });
+
   describe("isZero", () => {
     it("should return true if amount is zero", () => {
-      const data1 = { amount: 0, currency: "USD" };
+      const data1 = { amount: "0", currency: "USD" };
       const money = createMoney(data1).isZero();
 
       expect(money).toBe(true);
     });
 
     it("should return false if amount isn't zero", () => {
-      const data1 = { amount: 10, currency: "USD" };
+      const data1 = {
+        amount: "999988887777666655554444333322221111",
+        currency: "USD"
+      };
       const money = createMoney(data1).isZero();
 
       expect(money).toBe(false);
     });
   });
+
   describe("isPositive", () => {
     it("should return true if amount is positive", () => {
-      const data1 = { amount: 10, currency: "USD" };
+      const data1 = {
+        amount: "9999888877779999999999944333322221111",
+        currency: "USD"
+      };
       const money = createMoney(data1).isPositive();
 
       expect(money).toBe(true);
     });
 
     it("should return false if amount isn't positive", () => {
-      const data1 = { amount: -100, currency: "USD" };
+      const data1 = {
+        amount: "-999988887777666655554444333322221111",
+        currency: "USD"
+      };
       const money = createMoney(data1).isPositive();
 
       expect(money).toBe(false);
     });
   });
+
   describe("isNegative", () => {
     it("should return true if amount is negative", () => {
       const data1 = { amount: -100, currency: "USD" };
