@@ -1,8 +1,4 @@
 import { createBignumberCalculator } from "../bignumberCalculator";
-// import {createMoneyUnit} from "../../../money/src/index";
-// import { CreateMoney } from "../../../money/src/index";
-// import {RoundingModes} from "../../../core/src/index";
-
 import { createMoneyUnit } from "@easymoney/money";
 import { CreateMoney } from "@easymoney/money";
 import { RoundingModes } from "@easymoney/core";
@@ -81,7 +77,7 @@ describe("bignumberMoney", () => {
       expect(money1.getCurrency()).toEqual(data1.currency);
     });
 
-    it("should valid construct bignumber with decimals zero", () => {
+    it("should valid bignumber construct with decimals zero", () => {
       const data1 = {
         amount: "1111222233334444555566667777.00",
         currency: "USD"
@@ -107,7 +103,7 @@ describe("bignumberMoney", () => {
 
   describe("methods", () => {
     describe("isSameCurrency", () => {
-      it("should return true if currencies are same", () => {
+      it("should return true if currencies are same for bignumber value", () => {
         const data1 = {
           amount: "1111222233334444555566667777",
           currency: "USD"
@@ -152,7 +148,7 @@ describe("bignumberMoney", () => {
   });
 
   describe("equals", () => {
-    it("should return true if money objects are equal", () => {
+    it("should return true if money objects are equal for bignumber value", () => {
       const data1 = {
         amount: "11112222333344445555666677778888",
         currency: "USD"
@@ -168,7 +164,7 @@ describe("bignumberMoney", () => {
       expect(money1.equals(money2)).toBe(true);
     });
 
-    it("should return false if money objects arent equal with amount and currency", () => {
+    it("should return false if money objects arent equal with amount and currency for bignumber value", () => {
       const data1 = {
         amount: "11112222333344445555666677778888",
         currency: "USD"
@@ -184,7 +180,7 @@ describe("bignumberMoney", () => {
       expect(money1.equals(money2)).toBe(false);
     });
 
-    it("should return false if money objects arent equal with amounts", () => {
+    it("should return false if money objects arent equal with amounts for bignumber value", () => {
       const data1 = {
         amount: "11112222333344445555666677778888",
         currency: "RUB"
@@ -215,7 +211,7 @@ describe("bignumberMoney", () => {
   });
 
   describe("add", () => {
-    it("should throw an error", () => {
+    it("should throw an error for bignumber value", () => {
       const money1 = {
         amount: "111122223333444455556666777788889999",
         currency: "USD"
@@ -241,7 +237,7 @@ describe("bignumberMoney", () => {
       ).toEqual("300");
     });
 
-    it("should add bignumber values", () => {
+    it("should add bignumber values for bignumber value", () => {
       const money1 = {
         amount: "111122223333444455556666777788889999",
         currency: "USD"
@@ -320,7 +316,7 @@ describe("bignumberMoney", () => {
   });
 
   describe("compare", () => {
-    it("should valid comapares money", () => {
+    it("should valid comapares money for bignumber value", () => {
       const money1 = {
         amount: "111199992222888833337777444466665555",
         currency: "USD"
@@ -340,7 +336,7 @@ describe("bignumberMoney", () => {
       expect(result1.lessThanOrEqual(result2)).toEqual(true);
     });
 
-    it("should throw an error during comparison if currencies are different", () => {
+    it("should throw an error during comparison if currencies are different for bignumber value", () => {
       const money1 = { amount: "222888833337777444466665555", currency: "USD" };
       const money2 = {
         amount: "222888833337777444466665555",
@@ -365,7 +361,7 @@ describe("bignumberMoney", () => {
   });
 
   describe("getAmount", () => {
-    it("should return same amount that was passed", () => {
+    it("should return same amount that was passed for bignumber value", () => {
       const money1 = { amount: "222888833337777444466665555", currency: "USD" };
 
       const result1 = createMoney(money1);
@@ -375,7 +371,7 @@ describe("bignumberMoney", () => {
   });
 
   describe("getCurrency", () => {
-    it("should return same currency that was passed", () => {
+    it("should return same currency that was passed for bignumber value", () => {
       const money1 = {
         amount: "1111999999222888833337777444466665555",
         currency: "USD"
@@ -399,7 +395,7 @@ describe("bignumberMoney", () => {
       expect(expression).toThrow();
     });
 
-    it("should subtract money if data is valid", () => {
+    it("should subtract money if data is valid for bignumber value", () => {
       const data1 = { amount: "222888833337777444466665555", currency: "RUB" };
       const data2 = { amount: "222888833337777444466665556", currency: "RUB" };
 
@@ -411,7 +407,7 @@ describe("bignumberMoney", () => {
       expect(result.getAmount()).toEqual("-1");
     });
 
-    it("should correct chain", () => {
+    it("should correct chain for number and bignumber values", () => {
       const data1 = { amount: 100, currency: "RUB" };
       const data2 = { amount: 101, currency: "RUB" };
 
@@ -446,7 +442,7 @@ describe("bignumberMoney", () => {
   });
 
   describe("multiply", () => {
-    it("should throw an error is passed data is incorrect", () => {
+    it("should throw an error is passed data is incorrect for bignumber value", () => {
       const data1 = { amount: "111222333444555666777888999", currency: "RUB" };
 
       const money1 = createMoney(data1);
@@ -456,7 +452,7 @@ describe("bignumberMoney", () => {
       expect(expression).toThrow();
     });
 
-    it("should multiplies the amount", () => {
+    it("should multiplies the amount for bignumber value", () => {
       const data1 = { amount: "77778888111133339999111", currency: "RUB" };
 
       const result = createMoney(data1).multiply(6);
@@ -464,7 +460,7 @@ describe("bignumberMoney", () => {
       expect(result.getAmount()).toEqual("466673328666800039994666");
     });
 
-    it("should negative multiplies the amount", () => {
+    it("should negative multiplies the amount for bignumber value", () => {
       const data1 = { amount: "77778888111133339999111", currency: "RUB" };
 
       const result = createMoney(data1).multiply("-55432156789");
@@ -473,7 +469,7 @@ describe("bignumberMoney", () => {
     });
 
     describe("rounding", () => {
-      it("should round bankers rounding by default", () => {
+      it("should round bankers rounding by default for bignumber value", () => {
         const data1 = {
           amount: "111122223333444455556666777788889999",
           currency: "RUB"
@@ -524,7 +520,7 @@ describe("bignumberMoney", () => {
       });
     });
 
-    it("should be possible to pass another rounding method", () => {
+    it("should be possible to pass another rounding method for bignumber value", () => {
       const data1 = { amount: "991188227733664455912834765", currency: "RUB" };
 
       const money1 = createMoney(data1);
@@ -572,7 +568,7 @@ describe("bignumberMoney", () => {
 
   describe("divide", () => {
     it("should throw an error is passed data is incorrect", () => {
-      const data1 = { amount: 100, currency: "RUB" };
+      const data1 = { amount: "100", currency: "RUB" };
 
       const money1 = createMoney(data1);
 
@@ -581,7 +577,7 @@ describe("bignumberMoney", () => {
       expect(expression).toThrow();
     });
 
-    it("should divide the amount", () => {
+    it("should divide the amount for bignumber value", () => {
       const data1 = {
         amount: "99118822773366445591283991122",
         currency: "RUB"
@@ -592,14 +588,13 @@ describe("bignumberMoney", () => {
       const result2 = createMoney(data1).divide(1 / 2);
 
       const result3 = createMoney(data1).divide("1122334455667788990011223344");
-      // const result3 = createMoney(data1).divide(11223344556);
 
       expect(result.getAmount()).toEqual("19823764554673289118256798224");
       expect(result2.getAmount()).toEqual("198237645546732891182567982244");
       expect(result3.getAmount()).toEqual("88");
     });
 
-    it("should throws an error if round mode is invalid", () => {
+    it("should throws an error if round mode is invalid for bignumber value", () => {
       const data1 = { amount: "8831487109640372124", currency: "RUB" };
 
       const money1 = createMoney(data1);
@@ -610,7 +605,7 @@ describe("bignumberMoney", () => {
       expect(expression).toThrow();
     });
 
-    it("should throws an error if divizor is zero", () => {
+    it("should give an error if the divisor is zero and the dividend bignumber value", () => {
       const data1 = {
         amount: "88314871096403721248831487109640372124",
         currency: "RUB"
@@ -629,7 +624,13 @@ describe("bignumberMoney", () => {
           [10, 7, "1"],
           [6, 4, "2"],
           [10, 5, "2"],
-          [10, 6, "2"]
+          [10, 6, "2"],
+          [
+            "999988887777666655554444333322221111",
+            "999988887777666655554444333322221110",
+            "1"
+          ],
+          ["111999222888333777444666555", "111122223333444455556666", "1008"]
         ])(
           "should correctly round positive even results",
           (left, right, result) => {
@@ -648,7 +649,13 @@ describe("bignumberMoney", () => {
           [5, 2, "2"],
           [13, 5, "3"],
           [14, 5, "3"],
-          [15, 5, "3"]
+          [15, 5, "3"],
+          [
+            "999988887777666655554444333322221111",
+            "999988887777666655554444333322221199",
+            "1"
+          ],
+          ["111999222888333777444666555", "111122223333444455556663", "1008"]
         ])(
           "should correctly round positive odd results",
           (left, right, result) => {
@@ -665,7 +672,13 @@ describe("bignumberMoney", () => {
           [10, -6, "-2"],
           [6, -4, "-2"],
           [5, -4, "-1"],
-          [10, -2, "-5"]
+          [10, -2, "-5"],
+          [
+            "999988887777666655554444333322221111",
+            "-999988887777666655554444333322221110",
+            "-1"
+          ],
+          ["111999222888333777444666555", "-111122223333444455556666", "-1008"]
         ])(
           "should correctly round negative even results",
           (left, right, result) => {
@@ -683,7 +696,13 @@ describe("bignumberMoney", () => {
           [10, -4, "-2"],
           [13, -5, "-3"],
           [14, -5, "-3"],
-          [15, -5, "-3"]
+          [15, -5, "-3"],
+          [
+            "999988887777666655554444333322221111",
+            "-999988887777666655554444333322221199",
+            "-1"
+          ],
+          ["111999222888333777444666555", "-111122223333444455556663", "-1008"]
         ])(
           "should correctly round negative odd results",
           (left, right, result) => {
@@ -703,7 +722,13 @@ describe("bignumberMoney", () => {
           [10, 7, "1"],
           [6, 4, "2"],
           [6, 6, "1"],
-          [10, 6, "2"]
+          [10, 6, "2"],
+          [
+            "999988887777666655554444333322221111",
+            "666655555555555544443333222211110000",
+            "2"
+          ],
+          ["111999222888333777444666555", "12220000222233334444666690", "9"]
         ])(
           "should correctly round positive even results",
           (left, right, result) => {
@@ -722,7 +747,13 @@ describe("bignumberMoney", () => {
           [5, 2, "3"],
           [13, 5, "3"],
           [14, 5, "3"],
-          [15, 5, "3"]
+          [15, 5, "3"],
+          [
+            "999988887777666655554444333322221111",
+            "666655555555555544443333222211110009",
+            "2"
+          ],
+          ["111999222888333777444666555", "12220000222233334444666699", "9"]
         ])(
           "should correctly round positive odd results",
           (left, right, result) => {
@@ -739,7 +770,13 @@ describe("bignumberMoney", () => {
           [10, -6, "-2"],
           [6, -4, "-2"],
           [5, -4, "-1"],
-          [10, -2, "-5"]
+          [10, -2, "-5"],
+          [
+            "999988887777666655554444333322221111",
+            "-666655555555555544443333222211110000",
+            "-2"
+          ],
+          ["111999222888333777444666555", "-12220000222233334444666690", "-9"]
         ])(
           "should correctly round negative even results",
           (left, right, result) => {
@@ -757,7 +794,13 @@ describe("bignumberMoney", () => {
           [10, -4, "-3"],
           [13, -5, "-3"],
           [14, -5, "-3"],
-          [15, -5, "-3"]
+          [15, -5, "-3"],
+          [
+            "999988887777666655554444333322221111",
+            "-666655555555555544443333222211110009",
+            "-2"
+          ],
+          ["111999222888333777444666555", "-12220000222233334444666699", "-9"]
         ])(
           "should correctly round negative odd results",
           (left, right, result) => {
@@ -795,12 +838,40 @@ describe("bignumberMoney", () => {
           "8831487109640372124",
           [3, 4, 3],
           ["2649446132892111638", "3532594843856148849", "2649446132892111637"]
+        ],
+        [
+          "123456789123456789123456789",
+          [10, 0, 0],
+          ["123456789123456789123456789", "0", "0"]
+        ],
+        [
+          "123456789123456789123456788",
+          [1, 1, 1],
+          [
+            "41152263041152263041152264",
+            "41152263041152263041152262",
+            "41152263041152263041152262"
+          ]
+        ],
+        [
+          "123456789123456789123456788",
+          [0, 0, 1],
+          ["0", "0", "123456789123456789123456788"]
+        ],
+        [
+          "8831487109640372124",
+          [7, 2],
+          ["6868934418609178319", "1962552691031193805"]
+        ],
+        [
+          "-8831487109640372124",
+          [2, 7],
+          ["-1962552691031193805", "-6868934418609178319"]
         ]
       ])(
         "should correctly allocate values",
         (value, ratios, allocatedResults) => {
           const results = (allocatedResults as number[]).map(String);
-
           const money = createMoney({ amount: value, currency: "USD" });
           expect(
             money.allocate(ratios).map(money => money.getAmount())
@@ -812,6 +883,18 @@ describe("bignumberMoney", () => {
         const results = [-3, -2].map(String);
 
         const money = createMoney({ amount: -5, currency: "USD" });
+
+        const test = money.allocate([7, 3]).map(money => money.getAmount());
+        expect(test).toEqual(results);
+      });
+
+      it("for bignumber value should valid allocate for negative values money", () => {
+        const results = ["-6182040976748260486", "-2649446132892111638"];
+
+        const money = createMoney({
+          amount: "-8831487109640372124",
+          currency: "USD"
+        });
 
         const test = money.allocate([7, 3]).map(money => money.getAmount());
         expect(test).toEqual(results);
@@ -832,6 +915,24 @@ describe("bignumberMoney", () => {
         ]);
       });
 
+      it("for bignumber value should allocate amount valid", () => {
+        const data1 = {
+          amount: "999911118888222277773333666644445555",
+          currency: "RUB"
+        };
+
+        const money = createMoney(data1);
+
+        const allocated = money.allocate([1, 1, 1]);
+
+        expect(Array.isArray(allocated)).toBe(true);
+        expect(allocated.map(result => result.getAmount())).toEqual([
+          "333303706296074092591111222214815185",
+          "333303706296074092591111222214815185",
+          "333303706296074092591111222214815185"
+        ]);
+      });
+
       it("should allocate amount data with Foemmel's Conundrum", () => {
         const data = { amount: 5, currency: "RUB" };
 
@@ -843,7 +944,10 @@ describe("bignumberMoney", () => {
       });
 
       it("should throw an error when ratio array is empty", () => {
-        const data1 = { amount: 100, currency: "RUB" };
+        const data1 = {
+          amount: "12345678912345678901234567890",
+          currency: "RUB"
+        };
 
         const money = createMoney(data1);
 
@@ -853,7 +957,10 @@ describe("bignumberMoney", () => {
       });
 
       it("should throw an error when sum of ratios is less than zero", () => {
-        const data1 = { amount: 100, currency: "RUB" };
+        const data1 = {
+          amount: "12345678912345678901234567890",
+          currency: "RUB"
+        };
 
         const money = createMoney(data1);
 
@@ -863,7 +970,10 @@ describe("bignumberMoney", () => {
       });
 
       it("should throw an error when ratio is negative", () => {
-        const data1 = { amount: 100, currency: "RUB" };
+        const data1 = {
+          amount: "12345678912345678901234567890",
+          currency: "RUB"
+        };
 
         const money = createMoney(data1);
 
@@ -878,11 +988,39 @@ describe("bignumberMoney", () => {
         [15, 2, [8, 7]],
         [10, 2, [5, 5]],
         [15, 3, [5, 5, 5]],
-        [10, 3, [4, 3, 3]]
+        [10, 3, [4, 3, 3]],
+        [
+          "12345678912345678901234567890",
+          2,
+          ["6172839456172839450617283945", "6172839456172839450617283945"]
+        ],
+        [
+          "12345678912345678901234567895",
+          2,
+          ["6172839456172839450617283948", "6172839456172839450617283947"]
+        ],
+        [
+          "9999888877776666555544443333222211110005",
+          3,
+          [
+            "3333296292592222185181481111074070370003",
+            "3333296292592222185181481111074070370001",
+            "3333296292592222185181481111074070370001"
+          ]
+        ],
+        [
+          "9999888877776666555544443333222211110003",
+          3,
+          [
+            "3333296292592222185181481111074070370001",
+            "3333296292592222185181481111074070370001",
+            "3333296292592222185181481111074070370001"
+          ]
+        ]
       ])(
         "should correctly allocate values",
         (value, ratios, allocatedResults) => {
-          const results = allocatedResults.map(String);
+          const results = (allocatedResults as number[]).map(String);
           const money = createMoney({ amount: value, currency: "USD" });
           expect(
             money.allocateTo(ratios).map(money => money.getAmount())
@@ -891,32 +1029,47 @@ describe("bignumberMoney", () => {
       );
 
       it("should allocate to n targets", () => {
-        const data1 = { amount: 15, currency: "USD" };
+        const data1 = {
+          amount: "12345678912345678901234567895",
+          currency: "USD"
+        };
         const moneyArr = createMoney(data1).allocateTo(2);
 
-        expect(moneyArr.map(money => money.getAmount())).toEqual(["8", "7"]);
+        expect(moneyArr.map(money => money.getAmount())).toEqual([
+          "6172839456172839450617283948",
+          "6172839456172839450617283947"
+        ]);
       });
 
       it("should allocate to n targets", () => {
-        const data1 = { amount: 8, currency: "USD" };
+        const data1 = {
+          amount: "9999888877776666555544443333222211110005",
+          currency: "USD"
+        };
         const moneyArr = createMoney(data1).allocateTo(3);
 
         expect(moneyArr.map(money => money.getAmount())).toEqual([
-          "3",
-          "3",
-          "2"
+          "3333296292592222185181481111074070370003",
+          "3333296292592222185181481111074070370001",
+          "3333296292592222185181481111074070370001"
         ]);
       });
 
       it("should throw an error when allocation target is not an integer", () => {
-        const data1 = { amount: 15, currency: "USD" };
+        const data1 = {
+          amount: "3333296292592222185181481111074070370001",
+          currency: "USD"
+        };
         const expression = () => createMoney(data1).allocateTo(3.5);
 
         expect(expression).toThrow();
       });
 
       it("should throw an error when allocation target is empty", () => {
-        const data1 = { amount: 15, currency: "USD" };
+        const data1 = {
+          amount: "3333296292592222185181481111074070370001",
+          currency: "USD"
+        };
         // @ts-ignore
         const expression = () => createMoney(data1).allocateTo();
 
@@ -924,7 +1077,10 @@ describe("bignumberMoney", () => {
       });
 
       it("should throw an error when allocation ratio is negative", () => {
-        const data1 = { amount: 15, currency: "USD" };
+        const data1 = {
+          amount: "3333296292592222185181481111074070370001",
+          currency: "USD"
+        };
 
         const expression = () => createMoney(data1).allocateTo(-5);
 
