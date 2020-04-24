@@ -335,6 +335,8 @@ function allocate(instance: Instance, ratios: number[]) {
     fractions[index] = 0;
   }
 
+  debugger;
+
   return results.map(result =>
     createMoneyFactory(calculator, {
       amount: result,
