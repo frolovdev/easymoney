@@ -69,6 +69,11 @@ It's an old pattern that is implemented in many other languages i.g.:
 - PHP [moneyphp](https://github.com/moneyphp/money)
 - Go [go-money](https://github.com/Rhymond/go-money)
 
+
+Further reading
+
+[Why rounding is more important than you think](https://dev.to/frolovdev/why-rounding-is-more-important-than-you-think-134j)
+
 ## Main features
 
 - 🎁 **composable and modular api**: easy tree shaking with webpack
