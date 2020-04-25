@@ -8,6 +8,8 @@ import {
 import { createCurrencyList } from "./createCurrencyList";
 const isoCurrencyList = createCurrencyList(currencies);
 
+// exports
+
 export { isoCurrencyList };
 export { createAgregatedCurrencyList } from "./createAgregatedCurrencyList";
 export {
