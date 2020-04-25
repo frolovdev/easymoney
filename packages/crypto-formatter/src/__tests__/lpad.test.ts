@@ -1,4 +1,4 @@
-import { lpad } from "../lpad";
+import { lpad } from "../formatter/lpad";
 
 describe("lpad", () => {
   it("should add zeroes", () => {

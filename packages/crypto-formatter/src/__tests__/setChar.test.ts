@@ -1,4 +1,4 @@
-import { setCharAt } from "../setChar";
+import { setCharAt } from "../formatter/setChar";
 
 describe("setCharAt", () => {
   it("should set char in right position", () => {

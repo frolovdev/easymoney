@@ -44,8 +44,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
-    "@easymoney/currencies": "^0.0.2",
-    "@easymoney/money": "^0.0.5"
+    "@easymoney/currencies": "^0.0.4",
+    "@easymoney/money": "^0.0.7"
   },
   "dependencies": {
     "@easymoney/core": "^0.0.3"

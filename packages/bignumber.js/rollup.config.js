@@ -5,7 +5,7 @@ import {
   createCommon,
 } from "../../tools/rollup.config";
 
-const name = "bignumber";
+const name = "bignumber.js";
 export default {
   ...createCommon(name),
   output: [
@@ -17,9 +17,13 @@ export default {
     }),
     createUmd(name, {
       file: pkg.unpkg,
-      umdName: "bignumber",
-      globals: { "@easymoney/core": "easyMoneyCore" },
+      umdName: "easymoneyBignumber",
+      globals: {
+        "@easymoney/core": "easyMoneyCore",
+        "@easymoney/money": "easyMoneyMoney",
+        "bignumber.js": "bignumberJS",
+      },
     }),
   ],
-  external: ["@easymoney/core"],
+  external: ["@easymoney/core", "@easymoney/money", "bignumber.js"],
 };

@@ -48,7 +48,7 @@
     "bignumber.js": "^9.0.0"
   },
   "peerDependencies": {
-    "@easymoney/money": "0.0.5"
+    "@easymoney/money": "0.0.7"
   },
   "devDependencies": {
     "@easymoney/money": "^0.0.7"

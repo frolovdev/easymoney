@@ -1,8 +1,4 @@
-import { cryptoCurrencies } from "@easymoney/currencies";
-import { createMoneyCryptoFormatterUnit } from "./createMoneyCryptoFormatter";
-import { MoneyCryptoFormatter } from "./types";
+import { MoneyCryptoFormatter } from "./formatter/types";
+import { createMoneyCryptoFormatter } from "./formatter";
 
-const createMoneyIntlFormatter = createMoneyCryptoFormatterUnit(
-  cryptoCurrencies
-);
-export { createMoneyIntlFormatter, MoneyCryptoFormatter };
+export { MoneyCryptoFormatter, createMoneyCryptoFormatter };

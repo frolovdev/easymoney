@@ -36,7 +36,7 @@
     "size": "lerna run size",
     "pretest": "tsc --build",
     "test": "jest --watchAll",
-    "prepublishOnly": "yarn rebuild && npm run test-prehook",
+    "publish-script": "lerna exec yarn publish",
     "postpublish": "yarn clean",
     "clean": "rimraf packages/*/{tsconfig.tsbuildinfo,lib,dist}",
     "deploy": "cd website && now",
@@ -56,7 +56,9 @@
     "core": "./packages/core/src/index.ts",
     "currencies": "./packages/currencies/src/index.ts",
     "formatter": "./packages/formatter/src/index.ts",
-    "bigint-money": "./packages/bigint-money/src/index.ts"
+    "crypto-formatter": "./packages/formatter/src/index.ts",
+    "bigint-money": "./packages/bigint-money/src/index.ts",
+    "bignumber.js": "./packages/bignumber.js/src/index.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

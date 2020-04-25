@@ -17,7 +17,7 @@ export default {
     }),
     createUmd(name, {
       file: pkg.unpkg,
-      umdName: "easymoneyFormatter",
+      umdName: "easymoneyCryptoFormatter",
       globals: {
         "@easymoney/core": "easyMoneyCore",
         "@easymoney/currencies": "easyMoneyCurrencies",

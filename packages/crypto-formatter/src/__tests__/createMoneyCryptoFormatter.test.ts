@@ -1,6 +1,6 @@
-import { createMoneyCryptoFormatterUnit } from "../createMoneyCryptoFormatter";
+import { createMoneyCryptoFormatterUnit } from "../formatter/createMoneyCryptoFormatter";
 import { cryptoCurrencies } from "@easymoney/currencies";
-import { MoneyCryptoFormatter } from "../types";
+import { MoneyCryptoFormatter } from "../formatter/types";
 import { createMoney } from "@easymoney/money";
 
 describe("createMoneyIntlFormatter", () => {
