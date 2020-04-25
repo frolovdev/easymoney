@@ -44,12 +44,13 @@
     "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
-    "@easymoney/core": "^0.0.1",
     "@easymoney/money": "^0.0.5",
     "@easymoney/currencies": "^0.0.2"
   },
+  "dependencies": {
+    "@easymoney/core": "^0.0.1"
+  },
   "devDependencies": {
-    "@easymoney/core": "*",
     "@easymoney/money": "*",
     "@easymoney/currencies": "*"
   },

@@ -43,11 +43,8 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "devDependencies": {
+  "dependencies": {
     "@easymoney/core": "^0.0.1"
-  },
-  "peerDependencies": {
-    "@easymoney/core": "*"
   },
   "engines": {
     "node": ">=10.8.x"
