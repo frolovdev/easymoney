@@ -6,6 +6,7 @@
   "command": {
     "version": {
       "allowBranch": "master",
+      "message": "chore: publish %s",
       "no-changelog": true,
       "no-push": true
     }

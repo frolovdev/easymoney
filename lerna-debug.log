@@ -12,7 +12,7 @@
 7 verbose currentBranch master
 8 silly remoteBranchExists
 9 silly isBehindUpstream
-10 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 6
+10 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 7
 11 silly hasTags
 12 verbose hasTags false
 13 info Assuming all packages changed
@@ -23,17 +23,17 @@
 18 verbose updated @easymoney/currencies
 19 verbose updated @easymoney/formatter
 20 verbose updated @easymoney/money
-21 verbose git-describe undefined => "40916a3"
-22 silly git-describe parsed => {"refCount":"131","sha":"40916a3","isDirty":false}
+21 verbose git-describe undefined => "3c76021"
+22 silly git-describe parsed => {"refCount":"132","sha":"3c76021","isDirty":false}
 23 info execute Skipping releases
 24 silly lifecycle No script for "preversion" in "easymoney", continuing
 25 silly lifecycle No script for "preversion" in "@easymoney/core", continuing
 26 silly lifecycle No script for "version" in "@easymoney/core", continuing
 27 silly lifecycle No script for "preversion" in "@easymoney/bigint-money", continuing
 28 silly lifecycle No script for "preversion" in "@easymoney/currencies", continuing
-29 silly lifecycle No script for "version" in "@easymoney/currencies", continuing
-30 silly lifecycle No script for "preversion" in "@easymoney/money", continuing
-31 silly lifecycle No script for "version" in "@easymoney/bigint-money", continuing
+29 silly lifecycle No script for "version" in "@easymoney/bigint-money", continuing
+30 silly lifecycle No script for "version" in "@easymoney/currencies", continuing
+31 silly lifecycle No script for "preversion" in "@easymoney/money", continuing
 32 silly lifecycle No script for "version" in "@easymoney/money", continuing
 33 silly lifecycle No script for "preversion" in "@easymoney/bignumber.js", continuing
 34 silly lifecycle No script for "preversion" in "@easymoney/crypto-formatter", continuing
@@ -44,14 +44,14 @@
 39 silly lifecycle No script for "version" in "easymoney", continuing
 40 silly gitAdd [
 40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/core/package.json',
-40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/currencies/package.json',
 40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/bigint-money/package.json',
+40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/currencies/package.json',
 40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/money/package.json',
 40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/crypto-formatter/package.json',
 40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/bignumber.js/package.json',
 40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/formatter/package.json'
 40 silly gitAdd ]
-41 silly gitCommit chore(release): publish %s
+41 silly gitCommit Publish
 41 silly gitCommit
 41 silly gitCommit  - @easymoney/bigint-money@0.0.2
 41 silly gitCommit  - @easymoney/bignumber.js@0.0.2
@@ -63,9 +63,9 @@
 42 verbose git [
 42 verbose git   'commit',
 42 verbose git   '-F',
-42 verbose git   '/private/var/folders/_1/kt0jlkr526b6_bkjjrjp_92m0000gn/T/ceed08ab-d6e6-4e87-9014-c05e3c94fc95/lerna-commit.txt'
+42 verbose git   '/private/var/folders/_1/kt0jlkr526b6_bkjjrjp_92m0000gn/T/61704b72-8248-4db6-9e2a-3cdc54a24b10/lerna-commit.txt'
 42 verbose git ]
-43 error Error: Command failed: git commit -F /private/var/folders/_1/kt0jlkr526b6_bkjjrjp_92m0000gn/T/ceed08ab-d6e6-4e87-9014-c05e3c94fc95/lerna-commit.txt
+43 error Error: Command failed: git commit -F /private/var/folders/_1/kt0jlkr526b6_bkjjrjp_92m0000gn/T/61704b72-8248-4db6-9e2a-3cdc54a24b10/lerna-commit.txt
 43 error husky > pre-commit (node v12.16.1)
 43 error Stashing changes... [started]
 43 error Stashing changes... [skipped]
@@ -82,7 +82,7 @@
 43 error Running tasks for *.json [completed]
 43 error Running tasks... [completed]
 43 error husky > commit-msg (node v12.16.1)
-43 error ⧗   input: chore(release): publish %s
+43 error ⧗   input: Publish
 43 error
 43 error  - @easymoney/bigint-money@0.0.2
 43 error  - @easymoney/bignumber.js@0.0.2
@@ -91,9 +91,10 @@
 43 error  - @easymoney/currencies@0.0.3
 43 error  - @easymoney/formatter@0.0.2
 43 error  - @easymoney/money@0.0.6
-43 error ✖   scope must be one of [bigint-money, bignumber.js, core, crypto-formatter, currencies, formatter, money] [scope-enum]
+43 error ✖   subject may not be empty [subject-empty]
+43 error ✖   type may not be empty [type-empty]
 43 error
-43 error ✖   found 1 problems, 0 warnings
+43 error ✖   found 2 problems, 0 warnings
 43 error ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
 43 error
 43 error husky > commit-msg hook failed (add --no-verify to bypass)
