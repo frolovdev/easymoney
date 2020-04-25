@@ -1,10 +1,10 @@
 import { createBignumberCalculator } from "../bignumberCalculator";
 import { createMoneyUnit } from "@easymoney/money";
-import { CreateMoney } from "@easymoney/money";
+
 import { RoundingModes } from "@easymoney/core";
 
 describe("bignumberMoney", () => {
-  let createMoney: CreateMoney;
+  let createMoney: ReturnType<typeof createMoneyUnit>;
   beforeEach(() => {
     const bignumberCalculator = createBignumberCalculator();
     const createMoneyFunc = createMoneyUnit(bignumberCalculator);
