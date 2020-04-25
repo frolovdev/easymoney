@@ -7,57 +7,92 @@
 
 
 
-library for operating with monetary values in JavaScript and TypeScript
+library for operating with monetary values in **JavaScript** and **TypeScript**
 
-📖 [Read the documentation](https://easymoney.now.sh/docs/introduction/getting-started)
+- **Modular.** It's written with modular and composable architecture, so that your final **bundle** will be as **small** as possible.
+- **Statically typed.** First-class support of **Typescript**.
+- **Immutable**: It has chainable API, but without mutations.
+- **Support big numbers.** support values greater than MAX_SAFE_INTEGER with [Bignumber.js](https://github.com/MikeMcl/bignumber.js/)
+- **Crypto currencies.** It's have support of custom currencies and formatting them.
+- **Big int support.** It's have package for support new standart of big int out of the box in separate pacakge.
+- **Custom calculators.** you can override functionality with your own custom calculator.
+
+📖 [Read more](https://easymoney.now.sh/docs/introduction/getting-started)
+
+```js
+import { createMoney } from '@easymoney/money';
+
+const money1 = createMoney({ amount: 100, currency: 'USD' });
+
+const money2 = createMoney({ amount: 106, currency: 'USD' });
+
+const money3 = money1.add(money2).getAmount();
+// => 206
+```
+
+```js
+import {createMoneyIntlFormatter} from "@easymoney/formatter"
+import { createMoney } from '@easymoney/money';
+
+const money = createMoney({ amount: 5, currency: "USD" });
+
+const formatted = createMoneyIntlFormatter().format(money);
+// => "$0.05"
+```
+
+```js
+import {createMoneyCryptoFormatter} from "@easymoney/crypto-formatter"
+import { createMoney } from '@easymoney/money';
+import {cryptoCurrenciesMap} from "@easymoney/currencies"
+
+const money = createMoney({ amount: 5, currency: "LTC" });
+
+const formatted = createMoneyCryptoFormatter().format(money);
+// => "0.00000005LTC"
+```
+
+```js
+const currencies = [{ minorUnit: 2, code: "XBT" }, { minorUnit: 5, code: "DXBT" }];
+
+const list = createCurrencyList(currencies);
+
+list.getCurrencies();
+/**
+ * => {
+  XBT: { minorUnit: 2, code: "XBT" },
+  DXBT: { minorUnit: 5, code: "DXBT" },
+};
+ */
+
+```
 
 # Important Note ⚠️
 
-We currently hard work on adding non-intl formatting and support of cryptocurrencies, now we do not adhere to the semantic release, cause API (types) of packages might be changed.
+We currently hard work on prerelease and last refactorings, now we do not adhere to the semantic release, cause API (types) of packages might be changed.
 
-After adding formatting, we are going to commit our public API (publish 1.0.0) and support back-compatibility and semantic versioning. Please do not blame us for this decision; this allows us to move more iteratively 🚀.
+With release we are going to commit our public API (publish 1.0.0) and support back-compatibility and semantic versioning. Please do not blame us for this decision; this allows us to move more iteratively 🚀.
 
-High-level roadmap described below and on [a separate page](https://github.com/frolovdev/easymoney/projects/2).
-
-## High-level roadmap
-
-| Feature                              | Status |
-| ------------------------------------ | ------ |
-| core functions in math               | ✅      |
-| custom calculators support           | ✅      |
-| tests on most codebase               | ✅      |
-| currencies                           | ✅      |
-| bigInt Support                       | ✅      |
-| docs base api, positive cases        | ✅      |
-| property-based tests on main methods | ✅      |
-| intl formatter for createMoney       | ✅      |
-| formatter-crypto                     | ✅      |
-| supporting crypto currencies         | ✅      |
-| integration with bignumber.js        | ✅      |
-| release 1.0.0 (SOON)                 | ❌      |
-| formatter-bigint                     | ❌      |
-
-Feel free to ask any questions or just contact, I open to any suggestions or ideas
+High-level roadmap described on [a separate page](https://github.com/frolovdev/easymoney/projects/2).
 
 ## Quick start
 
 For main functionality you need just 2 packages (if you are not working with bigint)
 
 ```sh
-npm i @easymoney/core @easymoney/money
+npm i @easymoney/money
 ```
 
 or
 
 ```sh
-yarn add @easymoney/core @easymoney/money
+yarn add @easymoney/money
 ```
 
 ## Why
 
 Javascript developers attempt to use just numbers or strings (i.g. https://github.com/MikeMcl/bignumber.js) to operate with monetary values. I think this is a wrong way, and strings or numbers are not well suited for financial applications for those main reasons:
 
-- tricky rounding
+- tricky rounding (described [here](https://dev.to/frolovdev/why-rounding-is-more-important-than-you-think-134j))
 - conversion
 - allocating (dividing money between )
 - formatting
@@ -71,29 +106,9 @@ It's an old pattern that is implemented in many other languages i.g.:
 - PHP [moneyphp](https://github.com/moneyphp/money)
 - Go [go-money](https://github.com/Rhymond/go-money)
 
-
 Further reading
 
 [Why rounding is more important than you think](https://dev.to/frolovdev/why-rounding-is-more-important-than-you-think-134j)
-
-## Main features
-
-- 🎁 **composable and modular api**: easy tree shaking with webpack
-- 🛠 **statically typed**: first-class support of typescript
-- 💣 **reliable**: great dx and human readable errors
-- 🎁 **immutable**: immutable data
-- 💡 **big int suport**: support new standart of big int out of the box
-- 🧮 **custom calculators**: support custom calculators (for example if u need operating with big values like string) 
-
-## Comparison with other money libraries
-
-|                    | easymoney | Dinero |
-| ------------------ | --------- | ------ |
-| Custom calculators | ✅         | ❌      |
-| Big int support    | ✅         | ❌      |
-| Tree Shaking       | ✅         | ❌      |
-| Typescript         | ✅         | ❌      |
-| Flexible api       | ✅         | ❌      |
 
 ## Packages
 
