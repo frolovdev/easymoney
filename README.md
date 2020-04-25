@@ -31,7 +31,7 @@ const money3 = money1.add(money2).getAmount();
 ```
 
 ```js
-import {createMoneyIntlFormatter} from "@easymoney/formatter"
+import { createMoneyIntlFormatter } from "@easymoney/formatter"
 import { createMoney } from '@easymoney/money';
 
 const money = createMoney({ amount: 5, currency: "USD" });
@@ -41,9 +41,9 @@ const formatted = createMoneyIntlFormatter().format(money);
 ```
 
 ```js
-import {createMoneyCryptoFormatter} from "@easymoney/crypto-formatter"
+import { createMoneyCryptoFormatter } from "@easymoney/crypto-formatter"
 import { createMoney } from '@easymoney/money';
-import {cryptoCurrenciesMap} from "@easymoney/currencies"
+import { cryptoCurrenciesMap } from "@easymoney/currencies"
 
 const money = createMoney({ amount: 5, currency: "LTC" });
 
