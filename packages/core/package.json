@@ -1,6 +1,6 @@
 {
   "name": "@easymoney/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Whispers12",
   "sideEffects": false,
   "main": "dist/index.cjs.js",
@@ -57,6 +57,5 @@
     "amount",
     "immutable",
     "monetary"
-  ],
-  "dependencies": {}
+  ]
 }
