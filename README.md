@@ -7,15 +7,15 @@
 
 
 
-library for operating with monetary values in **JavaScript** and **TypeScript**
+library for operating with monetary values in **JavaScript** and **Typescript**
 
-- **Modular.** It's written with modular and composable architecture, so that your final **bundle** will be as **small** as possible.
+- **Modular.** It's written with modular and composable architecture so that your final **bundle** will be as **small** as possible.
 - **Statically typed.** First-class support of **Typescript**.
-- **Immutable**: It has chainable API, but without mutations.
-- **Support big numbers.** support values greater than MAX_SAFE_INTEGER with [Bignumber.js](https://github.com/MikeMcl/bignumber.js/)
-- **Crypto currencies.** It's have support of custom currencies and formatting them.
-- **Big int support.** It's have package for support new standart of big int out of the box in separate pacakge.
-- **Custom calculators.** you can override functionality with your own custom calculator.
+- **Immutable**: It has a chainable API, but without mutations.
+- **Supports big numbers.** Support values greater than MAX_SAFE_INTEGER with [Bignumber.js](https://github.com/MikeMcl/bignumber.js/)
+- **Crypto currencies.** It has support for custom currencies and formatting them.
+- **Big int support.** It has a package for supporting new standard of big int out of the box in a separate pacakge.
+- **Custom calculators.** You can override functionality with your own custom calculator.
 
 📖 [Read more](https://easymoney.now.sh/docs/introduction/getting-started)
 
@@ -68,15 +68,13 @@ list.getCurrencies();
 
 # Important Note ⚠️
 
-We currently hard work on prerelease and last refactorings, now we do not adhere to the semantic release, cause API (types) of packages might be changed.
+We currently working hard on pre-release and last refactorings, but we are not now adhering to the semantic release, because the API (types) of packages might be changed.
 
-With release we are going to commit our public API (publish 1.0.0) and support back-compatibility and semantic versioning. Please do not blame us for this decision; this allows us to move more iteratively 🚀.
+With the release we are going to commit our public API (publish 1.0.0) and support backward-compatibility and semantic versioning. Please do not blame us for this decision; this allows us to move more iteratively. 🚀
 
-High-level roadmap described on [a separate page](https://github.com/frolovdev/easymoney/projects/2).
+The high-level roadmap is described on [a separate page](https://github.com/frolovdev/easymoney/projects/2).
 
 ## Quick start
-
-For main functionality you need just 2 packages (if you are not working with bigint)
 
 ```sh
 npm i @easymoney/money
@@ -90,17 +88,17 @@ yarn add @easymoney/money
 
 ## Why
 
-Javascript developers attempt to use just numbers or strings (i.g. https://github.com/MikeMcl/bignumber.js) to operate with monetary values. I think this is a wrong way, and strings or numbers are not well suited for financial applications for those main reasons:
+JavaScript developers attempt to use just numbers or strings (i.g. https://github.com/MikeMcl/bignumber.js) to operate with monetary values. I don't think this is the right way, and strings or numbers are not well suited for financial applications for these main reasons:
 
 - tricky rounding (described [here](https://dev.to/frolovdev/why-rounding-is-more-important-than-you-think-134j))
 - conversion
-- allocating (dividing money between )
+- allocating (dividing money between parties)
 - formatting
 - working with cents (minor units of currency)
 
 The solution to these problems is the [Martin Fowler's Money Type](https://martinfowler.com/eaaCatalog/money.html) from ["Patterns of Enterprise Application Architecture"](https://www.amazon.ca/gp/product/0321127420/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=evertpot-20&creative=330641&linkCode=as2&creativeASIN=0321127420&linkId=3e43f20d3b2dd7e325a3feecdd2eaecd).
 
-It's an old pattern that is implemented in many other languages i.g.:
+It's an old pattern that is implemented in many other languages e.g.:
 
 - Java [Moneta](https://github.com/JavaMoney/jsr354-ri)
 - PHP [moneyphp](https://github.com/moneyphp/money)
