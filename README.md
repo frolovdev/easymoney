@@ -17,7 +17,7 @@ We currently hard work on adding non-intl formatting and support of cryptocurren
 
 After adding formatting, we are going to commit our public API (publish 1.0.0) and support back-compatibility and semantic versioning. Please do not blame us for this decision; this allows us to move more iteratively 🚀.
 
-High-level roadmap described below.
+High-level roadmap described below and on [a separate page](https://github.com/frolovdev/easymoney/projects/2).
 
 ## High-level roadmap
 
@@ -33,6 +33,8 @@ High-level roadmap described below.
 | intl formatter for createMoney       | ✅      |
 | formatter-crypto                     | ✅      |
 | supporting crypto currencies         | ✅      |
+| integration with bignumber.js        | ✅      |
+| release 1.0.0 (SOON)                 | ❌      |
 | formatter-bigint                     | ❌      |
 
 Feel free to ask any questions or just contact, I open to any suggestions or ideas
