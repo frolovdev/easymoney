@@ -1,5 +1,7 @@
 0 silly argv {
 0 silly argv   _: [ 'version' ],
+0 silly argv   changelog: false,
+0 silly argv   push: false,
 0 silly argv   lernaVersion: '3.20.2',
 0 silly argv   '$0': '/Users/andreyfrolov/Documents/easy-money-private-fork/node_modules/.bin/lerna'
 0 silly argv }
@@ -10,95 +12,102 @@
 5 verbose isAnythingCommitted 1
 6 silly currentBranch
 7 verbose currentBranch master
-8 silly remoteBranchExists
-9 silly isBehindUpstream
-10 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 7
-11 silly hasTags
-12 verbose hasTags false
-13 info Assuming all packages changed
-14 verbose updated @easymoney/bigint-money
-15 verbose updated @easymoney/bignumber.js
-16 verbose updated @easymoney/core
-17 verbose updated @easymoney/crypto-formatter
-18 verbose updated @easymoney/currencies
-19 verbose updated @easymoney/formatter
-20 verbose updated @easymoney/money
-21 verbose git-describe undefined => "3c76021"
-22 silly git-describe parsed => {"refCount":"132","sha":"3c76021","isDirty":false}
-23 info execute Skipping releases
-24 silly lifecycle No script for "preversion" in "easymoney", continuing
-25 silly lifecycle No script for "preversion" in "@easymoney/core", continuing
-26 silly lifecycle No script for "version" in "@easymoney/core", continuing
-27 silly lifecycle No script for "preversion" in "@easymoney/bigint-money", continuing
-28 silly lifecycle No script for "preversion" in "@easymoney/currencies", continuing
-29 silly lifecycle No script for "version" in "@easymoney/bigint-money", continuing
-30 silly lifecycle No script for "version" in "@easymoney/currencies", continuing
-31 silly lifecycle No script for "preversion" in "@easymoney/money", continuing
-32 silly lifecycle No script for "version" in "@easymoney/money", continuing
-33 silly lifecycle No script for "preversion" in "@easymoney/bignumber.js", continuing
-34 silly lifecycle No script for "preversion" in "@easymoney/crypto-formatter", continuing
-35 silly lifecycle No script for "preversion" in "@easymoney/formatter", continuing
-36 silly lifecycle No script for "version" in "@easymoney/crypto-formatter", continuing
-37 silly lifecycle No script for "version" in "@easymoney/bignumber.js", continuing
-38 silly lifecycle No script for "version" in "@easymoney/formatter", continuing
-39 silly lifecycle No script for "version" in "easymoney", continuing
-40 silly gitAdd [
-40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/core/package.json',
-40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/bigint-money/package.json',
-40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/currencies/package.json',
-40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/money/package.json',
-40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/crypto-formatter/package.json',
-40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/bignumber.js/package.json',
-40 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/formatter/package.json'
-40 silly gitAdd ]
-41 silly gitCommit Publish
-41 silly gitCommit
-41 silly gitCommit  - @easymoney/bigint-money@0.0.2
-41 silly gitCommit  - @easymoney/bignumber.js@0.0.2
-41 silly gitCommit  - @easymoney/core@0.0.2
-41 silly gitCommit  - @easymoney/crypto-formatter@0.0.2
-41 silly gitCommit  - @easymoney/currencies@0.0.3
-41 silly gitCommit  - @easymoney/formatter@0.0.2
-41 silly gitCommit  - @easymoney/money@0.0.6
-42 verbose git [
-42 verbose git   'commit',
-42 verbose git   '-F',
-42 verbose git   '/private/var/folders/_1/kt0jlkr526b6_bkjjrjp_92m0000gn/T/61704b72-8248-4db6-9e2a-3cdc54a24b10/lerna-commit.txt'
-42 verbose git ]
-43 error Error: Command failed: git commit -F /private/var/folders/_1/kt0jlkr526b6_bkjjrjp_92m0000gn/T/61704b72-8248-4db6-9e2a-3cdc54a24b10/lerna-commit.txt
-43 error husky > pre-commit (node v12.16.1)
-43 error Stashing changes... [started]
-43 error Stashing changes... [skipped]
-43 error → No partially staged files found...
-43 error Running tasks... [started]
-43 error Running tasks for **/*.ts?(x) [started]
-43 error Running tasks for *.json [started]
-43 error Running tasks for **/*.ts?(x) [skipped]
-43 error → No staged files match **/*.ts?(x)
-43 error prettier --write [started]
-43 error prettier --write [completed]
-43 error git add [started]
-43 error git add [completed]
-43 error Running tasks for *.json [completed]
-43 error Running tasks... [completed]
-43 error husky > commit-msg (node v12.16.1)
-43 error ⧗   input: Publish
-43 error
-43 error  - @easymoney/bigint-money@0.0.2
-43 error  - @easymoney/bignumber.js@0.0.2
-43 error  - @easymoney/core@0.0.2
-43 error  - @easymoney/crypto-formatter@0.0.2
-43 error  - @easymoney/currencies@0.0.3
-43 error  - @easymoney/formatter@0.0.2
-43 error  - @easymoney/money@0.0.6
-43 error ✖   subject may not be empty [subject-empty]
-43 error ✖   type may not be empty [type-empty]
-43 error
-43 error ✖   found 2 problems, 0 warnings
-43 error ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
-43 error
-43 error husky > commit-msg hook failed (add --no-verify to bypass)
-43 error
-43 error     at makeError (/Users/andreyfrolov/Documents/easy-money-private-fork/node_modules/execa/index.js:174:9)
-43 error     at /Users/andreyfrolov/Documents/easy-money-private-fork/node_modules/execa/index.js:278:16
-43 error     at processTicksAndRejections (internal/process/task_queues.js:97:5)
+8 silly hasTags
+9 verbose hasTags true
+10 silly git-describe.sync "a55cf34" => {"refCount":"135","sha":"a55cf34","isDirty":false}
+11 info Assuming all packages changed
+12 verbose updated @easymoney/bigint-money
+13 verbose updated @easymoney/bignumber.js
+14 verbose updated @easymoney/core
+15 verbose updated @easymoney/crypto-formatter
+16 verbose updated @easymoney/currencies
+17 verbose updated @easymoney/formatter
+18 verbose updated @easymoney/money
+19 verbose git-describe undefined => "a55cf34"
+20 silly git-describe parsed => {"refCount":"135","sha":"a55cf34","isDirty":false}
+21 info execute Skipping git push
+22 info execute Skipping releases
+23 silly lifecycle No script for "preversion" in "easymoney", continuing
+24 silly lifecycle No script for "preversion" in "@easymoney/core", continuing
+25 silly lifecycle No script for "version" in "@easymoney/core", continuing
+26 silly lifecycle No script for "preversion" in "@easymoney/bigint-money", continuing
+27 silly lifecycle No script for "preversion" in "@easymoney/currencies", continuing
+28 silly lifecycle No script for "version" in "@easymoney/bigint-money", continuing
+29 silly lifecycle No script for "version" in "@easymoney/currencies", continuing
+30 silly lifecycle No script for "preversion" in "@easymoney/money", continuing
+31 silly lifecycle No script for "version" in "@easymoney/money", continuing
+32 silly lifecycle No script for "preversion" in "@easymoney/bignumber.js", continuing
+33 silly lifecycle No script for "preversion" in "@easymoney/crypto-formatter", continuing
+34 silly lifecycle No script for "preversion" in "@easymoney/formatter", continuing
+35 silly lifecycle No script for "version" in "@easymoney/formatter", continuing
+36 silly lifecycle No script for "version" in "@easymoney/bignumber.js", continuing
+37 silly lifecycle No script for "version" in "@easymoney/crypto-formatter", continuing
+38 silly lifecycle No script for "version" in "easymoney", continuing
+39 silly gitAdd [
+39 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/core/package.json',
+39 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/bigint-money/package.json',
+39 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/currencies/package.json',
+39 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/money/package.json',
+39 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/formatter/package.json',
+39 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/bignumber.js/package.json',
+39 silly gitAdd   '/Users/andreyfrolov/Documents/easy-money-private-fork/packages/crypto-formatter/package.json'
+39 silly gitAdd ]
+40 silly gitCommit chore: publish
+40 silly gitCommit
+40 silly gitCommit  - @easymoney/bigint-money@0.0.2
+40 silly gitCommit  - @easymoney/bignumber.js@0.0.2
+40 silly gitCommit  - @easymoney/core@0.0.2
+40 silly gitCommit  - @easymoney/crypto-formatter@0.0.2
+40 silly gitCommit  - @easymoney/currencies@0.0.3
+40 silly gitCommit  - @easymoney/formatter@0.0.2
+40 silly gitCommit  - @easymoney/money@0.0.6
+41 verbose git [
+41 verbose git   'commit',
+41 verbose git   '-F',
+41 verbose git   '/private/var/folders/_1/kt0jlkr526b6_bkjjrjp_92m0000gn/T/b8b2dd1e-9fa2-407e-80a2-2ab745c2bb7b/lerna-commit.txt'
+41 verbose git ]
+42 silly gitTag @easymoney/bigint-money@0.0.2
+43 verbose git [
+43 verbose git   'tag',
+43 verbose git   '@easymoney/bigint-money@0.0.2',
+43 verbose git   '-m',
+43 verbose git   '@easymoney/bigint-money@0.0.2'
+43 verbose git ]
+44 silly gitTag @easymoney/bignumber.js@0.0.2
+45 verbose git [
+45 verbose git   'tag',
+45 verbose git   '@easymoney/bignumber.js@0.0.2',
+45 verbose git   '-m',
+45 verbose git   '@easymoney/bignumber.js@0.0.2'
+45 verbose git ]
+46 silly gitTag @easymoney/core@0.0.2
+47 verbose git [ 'tag', '@easymoney/core@0.0.2', '-m', '@easymoney/core@0.0.2' ]
+48 silly gitTag @easymoney/crypto-formatter@0.0.2
+49 verbose git [
+49 verbose git   'tag',
+49 verbose git   '@easymoney/crypto-formatter@0.0.2',
+49 verbose git   '-m',
+49 verbose git   '@easymoney/crypto-formatter@0.0.2'
+49 verbose git ]
+50 silly gitTag @easymoney/currencies@0.0.3
+51 verbose git [
+51 verbose git   'tag',
+51 verbose git   '@easymoney/currencies@0.0.3',
+51 verbose git   '-m',
+51 verbose git   '@easymoney/currencies@0.0.3'
+51 verbose git ]
+52 silly gitTag @easymoney/formatter@0.0.2
+53 verbose git [
+53 verbose git   'tag',
+53 verbose git   '@easymoney/formatter@0.0.2',
+53 verbose git   '-m',
+53 verbose git   '@easymoney/formatter@0.0.2'
+53 verbose git ]
+54 silly gitTag @easymoney/money@0.0.6
+55 verbose git [ 'tag', '@easymoney/money@0.0.6', '-m', '@easymoney/money@0.0.6' ]
+56 error Error: Command failed: git tag @easymoney/bigint-money@0.0.2 -m @easymoney/bigint-money@0.0.2
+56 error fatal: tag '@easymoney/bigint-money@0.0.2' already exists
+56 error
+56 error     at makeError (/Users/andreyfrolov/Documents/easy-money-private-fork/node_modules/execa/index.js:174:9)
+56 error     at /Users/andreyfrolov/Documents/easy-money-private-fork/node_modules/execa/index.js:278:16
+56 error     at processTicksAndRejections (internal/process/task_queues.js:97:5)

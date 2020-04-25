@@ -27,7 +27,7 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
-    "new-version": "lerna version --no-changelog --no-push",
+    "new-version": "lerna version --no-changelog --no-push --no-git-tag-version",
     "postinstall": "lerna bootstrap",
     "bootstrap": "lerna bootstrap && npm run build",
     "build": "lerna run build",
