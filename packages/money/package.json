@@ -26,6 +26,7 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
+    "version": "lerna version",
     "prepublishOnly": "yarn build && yarn test-prehook",
     "postpublish": "yarn clean",
     "prebuild": "yarn clean",
