@@ -43,19 +43,15 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@easymoney/core": "^0.0.1",
+    "bignumber.js": "^9.0.0"
+  },
+  "peerDependencies": {
     "@easymoney/money": "0.0.5"
   },
   "devDependencies": {
-    "@easymoney/money": "*",
-    "@easymoney/core": "*"
-  },
-  "dependencies": {
-    "bignumber.js": "^9.0.0"
-  },
-  "engines": {
-    "node": ">=10.8.x"
+    "@easymoney/money": "*"
   },
   "files": [
     "/README.md",

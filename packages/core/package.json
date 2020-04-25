@@ -43,9 +43,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "engines": {
-    "node": ">=10.8.x"
-  },
   "files": [
     "/README.md",
     "/package.json",

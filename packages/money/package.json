@@ -50,9 +50,6 @@
     "@easymoney/core": "*",
     "@easymoney/currencies": "*"
   },
-  "engines": {
-    "node": ">=10.8.x"
-  },
   "files": [
     "/README.md",
     "/package.json",
