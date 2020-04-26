@@ -43,6 +43,7 @@
     "test-prop": "jest propbased-test",
     "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "test-prehook": "jest --bail",
+    "test-coverage": "jest --bail --collectCoverage",
     "depcruise:archi": " depcruise --include-only '^(src|bin)' --config .dependency-cruiser.js -T archi src | dot -Grankdir=TD -T svg | tee high-level-dependencies.svg | depcruise-wrap-stream-in-html > high-level-dependencies.html"
   },
   "publishConfig": {
@@ -62,7 +63,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
-    "babel-jest": "^24.8.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-export-namespace-from": "^7.8.3",
     "@babel/preset-env": "^7.9.0",
@@ -77,6 +77,8 @@
     "@types/jest": "^25.2.1",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^1.13.0",
+    "babel-jest": "^24.8.0",
+    "codecov": "^3.6.5",
     "cross-env": "^5.2.1",
     "dependency-cruiser": "^8.1.1",
     "eslint": "^5.16.0",

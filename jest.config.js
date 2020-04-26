@@ -4,7 +4,6 @@ module.exports = {
   ...base,
   roots: ["<rootDir>"],
   projects: ["<rootDir>/packages/*/jest.config.js"],
-
   // moduleNameMapper: {
   //   "@easymoney/(.*)$": "<rootDir>/packages/$1",
   // },
