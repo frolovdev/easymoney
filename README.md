@@ -6,6 +6,8 @@
 </div>
 
 
+[![codecov](https://codecov.io/gh/frolovdev/easymoney/branch/master/graph/badge.svg)](https://codecov.io/gh/frolovdev/easymoney)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 library for operating with monetary values in **JavaScript** and **Typescript**
 
