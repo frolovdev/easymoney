@@ -23,11 +23,25 @@ describe("createMoneyIntlFormatter", () => {
       expect(formattedValue).toEqual("0.00000005LTC");
     });
 
+    it("should format valid LTC", () => {
+      const money = { amount: 5000000000000, currency: "LTC" };
+
+      const formattedValue = createFormatter().format(createMoney(money));
+      expect(formattedValue).toEqual("50000.00000000LTC");
+    });
+
     it("should format valid ETH", () => {
       const money = { amount: 5, currency: "ETH" };
 
       const formattedValue = createFormatter().format(createMoney(money));
       expect(formattedValue).toEqual("0.000000000000000005ETH");
+    });
+
+    it("should format valid negative values", () => {
+      const money = { amount: -5, currency: "ETH" };
+
+      const formattedValue = createFormatter().format(createMoney(money));
+      expect(formattedValue).toEqual("-0.000000000000000005ETH");
     });
 
     it("should be possible pick position of currency", () => {

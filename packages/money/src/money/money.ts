@@ -344,8 +344,6 @@ function allocate<CT>(instance: Instance<CT>, ratios: number[]) {
     fractions[index] = 0;
   }
 
-  debugger;
-
   return results.map(result =>
     createMoneyFactory(calculator)({
       amount: result,

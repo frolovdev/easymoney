@@ -72,7 +72,7 @@ function format(
     formatted = valueBase.slice(0, valueLength - subunit);
 
     if (subunit) {
-      formatted = `.${formatted}${valueBase.substr(valueLength - subunit)}`;
+      formatted = `${formatted}.${valueBase.substr(valueLength - subunit)}`;
     }
   } else {
     formatted = "0."

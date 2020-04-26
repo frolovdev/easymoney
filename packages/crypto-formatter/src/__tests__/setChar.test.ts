@@ -7,5 +7,6 @@ describe("setCharAt", () => {
     ).toEqual("sadasdasdasdas123");
     expect(setCharAt("sadasdasdasdasd", 0, "123")).toEqual("123adasdasdasdasd");
     expect(setCharAt("sadasdasdasdasd", 1, "123")).toEqual("s123dasdasdasdasd");
+    expect(setCharAt("sa", 3, "123")).toEqual("sa");
   });
 });
