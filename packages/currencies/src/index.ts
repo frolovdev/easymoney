@@ -1,9 +1,4 @@
-import {
-  currencies,
-  currenciesMap,
-  cryptoCurrencies,
-  cryptoCurrenciesMap
-} from "./currencies/";
+import { currencies, currenciesMap, cryptoCurrenciesMap } from "./currencies/";
 
 import { createCurrencyList } from "./createCurrencyList";
 const isoCurrencyList = createCurrencyList(currencies);
@@ -18,6 +13,7 @@ export {
   CurrencyMap,
   CurrencyUnitCrypto
 } from "./types";
+export { covertCurrencyMapToArray } from "./covertCurrencyMapToArray";
 export { CurrencyUnit, CurrencyUnitISO } from "@easymoney/core";
-export { currencies, currenciesMap, createCurrencyList };
-export { cryptoCurrencies, cryptoCurrenciesMap };
+export { currenciesMap, createCurrencyList };
+export { cryptoCurrenciesMap };
