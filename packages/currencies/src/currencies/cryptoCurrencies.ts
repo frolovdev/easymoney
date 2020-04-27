@@ -1,4 +1,5 @@
 import { CurrencyMap, CurrencyUnitCrypto } from "../types";
+import { covertCurrencyMapToArray } from "../covertCurrencyMapToArray";
 
 export const cryptoCurrenciesMap: CurrencyMap<CurrencyUnitCrypto> = {
   BTC: {
@@ -17,3 +18,5 @@ export const cryptoCurrenciesMap: CurrencyMap<CurrencyUnitCrypto> = {
     symbol: "ETH"
   }
 } as const;
+
+export const cryptoCurrencies = covertCurrencyMapToArray(cryptoCurrenciesMap);
