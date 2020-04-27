@@ -1,17 +1,25 @@
 import { createMoneyCryptoFormatterUnit } from "../formatter/createMoneyCryptoFormatter";
-import { cryptoCurrencies } from "@easymoney/currencies";
-import { MoneyCryptoFormatter } from "../formatter/types";
+import {
+  cryptoCurrenciesMap,
+  covertCurrencyMapToArray
+} from "@easymoney/currencies";
+
 import { createMoney } from "@easymoney/money";
+import { CryptoOptions, MoneyCryptoFormatter } from "../formatter/types";
 
 describe("createMoneyIntlFormatter", () => {
-  let createFormatter: ReturnType<typeof createMoneyCryptoFormatterUnit>;
+  let createFormatter: (
+    options?: CryptoOptions | undefined
+  ) => MoneyCryptoFormatter;
   beforeAll(() => {
-    createFormatter = createMoneyCryptoFormatterUnit(cryptoCurrencies);
+    createFormatter = createMoneyCryptoFormatterUnit(
+      covertCurrencyMapToArray(cryptoCurrenciesMap)
+    );
   });
 
   describe("format", () => {
     it("should throw an error if currency doesn't exist", () => {
-      const money = { amount: 5, currency: "XBT" };
+      const money = { amount: 5, currency: { code: "sadas", minorUnit: 1 } };
 
       const expression = () => createFormatter().format(createMoney(money));
       expect(expression).toThrow();
