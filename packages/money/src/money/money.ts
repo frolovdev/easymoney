@@ -7,7 +7,7 @@ import { isNumeric } from "../assert";
 import { CalculatorBase } from "../calculator/";
 import { MoneyBase } from "./types";
 import { fromString, fromNumber } from "../number";
-import { PrivateInstance, Instance, CreateMoney } from "./types";
+import { PrivateInstance, Instance } from "./types";
 
 function construct<CT>(
   amount: MoneyInput<CT>["amount"],
