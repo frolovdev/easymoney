@@ -1,23 +1,21 @@
-
-<div align="center" text-align="center">
-  <img src="https://easymoney.now.sh/img/logo.png" align="center"
-     alt="easy money logo" width="300" height="159"></img>     
-     <br></br>
-</div>
-
+<img src="https://easymoney.now.sh/img/logo.png" align="right"
+     alt="easy money logo" width="225" height="120"></img>     
 
 [![codecov](https://codecov.io/gh/frolovdev/easymoney/branch/master/graph/badge.svg)](https://codecov.io/gh/frolovdev/easymoney)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-library for operating with monetary values in **JavaScript** and **Typescript**
+Library for operating with monetary values in **JavaScript** and **Typescript**
 
-- **Modular.** It's written with modular and composable architecture so that your final **bundle** will be as **small** as possible.
-- **Statically typed.** First-class support of **Typescript**.
-- **Immutable**: It has a chainable API, but without mutations.
-- **Supports big numbers.** Support values greater than MAX_SAFE_INTEGER with [Bignumber.js](https://github.com/MikeMcl/bignumber.js/)
-- **Crypto currencies.** It has support for custom currencies and formatting them.
-- **Big int support.** It has a package for supporting new standard of big int out of the box in a separate pacakge.
-- **Custom calculators.** You can override functionality with your own custom calculator.
+* **Modular.** It's written with modular and composable architecture so
+  that your final **bundle** will be as **small** as possible.
+* **Statically typed.** First-class support of **Typescript**.
+* **Immutable**: It has a chainable API, but without mutations.
+* **Supports big numbers.** Support values greater
+  than MAX_SAFE_INTEGER with [Bignumber.js](https://github.com/MikeMcl/bignumber.js/)
+* **Crypto currencies.** It has support for custom currencies and formatting them.
+* **Big int support.** It has a package for supporting 
+  new standard of big int out of the box in a separate pacakge.
+* **Custom calculators.** You can override functionality with your own custom calculator.
 
 📖 [Read more](https://easymoney.now.sh/docs/introduction/getting-started)
 
