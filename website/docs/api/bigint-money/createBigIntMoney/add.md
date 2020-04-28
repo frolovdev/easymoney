@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: add
 ---
 
-# add
+
+# `add(money)`
+
+#### Arguments
+
+1. `money` ([BigIntMoneyBase](Description.md#bigintmoneybase))
+
+#### Returns
+
+`money` ([BigIntMoneyBase](Description.md#bigintmoneybase))
+
 
 **Example**
 
