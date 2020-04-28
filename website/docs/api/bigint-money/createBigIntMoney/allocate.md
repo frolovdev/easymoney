@@ -5,7 +5,15 @@ hide_title: true
 sidebar_label: allocate
 ---
 
-# allocate
+# `allocate(ratios)`
+
+#### Arguments
+
+1. `ratios` (Array of number)
+
+#### Returns
+
+`Array` ([BigIntMoneyBase](Description.md#bigintmoneybase))
 
 **Example**
 

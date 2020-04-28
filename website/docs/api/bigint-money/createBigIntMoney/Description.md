@@ -44,3 +44,22 @@ type Money = {
 };
 
 ```
+
+
+### RoundingModesType
+
+```ts
+
+const RoundingModes = {
+  HALF_EVEN: "HALF_EVEN",
+  HALF_UP: "HALF_UP",
+  HALF_DOWN: "HALF_DOWN",
+  FLOOR: "FLOOR",
+  CEILING: "CEILING",
+  DOWN: "DOWN",
+  UP: "UP"
+};
+
+type RoundingModesType = keyof typeof RoundingModes;
+
+```
