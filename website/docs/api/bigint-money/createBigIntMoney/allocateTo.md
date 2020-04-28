@@ -5,7 +5,15 @@ hide_title: true
 sidebar_label: allocateTo
 ---
 
-# allocateTo
+# `allocateTo(number)`
+
+#### Arguments
+
+1. `number`
+
+#### Returns
+
+`Array` ([BigIntMoneyBase](Description.md#bigintmoneybase))
 
 **Example**
 

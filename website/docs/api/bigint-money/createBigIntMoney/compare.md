@@ -5,7 +5,15 @@ hide_title: true
 sidebar_label: compare
 ---
 
-# compare
+# compare(money)
+
+#### Arguments
+
+1. `money` ([BigIntMoneyBase](Description.md#bigintmoneybase))
+
+#### Returns
+
+`1 | 0 | -1`
 
 **Example**
 
