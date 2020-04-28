@@ -24,16 +24,8 @@ interface BigIntMoneyBase {
   greaterThanOrEqual(money: BigIntMoneyBase): boolean;
   lessThan(money: BigIntMoneyBase): boolean;
   lessThanOrEqual(money: BigIntMoneyBase): boolean;
-
-  multiply(
-    number: number | string | bigint,
-    roundingMode?: RoundingModesType
-  ): BigIntMoneyBase;
-  divide(
-    number: number | string | bigint,
-    roundingMode?: RoundingModesType
-  ): BigIntMoneyBase;
-
+  multiply(number: number | string | bigint,roundingMode?: RoundingModesType): BigIntMoneyBase;
+  divide(number: number | string | bigint,roundingMode?: RoundingModesType): BigIntMoneyBase;
   allocate(ratios: number[]): BigIntMoneyBase[];
   allocateTo(number: number): BigIntMoneyBase[];
   getSource: () => bigint;
