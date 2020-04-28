@@ -5,9 +5,17 @@ hide_title: true
 sidebar_label: add
 ---
 
-# add
+# `add(money)`
 
-**Example**
+#### Arguments
+
+1. `money` ([MoneyBase](Description.md#moneybase))
+
+#### Returns
+
+`money` ([MoneyBase](Description.md#moneybase))
+
+#### Example
 
 ```js
 
