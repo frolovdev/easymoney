@@ -5,7 +5,13 @@ hide_title: true
 sidebar_label: getCurrency
 ---
 
-# getCurrency
+
+# `getCurrency()`
+
+#### Returns
+
+`money` ([BigIntMoneyBase](Description.md#money))
+
 
 **Example**
 
