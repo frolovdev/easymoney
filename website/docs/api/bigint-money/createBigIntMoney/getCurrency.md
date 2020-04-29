@@ -10,7 +10,7 @@ sidebar_label: getCurrency
 
 #### Returns
 
-`money` ([BigIntMoneyBase](Description.md#money))
+`money` ([Money](Description.md#money))
 
 
 **Example**
