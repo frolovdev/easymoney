@@ -7,9 +7,9 @@ sidebar_label: Installation
 To install the stable version:
 
 ```bash
-npm install --save @easymoney/core @easymoney/money
+npm install --save @easymoney/money
 ```
 
 ```bash
-yarn add @easymoney/core @easymoney/money
+yarn add @easymoney/money
 ```

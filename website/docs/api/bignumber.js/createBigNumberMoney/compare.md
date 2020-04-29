@@ -1,0 +1,27 @@
+---
+id: compare
+title: compare
+hide_title: true
+sidebar_label: compare
+---
+
+# compare
+
+**Example**
+
+```js
+
+import { createBigNumberMoney } from '@easymoney/bignumber.js';
+
+const money = createBigNumberMoney({ 
+                amount: "111199992222888833337777444466665555", 
+                currency: 'USD' });
+
+const money2 = createBigNumberMoney({ 
+                amount: "111199992222888833337777444466665555", 
+                currency: 'USD' });
+
+money.compare(money2);
+// => 0
+
+```

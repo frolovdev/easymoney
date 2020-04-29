@@ -12,11 +12,11 @@ easymoney is javascript library for working with monetary values
 ## Installation
 
 ```bash
-npm install --save @easymoney/core @easymoney/money
+npm install --save @easymoney/money
 ```
 
 ```bash
-yarn add @easymoney/core @easymoney/money
+yarn add @easymoney/money
 ```
 
 For more details, see the Installation page.

@@ -58,6 +58,32 @@ You can watch examples of using methods in original repo modulename/______tests_
   - [multiply](bigint-money/createBigIntMoney/multiply.md)
   - [subtract](bigint-money/createBigIntMoney/subtract.md)
 
+## @easymoney/bignumber.js
+
+- [createBigNumberMoney](bignumber.js/createBigNumberMoney/Description.md)
+  - [absolute](bignumber.js/createBigNumberMoney/absolute.md)
+  - [add](bignumber.js/createBigNumberMoney/add.md)
+  - [allocate](bignumber.js/createBigNumberMoney/allocate.md)
+  - [allocateTo](bignumber.js/createBigNumberMoney/allocateTo.md)
+  - [compare](bignumber.js/createBigNumberMoney/compare.md)
+  - [divide](bignumber.js/createBigNumberMoney/divide.md)
+  - [equals](bignumber.js/createBigNumberMoney/equalse.md)
+  - [getAmount](bignumber.js/createBigNumberMoney/getAmount.md)
+  - [getCurrency](bignumber.js/createBigNumberMoney/getCurrency.md)
+  - [greaterThan](bignumber.js/createBigNumberMoney/greaterThan.md)
+  - [greaterThanOrEqual](bignumber.js/createBigNumberMoney/greaterThanOrEqual.md)
+  - [isNegative](bignumber.js/createBigNumberMoney/isNegative.md)
+  - [isPositive](bignumber.js/createBigNumberMoney/isPositive.md)
+  - [isSameCurrency](bignumber.js/createBigNumberMoney/isSameCurrency.md)
+  - [isZero](bignumber.js/createBigNumberMoney/isZero.md)
+  - [lessThan](bignumber.js/createBigNumberMoney/lessThan.md)
+  - [lessThanOrEqual](bignumber.js/createBigNumberMoney/lessThanOrEqual.md)
+  - [mod](bignumber.js/createBigNumberMoney/mod.md)
+  - [multiply](bignumber.js/createBigNumberMoney/multiply.md)
+  - [negative](bignumber.js/createBigNumberMoney/negative.md)
+  - [ratioOf](bignumber.js/createBigNumberMoney/ratioOf.md)
+  - [subtract](bignumber.js/createBigNumberMoney/subtract.md)
+
 
 ## @easymoney/currencies
 
