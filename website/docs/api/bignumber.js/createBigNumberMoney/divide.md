@@ -13,9 +13,7 @@ sidebar_label: divide
 
 import { createBigNumberMoney } from '@easymoney/money';
 
-const money1 = createBigNumberMoney({ 
-                amount: "99118822773366445591283991122", 
-                currency: 'USD' });
+const money1 = createBigNumberMoney({ amount: "99118822773366445591283991122", currency: 'USD' });
 
 const result = money1.divide(5);
 

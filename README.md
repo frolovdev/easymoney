@@ -110,13 +110,14 @@ Further reading
 
 ## Packages
 
-|           Package           |                 Version                  |                Dependencies                |                   Size                   |
-| :-------------------------: | :--------------------------------------: | :----------------------------------------: | :--------------------------------------: |
-| [`@easymoney/bigint-money`] | [![npm-bigint-money]][pack-bigint-money] | [![deps-bigint-money]][david-bigint-money] | [![size-bigint-money]][pho-bigint-money] |
-|     [`@easymoney/core`]     |         [![npm-core]][pack-core]         |         [![deps-core]][david-core]         |         [![size-core]][pho-core]         |
-|  [`@easymoney/currencies`]  |   [![npm-currencies]][pack-currencies]   |   [![deps-currencies]][david-currencies]   |   [![size-currencies]][pho-currencies]   |
-|    [`@easymoney/money`]     |        [![npm-money]][pack-money]        |        [![deps-money]][david-money]        |        [![size-money]][pho-money]        |
-|  [`@easymoney/formatter`]   |    [![npm-formatter]][pack-formatter]    |    [![deps-formatter]][david-formatter]    |    [![size-formatter]][pho-formatter]    |
+|           Package             |                 Version                        |                Dependencies                      |                   Size                            |
+| :---------------------------: | :--------------------------------------------: | :----------------------------------------------: | :-----------------------------------------------: |
+|  [`@easymoney/bigint-money`]  |   [![npm-bigint-money]][pack-bigint-money]     | [![deps-bigint-money]][david-bigint-money]       |       [![size-bigint-money]][pho-bigint-money]    |
+|  [`@easymoney/bignumber.js`]  |   [![npm-bignumber]][pack-bignumber]           |   [![deps-bignumber]][david-bignumber]           |       [![size-bignumber]][pho-bignumber]          |
+|   [`@easymoney/currencies`]   |       [![npm-currencies]][pack-currencies]     |   [![deps-currencies]][david-currencies]         |       [![size-currencies]][pho-currencies]        |
+|      [`@easymoney/money`]     |           [![npm-money]][pack-money]           |        [![deps-money]][david-money]              |           [![size-money]][pho-money]              |
+|    [`@easymoney/formatter`]   |       [![npm-formatter]][pack-formatter]       |       [![deps-formatter]][david-formatter]       |       [![size-formatter]][pho-formatter]          |
+|[`@easymoney/crypto-formatter`]|[![npm-crypto-formatter]][pack-crypto-formatter]|[![deps-crypto-formatter]][david-crypto-formatter]| [![size-crypto-formatter]][pho-crypto-formatter]  |
 
 [`@easymoney/bigint-money`]: https://github.com/frolovdev/easymoney/tree/master/packages/bigint-money
 [npm-bigint-money]: https://img.shields.io/npm/v/@easymoney/bigint-money?color=blue
@@ -126,13 +127,13 @@ Further reading
 [size-bigint-money]: https://img.shields.io/bundlephobia/minzip/@easymoney/bigint-money
 [pho-bigint-money]: https://bundlephobia.com/result?p=@easymoney/bigint-money
 
-[`@easymoney/core`]: https://github.com/frolovdev/easymoney/tree/master/packages/core
-[npm-core]: https://img.shields.io/npm/v/@easymoney/core?color=blue
-[pack-core]: https://www.npmjs.com/package/@easymoney/core
-[deps-core]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/core
-[david-core]: https://david-dm.org/frolovdev/easymoney?path=packages/core
-[size-core]: https://img.shields.io/bundlephobia/minzip/@easymoney/core
-[pho-core]: https://bundlephobia.com/result?p=@easymoney/core
+[`@easymoney/bignumber.js`]: https://github.com/frolovdev/easymoney/tree/master/packages/bignumber.js
+[npm-bignumber]: https://img.shields.io/npm/v/@easymoney/bignumber.js?color=blue
+[pack-bignumber]: https://www.npmjs.com/package/@easymoney/bignumber.js
+[deps-bignumber]: https://david-dm.org/frolovdev/easymoney/status.svg?path=packages/bignumber.js
+[david-bignumber]: https://david-dm.org/frolovdev/easymoney?path=packages%2Fbignumber.js
+[size-bignumber]: https://img.shields.io/bundlephobia/minzip/@easymoney/bignumber.js
+[pho-bignumber]: https://bundlephobia.com/result?p=@easymoney/bignumber.js
 
 [`@easymoney/currencies`]: https://github.com/frolovdev/easymoney/tree/master/packages/currencies
 [npm-currencies]: https://img.shields.io/npm/v/@easymoney/currencies?color=blue
@@ -157,7 +158,6 @@ Further reading
 [david-formatter]: https://david-dm.org/frolovdev/easymoney?path=packages/formatter
 [size-formatter]: https://img.shields.io/bundlephobia/minzip/@easymoney/formatter
 [pho-formatter]: https://bundlephobia.com/result?p=@easymoney/formatter
-
 
 [`@easymoney/crypto-formatter`]: https://github.com/frolovdev/easymoney/tree/master/packages/crypto-formatter
 [npm-crypto-formatter]: https://img.shields.io/npm/v/@easymoney/crypto-formatter?color=blue
