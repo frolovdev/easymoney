@@ -10,7 +10,7 @@ sidebar_label: allocate
 
 #### Arguments
 
-1. `ratios` (Array<number>)
+1. `ratios (Array<number>)`
 
 #### Returns
 

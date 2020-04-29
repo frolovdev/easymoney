@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: format
 ---
 
-# format
+# `format(money,option?)`
+
+#### Arguments
+
+1. `money` ([MoneyBase](Description.md#moneybase))
+2. `option?` ([CryptoOptions](Description.md#cryptooptions))
+
+#### Returns
+
+`string`
+
 
 **Example**
 
