@@ -5,7 +5,12 @@ hide_title: true
 sidebar_label: getAmount
 ---
 
-# getAmount
+# `getAmount()`
+
+#### Returns
+
+`money` ([Money](Description.md#money))
+
 
 **Example**
 

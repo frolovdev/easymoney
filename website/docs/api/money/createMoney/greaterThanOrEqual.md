@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: greaterThanOrEqual
 ---
 
-# greaterThanOrEqual
+
+# `greaterThanOrEqual(money)`
+
+#### Arguments
+
+1. `money` ([MoneyBase](Description.md#moneybase))
+
+#### Returns
+
+`boolean`
+
 
 **Example**
 

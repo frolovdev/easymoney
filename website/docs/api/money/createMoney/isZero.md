@@ -5,7 +5,13 @@ hide_title: true
 sidebar_label: isZero
 ---
 
-# isZero
+
+# `isZero()`
+
+#### Returns
+
+1. `boolean`
+
 
 **Example**
 

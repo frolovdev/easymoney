@@ -5,7 +5,12 @@ hide_title: true
 sidebar_label: getCurrency
 ---
 
-# getCurrency
+# `getCurrency()`
+
+#### Returns
+
+`money` ([MoneyBase](Description.md#money))
+
 
 **Example**
 

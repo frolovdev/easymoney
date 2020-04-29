@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: compare
 ---
 
-# compare
+
+# compare(money)
+
+#### Arguments
+
+1. `money` ([MoneyBase](Description.md#moneybase))
+
+#### Returns
+
+`1 | 0 | -1`
+
 
 **Example**
 

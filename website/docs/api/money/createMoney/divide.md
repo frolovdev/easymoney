@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: divide
 ---
 
-# divide
+# `divide(money,roundingMode?)`
+
+#### Arguments
+
+1. `money` (number | string)
+2. `roundingMode?` ([RoundingModesType](Description.md#roundingmodestype))
+
+#### Returns
+
+`money` ([MoneyBase](Description.md#moneybase))
+
 
 **Example**
 

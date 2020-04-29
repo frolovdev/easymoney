@@ -5,7 +5,16 @@ hide_title: true
 sidebar_label: subtract
 ---
 
-# subtract
+# `subtract(money)`
+
+#### Arguments
+
+1. `money` ([MoneyBase](Description.md#moneybase))
+
+#### Returns
+
+`money` ([MoneyBase](Description.md#moneybase))
+
 
 **Example**
 
