@@ -13,9 +13,7 @@ sidebar_label: multiply
 
 import { createBigNumberMoney } from '@easymoney/bignumber.js';
 
-const money1 = createBigNumberMoney({ 
-                amount: "77778888111133339999111", 
-                currency: 'USD' });
+const money1 = createBigNumberMoney({ amount: "77778888111133339999111", currency: 'USD' });
 
 const result = money1.multiply(6);
 

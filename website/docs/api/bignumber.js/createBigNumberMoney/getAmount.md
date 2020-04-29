@@ -13,11 +13,9 @@ sidebar_label: getAmount
 
 import { createBigNumberMoney } from '@easymoney/bignumber.js';
 
-const result1 = createBigNumberMoney({ 
-                    amount: "198237645546732891182567982244", 
-                    currency: 'USD' });
+const result1 = createBigNumberMoney({ amount: "1982376455467328918256798244", currency: 'USD' });
 
 result1.getAmount();
-// => "198237645546732891182567982244"
+// => "1982376455467328918256798244"
 
 ```

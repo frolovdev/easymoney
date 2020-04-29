@@ -13,11 +13,9 @@ sidebar_label: negative
 
 import { createBigNumberMoney } from '@easymoney/bignumber.js';
 
-const money = createBigNumberMoney({ 
-                amount: "999988887777666655554444333322221111", 
-                currency: 'USD' });
+const money = createBigNumberMoney({ amount: "999888777666555444333222111", currency: 'USD' });
 
 const result = money.negative();
-// => "-999988887777666655554444333322221111"
+// => "-999888777666555444333222111"
 
 ```

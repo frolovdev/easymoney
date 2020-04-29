@@ -13,15 +13,11 @@ sidebar_label: ratioOf
 
 import { createBigNumberMoney } from '@easymoney/bignumber.js';
 
-const money = createBigNumberMoney({ 
-                amount: "100000000000000000000000000000000", 
-                currency: 'RUB' });
+const money = createBigNumberMoney({ amount: "10000000000000000000000000000", currency: 'RUB' });
 
-const money1 = createBigNumberMoney({ 
-                amount: "20000000000000000", 
-                currency: 'RUB' });
+const money1 = createBigNumberMoney({ amount: "200000000000000", currency: 'RUB' });
 
 const result = money.ratioOf(money1);
-// => "5000000000000000"
+// => "50000000000000"
 
 ```

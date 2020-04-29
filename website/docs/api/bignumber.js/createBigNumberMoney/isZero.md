@@ -20,9 +20,7 @@ money.isZero();
 // => true
 
 //if amount value isnt zero
-const money1 = createBigNumberMoney({ 
-                amount: "1111222233334444555566667777", 
-                currency: 'USD' });
+const money1 = createBigNumberMoney({ amount: "1111222233334444555566667777", currency: 'USD' });
 
 money1.isZero();
 // => false
