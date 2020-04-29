@@ -5,7 +5,13 @@ hide_title: true
 sidebar_label: isPositive
 ---
 
-# isPositive
+
+# `isPositive()`
+
+#### Returns
+
+1. `boolean`
+
 
 **Example**
 

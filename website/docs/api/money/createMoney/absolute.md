@@ -5,7 +5,13 @@ hide_title: true
 sidebar_label: absolute
 ---
 
-# absolute
+
+# `absolute()`
+
+#### Returns
+
+1. `money` ([MoneyBase](Description.md#moneybase))
+
 
 **Example**
 

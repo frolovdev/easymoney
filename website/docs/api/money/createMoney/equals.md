@@ -5,7 +5,16 @@ hide_title: true
 sidebar_label: equals
 ---
 
-# equals
+# `equals(money)`
+
+#### Arguments
+
+1. `money` ([MoneyBase](Description.md#moneybase))
+
+#### Returns
+
+`boolean`
+
 
 **Example**
 

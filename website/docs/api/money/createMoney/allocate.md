@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: allocate
 ---
 
-# allocate
+
+# `allocate(ratios)`
+
+#### Arguments
+
+1. `ratios` (Array<number>)
+
+#### Returns
+
+`Array` ([MoneyBase](Description.md#moneybase))
+
 
 **Example**
 

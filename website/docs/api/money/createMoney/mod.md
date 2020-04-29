@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: mod
 ---
 
-# mod
+
+# `mod(money)`
+
+#### Arguments
+
+1. `money` ([MoneyBase](Description.md#moneybase))
+
+#### Returns
+
+`money` ([MoneyBase](Description.md#moneybase))
+
 
 **Example**
 

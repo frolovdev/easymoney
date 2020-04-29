@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: isSameCurrency
 ---
 
-# isSameCurrency
+
+# `isSameCurrency(money)`
+
+#### Arguments
+
+1. `money` ([MoneyBase](Description.md#moneybase))
+
+#### Returns
+
+`boolean`
+
 
 **Example**
 

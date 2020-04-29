@@ -5,7 +5,13 @@ hide_title: true
 sidebar_label: negative
 ---
 
-# negative
+
+# `negative()`
+
+#### Returns
+
+`money` ([MoneyBase](Description.md#moneybase))
+
 
 **Example**
 
