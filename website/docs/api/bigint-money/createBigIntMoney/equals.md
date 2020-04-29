@@ -5,7 +5,16 @@ hide_title: true
 sidebar_label: equals
 ---
 
-# equals
+# `equals(money)`
+
+#### Arguments
+
+1. `money` ([BigIntMoneyBase](Description.md#bigintmoneybase))
+
+#### Returns
+
+`boolean`
+
 
 **Example**
 

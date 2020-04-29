@@ -5,7 +5,13 @@ hide_title: true
 sidebar_label: getSource
 ---
 
-# getSource
+
+# `getSource()`
+
+#### Returns
+
+`number`
+
 
 **Example**
 

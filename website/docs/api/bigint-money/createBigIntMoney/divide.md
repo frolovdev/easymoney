@@ -9,12 +9,13 @@ sidebar_label: divide
 
 #### Arguments
 
-1. `number` (number | string | bigint)
+1. `money` (number | string | bigint)
 2. `roundingMode?` ([RoundingModesType](Description.md#roundingmodestype))
 
 #### Returns
 
 `money` ([BigIntMoneyBase](Description.md#bigintmoneybase))
+
 
 **Example**
 

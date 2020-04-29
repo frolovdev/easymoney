@@ -5,7 +5,13 @@ hide_title: true
 sidebar_label: getAmount
 ---
 
-# getAmount
+
+# `getAmount()`
+
+#### Returns
+
+`money` ([BigIntMoneyBase](Description.md#money))
+
 
 **Example**
 

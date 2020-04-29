@@ -15,6 +15,7 @@ sidebar_label: allocateTo
 
 `Array` ([BigIntMoneyBase](Description.md#bigintmoneybase))
 
+
 **Example**
 
 ```js

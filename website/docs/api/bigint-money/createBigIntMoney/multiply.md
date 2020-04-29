@@ -5,7 +5,18 @@ hide_title: true
 sidebar_label: multiply
 ---
 
-# multiply
+
+# `multiply(money,roundingMode?)`
+
+#### Arguments
+
+1. `money` (number | string | bigint)
+2. `roundingMode?` ([RoundingModesType](Description.md#roundingmodestype))
+
+#### Returns
+
+`money` ([BigIntMoneyBase](Description.md#bigintmoneybase))
+
 
 **Example**
 

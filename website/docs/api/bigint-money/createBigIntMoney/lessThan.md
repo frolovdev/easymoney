@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: lessThan
 ---
 
-# lessThan
+
+# `lessThan(money)`
+
+#### Arguments
+
+1. `money` ([BigIntMoneyBase](Description.md#bigintmoneybase))
+
+#### Returns
+
+`boolean`
+
 
 **Example**
 
