@@ -22,9 +22,9 @@ money.lessThanOrEqual(money2);
 // => true
 
 //if first value less then second
-const money3 = createMoney({ amount: 150, currency: 'USD' });
+const money3 = createMoney({ amount: 100, currency: 'USD' });
 
-const money4 = createMoney({ amount: 100, currency: 'USD' });
+const money4 = createMoney({ amount: 150, currency: 'USD' });
 
 money3.lessThanOrEqual(money4);
 // => true

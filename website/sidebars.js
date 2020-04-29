@@ -69,6 +69,41 @@ module.exports = {
       },
       {
         type: "category",
+        label: "bignumber.js",
+        items: [
+          {
+            type: "category",
+            label: "createBigNumberMoney",
+            items: [
+              "api/bignumber.js/createBigNumberMoney/Description",
+              "api/bignumber.js/createBigNumberMoney/add",
+              "api/bignumber.js/createBigNumberMoney/absolute",
+              "api/bignumber.js/createBigNumberMoney/allocate",
+              "api/bignumber.js/createBigNumberMoney/allocateTo",
+              "api/bignumber.js/createBigNumberMoney/compare",
+              "api/bignumber.js/createBigNumberMoney/divide",
+              "api/bignumber.js/createBigNumberMoney/equals",
+              "api/bignumber.js/createBigNumberMoney/getAmount",
+              "api/bignumber.js/createBigNumberMoney/getCurrency",
+              "api/bignumber.js/createBigNumberMoney/greaterThan",
+              "api/bignumber.js/createBigNumberMoney/greaterThanOrEqual",
+              "api/bignumber.js/createBigNumberMoney/isNegative",
+              "api/bignumber.js/createBigNumberMoney/isPositive",
+              "api/bignumber.js/createBigNumberMoney/isSameCurrency",
+              "api/bignumber.js/createBigNumberMoney/isZero",
+              "api/bignumber.js/createBigNumberMoney/lessThan",
+              "api/bignumber.js/createBigNumberMoney/lessThanOrEqual",
+              "api/bignumber.js/createBigNumberMoney/mod",
+              "api/bignumber.js/createBigNumberMoney/multiply",
+              "api/bignumber.js/createBigNumberMoney/negative",
+              "api/bignumber.js/createBigNumberMoney/ratioOf",
+              "api/bignumber.js/createBigNumberMoney/subtract",
+            ],
+          },
+        ],
+      },
+      {
+        type: "category",
         label: "currencies",
         items: [
           {

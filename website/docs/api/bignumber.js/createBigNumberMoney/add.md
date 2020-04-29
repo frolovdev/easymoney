@@ -1,0 +1,38 @@
+---
+id: add
+title: add
+hide_title: true
+sidebar_label: add
+---
+
+# `add(money)`
+
+#### Arguments
+
+1. `money` ([MoneyBase](Description.md#moneybase))
+
+#### Returns
+
+`money` ([MoneyBase](Description.md#moneybase))
+
+#### Example
+
+```js
+
+import { createBigNumberMoney } from '@easymoney/bignumber.js';
+
+const money = createBigNumberMoney({ 
+                amount: "111122223333444455556666777788889999", 
+                currency: 'USD' });
+
+const money2 = createBigNumberMoney({ 
+                amount: 100, 
+                currency: 'USD' });
+
+const result = money.add(money2);
+
+result.getAmount();
+// => "111122223333444455556666777788890099"
+
+
+```
