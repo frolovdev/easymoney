@@ -5,7 +5,19 @@ hide_title: true
 sidebar_label: share
 ---
 
-# share
+
+# `share(amount,ratio,total)`
+
+#### Arguments
+
+1. `amount (bigint)` 
+2. `divisor (bigint)`
+3. `total (bigint)`
+
+#### Returns
+
+`number (bigint)`
+
 
 **Example**
 

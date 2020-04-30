@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: absolute
 ---
 
-# absolute
+
+# `absolute(value)`
+
+#### Arguments
+
+1. `value (bigint)` 
+
+#### Returns
+
+`number (bigint)`
+
 
 **Example**
 

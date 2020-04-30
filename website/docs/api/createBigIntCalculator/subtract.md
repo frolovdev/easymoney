@@ -5,7 +5,18 @@ hide_title: true
 sidebar_label: subtract
 ---
 
-# subtract
+
+# `subtract(amount,subtrahend)`
+
+#### Arguments
+
+1. `amount (bigint)` 
+2. `subtrahend (bigint)`
+
+#### Returns
+
+`number (bigint)`
+
 
 **Example**
 
