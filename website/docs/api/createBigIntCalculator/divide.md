@@ -11,7 +11,7 @@ sidebar_label: divide
 
 1. `amount (bigint)` 
 2. `divisor`
-2. `roundingMode` ([RoundingModesType](Description.md#roundingmodestype))
+3. `roundingMode` ([RoundingModesType](Description.md#roundingmodestype))
 
 #### Returns
 

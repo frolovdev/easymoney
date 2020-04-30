@@ -12,7 +12,7 @@ sidebar_label: multiply
 
 1. `amount` (number | string | bigint)
 2. `divisor`
-2. `roundingMode` ([RoundingModesType](Description.md#roundingmodestype))
+3. `roundingMode` ([RoundingModesType](Description.md#roundingmodestype))
 
 #### Returns
 

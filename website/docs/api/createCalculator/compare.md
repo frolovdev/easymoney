@@ -5,7 +5,18 @@ hide_title: true
 sidebar_label: compare
 ---
 
-# compare
+
+# `compare(a, b)`
+
+#### Arguments
+
+1. `a (string)` 
+2. `b (string)` 
+
+#### Returns
+
+`-1 | 1 | 0`
+
 
 **Example**
 

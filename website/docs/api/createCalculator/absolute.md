@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: absolute
 ---
 
-# absolute
+
+# `absolute(number)`
+
+#### Arguments
+
+1. `number (string)` 
+
+#### Returns
+
+`string`
+
 
 **Example**
 
