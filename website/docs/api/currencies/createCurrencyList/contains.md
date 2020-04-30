@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: contains
 ---
 
-# contains
+
+# `contains(currency)`
+
+#### Arguments
+
+1. `currency` ([Currency](Description.md#currency))
+
+#### Returns
+
+`boolean` 
+
 
 **Example**
 

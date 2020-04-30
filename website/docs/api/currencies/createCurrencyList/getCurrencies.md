@@ -5,7 +5,14 @@ hide_title: true
 sidebar_label: getCurrencies
 ---
 
-# getCurrencies
+
+# `getCurrencies()`
+
+
+#### Returns
+
+([CurrencyMap](Description.md#currencymap))
+
 
 **Example**
 

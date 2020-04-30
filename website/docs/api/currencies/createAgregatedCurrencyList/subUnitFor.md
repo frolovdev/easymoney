@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: subUnitFor
 ---
 
-# subUnitFor
+
+# `subUnitFor(currency)`
+
+#### Arguments
+
+1. `currency` ([Currency](Description.md#currency))
+
+#### Returns
+
+`boolean` 
+
 
 **Example**
 
