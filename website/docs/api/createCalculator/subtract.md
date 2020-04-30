@@ -5,7 +5,18 @@ hide_title: true
 sidebar_label: subtract
 ---
 
-# subtract
+
+# `subtract(amount, divisor)`
+
+#### Arguments
+
+1. `amount (string)` 
+2. `subtrahend (string)` 
+
+#### Returns
+
+`string`
+
 
 **Example**
 

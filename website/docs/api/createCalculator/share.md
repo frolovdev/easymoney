@@ -5,7 +5,19 @@ hide_title: true
 sidebar_label: share
 ---
 
-# share
+
+# `share(amount, divisor)`
+
+#### Arguments
+
+1. `amount: (string)`,
+2. `ratio: (number | string)`
+3. `total: (number | string)`
+
+#### Returns
+
+`string`
+
 
 **Example**
 

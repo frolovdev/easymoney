@@ -5,7 +5,16 @@ hide_title: true
 sidebar_label: floor
 ---
 
-# floor
+# `floor(number)`
+
+#### Arguments
+
+1. `number (string)` 
+
+#### Returns
+
+`string`
+
 
 **Example**
 

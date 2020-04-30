@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: multiply
 ---
 
-# multiply
+# `multiply(amount, multiplier)`
+
+#### Arguments
+
+1. `amount (string)` 
+2. `multiplier (number | string)` 
+
+#### Returns
+
+`string`
+
 
 **Example**
 

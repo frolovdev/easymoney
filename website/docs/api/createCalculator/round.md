@@ -5,7 +5,18 @@ hide_title: true
 sidebar_label: round
 ---
 
-# round
+
+# `round(number,roundingMode)`
+
+#### Arguments
+
+1. `number (number | string)` 
+2. `roundingMode` ([RoundingModesType](Description.md#roundingmodestype))
+
+#### Returns
+
+`string`
+
 
 **Example**
 

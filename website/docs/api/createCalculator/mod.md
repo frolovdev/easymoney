@@ -5,7 +5,18 @@ hide_title: true
 sidebar_label: mod
 ---
 
-# mod
+
+# `mod(amount, divisor)`
+
+#### Arguments
+
+1. `amount (string)` 
+2. `divisor (number | string)` 
+
+#### Returns
+
+`string`
+
 
 **Example**
 
