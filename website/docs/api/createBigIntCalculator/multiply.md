@@ -5,7 +5,19 @@ hide_title: true
 sidebar_label: multiply
 ---
 
-# multiply
+
+# `multiply(amount,divisor,roundingMode)`
+
+#### Arguments
+
+1. `amount` (number | string | bigint)
+2. `divisor`
+2. `roundingMode` ([RoundingModesType](Description.md#roundingmodestype))
+
+#### Returns
+
+`number (bigint)`
+
 
 **Example**
 

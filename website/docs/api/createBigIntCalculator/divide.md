@@ -5,7 +5,18 @@ hide_title: true
 sidebar_label: divide
 ---
 
-# compare
+# `divide(amount,divisor,roundingMode)`
+
+#### Arguments
+
+1. `amount (bigint)` 
+2. `divisor`
+2. `roundingMode` ([RoundingModesType](Description.md#roundingmodestype))
+
+#### Returns
+
+`number`
+
 
 **Example**
 

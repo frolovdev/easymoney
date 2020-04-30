@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: add
 ---
 
-# add
+# `add(amount,addend)`
+
+#### Arguments
+
+1. `amount`
+2. `addend`
+
+#### Returns
+
+`bigint`
+
 
 **Example**
 
