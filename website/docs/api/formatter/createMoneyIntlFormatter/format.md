@@ -5,7 +5,17 @@ hide_title: true
 sidebar_label: format
 ---
 
-# format
+
+# `format(currency)`
+
+#### Arguments
+
+1. `currency` ([CurrencyUnitISO](Description.md#currencyunitiso))
+
+#### Returns
+
+`currency` 
+
 
 **Example**
 
