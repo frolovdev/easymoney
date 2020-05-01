@@ -1,6 +1,11 @@
-<img src="https://easymoney.now.sh/img/logo.png" align="middle"
-     alt="easy money logo" width="225" height="120"></img>   
-     
+
+<div align="center">
+<br>
+[![easymoney logo](https://easymoney.now.sh/img/logo.png)](https://easymoney.now.sh/)
+</div>
+
+
+
 # @easymoney/bigint-money
 
 [![npm-bigint-money]][pack-bigint-money] ![npm type definitions]  [![deps-bigint-money]][david-bigint-money]  [![size-bigint-money]][pho-bigint-money] ![GitHub]
