@@ -6,15 +6,18 @@ sidebar_label: format
 ---
 
 
-# `format(currency)`
+# `format(money,locale?,options?)`
 
 #### Arguments
 
-1. `currency` ([CurrencyUnitISO](Description.md#currencyunitiso))
+1. `money` ([Money](Description.md#moneybase))
+2. `locale?` (string),
+3. `options?` ([MoneyIntlOptions](Description.md#moneyintloptions))     
+    
 
 #### Returns
 
-`currency` 
+`string` 
 
 
 **Example**

@@ -10,7 +10,7 @@ sidebar_label: isZero
 
 #### Returns
 
-1. `boolean`
+`boolean`
 
 
 **Example**
