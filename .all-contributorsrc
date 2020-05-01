@@ -26,6 +26,15 @@
         "doc",
         "code"
       ]
+    },
+    {
+      "login": "Mikchail",
+      "name": "Mikchail",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/43996756?v=4",
+      "profile": "https://github.com/Mikchail",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
