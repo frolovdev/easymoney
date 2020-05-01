@@ -1,4 +1,4 @@
-<img src="https://easymoney.now.sh/img/logo.png" align="center"
+<img src="https://easymoney.now.sh/img/logo.png" align="middle"
      alt="easy money logo" width="225" height="120"></img>   
      
 # @easymoney/bigint-money
