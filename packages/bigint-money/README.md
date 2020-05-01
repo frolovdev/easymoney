@@ -1,7 +1,8 @@
+<div align="center" style="width: 225px;height: 120px">
+<br/>
 
-<div align="center">
-<br>
 [![easymoney logo](https://easymoney.now.sh/img/logo.png)](https://easymoney.now.sh/)
+
 </div>
 
 
