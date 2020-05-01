@@ -13,7 +13,8 @@ sidebar_label: allocate
 
 #### Returns
 
-`Array` ([BigIntMoneyBase](Description.md#bigintmoneybase))
+`Array` <([BigIntMoneyBase](Description.md#bigintmoneybase))>
+
 
 **Example**
 

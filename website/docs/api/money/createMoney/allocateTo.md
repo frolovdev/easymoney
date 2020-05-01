@@ -5,6 +5,7 @@ hide_title: true
 sidebar_label: allocateTo
 ---
 
+
 # `allocateTo(money)`
 
 #### Arguments
@@ -13,7 +14,7 @@ sidebar_label: allocateTo
 
 #### Returns
 
-`Array` ([MoneyBase](Description.md#moneybase))
+`Array` <([MoneyBase](Description.md#moneybase))>
 
 
 **Example**

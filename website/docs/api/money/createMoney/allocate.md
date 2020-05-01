@@ -14,7 +14,7 @@ sidebar_label: allocate
 
 #### Returns
 
-`Array` ([MoneyBase](Description.md#moneybase))
+`Array` <([MoneyBase](Description.md#moneybase))>
 
 
 **Example**

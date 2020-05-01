@@ -10,7 +10,7 @@ sidebar_label: isPositive
 
 #### Returns
 
-1. `boolean`
+`boolean`
 
 
 **Example**
