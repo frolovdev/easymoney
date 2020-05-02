@@ -126,6 +126,11 @@ module.exports = {
               "api/currencies/createAgregatedCurrencyList/subUnitFor",
             ],
           },
+          {
+            type: "category",
+            label: "convertCurrencyMapToArray",
+            items:[ "api/currencies/convertCurrencyMapToArray"]
+          }
         ],
       },
       {

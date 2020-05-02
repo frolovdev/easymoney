@@ -1,5 +1,5 @@
 import { CurrencyMap, CurrencyUnitCrypto } from "../types";
-import { covertCurrencyMapToArray } from "../covertCurrencyMapToArray";
+import { convertCurrencyMapToArray } from "../convertCurrencyMapToArray";
 
 export const cryptoCurrenciesMap: CurrencyMap<CurrencyUnitCrypto> = {
   BTC: {
@@ -19,4 +19,4 @@ export const cryptoCurrenciesMap: CurrencyMap<CurrencyUnitCrypto> = {
   }
 } as const;
 
-export const cryptoCurrencies = covertCurrencyMapToArray(cryptoCurrenciesMap);
+export const cryptoCurrencies = convertCurrencyMapToArray(cryptoCurrenciesMap);

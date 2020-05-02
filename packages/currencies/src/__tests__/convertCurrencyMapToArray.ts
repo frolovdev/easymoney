@@ -1,8 +1,8 @@
-import { covertCurrencyMapToArray } from "../covertCurrencyMapToArray";
+import { convertCurrencyMapToArray } from "../convertCurrencyMapToArray";
 import { cryptoCurrenciesMap } from "../currencies/cryptoCurrencies";
 describe("covertCurrencyMapToArray", () => {
   it("should covert map to array", () => {
-    const array = covertCurrencyMapToArray(cryptoCurrenciesMap);
+    const array = convertCurrencyMapToArray(cryptoCurrenciesMap);
 
     expect(array).toEqual([
       {
