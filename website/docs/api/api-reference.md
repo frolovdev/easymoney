@@ -95,6 +95,7 @@ You can watch examples of using methods in original repo modulename/______tests_
   - [contains](currencies/createAgregatedCurrencyList/contains.md)
   - [getCurrencies](currencies/createAgregatedCurrencyList/getCurrencies.md)
   - [subUnitFor](currencies/createAgregatedCurrencyList/subUnitFor.md)
+- [convertCurrencyMapToArray](currencies/convertCurrencyMapToArray.md)
 
 ## @easymoney/formatter
 

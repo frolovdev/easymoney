@@ -13,7 +13,7 @@ export {
   CurrencyMap,
   CurrencyUnitCrypto
 } from "./types";
-export { covertCurrencyMapToArray } from "./covertCurrencyMapToArray";
+export { convertCurrencyMapToArray } from "./convertCurrencyMapToArray";
 export { CurrencyUnit, CurrencyUnitISO } from "@easymoney/core";
 export { currenciesMap, createCurrencyList };
 export { cryptoCurrenciesMap };

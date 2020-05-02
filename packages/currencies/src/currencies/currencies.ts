@@ -1,6 +1,6 @@
 import { CurrencyMap } from "../types";
 import { CurrencyUnitISO } from "@easymoney/core";
-import { covertCurrencyMapToArray } from "../covertCurrencyMapToArray";
+import { convertCurrencyMapToArray } from "../convertCurrencyMapToArray";
 
 export const currenciesMap: CurrencyMap<CurrencyUnitISO> = {
   AFN: {
@@ -1243,4 +1243,4 @@ export const currenciesMap: CurrencyMap<CurrencyUnitISO> = {
   }
 } as const;
 
-export const currencies = covertCurrencyMapToArray(currenciesMap);
+export const currencies = convertCurrencyMapToArray(currenciesMap);
