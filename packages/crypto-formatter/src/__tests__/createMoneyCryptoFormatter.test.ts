@@ -1,7 +1,7 @@
 import { createMoneyCryptoFormatterUnit } from "../formatter/createMoneyCryptoFormatter";
 import {
   cryptoCurrenciesMap,
-  covertCurrencyMapToArray
+  convertCurrencyMapToArray
 } from "@easymoney/currencies";
 
 import { createMoney } from "@easymoney/money";
@@ -13,7 +13,7 @@ describe("createMoneyIntlFormatter", () => {
   ) => MoneyCryptoFormatter;
   beforeAll(() => {
     createFormatter = createMoneyCryptoFormatterUnit(
-      covertCurrencyMapToArray(cryptoCurrenciesMap)
+      convertCurrencyMapToArray(cryptoCurrenciesMap)
     );
   });
 

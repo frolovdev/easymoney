@@ -1,6 +1,6 @@
 {
   "name": "@easymoney/crypto-formatter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Whispers12",
   "sideEffects": false,
   "main": "dist/index.cjs.js",
@@ -44,15 +44,15 @@
     "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
-    "@easymoney/currencies": "^0.0.4",
-    "@easymoney/money": "^0.0.7"
+    "@easymoney/currencies": "^0.0.5",
+    "@easymoney/money": "^0.0.9"
   },
   "dependencies": {
-    "@easymoney/core": "^0.0.3"
+    "@easymoney/core": "^0.0.4"
   },
   "devDependencies": {
-    "@easymoney/currencies": "^0.0.4",
-    "@easymoney/money": "^0.0.7"
+    "@easymoney/currencies": "^0.0.5",
+    "@easymoney/money": "^0.0.9"
   },
   "files": [
     "/README.md",

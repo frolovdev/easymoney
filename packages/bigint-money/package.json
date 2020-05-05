@@ -1,6 +1,6 @@
 {
   "name": "@easymoney/bigint-money",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Whispers12",
   "sideEffects": false,
   "main": "dist/index.cjs.js",
@@ -44,7 +44,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@easymoney/core": "^0.0.3"
+    "@easymoney/core": "^0.0.4"
   },
   "engines": {
     "node": ">=10.8.x"

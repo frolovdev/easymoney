@@ -1,6 +1,6 @@
 {
   "name": "@easymoney/money",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "author": "Whispers12",
   "sideEffects": false,
   "main": "dist/index.cjs.js",
@@ -44,11 +44,11 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@easymoney/core": "^0.0.3"
+    "@easymoney/core": "^0.0.4"
   },
   "devDependencies": {
     "@easymoney/core": "*",
-    "@easymoney/currencies": "^0.0.4"
+    "@easymoney/currencies": "^0.0.5"
   },
   "files": [
     "/README.md",

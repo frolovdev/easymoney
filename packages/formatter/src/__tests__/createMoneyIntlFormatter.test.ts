@@ -1,5 +1,8 @@
 import { createMoneyIntlFormatterUnit } from "../createMoneyIntlFormatter";
-import { currenciesMap, covertCurrencyMapToArray } from "@easymoney/currencies";
+import {
+  currenciesMap,
+  convertCurrencyMapToArray
+} from "@easymoney/currencies";
 import { MoneyIntlFormatter } from "../types";
 import { createMoney } from "@easymoney/money";
 
@@ -7,7 +10,7 @@ describe("createMoneyIntlFormatter", () => {
   let createFormatter: () => MoneyIntlFormatter;
   beforeAll(() => {
     createFormatter = createMoneyIntlFormatterUnit(
-      covertCurrencyMapToArray(currenciesMap)
+      convertCurrencyMapToArray(currenciesMap)
     );
   });
 
