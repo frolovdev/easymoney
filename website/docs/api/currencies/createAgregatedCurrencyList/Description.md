@@ -40,15 +40,15 @@ interface CurrencyList {
 
 ```ts
 
-type Currency = string | AnyCurrency;
+type Currency = string | AnyCurrencyUnit;
 
 ```
 
-### AnyCurrency
+### AnyCurrencyUnit
 
 ```ts
 
-interface AnyCurrency extends CurrencyUnit {
+interface AnyCurrencyUnit extends CurrencyUnit {
   [key: string]: any;
 }
 

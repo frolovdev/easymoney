@@ -3,7 +3,7 @@ export {
   Money,
   Currency,
   CurrencyUnit,
-  AnyCurrency,
+  AnyCurrencyUnit,
   CurrencyUnitISO
 } from "./types/common";
 export { assert } from "./utils/assert";

@@ -1,8 +1,8 @@
-export type Currency = string | AnyCurrency;
+export type Currency = string | AnyCurrencyUnit;
 
 export type Money<CT, Amount = string> = {
   amount: Amount;
-  currency: CT extends string ? CT : CT extends AnyCurrency ? CT : never;
+  currency: CT extends string ? CT : CT extends AnyCurrencyUnit ? CT : never;
 };
 
 export interface CurrencyUnit {
@@ -10,7 +10,7 @@ export interface CurrencyUnit {
   minorUnit: number;
 }
 
-export interface AnyCurrency extends CurrencyUnit {
+export interface AnyCurrencyUnit extends CurrencyUnit {
   [key: string]: any;
 }
 

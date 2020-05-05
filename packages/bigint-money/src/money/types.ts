@@ -1,4 +1,4 @@
-import { Money, RoundingModesType, AnyCurrency } from "@easymoney/core";
+import { Money, RoundingModesType, AnyCurrencyUnit } from "@easymoney/core";
 import { BigIntCalculatorBase } from "../calculator/";
 
 export interface BigIntMoneyBase<CT> {
@@ -36,7 +36,7 @@ export type BigIntPrivateInstance<CT> = {
 
 export type BigIntMoneyInput<CT> = {
   amount: number | string | bigint;
-  currency: CT extends string ? CT : CT extends AnyCurrency ? CT : never;
+  currency: CT extends string ? CT : CT extends AnyCurrencyUnit ? CT : never;
 };
 
 export type BigIntInstance<CT> = {

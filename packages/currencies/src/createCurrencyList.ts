@@ -1,16 +1,16 @@
-import { assert, bind, AnyCurrency, Currency } from "@easymoney/core";
+import { assert, bind, AnyCurrencyUnit, Currency } from "@easymoney/core";
 import { CurrencyList, CurrencyMap } from "./types";
 
-type PrivateInstance<C extends AnyCurrency> = {
+type PrivateInstance<C extends AnyCurrencyUnit> = {
   currencies: CurrencyMap<C>;
 };
 
-type Instance<C extends AnyCurrency> = {
+type Instance<C extends AnyCurrencyUnit> = {
   publicInstance: CurrencyList<C>;
   privateInstance: PrivateInstance<C>;
 };
 
-function createCurrencyList<C extends AnyCurrency>(
+function createCurrencyList<C extends AnyCurrencyUnit>(
   currencies: C[]
 ): CurrencyList<C> {
   const currencyMap: CurrencyMap<C> = {};
@@ -50,9 +50,9 @@ function createCurrencyList<C extends AnyCurrency>(
   return publicInstance;
 }
 
-function subUnitFor<C extends Currency, ObjCur extends AnyCurrency>(
+function subUnitFor<C extends Currency, ObjCur extends AnyCurrencyUnit>(
   instance: Instance<ObjCur>,
-  currency: C extends AnyCurrency ? C : C extends "string" ? string : never
+  currency: C extends AnyCurrencyUnit ? C : C extends "string" ? string : never
 ) {
   const currencyCode = typeof currency === "object" ? currency.code : currency;
   if (!instance.publicInstance.contains(currency)) {
@@ -62,15 +62,15 @@ function subUnitFor<C extends Currency, ObjCur extends AnyCurrency>(
   return instance.privateInstance.currencies[currencyCode].minorUnit;
 }
 
-function contains<C extends Currency, ObjCur extends AnyCurrency>(
+function contains<C extends Currency, ObjCur extends AnyCurrencyUnit>(
   privateInstance: PrivateInstance<ObjCur>,
-  currency: C extends AnyCurrency ? C : C extends "string" ? string : never
+  currency: C extends AnyCurrencyUnit ? C : C extends "string" ? string : never
 ): boolean {
   const code = typeof currency === "object" ? currency.code : currency;
   return !!privateInstance.currencies[code];
 }
 
-function getCurrencies<ObjCur extends AnyCurrency>(
+function getCurrencies<ObjCur extends AnyCurrencyUnit>(
   privateInstance: PrivateInstance<ObjCur>
 ) {
   return privateInstance.currencies;

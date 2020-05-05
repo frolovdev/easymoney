@@ -1,4 +1,4 @@
-import { Money, RoundingModesType, AnyCurrency } from "@easymoney/core";
+import { Money, RoundingModesType, AnyCurrencyUnit } from "@easymoney/core";
 
 import { CalculatorBase } from "../calculator/";
 
@@ -41,7 +41,7 @@ export type PrivateInstance<CT> = {
 
 export type MoneyInput<CT> = {
   amount: number | string;
-  currency: CT extends string ? CT : CT extends AnyCurrency ? CT : never;
+  currency: CT extends string ? CT : CT extends AnyCurrencyUnit ? CT : never;
 };
 
 export type CreateMoney<MI, MB> = (money: MI) => MB;

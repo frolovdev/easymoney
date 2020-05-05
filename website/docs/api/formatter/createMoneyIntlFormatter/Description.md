@@ -61,11 +61,11 @@ type CurrencyUnitISO = CurrencyUnit & {
 
 ```
 
-### AnyCurrency
+### AnyCurrencyUnit
 
 ```ts
 
-interface AnyCurrency extends CurrencyUnit {
+interface AnyCurrencyUnit extends CurrencyUnit {
   [key: string]: any;
 }
 
