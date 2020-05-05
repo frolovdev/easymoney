@@ -172,7 +172,7 @@ Further reading
 ## Comunity
 
 - [Spectrum](https://spectrum.chat/easymoney)
-- [Ask question in twitter](https://twitter.com/frolovdev)
+- [Ask question on twitter](https://twitter.com/frolovdev)
 
 ## Learn more
 
