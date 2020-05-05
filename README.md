@@ -66,14 +66,6 @@ list.getCurrencies();
 
 ```
 
-# Important Note ⚠️
-
-We currently working hard on pre-release and last refactorings, but we are not now adhering to the semantic release, because the API (types) of packages might be changed.
-
-With the release we are going to commit our public API (publish 1.0.0) and support backward-compatibility and semantic versioning. Please do not blame us for this decision; this allows us to move more iteratively. 🚀
-
-The high-level roadmap is described on [a separate page](https://github.com/frolovdev/easymoney/projects/2).
-
 ## Quick start
 
 ```sh
@@ -120,14 +112,14 @@ Further reading
 
 ## Packages
 
-|           Package             |                 Version                        |                Dependencies                      |                   Size                            |
-| :---------------------------: | :--------------------------------------------: | :----------------------------------------------: | :-----------------------------------------------: |
-|  [`@easymoney/bigint-money`]  |   [![npm-bigint-money]][pack-bigint-money]     | [![deps-bigint-money]][david-bigint-money]       |       [![size-bigint-money]][pho-bigint-money]    |
-|  [`@easymoney/bignumber.js`]  |   [![npm-bignumber]][pack-bignumber]           |   [![deps-bignumber]][david-bignumber]           |       [![size-bignumber]][pho-bignumber]          |
-|   [`@easymoney/currencies`]   |       [![npm-currencies]][pack-currencies]     |   [![deps-currencies]][david-currencies]         |       [![size-currencies]][pho-currencies]        |
-|      [`@easymoney/money`]     |           [![npm-money]][pack-money]           |        [![deps-money]][david-money]              |           [![size-money]][pho-money]              |
-|    [`@easymoney/formatter`]   |       [![npm-formatter]][pack-formatter]       |       [![deps-formatter]][david-formatter]       |       [![size-formatter]][pho-formatter]          |
-|[`@easymoney/crypto-formatter`]|[![npm-crypto-formatter]][pack-crypto-formatter]|[![deps-crypto-formatter]][david-crypto-formatter]| [![size-crypto-formatter]][pho-crypto-formatter]  |
+|             Package             |                     Version                      |                    Dependencies                    |                       Size                       |
+| :-----------------------------: | :----------------------------------------------: | :------------------------------------------------: | :----------------------------------------------: |
+|   [`@easymoney/bigint-money`]   |     [![npm-bigint-money]][pack-bigint-money]     |     [![deps-bigint-money]][david-bigint-money]     |     [![size-bigint-money]][pho-bigint-money]     |
+|   [`@easymoney/bignumber.js`]   |        [![npm-bignumber]][pack-bignumber]        |        [![deps-bignumber]][david-bignumber]        |        [![size-bignumber]][pho-bignumber]        |
+|    [`@easymoney/currencies`]    |       [![npm-currencies]][pack-currencies]       |       [![deps-currencies]][david-currencies]       |       [![size-currencies]][pho-currencies]       |
+|      [`@easymoney/money`]       |            [![npm-money]][pack-money]            |            [![deps-money]][david-money]            |            [![size-money]][pho-money]            |
+|    [`@easymoney/formatter`]     |        [![npm-formatter]][pack-formatter]        |        [![deps-formatter]][david-formatter]        |        [![size-formatter]][pho-formatter]        |
+| [`@easymoney/crypto-formatter`] | [![npm-crypto-formatter]][pack-crypto-formatter] | [![deps-crypto-formatter]][david-crypto-formatter] | [![size-crypto-formatter]][pho-crypto-formatter] |
 
 [`@easymoney/bigint-money`]: https://github.com/frolovdev/easymoney/tree/master/packages/bigint-money
 [npm-bigint-money]: https://img.shields.io/npm/v/@easymoney/bigint-money?color=blue
