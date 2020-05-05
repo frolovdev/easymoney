@@ -1,9 +1,11 @@
 <div align="center" style="width: 225px;height: 120px">
 <br/>
 
-[![easymoney logo](https://easymoney.now.sh/img/logo.png)](https://easymoney.now.sh/)
+<img src="https://easymoney.now.sh/img/logo.png" align="right"
+     alt="easy money logo" width="225" height="120"></img>  
 
 </div>
+
 
 # @easymoney/currencies
 
