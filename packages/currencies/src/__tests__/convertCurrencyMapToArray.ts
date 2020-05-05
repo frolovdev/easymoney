@@ -1,6 +1,6 @@
 import { convertCurrencyMapToArray } from "../convertCurrencyMapToArray";
 import { cryptoCurrenciesMap } from "../currencies/cryptoCurrencies";
-describe("covertCurrencyMapToArray", () => {
+describe("convertCurrencyMapToArray", () => {
   it("should covert map to array", () => {
     const array = convertCurrencyMapToArray(cryptoCurrenciesMap);
 

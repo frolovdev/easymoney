@@ -1,10 +1,10 @@
 import { createMoneyCryptoFormatterUnit } from "./createMoneyCryptoFormatter";
 import {
   cryptoCurrenciesMap,
-  covertCurrencyMapToArray
+  convertCurrencyMapToArray
 } from "@easymoney/currencies";
 
-const cryptoCurrencies = covertCurrencyMapToArray(cryptoCurrenciesMap);
+const cryptoCurrencies = convertCurrencyMapToArray(cryptoCurrenciesMap);
 const createMoneyCryptoFormatter = createMoneyCryptoFormatterUnit(
   cryptoCurrencies
 );
