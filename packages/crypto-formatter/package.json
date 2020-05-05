@@ -1,6 +1,6 @@
 {
   "name": "@easymoney/crypto-formatter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Whispers12",
   "sideEffects": false,
   "main": "dist/index.cjs.js",
