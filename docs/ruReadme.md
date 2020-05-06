@@ -94,11 +94,6 @@ JavaScript разработчики часто используют числа �
 - PHP [moneyphp](https://github.com/moneyphp/money)
 - Go [go-money](https://github.com/Rhymond/go-money)
 
-Дальнейшее чтение
-
-[Почему округление гораздо более важная операция чем вам кажется](https://dev.to/frolovdev/why-rounding-is-more-important-than-you-think-134j)
-
-
 ## Сравнение с Dinero.js
 
 |                                                                     | easymoney                                                                                                           | Dinero.js                                                                                                    |
