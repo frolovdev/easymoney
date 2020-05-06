@@ -78,16 +78,6 @@ or
 yarn add @easymoney/money
 ```
 
-
-**CDN**
-
- - [@easymoney/money](https://unpkg.com/@easymoney/money)
- - [@easymoney/bigint-money](https://unpkg.com/@easymoney/bigint-money)
- - [@easymoney/currencies](https://unpkg.com/@easymoney/currencies)
- - [@easymoney/bignumber.js](https://unpkg.com/@easymoney/bignumber.js)
- - [@easymoney/formatter](https://unpkg.com/@easymoney/formatter)
- - [@easymoney/crypto-formatter](https://unpkg.com/@easymoney/crypto-formatter)
-
 ## Why
 
 JavaScript developers attempt to use just numbers or strings (i.g. https://github.com/MikeMcl/bignumber.js) to operate with monetary values. I don't think this is the right way, and strings or numbers are not well suited for financial applications for these main reasons:
@@ -168,6 +158,15 @@ Further reading
 [david-crypto-formatter]: https://david-dm.org/frolovdev/easymoney?path=packages/crypto-formatter
 [size-crypto-formatter]: https://img.shields.io/bundlephobia/minzip/@easymoney/crypto-formatter
 [pho-crypto-formatter]: https://bundlephobia.com/result?p=@easymoney/crypto-formatter
+
+## CDN
+
+ - [@easymoney/money](https://unpkg.com/@easymoney/money)
+ - [@easymoney/bigint-money](https://unpkg.com/@easymoney/bigint-money)
+ - [@easymoney/currencies](https://unpkg.com/@easymoney/currencies)
+ - [@easymoney/bignumber.js](https://unpkg.com/@easymoney/bignumber.js)
+ - [@easymoney/formatter](https://unpkg.com/@easymoney/formatter)
+ - [@easymoney/crypto-formatter](https://unpkg.com/@easymoney/crypto-formatter)
 
 ## Comunity
 
