@@ -4,6 +4,19 @@ title: description
 hide_title: true
 sidebar_label: Description
 ---
+# Installation
+
+```
+npm install @easymoney/currencies
+```
+or 
+```
+yarn add @easymoney/currencies
+```
+or
+
+**CDN**
+ - [@easymoney/currencies](https://unpkg.com/@easymoney/currencies)
 
 # Unit definitions
 
