@@ -1,11 +1,9 @@
-import { currencies, currenciesMap, cryptoCurrenciesMap } from "./currencies/";
+import { currenciesMap, cryptoCurrenciesMap } from "./currencies/";
 
 import { createCurrencyList } from "./createCurrencyList";
-const isoCurrencyList = createCurrencyList(currencies);
 
 // exports
 
-export { isoCurrencyList };
 export { createAgregatedCurrencyList } from "./createAgregatedCurrencyList";
 export {
   CurrencyList,
