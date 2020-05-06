@@ -4,7 +4,20 @@ title: description
 hide_title: true
 sidebar_label: Description
 ---
+# Installation
 
+```
+npm install @easymoney/formatter
+```
+or 
+```
+yarn add @easymoney/formatter
+```
+or
+
+**CDN**
+ - [@easymoney/formatter](https://unpkg.com/@easymoney/formatter)
+ 
 # Unit definitions
 
 

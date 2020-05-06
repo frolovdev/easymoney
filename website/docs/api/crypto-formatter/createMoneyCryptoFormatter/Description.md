@@ -4,10 +4,21 @@ title: description
 hide_title: true
 sidebar_label: Description
 ---
+# Installation
+
+```
+npm install @easymoney/crypto-formatter
+```
+or 
+```
+yarn add @easymoney/crypto-formatter
+```
+or
+
+**CDN**
+ - [@easymoney/crypto-formatter](https://unpkg.com/@easymoney/crypto-formatter)
 
 # Unit definitions
-
-
 
 ### CryptoOptions
 

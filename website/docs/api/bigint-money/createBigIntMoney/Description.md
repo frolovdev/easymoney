@@ -5,6 +5,24 @@ hide_title: true
 sidebar_label: Description
 ---
 
+# Installation
+
+If you using this package check your Node JS version, it must be greater than v10.4.0. For compiling TypeScript specify ECMAScript target version are ES2020 or greater
+
+```
+npm install @easymoney/bigint-money
+```
+or 
+```
+yarn add @easymoney/bigint-money
+```
+or
+
+**CDN**
+ - [@easymoney/bigint-money](https://unpkg.com/@easymoney/bigint-money)
+
+
+
 # Unit definitions
 
 ### BigIntMoneyBase

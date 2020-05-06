@@ -4,7 +4,20 @@ title: description
 hide_title: true
 sidebar_label: Description
 ---
+# Installation
 
+```
+npm install @easymoney/money
+```
+or 
+```
+yarn add @easymoney/money
+```
+or
+
+**CDN**
+ - [@easymoney/money](https://unpkg.com/@easymoney/money)
+ 
 # Unit definitions
 
 ### MoneyBase

@@ -4,6 +4,19 @@ title: description
 hide_title: true
 sidebar_label: Description
 ---
+# Installation
+
+```
+npm install @easymoney/bignumber.js
+```
+or 
+```
+yarn add @easymoney/bignumber.js
+```
+or
+
+**CDN**
+ - [@easymoney/bignumber.js](https://unpkg.com/@easymoney/bignumber.js)
 
 # Unit definitions
 
