@@ -33,7 +33,7 @@
     "build": "lerna run build",
     "tsc:build": "tsc --build --dry --clean",
     "start": "tsc --build --watch",
-    "size": "lerna run size",
+    "size": "lerna run size-limit",
     "pretest": "tsc --build",
     "test": "jest --watchAll",
     "publish-script": "lerna exec yarn publish",
@@ -131,5 +131,63 @@
     "immutable",
     "monetary"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "size-limit": [
+    {
+      "name": "bigint-money",
+      "path": [
+        "bigint-money/dist/index.cjs.js",
+        "bigint-money/dist/index.umd.js",
+        "bigint-money/dist/index.es.js"
+      ]
+    },
+    {
+      "name": "bignumber.js",
+      "path": [
+        "/dist/index.cjs.js",
+        "/dist/index.umd.js",
+        "/dist/index.es.js"
+      ]
+    },
+    {
+      "name": "core",
+      "path": [
+        "bignumber.js/dist/index.cjs.js",
+        "bignumber.js/dist/index.umd.js",
+        "bignumber.js/dist/index.es.js"
+      ]
+    },
+    {
+      "name": "crypto-foramtter",
+      "path": [
+        "crypto-foramtter/dist/index.cjs.js",
+        "crypto-foramtter/dist/index.umd.js",
+        "crypto-foramtter/dist/index.es.js"
+      ]
+    },
+    {
+      "name": "currencies",
+      "path": [
+        "currencies/dist/index.cjs.js",
+        "currencies/dist/index.umd.js",
+        "currencies/dist/index.es.js"
+      ]
+    },
+    {
+      "name": "formatter",
+      "path": [
+        "formatter/dist/index.cjs.js",
+        "formatter/dist/index.umd.js",
+        "formatter/dist/index.es.js"
+      ]
+    },
+    {
+      "name": "money",
+      "path": [
+        "money/dist/index.cjs.js",
+        "money/dist/index.umd.js",
+        "money/dist/index.es.js"
+      ]
+    }
+  ]
 }
