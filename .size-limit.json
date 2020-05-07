@@ -1,7 +1,0 @@
-[
-  {
-    "path": "dist/index.js",
-    "webpack": false,
-    "limit": "2600 KB"
-  }
-]
