@@ -33,7 +33,6 @@
     "build": "lerna run build",
     "tsc:build": "tsc --build --dry --clean",
     "start": "tsc --build --watch",
-    "size": "lerna run size",
     "pretest": "tsc --build",
     "test": "jest --watchAll",
     "publish-script": "lerna exec yarn publish",
@@ -74,7 +73,6 @@
     "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-typescript": "^4.0.0",
-    "@size-limit/preset-small-lib": "^4.4.5",
     "@types/jest": "^25.2.1",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^1.13.0",
@@ -131,35 +129,5 @@
     "immutable",
     "monetary"
   ],
-  "dependencies": {},
-  "size-limit": [
-    {
-      "name": "bigint-money",
-      "path": "dist/index.js"
-    },
-    {
-      "name": "bignumber.js",
-      "path": "dist/index.js"
-    },
-    {
-      "name": "core",
-      "path": "dist/index.js"
-    },
-    {
-      "name": "crypto-foramtter",
-      "path": "dist/index.js"
-    },
-    {
-      "name": "currencies",
-      "path": "dist/index.js"
-    },
-    {
-      "name": "formatter",
-      "path": "dist/index.js"
-    },
-    {
-      "name": "money",
-      "path": "dist/index.js"
-    }
-  ]
+  "dependencies": {}
 }

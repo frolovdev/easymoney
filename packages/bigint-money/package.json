@@ -36,8 +36,7 @@
     "test": "../../node_modules/.bin/jest --watchAll",
     "test-prop": "../../node_modules/.bin/jest propbased-test",
     "test-debug": "node --inspect-brk ../../node_modules/.bin/jest --runInBand",
-    "test-prehook": "../../node_modules/.bin/jest --bail",
-    "size": "../../node_modules/.bin/size-limit"
+    "test-prehook": "../../node_modules/.bin/jest --bail"
   },
   "publishConfig": {
     "access": "public",
