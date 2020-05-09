@@ -100,6 +100,18 @@ Further reading
 
 [Why rounding is more important than you think](https://dev.to/frolovdev/why-rounding-is-more-important-than-you-think-134j)
 
+
+## Comparison with dinero.js
+
+|                                               | easymoney                                                                                                                    | Dinero.js                                                                                                    |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Typescript                                    | ✅                                                                                                                            | ❌ (only @types/Dinero)                                                                                       |
+| Modular                                       | functionality is divided by domains, which allows the library to be divided into separate modules as efficiently as possible | written as a monolith, one big object with a bunch of functions, no way to divide it into packages by design |
+| Custom currencies support                     | ✅                                                                                                                            | ❌ (only ISO currencies)                                                                                      |
+| Custom calculators support                    | ✅                                                                                                                            | ❌                                                                                                            |
+| Monetary values greater than MAX_SAFE_INTEGER | ✅                                                                                                                            | ❌                                                                                                            |
+| Bigint support                                | ✅                                                                                                                            | ❌                                                                                                            |
+
 ## Packages
 
 |             Package             |                     Version                      |                    Dependencies                    |                       Size                       |
