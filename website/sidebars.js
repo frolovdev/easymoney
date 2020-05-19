@@ -7,33 +7,39 @@ module.exports = {
         type: "category",
         label: "money",
         items: [
+          "api/money/createMoney/Description",
           {
             type: "category",
             label: "createMoney",
             items: [
-              "api/money/createMoney/Description",
-              "api/money/createMoney/add",
-              "api/money/createMoney/absolute",
-              "api/money/createMoney/allocate",
-              "api/money/createMoney/allocateTo",
-              "api/money/createMoney/compare",
-              "api/money/createMoney/divide",
-              "api/money/createMoney/equals",
-              "api/money/createMoney/getAmount",
-              "api/money/createMoney/getCurrency",
-              "api/money/createMoney/greaterThan",
-              "api/money/createMoney/greaterThanOrEqual",
-              "api/money/createMoney/isNegative",
-              "api/money/createMoney/isPositive",
-              "api/money/createMoney/isSameCurrency",
-              "api/money/createMoney/isZero",
-              "api/money/createMoney/lessThan",
-              "api/money/createMoney/lessThanOrEqual",
-              "api/money/createMoney/mod",
-              "api/money/createMoney/multiply",
-              "api/money/createMoney/negative",
-              "api/money/createMoney/ratioOf",
-              "api/money/createMoney/subtract",
+              {
+                type: "category",
+                label: "methods",
+                items: [
+                  "api/money/createMoney/add",
+                  "api/money/createMoney/absolute",
+                  "api/money/createMoney/allocate",
+                  "api/money/createMoney/allocateTo",
+                  "api/money/createMoney/compare",
+                  "api/money/createMoney/divide",
+                  "api/money/createMoney/equals",
+                  "api/money/createMoney/getAmount",
+                  "api/money/createMoney/getCurrency",
+                  "api/money/createMoney/greaterThan",
+                  "api/money/createMoney/greaterThanOrEqual",
+                  "api/money/createMoney/isNegative",
+                  "api/money/createMoney/isPositive",
+                  "api/money/createMoney/isSameCurrency",
+                  "api/money/createMoney/isZero",
+                  "api/money/createMoney/lessThan",
+                  "api/money/createMoney/lessThanOrEqual",
+                  "api/money/createMoney/mod",
+                  "api/money/createMoney/multiply",
+                  "api/money/createMoney/negative",
+                  "api/money/createMoney/ratioOf",
+                  "api/money/createMoney/subtract",
+                ]
+              }
             ],
           },
         ],
@@ -42,27 +48,33 @@ module.exports = {
         type: "category",
         label: "bigint-money",
         items: [
+          "api/bigint-money/createBigIntMoney/Description",
           {
             type: "category",
             label: "createBigIntMoney",
             items: [
-              "api/bigint-money/createBigIntMoney/Description",
-              "api/bigint-money/createBigIntMoney/add",
-              "api/bigint-money/createBigIntMoney/allocate",
-              "api/bigint-money/createBigIntMoney/allocateTo",
-              "api/bigint-money/createBigIntMoney/compare",
-              "api/bigint-money/createBigIntMoney/divide",
-              "api/bigint-money/createBigIntMoney/equals",
-              "api/bigint-money/createBigIntMoney/getAmount",
-              "api/bigint-money/createBigIntMoney/getCurrency",
-              "api/bigint-money/createBigIntMoney/getSource",
-              "api/bigint-money/createBigIntMoney/greaterThan",
-              "api/bigint-money/createBigIntMoney/greaterThanOrEqual",
-              "api/bigint-money/createBigIntMoney/isSameCurrency",
-              "api/bigint-money/createBigIntMoney/lessThan",
-              "api/bigint-money/createBigIntMoney/lessThanOrEqual",
-              "api/bigint-money/createBigIntMoney/multiply",
-              "api/bigint-money/createBigIntMoney/subtract",
+              {
+                type: "category",
+                label: "methods",
+                items: [
+                  "api/bigint-money/createBigIntMoney/add",
+                  "api/bigint-money/createBigIntMoney/allocate",
+                  "api/bigint-money/createBigIntMoney/allocateTo",
+                  "api/bigint-money/createBigIntMoney/compare",
+                  "api/bigint-money/createBigIntMoney/divide",
+                  "api/bigint-money/createBigIntMoney/equals",
+                  "api/bigint-money/createBigIntMoney/getAmount",
+                  "api/bigint-money/createBigIntMoney/getCurrency",
+                  "api/bigint-money/createBigIntMoney/getSource",
+                  "api/bigint-money/createBigIntMoney/greaterThan",
+                  "api/bigint-money/createBigIntMoney/greaterThanOrEqual",
+                  "api/bigint-money/createBigIntMoney/isSameCurrency",
+                  "api/bigint-money/createBigIntMoney/lessThan",
+                  "api/bigint-money/createBigIntMoney/lessThanOrEqual",
+                  "api/bigint-money/createBigIntMoney/multiply",
+                  "api/bigint-money/createBigIntMoney/subtract",
+                ]
+              }
             ],
           },
         ],
@@ -71,33 +83,39 @@ module.exports = {
         type: "category",
         label: "bignumber.js",
         items: [
+          "api/bignumber.js/createBigNumberMoney/Description",
           {
             type: "category",
             label: "createBigNumberMoney",
             items: [
-              "api/bignumber.js/createBigNumberMoney/Description",
-              "api/bignumber.js/createBigNumberMoney/add",
-              "api/bignumber.js/createBigNumberMoney/absolute",
-              "api/bignumber.js/createBigNumberMoney/allocate",
-              "api/bignumber.js/createBigNumberMoney/allocateTo",
-              "api/bignumber.js/createBigNumberMoney/compare",
-              "api/bignumber.js/createBigNumberMoney/divide",
-              "api/bignumber.js/createBigNumberMoney/equals",
-              "api/bignumber.js/createBigNumberMoney/getAmount",
-              "api/bignumber.js/createBigNumberMoney/getCurrency",
-              "api/bignumber.js/createBigNumberMoney/greaterThan",
-              "api/bignumber.js/createBigNumberMoney/greaterThanOrEqual",
-              "api/bignumber.js/createBigNumberMoney/isNegative",
-              "api/bignumber.js/createBigNumberMoney/isPositive",
-              "api/bignumber.js/createBigNumberMoney/isSameCurrency",
-              "api/bignumber.js/createBigNumberMoney/isZero",
-              "api/bignumber.js/createBigNumberMoney/lessThan",
-              "api/bignumber.js/createBigNumberMoney/lessThanOrEqual",
-              "api/bignumber.js/createBigNumberMoney/mod",
-              "api/bignumber.js/createBigNumberMoney/multiply",
-              "api/bignumber.js/createBigNumberMoney/negative",
-              "api/bignumber.js/createBigNumberMoney/ratioOf",
-              "api/bignumber.js/createBigNumberMoney/subtract",
+              {
+                type: "category",
+                label: "methods",
+                items:[
+                  "api/bignumber.js/createBigNumberMoney/add",
+                  "api/bignumber.js/createBigNumberMoney/absolute",
+                  "api/bignumber.js/createBigNumberMoney/allocate",
+                  "api/bignumber.js/createBigNumberMoney/allocateTo",
+                  "api/bignumber.js/createBigNumberMoney/compare",
+                  "api/bignumber.js/createBigNumberMoney/divide",
+                  "api/bignumber.js/createBigNumberMoney/equals",
+                  "api/bignumber.js/createBigNumberMoney/getAmount",
+                  "api/bignumber.js/createBigNumberMoney/getCurrency",
+                  "api/bignumber.js/createBigNumberMoney/greaterThan",
+                  "api/bignumber.js/createBigNumberMoney/greaterThanOrEqual",
+                  "api/bignumber.js/createBigNumberMoney/isNegative",
+                  "api/bignumber.js/createBigNumberMoney/isPositive",
+                  "api/bignumber.js/createBigNumberMoney/isSameCurrency",
+                  "api/bignumber.js/createBigNumberMoney/isZero",
+                  "api/bignumber.js/createBigNumberMoney/lessThan",
+                  "api/bignumber.js/createBigNumberMoney/lessThanOrEqual",
+                  "api/bignumber.js/createBigNumberMoney/mod",
+                  "api/bignumber.js/createBigNumberMoney/multiply",
+                  "api/bignumber.js/createBigNumberMoney/negative",
+                  "api/bignumber.js/createBigNumberMoney/ratioOf",
+                  "api/bignumber.js/createBigNumberMoney/subtract",
+                ]
+              }
             ],
           },
         ],
@@ -106,30 +124,49 @@ module.exports = {
         type: "category",
         label: "currencies",
         items: [
+          "api/currencies/createCurrencyList/Description",
           {
             type: "category",
             label: "createCurrencyList",
             items: [
-              "api/currencies/createCurrencyList/Description",
-              "api/currencies/createCurrencyList/contains",
-              "api/currencies/createCurrencyList/getCurrencies",
-              "api/currencies/createCurrencyList/subUnitFor",
+              {
+                type: "category",
+                label: "methods",
+                items: [
+                  "api/currencies/createCurrencyList/contains",
+                  "api/currencies/createCurrencyList/getCurrencies",
+                  "api/currencies/createCurrencyList/subUnitFor",
+                ]
+              }
             ],
           },
           {
             type: "category",
             label: "createAgregatedCurrencyList",
             items: [
-              "api/currencies/createAgregatedCurrencyList/Description",
-              "api/currencies/createAgregatedCurrencyList/contains",
-              "api/currencies/createAgregatedCurrencyList/getCurrencies",
-              "api/currencies/createAgregatedCurrencyList/subUnitFor",
+              {
+                type: "category",
+                label: "methods",
+                items: [
+                  "api/currencies/createAgregatedCurrencyList/contains",
+                  "api/currencies/createAgregatedCurrencyList/getCurrencies",
+                  "api/currencies/createAgregatedCurrencyList/subUnitFor",
+                ]
+              }
             ],
           },
           {
             type: "category",
             label: "convertCurrencyMapToArray",
-            items:[ "api/currencies/convertCurrencyMapToArray"]
+            items:[
+              {
+                type: "category",
+                label: "methods",
+                items: [
+                  "api/currencies/convertCurrencyMapToArray"
+                ]
+              }
+            ]
           }
         ],
       },
@@ -137,12 +174,19 @@ module.exports = {
         type: "category",
         label: "formatter",
         items: [
+          "api/formatter/createMoneyIntlFormatter/Description",
           {
             type: "category",
             label: "createMoneyIntlFormatter",
             items: [
-              "api/formatter/createMoneyIntlFormatter/Description",
-              "api/formatter/createMoneyIntlFormatter/format",
+              {
+                type: "category",
+                label: "methods",
+                items: [
+                  "api/formatter/createMoneyIntlFormatter/format",
+                ]
+              }
+
             ],
           },
         ],
@@ -151,12 +195,19 @@ module.exports = {
         type: "category",
         label: "crypto-formatter",
         items: [
+          "api/crypto-formatter/createMoneyCryptoFormatter/Description",
           {
             type: "category",
             label: "createMoneyCryptoFormatter",
             items: [
-              "api/crypto-formatter/createMoneyCryptoFormatter/Description",
-              "api/crypto-formatter/createMoneyCryptoFormatter/format",
+              {
+                type: "category",
+                label: "methods",
+                items: [
+                  "api/crypto-formatter/createMoneyCryptoFormatter/format",
+                ]
+              }
+             
             ],
           },
         ],

@@ -13,7 +13,7 @@ module.exports = {
       apiKey: process.env.ALGOLIA_API_KEY,
     },
 
-    sidebarCollapsible: false,
+    sidebarCollapsible: true,
     prism: {
       theme: require("prism-react-renderer/themes/vsDark"),
       darkTheme: require("prism-react-renderer/themes/vsDark"),
