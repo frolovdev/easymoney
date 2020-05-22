@@ -98,6 +98,8 @@ It's an old pattern that is implemented in many other languages e.g.:
 
 Further reading
 
+[How to Operate with Monetary Values in JavaScript](https://dev.to/frolovdev/how-to-operate-with-monetary-values-in-javascript-3fal)
+[Main features of easymoney](https://dev.to/frolovdev/introducing-easymoney-41kj)
 [Why rounding is more important than you think](https://dev.to/frolovdev/why-rounding-is-more-important-than-you-think-134j)
 
 
