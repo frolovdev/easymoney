@@ -8,7 +8,6 @@ module.exports = {
   name: pack.name,
   displayName: pack.name,
   moduleNameMapper: {
-    "^@someinterestingtestnamesorrynpmforthisasdsadasdasdasd\\/((?!config)[^\\/]+)":
-      "<rootDir>/../packages/$1/src"
+    "^@easymoney\\/((?!config)[^\\/]+)": "<rootDir>/../packages/$1/src"
   }
 };

@@ -13,8 +13,7 @@ module.exports = {
   ],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {
-    "^@someinterestingtestnamesorrynpmforthisasdsadasdasdasd\\/((?!config)[^\\/]+)":
-      "<rootDir>/../$1/src"
+    "^@easymoney\\/((?!config)[^\\/]+)": "<rootDir>/../$1/src"
   },
   verbose: true
 };
