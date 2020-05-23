@@ -29,9 +29,8 @@
   "scripts": {
     "prettier": "prettier --write \"./packages/**/*.{js,jsx,ts,tsx}\"",
     "new-version": "lerna version --no-changelog --no-push --no-git-tag-version",
-    "postinstall": "lerna bootstrap && lerna run build",
+    "postinstall": "lerna bootstrap",
     "bootstrap": "lerna bootstrap && npm run build",
-    "build": "lerna run build",
     "build-prod": "lerna run build-prod",
     "tsc:build": "tsc --build --dry --clean",
     "start": "tsc --build --watch",
@@ -41,7 +40,7 @@
     "test-integration": "jest --config jest.integration.js --bail",
     "test-prehook": "jest --bail",
     "jest-coverage": "jest --bail --collectCoverage",
-    "test-coverage": "lerna run build && yarn jest-coverage",
+    "test-coverage": "yarn build-prod && yarn jest-coverage",
     "clean": "rimraf packages/*/{tsconfig.tsbuildinfo,lib,dist}",
     "deploy": "cd website && now",
     "depcruise:archi": " depcruise --include-only '^(src|bin)' --config .dependency-cruiser.js -T archi src | dot -Grankdir=TD -T svg | tee high-level-dependencies.svg | depcruise-wrap-stream-in-html > high-level-dependencies.html"
