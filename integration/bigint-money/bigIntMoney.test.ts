@@ -1,14 +1,7 @@
-import {
-  createBigIntMoney,
-  BigIntMoneyBase,
-  BigIntMoneyInput
-} from "@easymoney/bigint-money";
+import { createBigIntMoney } from "@easymoney/bigint-money";
 
 describe("bigIntMoney", () => {
-  let createMoney: <CT>({
-    amount,
-    currency
-  }: BigIntMoneyInput<CT>) => BigIntMoneyBase<CT>;
+  let createMoney: typeof createBigIntMoney;
   beforeEach(() => {
     createMoney = createBigIntMoney;
   });
