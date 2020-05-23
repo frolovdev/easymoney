@@ -1,9 +1,18 @@
-import { createAgregatedCurrencyList } from "../createAgregatedCurrencyList";
-import { createCurrencyList } from "../createCurrencyList";
-
-import { currencies } from "../currencies";
+import {
+  createAgregatedCurrencyList,
+  createCurrencyList,
+  currenciesMap,
+  convertCurrencyMapToArray,
+  CurrencyUnitISO
+} from "@easymoney/currencies";
 
 describe("createAgregatedCurrencyList", () => {
+  let currencies: CurrencyUnitISO[];
+
+  beforeAll(() => {
+    currencies = convertCurrencyMapToArray(currenciesMap);
+  });
+
   describe("construct", () => {
     it("shouldnt throws an error if data is correct", () => {
       const keys = Object.keys(currencies);
