@@ -27,7 +27,6 @@
   "description": "Best way to do money in js",
   "scripts": {
     "build-prod": "yarn clean && yarn build",
-    "publish-script": "npm publish",
     "start": "tsc -w --preserveWatchOutput",
     "build": "../../node_modules/.bin/rollup -c",
     "clean": "../../node_modules/.bin/rimraf dist/",
