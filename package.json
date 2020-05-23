@@ -27,6 +27,7 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
+    "prettier": "prettier --write \"./packages/**/*.{js,jsx,ts,tsx}\"",
     "new-version": "lerna version --no-changelog --no-push --no-git-tag-version",
     "postinstall": "lerna bootstrap && lerna run build",
     "bootstrap": "lerna bootstrap && npm run build",

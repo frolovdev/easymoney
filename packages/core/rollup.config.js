@@ -2,7 +2,7 @@ import pkg from "./package.json";
 import {
   createEsCjs,
   createUmd,
-  createCommon,
+  createCommon
 } from "../../tools/rollup.config";
 
 const name = "core";
@@ -12,14 +12,14 @@ export default {
     ...createEsCjs(name, {
       file: {
         cjs: pkg.main,
-        es: pkg.module,
-      },
+        es: pkg.module
+      }
     }),
     createUmd(name, {
       file: pkg.unpkg,
       umdName: "easymoneyCore",
-      globals: {},
-    }),
+      globals: {}
+    })
   ],
-  external: [],
+  external: []
 };
