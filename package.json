@@ -36,6 +36,7 @@
     "tsc:build": "tsc --build --dry --clean",
     "start": "tsc --build --watch",
     "test": "jest --watchAll",
+    "test-dev": "jest --bail",
     "test-tools": "jest --config jest.tools.js --bail",
     "test-integration": "jest --config jest.integration.js --bail",
     "test-prehook": "jest --bail",

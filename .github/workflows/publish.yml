@@ -28,7 +28,7 @@ jobs:
       - name: Build dists
         run: yarn build-prod
       - name: Run tests
-        run: yarn test
+        run: yarn test-dev
       - name: Update versions to release candidates in packages and publish
         run: |
           node tools/ci/publish-rc-script.js
