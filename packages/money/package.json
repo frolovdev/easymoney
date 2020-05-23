@@ -51,7 +51,6 @@
   "files": [
     "/README.md",
     "/package.json",
-    "/src",
     "/dist"
   ],
   "keywords": [
