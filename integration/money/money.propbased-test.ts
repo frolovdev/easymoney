@@ -1,5 +1,5 @@
 import * as fc from "fast-check";
-import { createMoney } from "../index";
+import { createMoney } from "@easymoney/money";
 
 describe("money", () => {
   describe("methods", () => {
