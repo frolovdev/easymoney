@@ -26,17 +26,12 @@
   "license": "MIT",
   "description": "Best way to do money in js",
   "scripts": {
-    "prepublishOnly": "yarn build && yarn test-prehook",
-    "postpublish": "yarn clean",
-    "prebuild": "yarn clean",
+    "build-prod": "yarn clean && yarn build",
+    "publish-script": "npm publish",
     "start": "tsc -w --preserveWatchOutput",
     "build": "../../node_modules/.bin/rollup -c",
     "clean": "../../node_modules/.bin/rimraf dist/",
-    "deploy": "cd website && now",
-    "test": "../../node_modules/.bin/jest --watchAll",
-    "test-prop": "../../node_modules/.bin/jest propbased-test",
-    "test-debug": "node --inspect-brk ../../node_modules/.bin/jest --runInBand",
-    "test-prehook": "../../node_modules/.bin/jest --bail"
+    "test": "../../node_modules/.bin/jest --watchAll"
   },
   "publishConfig": {
     "access": "public",
