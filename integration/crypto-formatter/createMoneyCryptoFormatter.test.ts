@@ -1,20 +1,10 @@
-import { createMoneyCryptoFormatterUnit } from "../formatter/createMoneyCryptoFormatter";
-import {
-  cryptoCurrenciesMap,
-  convertCurrencyMapToArray
-} from "@easymoney/currencies";
-
+import { createMoneyCryptoFormatter } from "@easymoney/crypto-formatter";
 import { createMoney } from "@easymoney/money";
-import { CryptoOptions, MoneyCryptoFormatter } from "../formatter/types";
 
 describe("createMoneyIntlFormatter", () => {
-  let createFormatter: (
-    options?: CryptoOptions | undefined
-  ) => MoneyCryptoFormatter;
+  let createFormatter: typeof createMoneyCryptoFormatter;
   beforeAll(() => {
-    createFormatter = createMoneyCryptoFormatterUnit(
-      convertCurrencyMapToArray(cryptoCurrenciesMap)
-    );
+    createFormatter = createMoneyCryptoFormatter;
   });
 
   describe("format", () => {
