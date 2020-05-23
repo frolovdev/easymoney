@@ -1,5 +1,8 @@
-import { convertCurrencyMapToArray } from "../convertCurrencyMapToArray";
-import { cryptoCurrenciesMap } from "../currencies/cryptoCurrencies";
+import {
+  convertCurrencyMapToArray,
+  cryptoCurrenciesMap
+} from "@easymoney/currencies";
+
 describe("convertCurrencyMapToArray", () => {
   it("should covert map to array", () => {
     const array = convertCurrencyMapToArray(cryptoCurrenciesMap);
