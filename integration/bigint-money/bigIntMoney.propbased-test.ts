@@ -1,5 +1,5 @@
 import * as fc from "fast-check";
-import { createBigIntMoney } from "../index";
+import { createBigIntMoney } from "@easymoney/bigint-money";
 
 describe("bigIntMoney", () => {
   describe("methods", () => {
