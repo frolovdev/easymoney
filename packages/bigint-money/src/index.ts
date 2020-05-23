@@ -1,6 +1,5 @@
 export {
   BigIntMoneyBase,
   createBigIntMoney,
-  createBigIntMoneyUnit,
-  BigIntMoneyInput
+  createBigIntMoneyUnit
 } from "./money";
