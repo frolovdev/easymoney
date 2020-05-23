@@ -36,6 +36,8 @@
     "start": "tsc --build --watch",
     "pretest": "tsc --build",
     "test": "jest --watchAll",
+    "test-tools": "jest --config jest.tools.js --bail",
+    "test-integration": "jest --config jest.integration.js --bail",
     "publish-script": "lerna exec yarn publish",
     "postpublish": "yarn clean",
     "clean": "rimraf packages/*/{tsconfig.tsbuildinfo,lib,dist}",
