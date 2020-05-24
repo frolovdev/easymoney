@@ -7,7 +7,7 @@ const publishNpm = require("./publishNpm");
 const { getPackages, getPackageJsonDataFromPackages } = require("./packages");
 const path = require("path");
 const Graph = require("./graph");
-const { updatePackagesVersions } = require("./version");
+const { updatePackagesVersions, checkIsRc } = require("./version");
 const { writeDataToDisk } = require("./updatePackageData");
 
 const directoryPath = path.join(__dirname, "../..", "packages");
@@ -26,7 +26,11 @@ async function prepareData(parsedPackagesJsonData) {
 
     const pathToPck = paths[i];
     try {
-      await fetchPackageJson(name, { version });
+      if (checkIsRc(version)) {
+        packagesToUpdate.push({ packageData, pathToPck });
+      } else {
+        await fetchPackageJson(name, { version });
+      }
     } catch (err) {
       if (err instanceof PackageNotFoundError) {
         console.log("need to publish the package", name);
