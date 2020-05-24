@@ -51,6 +51,7 @@ async function prepareData(parsedPackagesJsonData) {
     if (packagesToUpdate.length === 0) {
       throw new Error("nothing to update");
     }
+
     const packagesToUpdateData = packagesToUpdate.map(
       ({ packageData }) => packageData
     );
