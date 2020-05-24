@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/frolovdev/easymoney#readme",
   "license": "MIT",
-  "description": "Best way to do money in js",
+  "description": "Library to operate with monetary values in Javascript",
   "scripts": {
     "build-prod": "yarn clean && yarn build",
     "start": "tsc -w --preserveWatchOutput",
