@@ -1,6 +1,6 @@
 {
   "name": "@easymoney/core",
-  "version": "1.0.1-rc.0",
+  "version": "1.0.1-rc.1",
   "author": "Whispers12",
   "sideEffects": false,
   "main": "dist/index.cjs.js",

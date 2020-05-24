@@ -1,6 +1,6 @@
 {
   "name": "@easymoney/bignumber.js",
-  "version": "1.0.1-rc.0",
+  "version": "1.0.1-rc.1",
   "author": "Whispers12",
   "sideEffects": false,
   "main": "dist/index.cjs.js",
@@ -37,9 +37,9 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@easymoney/core": "^1.0.1-rc.0",
+    "@easymoney/core": "^1.0.1-rc.1",
     "bignumber.js": "^9.0.0",
-    "@easymoney/money": "^1.0.1-rc.0"
+    "@easymoney/money": "^1.0.1-rc.1"
   },
   "files": [
     "/README.md",
