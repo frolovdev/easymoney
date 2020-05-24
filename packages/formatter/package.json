@@ -1,6 +1,6 @@
 {
   "name": "@easymoney/formatter",
-  "version": "1.0.1-rc.2",
+  "version": "1.0.1",
   "author": "Whispers12",
   "sideEffects": false,
   "main": "dist/index.cjs.js",
@@ -37,14 +37,14 @@
     "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
-    "@easymoney/currencies": "^1.0.2-rc.2"
+    "@easymoney/currencies": "^1.0.2"
   },
   "dependencies": {
-    "@easymoney/core": "^1.0.1-rc.2"
+    "@easymoney/core": "^1.0.1"
   },
   "devDependencies": {
-    "@easymoney/currencies": "^1.0.2-rc.2",
-    "@easymoney/money": "^1.0.1-rc.2"
+    "@easymoney/currencies": "^1.0.2",
+    "@easymoney/money": "^1.0.1"
   },
   "files": [
     "/README.md",
