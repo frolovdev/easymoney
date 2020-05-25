@@ -18,6 +18,32 @@ or
 **CDN**
  - [@easymoney/money](https://unpkg.com/@easymoney/money)
  
+# Description
+
+The Money object only supports integer(ish) values on instantiation. The following is (not) supported. When a non-supported value is passed a Error will be thrown.
+
+```js
+import { createMoney } from "@easymoney/money"
+
+// int is accepted
+new Money(500, "USD");
+
+// string is accepted if integer
+new Money('500', "USD");
+
+// string is accepted if fractional part is zero
+new Money('500.00', "USD");
+
+// leading zero's are not accepted
+new Money('00500', "USD");
+
+// multiple zero's are not accepted
+new Money('000', "USD");
+
+// plus sign is not accepted
+new Money('+500', "USD");
+```
+
 # Unit definitions
 
 ### MoneyBase
