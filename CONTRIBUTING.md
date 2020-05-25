@@ -2,6 +2,7 @@
 
 - [Commit Message Guidelines](#commit)
 - [Contribute to the codebase](#contribute)
+- [Installation](#install)
 
 ## <a name="commit"></a> Commit Message Guidelines
 
@@ -151,4 +152,25 @@ from the main (upstream) repository:
 
     ```shell
     git pull --ff upstream master
+    ```
+
+## <a name="install"></a> Installation
+
+* You need yarn as package manager
+
+     ```shell
+    yarn
+    ```
+
+* Build 
+
+
+     ```shell
+    yarn start
+    ```
+
+* Test
+
+     ```shell
+    yarn test
     ```
