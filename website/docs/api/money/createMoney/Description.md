@@ -26,22 +26,22 @@ The Money object only supports integer(ish) values on instantiation. The followi
 import { createMoney } from "@easymoney/money"
 
 // int is accepted
-new Money(500, "USD");
+createMoney(500, "USD");
 
 // string is accepted if integer
-new Money('500', "USD");
+createMoney('500', "USD");
 
 // string is accepted if fractional part is zero
-new Money('500.00', "USD");
+createMoney('500.00', "USD");
 
 // leading zero's are not accepted
-new Money('00500', "USD");
+createMoney('00500', "USD");
 
 // multiple zero's are not accepted
-new Money('000', "USD");
+createMoney('000', "USD");
 
 // plus sign is not accepted
-new Money('+500', "USD");
+createMoney('+500', "USD");
 ```
 
 # Unit definitions
