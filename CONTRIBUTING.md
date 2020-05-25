@@ -1,6 +1,9 @@
 #easymoney
 
 - [Commit Message Guidelines](#commit)
+- [Contribute to the codebase](#contribute)
+- [Installation](#install)
+- [Working with documentation site](#sitedocs)
 
 ## <a name="commit"></a> Commit Message Guidelines
 
@@ -28,7 +31,7 @@ to read on GitHub as well as in various git tools.
 
 The footer should contain a [closing reference to an issue or jira task](https://help.github.com/articles/closing-issues-via-commit-messages/) if any exist.
 
-Samples: ([samples from angular repo](https://github.com/angular/angular/commits/master))
+Samples: ([samples from easymoney repo](https://github.com/frolovdev/easymoney/commits/master))
 
 ### Revert
 
@@ -52,16 +55,7 @@ Must be one of the following:
 
 The scope should be the name of the npm package affected (as perceived by the person reading the changelog generated from commit messages.
 
-The following is the list of supported scopes:
-
-- **number**
-- **formatter**
-- **currencies**
-- **calculator**
-- **round**
-- **assert**
-- **consts**
-- **none**
+The following is the list of supported scopes are pacakges names.
 
 There are currently a few exceptions to the "use package name" rule:
 
@@ -86,3 +80,120 @@ The footer should contain any information about **Breaking Changes** and is also
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
 
 A detailed explanation can be found in this [document](https://docs.google.com/document/d/1qrdfciipjsldn3el15ijygnpihorgu1_ooaqwjidu5y/edit#heading=h.uyo6cb12dt6w).
+
+
+## <a name="contribute"></a> Contribute to codebase
+
+1. Search [GitHub](https://github.com/frolovdev/easymoney/pulls) for an open or closed PR
+  that relates to your submission. You don't want to duplicate effort.
+1. Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add.
+  Discussing the design up front helps to ensure that we're ready to accept your work.
+2. Fork the repo.
+3. Make your changes in a new git branch:
+
+     ```shell
+     git checkout -b my-fix-branch master
+     ```
+
+4. Create your patch, **including appropriate test cases**.
+5. Run the full easymoney test suite, as described in the [developer documentation][dev-doc],
+  and ensure that all tests pass.
+1. Commit your changes using a descriptive commit message that follows our
+  [commit message conventions](#commit). Adherence to these conventions
+  is necessary because release notes are automatically generated from these messages.
+
+     ```shell
+     git commit -a
+     ```
+    Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
+
+1. Push your branch to GitHub:
+
+    ```shell
+    git push origin my-fix-branch
+    ```
+
+1. In GitHub, send a pull request to `easymoney:master`.
+* If we suggest changes then:
+  * Make the required updates.
+  * Re-run the easymoney test suites to ensure tests are still passing.
+  * Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
+
+    ```shell
+    git rebase master -i
+    git push -f
+    ```
+
+That's it! Thank you for your contribution!
+
+#### After your pull request is merged
+
+After your pull request is merged, you can safely delete your branch and pull the changes
+from the main (upstream) repository:
+
+* Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:
+
+    ```shell
+    git push origin --delete my-fix-branch
+    ```
+
+* Check out the master branch:
+
+    ```shell
+    git checkout master -f
+    ```
+
+* Delete the local branch:
+
+    ```shell
+    git branch -D my-fix-branch
+    ```
+
+* Update your master with the latest upstream version:
+
+    ```shell
+    git pull --ff upstream master
+    ```
+
+## <a name="install"></a> Installation
+
+* You need yarn as package manager
+
+     ```shell
+    yarn
+    ```
+
+* Build 
+
+
+     ```shell
+    yarn start
+    ```
+
+* Test
+
+     ```shell
+    yarn test
+    ```
+
+## <a name="sitedocs"></a> Working with documentation site
+
+* Go to website folder
+
+    ```shell
+    cd website
+    ```
+
+* You need npm package manager to install packages
+
+    ```shell
+    npm install
+    ```
+
+* To run project on localhost
+
+    ```shell
+    npm run start
+    ```
+
+* Open browser and go to localhost:3000

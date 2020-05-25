@@ -3,5 +3,5 @@ import { createBigIntCalculator } from "../calculator/";
 
 const createBigIntMoney = createBigIntMoneyUnit(createBigIntCalculator());
 
-export { BigIntMoneyBase } from "./types";
+export { BigIntMoneyBase, BigIntMoneyInput } from "./types";
 export { createBigIntMoney, createBigIntMoneyUnit };

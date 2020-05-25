@@ -1,0 +1,70 @@
+name: easymoney publish rc
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "packages/*/package.json"
+      - "packages/*/*/package.json"
+      - "docs/update.md"
+
+jobs:
+  publish-rc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: install
+        run: yarn
+      - name: set npm config
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN && npm config set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+        env:
+          NPM_TOKEN: ${{ secrets.npm_token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run test tools
+        run: yarn test-tools
+      - name: Build dists
+        run: yarn build-prod
+      - name: Run tests
+        run: yarn test-dev
+      - name: Update versions to release candidates in packages and publish
+        run: |
+          node tools/ci/publish-rc-script.js
+      - name: Prettier
+        if: ${{ failure() || success() }}
+        run: yarn prettier
+      - name: Commit changes
+        if: ${{ failure() || success() }}
+        run: |
+          git add .
+          git status
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "ci: publish rc versions"
+        env:
+          NPM_TOKEN: ${{ secrets.npm_token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push changes to repository
+        if: ${{ failure() || success() }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Docker integration tests
+        run: docker build -f Dockerfile -t integration-tests .
+      - name: Publish prod versions
+        run: node tools/ci/publish-prod-script.js
+      - name: Commit changes
+        run: |
+          git add .
+          git status
+          git commit -m "ci: publish prod versions"
+        env:
+          NPM_TOKEN: ${{ secrets.npm_token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push changes to repository
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

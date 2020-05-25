@@ -4,5 +4,5 @@ const pack = require("./package");
 module.exports = {
   ...baseConfig,
   name: pack.name,
-  displayName: pack.name,
+  displayName: pack.name
 };

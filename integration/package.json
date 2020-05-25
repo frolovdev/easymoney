@@ -1,0 +1,15 @@
+{
+  "name": "integration-tests",
+  "version": "0.0.1",
+  "scripts": {},
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=10.8.x"
+  },
+  "dependencies": {}
+}

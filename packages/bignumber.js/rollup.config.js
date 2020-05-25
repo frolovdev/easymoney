@@ -2,7 +2,7 @@ import pkg from "./package.json";
 import {
   createEsCjs,
   createUmd,
-  createCommon,
+  createCommon
 } from "../../tools/rollup.config";
 
 const name = "bignumber.js";
@@ -12,8 +12,8 @@ export default {
     ...createEsCjs(name, {
       file: {
         cjs: pkg.main,
-        es: pkg.module,
-      },
+        es: pkg.module
+      }
     }),
     createUmd(name, {
       file: pkg.unpkg,
@@ -21,9 +21,9 @@ export default {
       globals: {
         "@easymoney/core": "easyMoneyCore",
         "@easymoney/money": "easyMoneyMoney",
-        "bignumber.js": "bignumberJS",
-      },
-    }),
+        "bignumber.js": "bignumberJS"
+      }
+    })
   ],
-  external: ["@easymoney/core", "@easymoney/money", "bignumber.js"],
+  external: ["@easymoney/core", "@easymoney/money", "bignumber.js"]
 };

@@ -1,14 +1,12 @@
-import { createBignumberCalculator } from "../bignumberCalculator";
-import { createMoneyUnit } from "@easymoney/money";
+import { createBigNumberMoney } from "@easymoney/bignumber.js";
 
+import { createMoneyUnit } from "@easymoney/money";
 import { RoundingModes } from "@easymoney/core";
 
 describe("bignumberMoney", () => {
   let createMoney: ReturnType<typeof createMoneyUnit>;
   beforeEach(() => {
-    const bignumberCalculator = createBignumberCalculator();
-    const createMoneyFunc = createMoneyUnit(bignumberCalculator);
-    createMoney = createMoneyFunc;
+    createMoney = createBigNumberMoney;
   });
 
   describe("public api", () => {

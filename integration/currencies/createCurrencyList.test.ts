@@ -1,12 +1,22 @@
-import { createCurrencyList } from "../createCurrencyList";
-import { cryptoCurrencies, cryptoCurrenciesMap } from "../currencies";
+import {
+  createCurrencyList,
+  cryptoCurrenciesMap,
+  convertCurrencyMapToArray,
+  CurrencyUnitCrypto
+} from "@easymoney/currencies";
 
 describe("createCurrencyList", () => {
+  let cryptoCurrencies: CurrencyUnitCrypto[];
+
+  beforeAll(() => {
+    cryptoCurrencies = convertCurrencyMapToArray(cryptoCurrenciesMap);
+  });
+
   describe("construct", () => {
     it("shouldnt throws an error if data is correct", () => {
       const goodMock = [
         { minorUnit: 2, code: "XBT" },
-        { minorUnit: 5, code: "DXBT" },
+        { minorUnit: 5, code: "DXBT" }
       ];
 
       const createList = () => createCurrencyList(goodMock);
@@ -51,8 +61,8 @@ describe("createCurrencyList", () => {
         { minorUnit: 2, code: "XBT" },
         {
           minorUnit: 2,
-          code: 25,
-        },
+          code: 25
+        }
       ] as {
         minorUnit: number;
         code: string;
@@ -68,8 +78,8 @@ describe("createCurrencyList", () => {
         { minorUnit: "asdas", code: "XBT" },
         {
           minorUnit: 2,
-          code: "XYT",
-        },
+          code: "XYT"
+        }
       ] as {
         minorUnit: number;
         code: string;
@@ -85,7 +95,7 @@ describe("createCurrencyList", () => {
     it("should be equal original length of data", () => {
       const mock = [
         { minorUnit: 2, code: "XBT" },
-        { minorUnit: 5, code: "DXBT" },
+        { minorUnit: 5, code: "DXBT" }
       ];
 
       const list = createCurrencyList(mock);
@@ -96,12 +106,12 @@ describe("createCurrencyList", () => {
     it("returns a map of currencies", () => {
       const mock = [
         { minorUnit: 2, code: "XBT" },
-        { minorUnit: 5, code: "DXBT" },
+        { minorUnit: 5, code: "DXBT" }
       ];
 
       const expectedResult = {
         XBT: { minorUnit: 2, code: "XBT" },
-        DXBT: { minorUnit: 5, code: "DXBT" },
+        DXBT: { minorUnit: 5, code: "DXBT" }
       };
 
       const list = createCurrencyList(mock);
@@ -151,10 +161,12 @@ describe("createCurrencyList", () => {
   });
 
   describe("working with crypto", () => {
-    const cryptoCurrencyList = createCurrencyList(cryptoCurrencies);
+    it("should create list correctly", () => {
+      const cryptoCurrencyList = createCurrencyList(cryptoCurrencies);
 
-    expect(cryptoCurrencyList.subUnitFor("BTC")).toEqual(
-      cryptoCurrenciesMap.BTC.minorUnit
-    );
+      expect(cryptoCurrencyList.subUnitFor("BTC")).toEqual(
+        cryptoCurrenciesMap.BTC.minorUnit
+      );
+    });
   });
 });

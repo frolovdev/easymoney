@@ -1,18 +1,9 @@
-import { BigIntMoneyInput } from "../types";
-import { BigIntMoneyBase } from "../../money/types";
-import { createBigIntCalculator } from "../../calculator";
-import { createBigIntMoneyUnit } from "../bigIntMoney";
-import { BIG_INT_PRECISION_M } from "../../consts/precisions";
+import { createBigIntMoney } from "@easymoney/bigint-money";
 
 describe("bigIntMoney", () => {
-  let createMoney: <CT>({
-    amount,
-    currency
-  }: BigIntMoneyInput<CT>) => BigIntMoneyBase<CT>;
+  let createMoney: typeof createBigIntMoney;
   beforeEach(() => {
-    const calculator = createBigIntCalculator();
-    const createMoneyFunc = createBigIntMoneyUnit(calculator);
-    createMoney = createMoneyFunc;
+    createMoney = createBigIntMoney;
   });
 
   describe("public api", () => {
@@ -435,24 +426,20 @@ describe("bigIntMoney", () => {
       ])(
         "should correctly allocate values",
         (value, ratios, allocatedResults) => {
-          const results = allocatedResults.map(
-            result => BigInt(result) * BIG_INT_PRECISION_M
-          );
+          const results = allocatedResults.map(result => BigInt(result));
           const money = createMoney({ amount: value, currency: "USD" });
           expect(
-            money.allocate(ratios).map(money => money.getSource())
+            money.allocate(ratios).map(money => money.getAmount())
           ).toEqual(results);
         }
       );
 
       it("should valid allocate for negative values op", () => {
-        const results = [-3, -2].map(
-          result => BigInt(result) * BIG_INT_PRECISION_M
-        );
+        const results = [-3, -2].map(result => BigInt(result));
 
         const money = createMoney({ amount: -5, currency: "USD" });
 
-        const test = money.allocate([7, 3]).map(money => money.getSource());
+        const test = money.allocate([7, 3]).map(money => money.getAmount());
         expect(test).toEqual(results);
       });
 

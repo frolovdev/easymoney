@@ -1,1 +1,5 @@
-export { BigIntMoneyBase, createBigIntMoney } from "./money";
+export {
+  BigIntMoneyBase,
+  createBigIntMoney,
+  createBigIntMoneyUnit
+} from "./money";
