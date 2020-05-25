@@ -7,6 +7,10 @@ sidebar_label: getAmount
 
 # getAmount
 
+#### Description
+
+Returns amount of Money object.
+
 **Example**
 
 ```js

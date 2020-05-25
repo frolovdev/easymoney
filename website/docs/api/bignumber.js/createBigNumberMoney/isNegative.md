@@ -7,6 +7,10 @@ sidebar_label: isNegative
 
 # isNegative
 
+#### Description
+
+Returns true if amount is negative.
+
 **Example**
 
 ```js

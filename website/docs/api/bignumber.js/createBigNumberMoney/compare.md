@@ -7,6 +7,10 @@ sidebar_label: compare
 
 # compare
 
+#### Description
+
+Compares two Money objects.
+
 **Example**
 
 ```js

@@ -7,6 +7,10 @@ sidebar_label: getCurrency
 
 # getCurrency
 
+#### Description
+
+Returns currency of Money object.
+
 **Example**
 
 ```js

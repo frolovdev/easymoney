@@ -7,6 +7,10 @@ sidebar_label: isSameCurrency
 
 # isSameCurrency
 
+#### Description
+
+Compares whether two Money objects have the same currency.
+
 **Example**
 
 ```js

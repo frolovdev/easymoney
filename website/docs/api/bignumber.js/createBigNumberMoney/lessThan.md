@@ -7,6 +7,10 @@ sidebar_label: lessThan
 
 # lessThan
 
+#### Description
+
+Compares whether the first Money object is less than the second.
+
 **Example**
 
 ```js

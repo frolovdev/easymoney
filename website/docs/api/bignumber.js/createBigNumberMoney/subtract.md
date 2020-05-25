@@ -7,6 +7,10 @@ sidebar_label: subtract
 
 # subtract
 
+#### Description
+
+Subtractions can be performed using subtract().
+
 **Example**
 
 ```js

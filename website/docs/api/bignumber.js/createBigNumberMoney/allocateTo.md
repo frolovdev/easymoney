@@ -7,6 +7,11 @@ sidebar_label: allocateTo
 
 # allocateTo
 
+#### Description
+
+Allocate to N targets
+An amount of money can be allocated to N targets using allocateTo().
+
 **Example**
 
 ```js

@@ -7,6 +7,10 @@ sidebar_label: mod
 
 # mod
 
+#### Description
+
+Modulus operations can be performed using mod().
+
 **Example**
 
 ```js

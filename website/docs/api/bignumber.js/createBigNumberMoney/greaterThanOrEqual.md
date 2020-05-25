@@ -7,6 +7,10 @@ sidebar_label: greaterThanOrEqual
 
 # greaterThanOrEqual
 
+#### Description
+
+You can also use greaterThanOrEqual() to additionally check for equality.
+
 **Example**
 
 ```js

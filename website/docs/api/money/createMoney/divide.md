@@ -7,6 +7,10 @@ sidebar_label: divide
 
 # `divide(money,roundingMode?)`
 
+#### Description
+
+Divisions can be performed using divide().
+
 #### Arguments
 
 1. `money` (number | string)

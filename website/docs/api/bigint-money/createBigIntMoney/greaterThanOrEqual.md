@@ -8,6 +8,10 @@ sidebar_label: greaterThanOrEqual
 
 # `greaterThanOrEqual(money)`
 
+#### Description
+
+You can also use greaterThanOrEqual() to additionally check for equality.
+
 #### Arguments
 
 1. `money` ([BigIntMoneyBase](Description.md#bigintmoneybase))
