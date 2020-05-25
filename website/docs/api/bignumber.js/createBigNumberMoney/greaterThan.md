@@ -7,6 +7,10 @@ sidebar_label: greaterThan
 
 # greaterThan
 
+#### Description
+
+Compares whether the first Money object is larger than the second.
+
 **Example**
 
 ```js

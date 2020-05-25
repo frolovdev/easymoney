@@ -8,6 +8,11 @@ sidebar_label: mod
 
 # `mod(money)`
 
+#### Description
+
+Modulus operations can be performed using mod().
+
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))

@@ -8,6 +8,10 @@ sidebar_label: isSameCurrency
 
 # `isSameCurrency(money)`
 
+#### Description
+
+Compares whether two Money objects have the same currency.
+
 #### Arguments
 
 1. `money` ([BigIntMoneyBase](Description.md#bigintmoneybase))

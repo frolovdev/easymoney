@@ -7,6 +7,10 @@ sidebar_label: ratioOf
 
 # ratioOf
 
+#### Description
+
+ratioOf() provides the ratio of a Money object in comparison to another Money object.
+
 **Example**
 
 ```js

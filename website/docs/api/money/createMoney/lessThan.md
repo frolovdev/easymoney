@@ -7,6 +7,10 @@ sidebar_label: lessThan
 
 # `lessThan(money)`
 
+#### Description
+
+Compares whether the first Money object is less than the second.
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))

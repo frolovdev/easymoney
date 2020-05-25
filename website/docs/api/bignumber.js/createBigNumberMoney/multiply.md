@@ -7,6 +7,10 @@ sidebar_label: multiply
 
 # multiply
 
+#### Description
+
+Multiplications can be performed using multiply().
+
 **Example**
 
 ```js

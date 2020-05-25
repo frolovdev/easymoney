@@ -8,6 +8,10 @@ sidebar_label: subtract
 
 # `subtract(money)`
 
+#### Description
+
+Subtractions can be performed using subtract().
+
 #### Arguments
 
 1. `money` ([BigIntMoneyBase](Description.md#bigintmoneybase))

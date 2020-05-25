@@ -7,6 +7,10 @@ sidebar_label: divide
 
 # divide
 
+#### Description
+
+Divisions can be performed using divide().
+
 **Example**
 
 ```js

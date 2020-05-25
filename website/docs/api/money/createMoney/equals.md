@@ -7,6 +7,10 @@ sidebar_label: equals
 
 # `equals(money)`
 
+#### Description
+
+Compares whether two Money objects are equal in value and currency.
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))
