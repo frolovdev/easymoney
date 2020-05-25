@@ -31,7 +31,7 @@ to read on GitHub as well as in various git tools.
 
 The footer should contain a [closing reference to an issue or jira task](https://help.github.com/articles/closing-issues-via-commit-messages/) if any exist.
 
-Samples: ([samples from angular repo](https://github.com/angular/angular/commits/master))
+Samples: ([samples from easymoney repo](https://github.com/frolovdev/easymoney/commits/master))
 
 ### Revert
 
@@ -96,7 +96,7 @@ A detailed explanation can be found in this [document](https://docs.google.com/d
      ```
 
 4. Create your patch, **including appropriate test cases**.
-5. Run the full Angular test suite, as described in the [developer documentation][dev-doc],
+5. Run the full easymoney test suite, as described in the [developer documentation][dev-doc],
   and ensure that all tests pass.
 1. Commit your changes using a descriptive commit message that follows our
   [commit message conventions](#commit). Adherence to these conventions
@@ -113,10 +113,10 @@ A detailed explanation can be found in this [document](https://docs.google.com/d
     git push origin my-fix-branch
     ```
 
-1. In GitHub, send a pull request to `angular:master`.
+1. In GitHub, send a pull request to `easymoney:master`.
 * If we suggest changes then:
   * Make the required updates.
-  * Re-run the Angular test suites to ensure tests are still passing.
+  * Re-run the easymoney test suites to ensure tests are still passing.
   * Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
 
     ```shell
