@@ -13,7 +13,7 @@ You can watch examples of using methods in original repo modulename/______tests_
 
 ## @easymoney/money
 
-- [createMoney](money/createMoney/Description.md)
+<!-- - [createMoney](money/createMoney/Description.md)
   - [absolute](money/createMoney/absolute.md)
   - [add](money/createMoney/add.md)
   - [allocate](money/createMoney/allocate.md)
@@ -35,8 +35,31 @@ You can watch examples of using methods in original repo modulename/______tests_
   - [multiply](money/createMoney/multiply.md)
   - [negative](money/createMoney/negative.md)
   - [ratioOf](money/createMoney/ratioOf.md)
-  - [subtract](money/createMoney/subtract.md)
+  - [subtract](money/createMoney/subtract.md) -->
 
+- [createMoney](money/createMoney/Description.md)
+  - [absolute](money/createMoney/methods#absolute)
+  - [add](money/createMoney/methods#add)
+  - [allocate](money/createMoney/methods#allocate)
+  - [allocateTo](money/createMoney/methods#allocateTo)
+  - [compare](money/createMoney/methods#compare)
+  - [divide](money/createMoney/methods#divide)
+  - [equals](money/createMoney/methods#equalse)
+  - [getAmount](money/createMoney/methods#getAmount)
+  - [getCurrency](money/createMoney/methods#getCurrency)
+  - [greaterThan](money/createMoney/methods#greaterThan)
+  - [greaterThanOrEqual](money/createMoney/methods#greaterThanOrEqual)
+  - [isNegative](money/createMoney/methods#isNegative)
+  - [isPositive](money/createMoney/methods#isPositive)
+  - [isSameCurrency](money/createMoney/methods#isSameCurrency)
+  - [isZero](money/createMoney/methods#methods#isZero)
+  - [lessThan](money/createMoney/methods#lessThan)
+  - [lessThanOrEqual](money/createMoney/methods#lessThanOrEqual)
+  - [mod](money/createMoney/methods#mod)
+  - [multiply](money/createMoney/methods#multiply)
+  - [negative](money/createMoney/methods#negative)
+  - [ratioOf](money/createMoney/methods#ratioOf)
+  - [subtract](money/createMoney/methods#subtract)
 
 ## @easymoney/bigint-money
 
