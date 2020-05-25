@@ -3,6 +3,7 @@
 - [Commit Message Guidelines](#commit)
 - [Contribute to the codebase](#contribute)
 - [Installation](#install)
+- [Working with documentation site](#sitedocs)
 
 ## <a name="commit"></a> Commit Message Guidelines
 
@@ -174,3 +175,25 @@ from the main (upstream) repository:
      ```shell
     yarn test
     ```
+
+## <a name="sitedocs"></a> Working with documentation site
+
+* Go to website folder
+
+    ```shell
+    cd website
+    ```
+
+* You need npm package manager to install packages
+
+    ```shell
+    npm install
+    ```
+
+* To run project on localhost
+
+    ```shell
+    npm run start
+    ```
+
+* Open browser and go to localhost:3000
