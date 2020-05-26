@@ -18,16 +18,15 @@ or
 **CDN**
  - [@easymoney/currencies](https://unpkg.com/@easymoney/currencies)
 
-# Unit definitions
-
 # Description
 
 The createCurrencyList function provides a way for a developer to create a custom currency repository. The class accepts an array of currency code and minor unit pairs. In case of an invalid array an exception is thrown.
 
+# Unit definitions
+
 ### CurrencyList
 
 ```ts
-import { createCurrencyList } from "@easymoney/money"
 
 interface CurrencyList {
   contains: (currency: Currency) => boolean;

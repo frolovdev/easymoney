@@ -18,15 +18,14 @@ or
 **CDN**
  - [@easymoney/crypto-formatter](https://unpkg.com/@easymoney/crypto-formatter)
 
-# Unit definitions
-
 # Description
 Since Money is not ISO currency specific, you can construct a currency object by using the code XBT or any another. For Bitcoin there is also a formatter and a parser available. The subunit is 8 for a Bitcoin.
+
+# Unit definitions
 
 ### CryptoOptions
 
 ```ts
-import {  createMoneyCryptoFormatter } from "@easymoney/money"
 
 type CryptoOptions = {
   fractionDigits?: number;
