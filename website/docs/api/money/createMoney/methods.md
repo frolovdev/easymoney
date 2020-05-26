@@ -5,35 +5,12 @@ hide_title: true
 sidebar_label: methods
 ---
 
-<!-- ## @easymoney/money
-
-- [createMoney](Description.md)
-  - [absolute](methods#absolute)
-  - [add](#add)
-  - [allocate](#allocate)
-  - [allocateTo](#allocateTo)
-  - [compare](#compare)
-  - [divide](#divide)
-  - [equals](#equalse)
-  - [getAmount](#getAmount)
-  - [getCurrency](#getCurrency)
-  - [greaterThan](#greaterThan)
-  - [greaterThanOrEqual](#greaterThanOrEqual)
-  - [isNegative](#isNegative)
-  - [isPositive](methods#isPositive)
-  - [isSameCurrency](#isSameCurrency)
-  - [isZero](#isZero)
-  - [lessThan](#lessThan)
-  - [lessThanOrEqual](#lessThanOrEqual)
-  - [mod](#mod)
-  - [multiply](#multiply)
-  - [negative](#negative)
-  - [ratioOf](#ratioOf)
-  - [subtract](#subtract) -->
-
-
 
 ## `absolute()`
+
+#### Description
+
+Provides the absolute value of a Money object.
 
 #### Returns
 
@@ -56,6 +33,10 @@ const result = money.absolute();
 
 ## `add(money)`
 
+#### Description
+
+Additions can be performed using add().
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))
@@ -63,6 +44,12 @@ const result = money.absolute();
 #### Returns
 
 `money` ([MoneyBase](Description.md#moneybase))
+
+#### Throws
+
+`TypeError` - throws if currencies aren't identical
+
+`TypeError` - throws if result of arithmetic operation isn't an integer
 
 #### Example
 
@@ -135,6 +122,11 @@ allocatedNegative.map((result) => result.getAmount());
 
 ## `allocateTo(money)`
 
+#### Description
+
+Allocate to N targets
+An amount of money can be allocated to N targets using allocateTo().
+
 #### Arguments
 
 1. `money`
@@ -163,6 +155,10 @@ money1.allocateTo(3).map((result) => result.getAmount());
 
 ## compare(money)
 
+#### Description
+
+Compares two Money objects.
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))
@@ -187,7 +183,12 @@ money.compare(money2);
 
 ```
 
+
 ## `divide(money,roundingMode?)`
+
+#### Description
+
+Divisions can be performed using divide().
 
 #### Arguments
 
@@ -219,7 +220,12 @@ result2.getAmount();
 
 ```
 
+
 ## `equals(money)`
+
+#### Description
+
+Compares whether two Money objects are equal in value and currency.
 
 #### Arguments
 
@@ -254,7 +260,12 @@ money3.equals(money4);
 
 ```
 
+
 ## `getAmount()`
+
+#### Description
+
+Returns amount of Money object.
 
 #### Returns
 
@@ -274,7 +285,12 @@ result1.getAmount();
 
 ```
 
+
 ## `getCurrency()`
+
+#### Description
+
+Returns currency of Money object.
 
 #### Returns
 
@@ -295,6 +311,10 @@ result1.getCurrency();
 ```
 
 ## `greaterThan(money)`
+
+#### Description
+
+Compares whether the first Money object is larger than the second.
 
 #### Arguments
 
@@ -331,6 +351,10 @@ money3.greaterThan(money4);
 
 ## `greaterThanOrEqual(money)`
 
+#### Description
+
+You can also use greaterThanOrEqual() to additionally check for equality.
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))
@@ -364,7 +388,12 @@ money3.greaterThanOrEqual(money4);
 
 ```
 
+
 ## `isNegative()`
+
+#### Description
+
+Returns true if amount is negative.
 
 #### Returns
 
@@ -393,6 +422,10 @@ money1.isNegative();
 
 ## `isPositive()`
 
+#### Description
+
+Returns true if amount is positive.
+
 #### Returns
 
 `boolean`
@@ -419,6 +452,10 @@ money1.isPositive();
 ```
 
 ## `isSameCurrency(money)`
+
+#### Description
+
+Compares whether two Money objects have the same currency.
 
 #### Arguments
 
@@ -455,6 +492,10 @@ money3.isSameCurrency(money4);
 
 ## `isZero()`
 
+#### Description
+
+Returns true if amount is equals zero.
+
 #### Returns
 
 `boolean`
@@ -480,7 +521,12 @@ money1.isZero();
 
 ```
 
+
 ## `lessThan(money)`
+
+#### Description
+
+Compares whether the first Money object is less than the second.
 
 #### Arguments
 
@@ -515,43 +561,12 @@ money3.lessThan(money4);
 
 ```
 
-
-## `lessThan(money)`
-
-#### Arguments
-
-1. `money` ([MoneyBase](Description.md#moneybase))
-
-#### Returns
-
-`boolean`
-
-
-**Example**
-
-```js
-
-import { createMoney } from '@easymoney/money';
-
-//if first value equals second
-const money = createMoney({ amount: 100, currency: 'USD' });
-
-const money2 = createMoney({ amount: 100, currency: 'USD' });
-
-money.lessThan(money2);
-// => false
-
-//if first value less then second
-const money3 = createMoney({ amount: 100, currency: 'USD' });
-
-const money4 = createMoney({ amount: 150, currency: 'USD' });
-
-money3.lessThan(money4);
-// => true
-
-```
 
 ## `lessThanOrEqual(money)`
+
+#### Description
+
+You can also use lessThanOrEqual() to additionally check for equality.
 
 #### Arguments
 
@@ -587,7 +602,13 @@ money3.lessThanOrEqual(money4);
 ```
 
 
+
 ## `mod(money)`
+
+#### Description
+
+Modulus operations can be performed using mod().
+
 
 #### Arguments
 
@@ -623,6 +644,10 @@ result1.getAmount();
 ```
 
 ## `multiply(money,roundingMode?)`
+
+#### Description
+
+Multiplications can be performed using multiply().
 
 #### Arguments
 
@@ -672,6 +697,10 @@ const result = money.negative();
 
 ## `ratioOf(money)`
 
+#### Description
+
+ratioOf() provides the ratio of a Money object in comparison to another Money object.
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))
@@ -698,6 +727,10 @@ const result = money.ratioOf(money1);
 
 ## `subtract(money)`
 
+#### Description
+
+Subtractions can be performed using subtract().
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))
@@ -723,4 +756,3 @@ result.getAmount();
 // => "-1"
 
 ```
-
