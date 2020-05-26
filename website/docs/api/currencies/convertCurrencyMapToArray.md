@@ -8,13 +8,18 @@ sidebar_label: convertCurrencyMapToArray
 
 # `convertCurrencyMapToArray(CurrencyMap)`
 
+#### Description
+
+Convert currency map to array of currencies.
+
+
 #### Arguments
 
 1. `CurrencyMap` ([CurrencyMap](Description.md#currencymap))
 
 #### Returns
 
-`array` 
+`array`
 
 
 **Example**

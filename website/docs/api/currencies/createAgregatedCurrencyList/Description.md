@@ -9,7 +9,7 @@ sidebar_label: Description
 ```
 npm install @easymoney/currencies
 ```
-or 
+or
 ```
 yarn add @easymoney/currencies
 ```
@@ -20,11 +20,14 @@ or
 
 # Unit definitions
 
+# Description
 
+This currency list contains, aggregation of currency lists.
 
 ### CurrencyList
 
 ```ts
+import { createAgregatedCurrencyList } from "@easymoney/money"
 
 interface CurrencyList {
   contains: (currency: Currency) => boolean;
@@ -77,4 +80,3 @@ interface CurrencyUnit {
 }
 
 ```
-

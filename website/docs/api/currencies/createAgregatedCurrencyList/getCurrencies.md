@@ -8,6 +8,9 @@ sidebar_label: getCurrencies
 
 # `getCurrencies()`
 
+#### Description
+
+Returns currency map of current list.
 
 #### Returns
 

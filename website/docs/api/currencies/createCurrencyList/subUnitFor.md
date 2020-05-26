@@ -8,13 +8,17 @@ sidebar_label: subUnitFor
 
 # `subUnitFor(currency)`
 
+#### Description
+
+Returns subunit (minor unit) for passed currency.
+
 #### Arguments
 
 1. `currency` ([Currency](Description.md#currency))
 
 #### Returns
 
-`boolean` 
+`boolean`
 
 
 **Example**

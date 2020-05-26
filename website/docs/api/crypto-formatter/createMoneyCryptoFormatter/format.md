@@ -7,6 +7,10 @@ sidebar_label: format
 
 # `format(money,option?)`
 
+#### Description
+
+It is often necessary that you display the money value somewhere, probably in a specific format. This is where formatters help you. You can turn a money object into a human readable string.
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))

@@ -9,7 +9,7 @@ sidebar_label: Description
 ```
 npm install @easymoney/crypto-formatter
 ```
-or 
+or
 ```
 yarn add @easymoney/crypto-formatter
 ```
@@ -20,9 +20,13 @@ or
 
 # Unit definitions
 
+# Description
+Since Money is not ISO currency specific, you can construct a currency object by using the code XBT or any another. For Bitcoin there is also a formatter and a parser available. The subunit is 8 for a Bitcoin.
+
 ### CryptoOptions
 
 ```ts
+import {  createMoneyCryptoFormatter } from "@easymoney/money"
 
 type CryptoOptions = {
   fractionDigits?: number;
@@ -74,6 +78,3 @@ interface MoneyBase {
 }
 
 ```
-
-
-
