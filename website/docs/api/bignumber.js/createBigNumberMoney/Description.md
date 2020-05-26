@@ -9,7 +9,7 @@ sidebar_label: Description
 ```
 npm install @easymoney/bignumber.js
 ```
-or 
+or
 ```
 yarn add @easymoney/bignumber.js
 ```
@@ -20,9 +20,14 @@ or
 
 # Unit definitions
 
+# Description
+
+The Money object only supports integer(ish) values on instantiation. The following is (not) supported. When a non-supported value is passed a Error will be thrown.
+
 ### MoneyBase
 
 ```ts
+import { createBigNumberMoney } from "@easymoney/money"
 
 interface MoneyBase {
   getAmount: () => Money["amount"];
@@ -52,7 +57,7 @@ interface MoneyBase {
 ```
 
 
-### Money 
+### Money
 
 ```ts
 

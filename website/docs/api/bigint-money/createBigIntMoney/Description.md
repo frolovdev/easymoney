@@ -12,7 +12,7 @@ If you using this package check your Node JS version, it must be greater than v1
 ```
 npm install @easymoney/bigint-money
 ```
-or 
+or
 ```
 yarn add @easymoney/bigint-money
 ```
@@ -25,10 +25,15 @@ or
 
 # Unit definitions
 
+# Description
+
+The Money object only supports integer(ish) values on instantiation. The following is (not) supported. When a non-supported value is passed a Error will be thrown.
+
 ### BigIntMoneyBase
 
 
 ```ts
+import { createBigIntMoney } from "@easymoney/money"
 
 interface BigIntMoneyBase {
   getAmount: () => Money["amount"];
@@ -52,7 +57,7 @@ interface BigIntMoneyBase {
 ```
 
 
-### Money 
+### Money
 
 ```ts
 
