@@ -12,7 +12,7 @@ If you using this package check your Node JS version, it must be greater than v1
 ```
 npm install @easymoney/bigint-money
 ```
-or 
+or
 ```
 yarn add @easymoney/bigint-money
 ```
@@ -21,7 +21,31 @@ or
 **CDN**
  - [@easymoney/bigint-money](https://unpkg.com/@easymoney/bigint-money)
 
+# Description
 
+The Money object only supports integer(ish) values on instantiation. The following is (not) supported. When a non-supported value is passed a Error will be thrown.
+
+ ```js
+ import { createBigIntMoney} from "@easymoney/bigint-money"
+
+ // int is accepted
+ createBigIntMoney(500, "USD");
+
+ // string is accepted if integer
+ createBigIntMoney('500', "USD");
+
+ // string is accepted if fractional part is zero
+ createBigIntMoney('500.00', "USD");
+
+ // leading zero's are not accepted
+ createBigIntMoney('00500', "USD");
+
+ // multiple zero's are not accepted
+ createBigIntMoney('000', "USD");
+
+ // plus sign is not accepted
+ createBigIntMoney('+500', "USD");
+ ```
 
 # Unit definitions
 
@@ -52,7 +76,7 @@ interface BigIntMoneyBase {
 ```
 
 
-### Money 
+### Money
 
 ```ts
 

@@ -8,6 +8,10 @@ sidebar_label: isPositive
 
 # `isPositive()`
 
+#### Description
+
+Returns true if amount is positive.
+
 #### Returns
 
 `boolean`

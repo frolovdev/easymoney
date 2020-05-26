@@ -7,6 +7,10 @@ sidebar_label: add
 
 # `add(money)`
 
+#### Description
+
+Additions can be performed using add().
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))

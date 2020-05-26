@@ -8,13 +8,17 @@ sidebar_label: contains
 
 # `contains(currency)`
 
+#### Description
+
+Check if currency exist in the current list.
+
 #### Arguments
 
 1. `currency` ([Currency](Description.md#currency))
 
 #### Returns
 
-`boolean` 
+`boolean`
 
 
 **Example**

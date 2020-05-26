@@ -8,6 +8,10 @@ sidebar_label: ratioOf
 
 # `ratioOf(money)`
 
+#### Description
+
+ratioOf() provides the ratio of a Money object in comparison to another Money object.
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))

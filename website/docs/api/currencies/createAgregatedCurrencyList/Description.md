@@ -9,7 +9,7 @@ sidebar_label: Description
 ```
 npm install @easymoney/currencies
 ```
-or 
+or
 ```
 yarn add @easymoney/currencies
 ```
@@ -18,9 +18,11 @@ or
 **CDN**
  - [@easymoney/currencies](https://unpkg.com/@easymoney/currencies)
 
+# Description
+
+This currency list contains, aggregation of currency lists.
+
 # Unit definitions
-
-
 
 ### CurrencyList
 
@@ -77,4 +79,3 @@ interface CurrencyUnit {
 }
 
 ```
-

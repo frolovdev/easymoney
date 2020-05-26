@@ -7,6 +7,10 @@ sidebar_label: lessThanOrEqual
 
 # `lessThanOrEqual(money)`
 
+#### Description
+
+You can also use lessThanOrEqual() to additionally check for equality.
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))

@@ -7,6 +7,10 @@ sidebar_label: multiply
 
 # `multiply(money,roundingMode?)`
 
+#### Description
+
+Multiplications can be performed using multiply().
+
 #### Arguments
 
 1. `money` (number | string)

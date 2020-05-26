@@ -8,6 +8,10 @@ sidebar_label: isZero
 
 # `isZero()`
 
+#### Description
+
+Returns true if amount is equals zero.
+
 #### Returns
 
 `boolean`

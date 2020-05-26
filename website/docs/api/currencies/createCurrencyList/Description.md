@@ -9,7 +9,7 @@ sidebar_label: Description
 ```
 npm install @easymoney/currencies
 ```
-or 
+or
 ```
 yarn add @easymoney/currencies
 ```
@@ -18,9 +18,11 @@ or
 **CDN**
  - [@easymoney/currencies](https://unpkg.com/@easymoney/currencies)
 
+# Description
+
+The createCurrencyList function provides a way for a developer to create a custom currency repository. The class accepts an array of currency code and minor unit pairs. In case of an invalid array an exception is thrown.
+
 # Unit definitions
-
-
 
 ### CurrencyList
 
@@ -77,4 +79,3 @@ interface CurrencyUnit {
 }
 
 ```
-

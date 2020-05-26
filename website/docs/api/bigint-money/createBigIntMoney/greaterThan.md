@@ -7,6 +7,10 @@ sidebar_label: greaterThan
 
 # `greaterThan(money)`
 
+#### Description
+
+Compares whether the first Money object is larger than the second.
+
 #### Arguments
 
 1. `money` ([BigIntMoneyBase](Description.md#bigintmoneybase))

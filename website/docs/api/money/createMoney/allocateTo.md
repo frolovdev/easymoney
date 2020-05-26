@@ -8,6 +8,11 @@ sidebar_label: allocateTo
 
 # `allocateTo(money)`
 
+#### Description
+
+Allocate to N targets
+An amount of money can be allocated to N targets using allocateTo().
+
 #### Arguments
 
 1. `money`

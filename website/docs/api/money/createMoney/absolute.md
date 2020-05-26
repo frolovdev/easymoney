@@ -8,6 +8,10 @@ sidebar_label: absolute
 
 # `absolute()`
 
+#### Description
+
+Provides the absolute value of a Money object.
+
 #### Returns
 
 1. `money` ([MoneyBase](Description.md#moneybase))

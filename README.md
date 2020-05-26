@@ -206,6 +206,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/oneyan1"><img src="https://avatars1.githubusercontent.com/u/45971627?v=4" width="100px;" alt=""/><br /><sub><b>oneyan1</b></sub></a><br /><a href="https://github.com/frolovdev/easymoney/commits?author=oneyan1" title="Tests">⚠️</a> <a href="https://github.com/frolovdev/easymoney/commits?author=oneyan1" title="Documentation">📖</a> <a href="https://github.com/frolovdev/easymoney/commits?author=oneyan1" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Mikchail"><img src="https://avatars1.githubusercontent.com/u/43996756?v=4" width="100px;" alt=""/><br /><sub><b>Mikchail</b></sub></a><br /><a href="https://github.com/frolovdev/easymoney/commits?author=Mikchail" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Melzmr"><img src="https://avatars3.githubusercontent.com/u/38521674?v=4" width="100px;" alt=""/><br /><sub><b>Roman Martynenko</b></sub></a><br /><a href="https://github.com/frolovdev/easymoney/commits?author=Melzmr" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Artem676"><img src="https://avatars2.githubusercontent.com/u/43669813?v=4" width="100px;" alt=""/><br /><sub><b>Artem676</b></sub></a><br /><a href="https://github.com/frolovdev/easymoney/commits?author=Artem676" title="Documentation">📖</a></td>
   </tr>
 </table>
 

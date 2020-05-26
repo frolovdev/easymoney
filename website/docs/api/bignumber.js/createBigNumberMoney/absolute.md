@@ -7,6 +7,10 @@ sidebar_label: absolute
 
 # absolute
 
+#### Description
+
+Provides the absolute value of a Money object.
+
 **Example**
 
 ```js

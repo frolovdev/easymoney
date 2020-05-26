@@ -8,6 +8,10 @@ sidebar_label: getAmount
 
 # `getAmount()`
 
+#### Description
+
+Returns amount of Money object.
+
 #### Returns
 
 `money` ([Money](Description.md#money))

@@ -8,6 +8,10 @@ sidebar_label: compare
 
 # compare(money)
 
+#### Description
+
+Compares two Money objects.
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))

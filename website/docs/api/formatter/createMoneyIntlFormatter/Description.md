@@ -9,7 +9,7 @@ sidebar_label: Description
 ```
 npm install @easymoney/formatter
 ```
-or 
+or
 ```
 yarn add @easymoney/formatter
 ```
@@ -17,10 +17,14 @@ or
 
 **CDN**
  - [@easymoney/formatter](https://unpkg.com/@easymoney/formatter)
- 
+
+# Description
+
+As its name says, this formatter requires and uses ```toLocaleString```. In order to provide the correct subunit for the specific currency, you should also provide the specific currency repository.
+
+Please be aware that using the intl extension can give different results in different environments.
+
 # Unit definitions
-
-
 
 ### MoneyIntlOptions
 
@@ -115,7 +119,3 @@ interface MoneyBase {
 }
 
 ```
-
-
-
-

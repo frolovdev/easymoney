@@ -7,6 +7,11 @@ sidebar_label: equals
 
 # equals
 
+#### Description
+
+Compares whether two Money objects are equal in value and currency.
+
+
 **Example**
 
 ```js

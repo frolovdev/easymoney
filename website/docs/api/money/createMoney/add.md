@@ -7,6 +7,10 @@ sidebar_label: add
 
 # `add(money)`
 
+#### Description
+
+Additions can be performed using add().
+
 #### Arguments
 
 1. `money` ([MoneyBase](Description.md#moneybase))
@@ -14,6 +18,12 @@ sidebar_label: add
 #### Returns
 
 `money` ([MoneyBase](Description.md#moneybase))
+
+#### Throws
+
+`TypeError` - throws if currencies aren't identical
+
+`TypeError` - throws if result of arithmetic operation isn't an integer
 
 #### Example
 
