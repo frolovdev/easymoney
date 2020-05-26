@@ -54,28 +54,29 @@ module.exports = {
             type: "category",
             label: "createBigIntMoney",
             items: [
-              {
-                type: "category",
-                label: "methods",
-                items: [
-                  "api/bigint-money/createBigIntMoney/add",
-                  "api/bigint-money/createBigIntMoney/allocate",
-                  "api/bigint-money/createBigIntMoney/allocateTo",
-                  "api/bigint-money/createBigIntMoney/compare",
-                  "api/bigint-money/createBigIntMoney/divide",
-                  "api/bigint-money/createBigIntMoney/equals",
-                  "api/bigint-money/createBigIntMoney/getAmount",
-                  "api/bigint-money/createBigIntMoney/getCurrency",
-                  "api/bigint-money/createBigIntMoney/getSource",
-                  "api/bigint-money/createBigIntMoney/greaterThan",
-                  "api/bigint-money/createBigIntMoney/greaterThanOrEqual",
-                  "api/bigint-money/createBigIntMoney/isSameCurrency",
-                  "api/bigint-money/createBigIntMoney/lessThan",
-                  "api/bigint-money/createBigIntMoney/lessThanOrEqual",
-                  "api/bigint-money/createBigIntMoney/multiply",
-                  "api/bigint-money/createBigIntMoney/subtract",
-                ]
-              }
+              "api/bigint-money/createBigIntMoney/methods"
+              // {
+              //   type: "category",
+              //   label: "methods",
+              //   items: [
+              //     "api/bigint-money/createBigIntMoney/add",
+              //     "api/bigint-money/createBigIntMoney/allocate",
+              //     "api/bigint-money/createBigIntMoney/allocateTo",
+              //     "api/bigint-money/createBigIntMoney/compare",
+              //     "api/bigint-money/createBigIntMoney/divide",
+              //     "api/bigint-money/createBigIntMoney/equals",
+              //     "api/bigint-money/createBigIntMoney/getAmount",
+              //     "api/bigint-money/createBigIntMoney/getCurrency",
+              //     "api/bigint-money/createBigIntMoney/getSource",
+              //     "api/bigint-money/createBigIntMoney/greaterThan",
+              //     "api/bigint-money/createBigIntMoney/greaterThanOrEqual",
+              //     "api/bigint-money/createBigIntMoney/isSameCurrency",
+              //     "api/bigint-money/createBigIntMoney/lessThan",
+              //     "api/bigint-money/createBigIntMoney/lessThanOrEqual",
+              //     "api/bigint-money/createBigIntMoney/multiply",
+              //     "api/bigint-money/createBigIntMoney/subtract",
+              //   ]
+              // }
             ],
           },
         ],
@@ -89,34 +90,35 @@ module.exports = {
             type: "category",
             label: "createBigNumberMoney",
             items: [
-              {
-                type: "category",
-                label: "methods",
-                items:[
-                  "api/bignumber.js/createBigNumberMoney/add",
-                  "api/bignumber.js/createBigNumberMoney/absolute",
-                  "api/bignumber.js/createBigNumberMoney/allocate",
-                  "api/bignumber.js/createBigNumberMoney/allocateTo",
-                  "api/bignumber.js/createBigNumberMoney/compare",
-                  "api/bignumber.js/createBigNumberMoney/divide",
-                  "api/bignumber.js/createBigNumberMoney/equals",
-                  "api/bignumber.js/createBigNumberMoney/getAmount",
-                  "api/bignumber.js/createBigNumberMoney/getCurrency",
-                  "api/bignumber.js/createBigNumberMoney/greaterThan",
-                  "api/bignumber.js/createBigNumberMoney/greaterThanOrEqual",
-                  "api/bignumber.js/createBigNumberMoney/isNegative",
-                  "api/bignumber.js/createBigNumberMoney/isPositive",
-                  "api/bignumber.js/createBigNumberMoney/isSameCurrency",
-                  "api/bignumber.js/createBigNumberMoney/isZero",
-                  "api/bignumber.js/createBigNumberMoney/lessThan",
-                  "api/bignumber.js/createBigNumberMoney/lessThanOrEqual",
-                  "api/bignumber.js/createBigNumberMoney/mod",
-                  "api/bignumber.js/createBigNumberMoney/multiply",
-                  "api/bignumber.js/createBigNumberMoney/negative",
-                  "api/bignumber.js/createBigNumberMoney/ratioOf",
-                  "api/bignumber.js/createBigNumberMoney/subtract",
-                ]
-              }
+              "api/bignumber.js/createBigNumberMoney/methods"
+              // {
+              //   type: "category",
+              //   label: "methods",
+              //   items:[
+              //     "api/bignumber.js/createBigNumberMoney/add",
+              //     "api/bignumber.js/createBigNumberMoney/absolute",
+              //     "api/bignumber.js/createBigNumberMoney/allocate",
+              //     "api/bignumber.js/createBigNumberMoney/allocateTo",
+              //     "api/bignumber.js/createBigNumberMoney/compare",
+              //     "api/bignumber.js/createBigNumberMoney/divide",
+              //     "api/bignumber.js/createBigNumberMoney/equals",
+              //     "api/bignumber.js/createBigNumberMoney/getAmount",
+              //     "api/bignumber.js/createBigNumberMoney/getCurrency",
+              //     "api/bignumber.js/createBigNumberMoney/greaterThan",
+              //     "api/bignumber.js/createBigNumberMoney/greaterThanOrEqual",
+              //     "api/bignumber.js/createBigNumberMoney/isNegative",
+              //     "api/bignumber.js/createBigNumberMoney/isPositive",
+              //     "api/bignumber.js/createBigNumberMoney/isSameCurrency",
+              //     "api/bignumber.js/createBigNumberMoney/isZero",
+              //     "api/bignumber.js/createBigNumberMoney/lessThan",
+              //     "api/bignumber.js/createBigNumberMoney/lessThanOrEqual",
+              //     "api/bignumber.js/createBigNumberMoney/mod",
+              //     "api/bignumber.js/createBigNumberMoney/multiply",
+              //     "api/bignumber.js/createBigNumberMoney/negative",
+              //     "api/bignumber.js/createBigNumberMoney/ratioOf",
+              //     "api/bignumber.js/createBigNumberMoney/subtract",
+              //   ]
+              // }
             ],
           },
         ],
@@ -130,43 +132,46 @@ module.exports = {
             type: "category",
             label: "createCurrencyList",
             items: [
-              {
-                type: "category",
-                label: "methods",
-                items: [
-                  "api/currencies/createCurrencyList/contains",
-                  "api/currencies/createCurrencyList/getCurrencies",
-                  "api/currencies/createCurrencyList/subUnitFor",
-                ]
-              }
+              "api/currencies/createCurrencyList/methods"
+              // {
+              //   type: "category",
+              //   label: "methods",
+              //   items: [
+              //     "api/currencies/createCurrencyList/contains",
+              //     "api/currencies/createCurrencyList/getCurrencies",
+              //     "api/currencies/createCurrencyList/subUnitFor",
+              //   ]
+              // }
             ],
           },
           {
             type: "category",
             label: "createAgregatedCurrencyList",
             items: [
-              {
-                type: "category",
-                label: "methods",
-                items: [
-                  "api/currencies/createAgregatedCurrencyList/contains",
-                  "api/currencies/createAgregatedCurrencyList/getCurrencies",
-                  "api/currencies/createAgregatedCurrencyList/subUnitFor",
-                ]
-              }
+              "api/currencies/createAgregatedCurrencyList/methods"
+              // {
+              //   type: "category",
+              //   label: "methods",
+              //   items: [
+              //     "api/currencies/createAgregatedCurrencyList/contains",
+              //     "api/currencies/createAgregatedCurrencyList/getCurrencies",
+              //     "api/currencies/createAgregatedCurrencyList/subUnitFor",
+              //   ]
+              // }
             ],
           },
           {
             type: "category",
             label: "convertCurrencyMapToArray",
             items:[
-              {
-                type: "category",
-                label: "methods",
-                items: [
-                  "api/currencies/convertCurrencyMapToArray"
-                ]
-              }
+              "api/currencies/convertCurrencyMapToArray/methods"
+              // {
+              //   type: "category",
+              //   label: "methods",
+              //   items: [
+              //     "api/currencies/convertCurrencyMapToArray"
+              //   ]
+              // }
             ]
           }
         ],
@@ -180,13 +185,14 @@ module.exports = {
             type: "category",
             label: "createMoneyIntlFormatter",
             items: [
-              {
-                type: "category",
-                label: "methods",
-                items: [
-                  "api/formatter/createMoneyIntlFormatter/format",
-                ]
-              }
+              "api/formatter/createMoneyIntlFormatter/methods"
+              // {
+              //   type: "category",
+              //   label: "methods",
+              //   items: [
+              //     "api/formatter/createMoneyIntlFormatter/format",
+              //   ]
+              // }
 
             ],
           },
@@ -201,13 +207,14 @@ module.exports = {
             type: "category",
             label: "createMoneyCryptoFormatter",
             items: [
-              {
-                type: "category",
-                label: "methods",
-                items: [
-                  "api/crypto-formatter/createMoneyCryptoFormatter/format",
-                ]
-              }
+              "api/crypto-formatter/createMoneyCryptoFormatter/methods"
+              // {
+              //   type: "category",
+              //   label: "methods",
+              //   items: [
+              //     "api/crypto-formatter/createMoneyCryptoFormatter/format",
+              //   ]
+              // }
              
             ],
           },
