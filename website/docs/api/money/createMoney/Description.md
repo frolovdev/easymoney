@@ -9,7 +9,7 @@ sidebar_label: Description
 ```
 npm install @easymoney/money
 ```
-or 
+or
 ```
 yarn add @easymoney/money
 ```
@@ -17,7 +17,7 @@ or
 
 **CDN**
  - [@easymoney/money](https://unpkg.com/@easymoney/money)
- 
+
 # Description
 
 The Money object only supports integer(ish) values on instantiation. The following is (not) supported. When a non-supported value is passed a Error will be thrown.
@@ -78,7 +78,7 @@ interface MoneyBase {
 ```
 
 
-### Money 
+### Money
 
 ```ts
 

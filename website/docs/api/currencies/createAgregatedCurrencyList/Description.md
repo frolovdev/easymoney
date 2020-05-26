@@ -18,16 +18,15 @@ or
 **CDN**
  - [@easymoney/currencies](https://unpkg.com/@easymoney/currencies)
 
-# Unit definitions
-
 # Description
 
 This currency list contains, aggregation of currency lists.
 
+# Unit definitions
+
 ### CurrencyList
 
 ```ts
-import { createAgregatedCurrencyList } from "@easymoney/money"
 
 interface CurrencyList {
   contains: (currency: Currency) => boolean;

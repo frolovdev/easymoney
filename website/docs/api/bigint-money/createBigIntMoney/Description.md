@@ -21,19 +21,36 @@ or
 **CDN**
  - [@easymoney/bigint-money](https://unpkg.com/@easymoney/bigint-money)
 
-
-
-# Unit definitions
-
 # Description
 
 The Money object only supports integer(ish) values on instantiation. The following is (not) supported. When a non-supported value is passed a Error will be thrown.
+
+# Unit definitions
 
 ### BigIntMoneyBase
 
 
 ```ts
 import { createBigIntMoney } from "@easymoney/money"
+
+// int is accepted
+createBigIntMoney(500, "USD");
+
+// string is accepted if integer
+createBigIntMoney('500', "USD");
+
+// string is accepted if fractional part is zero
+createBigIntMoney('500.00', "USD");
+
+// leading zero's are not accepted
+createBigIntMoney('00500', "USD");
+
+// multiple zero's are not accepted
+createBigIntMoney('000', "USD");
+
+// plus sign is not accepted
+createBigIntMoney('+500', "USD");
+```
 
 interface BigIntMoneyBase {
   getAmount: () => Money["amount"];
