@@ -21,9 +21,9 @@ Additions can be performed using add().
 
 #### Throws
 
-`TypeError` - throws if currencies aren't identical;
+`TypeError` - throws if currencies aren't identical
 
-`TypeError` - throws if result of arithmetic operation isn't an integer;
+`TypeError` - throws if result of arithmetic operation isn't an integer
 
 #### Example
 
