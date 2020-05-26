@@ -22,12 +22,9 @@ or
 
 The Money object only supports integer(ish) values on instantiation. The following is (not) supported. When a non-supported value is passed a Error will be thrown.
 
-# Unit definitions
+```js
 
-### MoneyBase
-
-```ts
-import { createBigNumberMoney } from "@easymoney/money"
+import { createBigNumberMoney } from "@easymoney/bignumber.js"
 
 // int is accepted
 createBigNumberMoney(500, "USD");
@@ -47,6 +44,12 @@ createBigNumberMoney('000', "USD");
 // plus sign is not accepted
 createBigNumberMoney('+500', "USD");
 ```
+
+# Unit definitions
+
+### MoneyBase
+
+```ts
 
 interface MoneyBase {
   getAmount: () => Money["amount"];
