@@ -109,28 +109,3 @@ You can watch examples of using methods in original repo modulename/______tests_
 
 
 
-
-<!-- ## Calculator
-
-- [createCalculator](createCalculator/Description.md)
-  - [absolute](createCalculator/absolute.md)
-  - [add](createCalculator/add.md)
-  - [ceil](createCalculator/ceil.md)
-  - [compare](createCalculator/compare.md)
-  - [divide](createCalculator/divide.md)
-  - [floor](createCalculator/floor.md)
-  - [mod](createCalculator/mod.md)
-  - [multiply](createCalculator/multiply.md)
-  - [round](createCalculator/round.md)
-  - [share](createCalculator/share.md)
-  - [subtract](createCalculator/subtract.md)
-- [createBigIntCalculator](createBigIntCalculator/Description.md)
-  - [absolute](createBigIntCalculator/absolute.md)
-  - [add](createBigIntCalculator/add.md)
-  - [compare](createBigIntCalculator/compare.md)
-  - [divide](createBigIntCalculator/divide.md)
-  - [mod](createBigIntCalculator/mod.md)
-  - [multiply](createBigIntCalculator/multiply.md)
-  - [share](createBigIntCalculator/share.md)
-  - [subtract](createBigIntCalculator/subtract.md) -->
-
