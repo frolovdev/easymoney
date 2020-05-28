@@ -64,13 +64,7 @@ module.exports = {
               "api/currencies/createAgregatedCurrencyList/methods"
             ],
           },
-          {
-            type: "category",
-            label: "convertCurrencyMapToArray",
-            items:[
-              "api/currencies/convertCurrencyMapToArray/methods"
-            ]
-          }
+          "api/currencies/convertCurrencyMapToArray"
         ],
       },
       {
