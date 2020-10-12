@@ -81,8 +81,12 @@ function format(
     style: mergedOptions.style,
     currencyDisplay: mergedOptions.currencyDisplay,
     minimumFractionDigits:
-      mergedOptions.minimumFractionDigits || decimalDigitsLength,
+      mergedOptions.minimumFractionDigits !== undefined
+        ? mergedOptions.minimumFractionDigits
+        : decimalDigitsLength,
     maximumFractionDigits:
-      mergedOptions.maximumFractionDigits || decimalDigitsLength
+      mergedOptions.maximumFractionDigits !== undefined
+        ? mergedOptions.maximumFractionDigits
+        : decimalDigitsLength
   });
 }
