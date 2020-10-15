@@ -31,7 +31,9 @@ const subtract: CalculatorBase["subtract"] = function(amount, subtrahend) {
 };
 
 const compare: CalculatorBase["compare"] = function(a, b) {
-  return a < b ? -1 : a > b ? 1 : 0;
+  const aNumber = Number(a);
+  const bNumber = Number(b);
+  return aNumber < bNumber ? -1 : aNumber > bNumber ? 1 : 0;
 };
 
 const add: CalculatorBase["add"] = function(amount, addend) {

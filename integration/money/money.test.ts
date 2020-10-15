@@ -1,4 +1,4 @@
-import { createMoney as createMoneyFunc, MoneyBase } from "@easymoney/money";
+import { createMoney as createMoneyFunc } from "@easymoney/money";
 import { RoundingModes } from "@easymoney/core";
 import { currenciesMap } from "@easymoney/currencies";
 
@@ -945,6 +945,22 @@ describe("money", () => {
 
         expect(money).toBe(false);
       });
+    });
+  });
+
+  describe("issues", () => {
+    it("should fix the issue #61 https://github.com/frolovdev/easymoney/issues/61", () => {
+      const low = createMoney({ amount: 500, currency: "USD" });
+      const high = createMoney({ amount: 1217, currency: "USD" });
+
+      console.log("qwopioeuhqwjkelq;");
+      const expression = low.lessThan(high);
+
+      // should be `true`, but its `false`
+      expect(expression).toEqual(true);
+
+      // // should be `false`, but its `true`
+      expect(low.greaterThan(high)).toEqual(false);
     });
   });
 });
