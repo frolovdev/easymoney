@@ -4,6 +4,7 @@
 - [Contribute to the codebase](#contribute)
 - [Installation](#install)
 - [Working with documentation site](#sitedocs)
+- [Running tests](#tests)
 
 ## <a name="commit"></a> Commit Message Guidelines
 
@@ -197,3 +198,9 @@ from the main (upstream) repository:
     ```
 
 * Open browser and go to localhost:3000
+
+## <a name="tests"></a> Runing tests
+
+```
+node --inspect-brk ./node_modules/.bin/jest -i ./integration/money/money.test.ts -t "should fix the issue #61 https://github.com/frolovdev/easymoney/issues/61" --config jest.config.js --bail
+```
