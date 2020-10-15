@@ -66,6 +66,11 @@ list.getCurrencies();
 
 ```
 
+## Requirements
+
+* For typescript users TS 3.7+
+* If you use @easymoney/bigint-money you need Node Version or Browser Version that supports this [proposal](https://caniuse.com/bigint) 
+
 ## Quick start
 
 ```sh
