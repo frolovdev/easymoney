@@ -33,7 +33,8 @@ export function createMoneyIntlFormatterUnit(currencies: CurrencyUnitISO[]) {
 const defaultOptions: MoneyIntlOptions = {
   currencyDisplay: "symbol",
   useGrouping: true,
-  style: "currency"
+  style: "currency",
+  hideFractionIfZero: false
 };
 
 function format(
@@ -73,6 +74,10 @@ function format(
     formatted = `-${formatted}`;
   }
 
+  const hideFractionDigits =
+    mergedOptions.hideFractionIfZero &&
+    parseInt(valueBase) % Math.pow(10, subunit) === 0;
+
   const currency = money.getCurrency();
 
   return Number(formatted).toLocaleString(locale, {
@@ -80,13 +85,15 @@ function format(
     useGrouping: mergedOptions.useGrouping,
     style: mergedOptions.style,
     currencyDisplay: mergedOptions.currencyDisplay,
-    minimumFractionDigits:
-      mergedOptions.minimumFractionDigits !== undefined
-        ? mergedOptions.minimumFractionDigits
-        : decimalDigitsLength,
-    maximumFractionDigits:
-      mergedOptions.maximumFractionDigits !== undefined
-        ? mergedOptions.maximumFractionDigits
-        : decimalDigitsLength
+    minimumFractionDigits: hideFractionDigits
+      ? 0
+      : mergedOptions.minimumFractionDigits !== undefined
+      ? mergedOptions.minimumFractionDigits
+      : decimalDigitsLength,
+    maximumFractionDigits: hideFractionDigits
+      ? 0
+      : mergedOptions.maximumFractionDigits !== undefined
+      ? mergedOptions.maximumFractionDigits
+      : decimalDigitsLength
   });
 }
