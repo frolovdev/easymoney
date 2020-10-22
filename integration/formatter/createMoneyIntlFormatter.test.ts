@@ -48,5 +48,23 @@ describe("createMoneyIntlFormatter", () => {
       );
       expect(formattedValue).toEqual("$5.00");
     });
+
+    it("should respect the hideFractionIfZero option", () => {
+      const moneyWithFraction = { amount: 550, currency: "USD" };
+      const formattedValueWithFraction = createFormatter().format(
+        createMoney(moneyWithFraction),
+        "en-US",
+        { hideFractionIfZero: true }
+      );
+      expect(formattedValueWithFraction).toEqual("$5.50");
+
+      const moneyWithoutFraction = { amount: 500, currency: "USD" };
+      const formattedValueWithoutFraction = createFormatter().format(
+        createMoney(moneyWithoutFraction),
+        "en-US",
+        { hideFractionIfZero: true }
+      );
+      expect(formattedValueWithoutFraction).toEqual("$5");
+    });
   });
 });

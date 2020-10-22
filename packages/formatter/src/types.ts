@@ -6,6 +6,7 @@ export type MoneyIntlOptions = {
   maximumFractionDigits?: number;
   useGrouping?: boolean;
   style?: "currency" | "decimal";
+  hideFractionIfZero?: boolean;
 };
 
 export type MoneyIntlFormatter = {
