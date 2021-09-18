@@ -67,6 +67,7 @@ const createMoneyFactory = (calculator: CalculatorBase) => <CT>({
   publicInstance.isPositive = bind(isPositive, instance);
   publicInstance.isNegative = bind(isNegative, instance);
   publicInstance.ratioOf = bind(ratioOf, instance);
+  publicInstance.toJSON = bind(toJSON, instance);
 
   return publicInstance;
 };
@@ -433,4 +434,12 @@ function ratioOf<CT>(instance: Instance<CT>, money: MoneyBase<CT>) {
   const { calculator } = privateInstance;
 
   return calculator.divide(publicInstance.getAmount(), money.getAmount());
+}
+
+function toJSON<CT>(instance: Instance<CT>) {
+  const { publicInstance } = instance;
+  return JSON.stringify({
+    amount: publicInstance.getAmount(),
+    currency: publicInstance.getCurrency()
+  });
 }

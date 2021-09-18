@@ -10,10 +10,10 @@ describe("bignumberMoney", () => {
   });
 
   describe("public api", () => {
-    it("should contains 22 public methods", () => {
+    it("should contains 23 public methods", () => {
       expect(
         Object.keys(createMoney({ amount: 100, currency: "USD" })).length
-      ).toEqual(22);
+      ).toEqual(23);
     });
 
     it("shouldnt contain round in public inteface", () => {
@@ -1323,6 +1323,31 @@ describe("bignumberMoney", () => {
       const money = createMoney(data1).isNegative();
 
       expect(money).toBe(false);
+    });
+  });
+
+  describe("toJSON", () => {
+    it("should return string if currency string", () => {
+      const data1 = { amount: 100, currency: "USD" };
+      const data1String = `{"amount":"100","currency":"USD"}`;
+      const money = createMoney(data1).toJSON();
+      expect(money).toBe(data1String);
+    });
+
+    it("should return string if currency object", () => {
+      const data1 = {
+        amount: 100,
+        currency: {
+          code: "BMD",
+          currency: "Bermudian Dollar",
+          minorUnit: 2,
+          numericCode: 60
+        }
+      };
+      const data1String =
+        '{"amount":"100","currency":{"code":"BMD","currency":"Bermudian Dollar","minorUnit":2,"numericCode":60}}';
+      const money = createMoney(data1).toJSON();
+      expect(money).toBe(data1String);
     });
   });
 });
