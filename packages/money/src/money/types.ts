@@ -31,6 +31,7 @@ export interface MoneyBase<CT> {
   isZero(): boolean;
   isPositive(): boolean;
   isNegative(): boolean;
+  toJSON(): string;
 }
 
 export type PrivateInstance<CT> = {
