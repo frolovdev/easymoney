@@ -19,6 +19,10 @@ Additions can be performed using add().
 
 `money` ([BigIntMoneyBase](Description.md#bigintmoneybase))
 
+#### Throws
+
+`TypeError` - throws if currencies aren't identical
+
 
 **Example**
 
