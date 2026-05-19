@@ -43,6 +43,10 @@ Additions can be performed using add().
 
 `money` ([MoneyBase](Description.md#moneybase))
 
+#### Throws
+
+`TypeError` - throws if currencies aren't identical
+
 #### Example
 
 ```js
